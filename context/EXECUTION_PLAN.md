@@ -65,9 +65,9 @@
 
 ### Token management:
 - GitHub tokens in remotes (embedded in URLs)
-- Main token: `ghp_YOUR_GITHUB_TOKEN_HERE` (lidenal85-blip)
-- Secondary: `ghp_YOUR_GITHUB_TOKEN_HERE` (den4ikorm1985)
-- Token from git.md: `ghp_YOUR_GITHUB_TOKEN_HERE` (lidenal85-blip-alt)
+- Main token: `ghp_YOUR_TOKEN_HERE` (lidenal85-blip)
+- Secondary: `ghp_YOUR_TOKEN_HERE` (den4ikorm1985)
+- Token from git.md: `ghp_YOUR_TOKEN_HERE` (lidenal85-blip-alt)
 
 ### Branch strategy:
 - `manifest-5.1` — от feature/claude-multi-account для разработки

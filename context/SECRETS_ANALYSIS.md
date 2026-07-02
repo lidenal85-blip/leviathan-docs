@@ -9,7 +9,7 @@
   - GEMINI_K1..K6: 6 ключей Gemini (AIzaSy...)
   - GROQ_K1..K5: 5 ключей Groq (gsk_...)
   - TG_BOT_TOKEN: 8604646197:AAFJM_c38cGBxICgUDWB-jEtgImUz0Fyo2M
-  - GITHUB_TOKEN: ghp_YOUR_GITHUB_TOKEN_HERE
+  - GITHUB_TOKEN: ghp_YOUR_TOKEN_HERE
   - FAL_KEY: dfffce81-c079-490f-9e42-b0b787cf90e8:c0f435ad65001b04ee56dda925c50c1d
   - LEV_MCP_TOKEN: den4ik1985!
 - **Всего:** 15 ключей

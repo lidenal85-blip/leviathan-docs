@@ -1,7 +1,7 @@
 # 📡 P3: GitHub Sync — Отчёт
 
 **Дата:** 2026-07-01
-**Токен:** `ghp_YOUR_GITHUB_TOKEN_HERE` (lidenal85-blip)
+**Токен:** `ghp_YOUR_TOKEN_HERE` (lidenal85-blip)
 
 ## Результаты пуша
 

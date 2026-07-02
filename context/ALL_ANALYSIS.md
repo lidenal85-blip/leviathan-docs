@@ -4181,9 +4181,9 @@ class DurableEventBusV2:
 
 ### Token management:
 - GitHub tokens in remotes (embedded in URLs)
-- Main token: `ghp_YOUR_GITHUB_TOKEN_HERE` (lidenal85-blip)
-- Secondary: `ghp_YOUR_GITHUB_TOKEN_HERE` (den4ikorm1985)
-- Token from git.md: `ghp_YOUR_GITHUB_TOKEN_HERE` (lidenal85-blip-alt)
+- Main token: `ghp_YOUR_TOKEN_HERE` (lidenal85-blip)
+- Secondary: `ghp_YOUR_TOKEN_HERE` (den4ikorm1985)
+- Token from git.md: `ghp_YOUR_TOKEN_HERE` (lidenal85-blip-alt)
 
 ### Branch strategy:
 - `manifest-5.1` — от feature/claude-multi-account для разработки
@@ -4206,7 +4206,7 @@ class DurableEventBusV2:
   - GEMINI_K1..K6: 6 ключей Gemini (AIzaSy...)
   - GROQ_K1..K5: 5 ключей Groq (gsk_...)
   - TG_BOT_TOKEN: 8604646197:AAFJM_c38cGBxICgUDWB-jEtgImUz0Fyo2M
-  - GITHUB_TOKEN: ghp_YOUR_GITHUB_TOKEN_HERE
+  - GITHUB_TOKEN: ghp_YOUR_TOKEN_HERE
   - FAL_KEY: dfffce81-c079-490f-9e42-b0b787cf90e8:c0f435ad65001b04ee56dda925c50c1d
   - LEV_MCP_TOKEN: den4ik1985!
 - **Всего:** 15 ключей
@@ -5354,7 +5354,7 @@ git config --global credential.helper store
 cat > ~/.netrc << 'EOF'
 machine github.com
 login lidenal85-blip
-password ghp_YOUR_GITHUB_TOKEN_HERE
+password ghp_YOUR_TOKEN_HERE
 EOF
 chmod 600 ~/.netrc
 ```
@@ -5435,7 +5435,7 @@ EOF
 git add .
 git commit -m "Initial commit: Agent analysis repository"
 git branch -M main
-git remote add origin https://lidenal85-blip:ghp_YOUR_GITHUB_TOKEN_HERE@github.com/lidenal85-blip/agent-analysis.git
+git remote add origin https://lidenal85-blip:ghp_YOUR_TOKEN_HERE@github.com/lidenal85-blip/agent-analysis.git
 git push -u origin main
 ```
 
@@ -5443,11 +5443,11 @@ git push -u origin main
 
 ```bash
 # Проверь токен
-curl -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+curl -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
      https://api.github.com/user | jq .
 
 # Получи список репозиториев
-curl -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+curl -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
      https://api.github.com/users/lidenal85-blip/repos | jq '.[].name'
 ```
 
@@ -5457,24 +5457,24 @@ curl -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
 
 ```bash
 # Получи список всех репозиториев
-REPOS=$(curl -s -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+REPOS=$(curl -s -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
         https://api.github.com/users/lidenal85-blip/repos | jq -r '.[].name')
 
 for repo in $REPOS; do
     echo "=== Анализируем $repo ==="
     
     # Получи информацию о репозитории
-    curl -s -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+    curl -s -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
          "https://api.github.com/repos/lidenal85-blip/$repo" | jq '{name, description, language, size, updated_at}'
     
     # Получи список файлов
-    curl -s -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+    curl -s -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
          "https://api.github.com/repos/lidenal85-blip/$repo/contents" | jq '.[].name'
     
     # Если есть Python файлы, скачай и проанализируй
     mkdir -p /tmp/github-analysis/$repo
     cd /tmp/github-analysis/$repo
-    git clone https://lidenal85-blip:ghp_YOUR_GITHUB_TOKEN_HERE@github.com/lidenal85-blip/$repo.git 2>/dev/null
+    git clone https://lidenal85-blip:ghp_YOUR_TOKEN_HERE@github.com/lidenal85-blip/$repo.git 2>/dev/null
 done
 ```
 
@@ -5592,7 +5592,7 @@ git push origin main
 ```bash
 # Создать issue для CRITICAL улучшения
 curl -X POST \
-  -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+  -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/lidenal85-blip/agent-analysis/issues \
   -d '{

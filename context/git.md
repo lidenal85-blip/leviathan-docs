@@ -14,7 +14,7 @@ git config --global credential.helper store
 cat > ~/.netrc << 'EOF'
 machine github.com
 login lidenal85-blip
-password ghp_YOUR_GITHUB_TOKEN_HERE
+password ghp_YOUR_TOKEN_HERE
 EOF
 chmod 600 ~/.netrc
 ```
@@ -95,7 +95,7 @@ EOF
 git add .
 git commit -m "Initial commit: Agent analysis repository"
 git branch -M main
-git remote add origin https://lidenal85-blip:ghp_YOUR_GITHUB_TOKEN_HERE@github.com/lidenal85-blip/agent-analysis.git
+git remote add origin https://lidenal85-blip:ghp_YOUR_TOKEN_HERE@github.com/lidenal85-blip/agent-analysis.git
 git push -u origin main
 ```
 
@@ -103,11 +103,11 @@ git push -u origin main
 
 ```bash
 # Проверь токен
-curl -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+curl -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
      https://api.github.com/user | jq .
 
 # Получи список репозиториев
-curl -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+curl -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
      https://api.github.com/users/lidenal85-blip/repos | jq '.[].name'
 ```
 
@@ -117,24 +117,24 @@ curl -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
 
 ```bash
 # Получи список всех репозиториев
-REPOS=$(curl -s -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+REPOS=$(curl -s -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
         https://api.github.com/users/lidenal85-blip/repos | jq -r '.[].name')
 
 for repo in $REPOS; do
     echo "=== Анализируем $repo ==="
     
     # Получи информацию о репозитории
-    curl -s -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+    curl -s -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
          "https://api.github.com/repos/lidenal85-blip/$repo" | jq '{name, description, language, size, updated_at}'
     
     # Получи список файлов
-    curl -s -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+    curl -s -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
          "https://api.github.com/repos/lidenal85-blip/$repo/contents" | jq '.[].name'
     
     # Если есть Python файлы, скачай и проанализируй
     mkdir -p /tmp/github-analysis/$repo
     cd /tmp/github-analysis/$repo
-    git clone https://lidenal85-blip:ghp_YOUR_GITHUB_TOKEN_HERE@github.com/lidenal85-blip/$repo.git 2>/dev/null
+    git clone https://lidenal85-blip:ghp_YOUR_TOKEN_HERE@github.com/lidenal85-blip/$repo.git 2>/dev/null
 done
 ```
 
@@ -252,7 +252,7 @@ git push origin main
 ```bash
 # Создать issue для CRITICAL улучшения
 curl -X POST \
-  -H "Authorization: token ghp_YOUR_GITHUB_TOKEN_HERE" \
+  -H "Authorization: token ghp_YOUR_TOKEN_HERE" \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/lidenal85-blip/agent-analysis/issues \
   -d '{
