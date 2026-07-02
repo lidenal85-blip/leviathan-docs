@@ -1,6 +1,8 @@
 site_name: Leviathan Agent Platform
 site_description: Документация агентной системы
 site_url: https://lidenal85-blip.github.io/leviathan-docs/
+repo_url: https://github.com/lidenal85-blip/leviathan-docs
+
 theme:
   name: material
   language: ru
@@ -16,22 +18,33 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - tables
+
 nav:
   - Главная: index.md
   - Быстрый старт:
-    - Мастер-промт: MASTER_PROMPT.md
-    - Чек-лист: MASTER_CHECKLIST.md
-    - Индекс: INDEX.md
+    - Мастер-промт: prompts/MASTER_PROMPT.md
+    - Чек-лист: plans/MASTER_CHECKLIST.md
   - Документация:
     - Манифест 5.0.0: context/MANIFEST_5.0.0.md
-    - Анализ системы: context/MY_SYSTEM_ANALYSIS.md
+    - ADR-002 Merge: context/ADR_002_MERGE_PLAN.md
     - План объединения: context/COMPREHENSIVE_UNIFICATION_PLAN.md
+    - Анализ системы: context/MY_SYSTEM_ANALYSIS.md
     - Слияние агентов: context/AGENT_MERGE_PLAN.md
+    - Сравнение: context/COMPARISON.md
+    - Секреты: context/SECRETS_ANALYSIS.md
+  - Отчёты:
+    - Реализация: context/IMPLEMENTATION_REPORT.md
+    - Миграция секретов: context/SECRETS_MIGRATION_REPORT.md
+    - Финальный отчёт 5.1: context/MANIFEST_5.1_FINAL_REPORT.md
+    - Манифест 5.1: context/MANIFEST_5.1_AGENT_IMPLEMENTATION.md
+    - План миграции: context/MANIFEST_MIGRATION_PLAN.md
+    - Execution Plan: context/EXECUTION_PLAN.md
+  - GitHub: https://github.com/lidenal85-blip/leviathan-docs
