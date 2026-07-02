@@ -1,0 +1,30 @@
+# Секреты и токены
+*.token
+*.key
+*.secret
+.env
+.env.local
+.netrc
+.github_token
+github_token.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
