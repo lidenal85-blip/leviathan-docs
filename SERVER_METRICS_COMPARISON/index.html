@@ -665,6 +665,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#phase-0-profiling-results-2026-07-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0 Profiling Results (2026-07-03)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 0 Profiling Results (2026-07-03)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-consumers-by-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Consumers by RAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2057,6 +2118,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#phase-0-profiling-results-2026-07-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0 Profiling Results (2026-07-03)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 0 Profiling Results (2026-07-03)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-consumers-by-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Consumers by RAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2152,6 +2274,79 @@
 <li><strong>Активных сервисов 54, а не 10</strong> — ROADMAP, вероятно, считал только ключевые сервисы LEVIATHAN, а <code>systemctl</code> показывает все запущенные systemd-юниты.</li>
 <li><strong>Load average высокий</strong> — 3.62 на 2 ядра означает очередь процессов. Стоит проверить, какие процессы нагружают CPU.</li>
 </ol>
+<h2 id="phase-0-profiling-results-2026-07-03">Phase 0 Profiling Results (2026-07-03)</h2>
+<p>Выполнено в рамках MASTER ROADMAP Фазы 0 (Стабилизация).</p>
+<h3 id="top-consumers-by-ram">Top Consumers by RAM</h3>
+<table>
+<thead>
+<tr>
+<th>PID</th>
+<th>Process</th>
+<th>RAM %</th>
+<th>CPU %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2638458</td>
+<td>freebuff (manicode)</td>
+<td>19.7%</td>
+<td>44.6%</td>
+</tr>
+<tr>
+<td>2709893</td>
+<td>uvicorn main:app (:8135)</td>
+<td>7.9%</td>
+<td>39.8%</td>
+</tr>
+<tr>
+<td>965749</td>
+<td>node openclaw gateway</td>
+<td>4.3%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system-state">System State</h3>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Значение</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Load Average</strong></td>
+<td>8.37 / 6.75 / 5.21</td>
+<td>🔴 Critical (&gt;2 на 2 ядра)</td>
+</tr>
+<tr>
+<td><strong>RAM Used</strong></td>
+<td>3.0 / 3.8 GiB (79%)</td>
+<td>🔴 Высокое</td>
+</tr>
+<tr>
+<td><strong>Swap Used</strong></td>
+<td>2.4 / 5.0 GiB (48%)</td>
+<td>🟡 Значительное</td>
+</tr>
+</tbody>
+</table>
+<h3 id="findings">Findings</h3>
+<ol>
+<li><strong>freebuff — главный потребитель</strong>: 19.7% RAM + 44.6% CPU. Требует оптимизации.</li>
+<li><strong>API ключи невалидны</strong>: Groq возвращает 401 Invalid API Key. Все ключи в cooldown.</li>
+<li><strong>CircuitBreaker разомкнут</strong>: Для gemini и groq после 3+ неудачных попыток.</li>
+<li><strong>Load 8.37 на 2 ядра</strong>: Очередь процессов более 4х кратно превышает мощность CPU.</li>
+</ol>
+<h3 id="recommendations">Recommendations</h3>
+<ul>
+<li>Перезагрузить/обновить API-ключи в secrets-vault</li>
+<li>Оптимизировать freebuff (или перезапустить)</li>
+<li>Рассмотреть добавление ядер или миграцию процессов</li>
+</ul>
 <hr />
 <p><em>Источник: /root/analysis/MASTER_ROADMAP.md §1.2 | Проверено: 2026-07-03</em></p>
 
