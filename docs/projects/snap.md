@@ -12,3 +12,7 @@ Snap package management — manages Snap installations
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/snap_audit.md)

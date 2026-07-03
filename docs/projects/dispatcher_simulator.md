@@ -14,3 +14,7 @@ Simulation environment for testing task dispatching algorithms and agent workflo
 | **Purpose** | Testing & simulation |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/dispatcher_simulator_audit.md)

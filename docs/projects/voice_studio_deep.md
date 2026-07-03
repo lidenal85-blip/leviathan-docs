@@ -12,3 +12,7 @@ Deep voice analysis tools — extends Voice Studio capabilities
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/voice_studio_deep_audit.md)

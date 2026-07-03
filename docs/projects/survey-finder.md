@@ -14,3 +14,7 @@ Automated survey discovery tool — finds and monitors paid surveys, notifies us
 | **Type** | Automated scraper/bot |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/survey_finder_audit.md)

@@ -12,3 +12,7 @@ Collection of small utilities and scripts
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/other_small_audits.md)

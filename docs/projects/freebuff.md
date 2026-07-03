@@ -12,3 +12,7 @@ Claude Code free tier wrapper — manages Claude accounts for free API access
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/freebuff_audit.md)

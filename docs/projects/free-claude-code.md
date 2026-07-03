@@ -15,3 +15,7 @@ Tool for using Claude Code without API costs — manages Claude accounts, sessio
 | **Includes** | freebuff sub-project |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/freebuff_audit.md)

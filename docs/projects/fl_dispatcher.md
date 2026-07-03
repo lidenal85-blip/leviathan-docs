@@ -12,3 +12,7 @@ Freelance dispatcher — coordinates freelance project assignments
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/fl_dispatcher_audit.md)

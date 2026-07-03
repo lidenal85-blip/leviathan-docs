@@ -22,4 +22,4 @@ Voice processing platform — provides voice synthesis, recognition, and audio p
 
 ## Full Audit
 
-[📊 Полный аудит проекта](../analysis/audit/vocalplatform_audit/)
+[📊 Полный аудит проекта](../analysis/audit/vocalplatform_audit.md)

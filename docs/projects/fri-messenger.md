@@ -15,3 +15,7 @@ Messaging platform integration service — connects multiple messaging channels 
 | **Features** | Multi-channel messaging |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/fri-messenger_audit.md)

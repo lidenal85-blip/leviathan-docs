@@ -12,3 +12,7 @@ Night-time automated research tool — runs analysis tasks during off-peak hours
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/night_research_audit.md)

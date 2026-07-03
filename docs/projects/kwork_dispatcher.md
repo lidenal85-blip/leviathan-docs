@@ -12,3 +12,7 @@ Task dispatcher for Kwork freelance orders — routes work to available agents
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/kwork_dispatcher_audit.md)

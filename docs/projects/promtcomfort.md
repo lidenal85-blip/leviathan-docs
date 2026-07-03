@@ -12,3 +12,7 @@ Prompt engineering utility — optimizes AI prompts for better results
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/promtcomfort_audit.md)

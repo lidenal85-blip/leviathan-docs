@@ -12,3 +12,7 @@ Claude session wake-up tool — keeps Claude sessions alive
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/claude_wake_audit.md)

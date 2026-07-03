@@ -47,6 +47,7 @@ nav:
   - Отчёт реализации: context/IMPLEMENTATION_REPORT.md
 - Аналитика:
   - analysis/index.md
+  - Аудиты проектов: analysis/audit/index.md
   - analysis/ARCHITECTURAL_AUDIT_2026-07-03.md
   - analysis/SYSTEM_AUDIT_2026-07-03.md
   - analysis/CLAUDE_SESSIONS_ANALYSIS_2026-07-03.md

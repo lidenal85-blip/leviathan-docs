@@ -14,3 +14,7 @@ Media processing pipeline — handles video/audio conversion, thumbnail generati
 | **Type** | Media processing |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/media_factory_audit.md)

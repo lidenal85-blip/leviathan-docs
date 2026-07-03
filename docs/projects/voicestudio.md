@@ -13,6 +13,6 @@ Voice processing studio — web application for voice recording, editing, and AI
 | **Hosting** | Nginx, `/var/www/` |
 | **Type** | Web Application |
 
-[📊 Аудит](../analysis/audit/voicestudio_audit/)
+[📊 Аудит](../analysis/audit/voicestudio_audit.md)
 
 ---

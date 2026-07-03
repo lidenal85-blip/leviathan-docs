@@ -12,3 +12,7 @@ API service for MinusFabrika platform
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/minusfabrika_api_audit.md)

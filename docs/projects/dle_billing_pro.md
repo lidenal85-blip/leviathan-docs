@@ -12,3 +12,7 @@ DLE billing system — payment processing for DLE-based sites
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/dle_billing_pro_audit.md)

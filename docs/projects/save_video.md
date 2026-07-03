@@ -12,3 +12,7 @@ Video downloader utility — saves videos from various platforms
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/save_video_audit.md)

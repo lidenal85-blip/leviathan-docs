@@ -14,3 +14,7 @@ Telegram channel monitoring bot — tracks messages, analyzes trends, and provid
 | **Integration** | Telegram API |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/tg_channel_monitor_audit.md)

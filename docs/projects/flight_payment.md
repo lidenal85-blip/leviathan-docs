@@ -12,3 +12,7 @@ Flight ticket payment processing service
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/flight_payment_audit.md)

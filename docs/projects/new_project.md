@@ -12,3 +12,7 @@ Project template/scaffold — starting point for new LEVIATHAN projects
 | **Maintenance** | Low |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/new_project_audit.md)
