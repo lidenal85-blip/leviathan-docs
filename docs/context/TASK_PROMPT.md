@@ -362,7 +362,7 @@ import os
 router = APIRouter()
 
 # Инициализация vault
-MASTER_KEY = os.getenv("VAULT_MASTER_KEY", "leviathan_master_key_2026")
+MASTER_KEY = os.getenv("VAULT_MASTER_KEY", "<your-master-key-here>")
 vault = SecretsVault(MASTER_KEY)
 
 class SecretRequest(BaseModel):
@@ -418,7 +418,7 @@ import re
 from pathlib import Path
 from core.vault import SecretsVault
 
-MASTER_KEY = os.getenv("VAULT_MASTER_KEY", "leviathan_master_key_2026")
+MASTER_KEY = os.getenv("VAULT_MASTER_KEY", "<your-master-key-here>")
 vault = SecretsVault(MASTER_KEY)
 
 PROJECTS = {
@@ -597,7 +597,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/secrets_vault
-Environment="VAULT_MASTER_KEY=leviathan_master_key_2026"
+Environment="VAULT_MASTER_KEY=<your-master-key-here>"
 ExecStart=/usr/bin/python3 /opt/secrets_vault/api/main.py
 Restart=always
 RestartSec=10
