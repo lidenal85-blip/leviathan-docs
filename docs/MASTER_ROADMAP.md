@@ -24,7 +24,7 @@ This document defines the canonical architectural direction for the LEVIATHAN pl
 ---
 
 *Original file location: `/root/analysis/MASTER_ROADMAP.md`*
-# LEVIATHAN MASTER ROADMAP
+
 **Автор:** Claude (эта сессия) · **Дата:** 2026-07-03 · **Статус:** Канонический (заменяет 3 предыдущих противоречащих видения)
 
 ---
