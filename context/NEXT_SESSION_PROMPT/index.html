@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPARISON/">
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/NEXT_SESSION_PROMPT/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0 - Leviathan Agent Platform</title>
+        <title>🚀 СТАРТ НОВОЙ СЕССИИ — Leviathan / ADR-002 - Leviathan Agent Platform</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vs-500" class="md-skip">
+        <a href="#leviathan-adr-002" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0
+              🚀 СТАРТ НОВОЙ СЕССИИ — Leviathan / ADR-002
             
           </span>
         </div>
@@ -818,7 +818,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Легенда
+        ⚡ БЫСТРЫЙ СТАРТ (если времени мало)
       
     </span>
   </a>
@@ -826,10 +826,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-05-0" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)
+        🌐 Живой сайт документации (альтернатива)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 Кто ты и что происходит
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Проверка живого состояния (выполни ОБЯЗАТЕЛЬНО перед любой работой)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Что точно сделано (не переделывать)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Незакрытые хвосты
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Рекомендуемый первый шаг
       
     </span>
   </a>
@@ -853,315 +908,72 @@
 
 
 
-<h1 id="vs-500">СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0</h1>
-<p><strong>Дата:</strong> 2026-07-01 | <strong>Источник:</strong> реальный код из GitHub</p>
-<h2 id="_1">Легенда</h2>
-<p>✅ Полная реализация | ⚠️ Частичная | ❌ Отсутствует | 🔶 Иначе реализовано</p>
-<table>
-<thead>
-<tr>
-<th>Область</th>
-<th>LangGraph</th>
-<th>LangChain</th>
-<th>CrewAI</th>
-<th>OpenHands</th>
-<th>AutoGen</th>
-<th>PydanticAI</th>
-<th>Semantic Kernel</th>
-<th>LlamaIndex</th>
-<th><strong>Манифест 5.0.0</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1. Agent Lifecycle (FSM)</strong></td>
-<td>✅ StateGraph + Pregel</td>
-<td>❌</td>
-<td>✅ Flow decorators</td>
-<td>✅ AgentController</td>
-<td>⚠️ BaseChatAgent</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ BaseWorkflowAgent</td>
-<td>✅ AgentLifecycle</td>
-</tr>
-<tr>
-<td><strong>2. Runnable Interface</strong></td>
-<td>✅ Runnable+RunnableConfig</td>
-<td>✅ LCEL полный</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ on_messages/stream</td>
-<td>❌</td>
-<td>⚠️ invoke_stream</td>
-<td>⚠️ Workflow+step</td>
-<td>✅ Runnable+Sequence+Parallel</td>
-</tr>
-<tr>
-<td><strong>3. Middleware Pipeline</strong></td>
-<td>✅ before/after model hooks</td>
-<td>✅ AgentMiddleware v1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelFilterExtension</td>
-<td>❌</td>
-<td>✅ MiddlewarePipeline</td>
-</tr>
-<tr>
-<td><strong>4. Callback System</strong></td>
-<td>✅ StreamMode+events</td>
-<td>✅ BaseCallbackHandler</td>
-<td>⚠️ @listen decorator</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>✅ FilterTypes (3 типа)</td>
-<td>⚠️ WorkflowHandler</td>
-<td>✅ CallbackManager (12 hooks)</td>
-</tr>
-<tr>
-<td><strong>5. Typed State (Pydantic v2)</strong></td>
-<td>✅ TypedDict+Annotated+reducers</td>
-<td>⚠️</td>
-<td>✅ Pydantic BaseModel</td>
-<td>❌ dict</td>
-<td>✅ BaseState Pydantic</td>
-<td>✅ полный</td>
-<td>⚠️ KernelArguments</td>
-<td>✅ AgentContext Pydantic</td>
-<td>✅ TypedState Pydantic v2</td>
-</tr>
-<tr>
-<td><strong>6. Checkpointing</strong></td>
-<td>✅ InMemory+Postgres+Redis+branch</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ CheckpointStore multi-backend</td>
-</tr>
-<tr>
-<td><strong>7. Durable Execution</strong></td>
-<td>✅ Durability(sync/async/exit)+ACK</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ ACK/NACK+idempotency+DLQ</td>
-</tr>
-<tr>
-<td><strong>8. Memory System</strong></td>
-<td>⚠️ BaseStore only</td>
-<td>⚠️ ConversationBuffer</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>✅ ChatMemoryBuffer+retrieval</td>
-<td>✅ Short/Long/Episodic/Semantic</td>
-</tr>
-<tr>
-<td><strong>9. Plugin SDK</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Plugin lifecycle full</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelPlugin+discovery</td>
-<td>❌</td>
-<td>✅ install/load/enable/uninstall</td>
-</tr>
-<tr>
-<td><strong>10. Capability Discovery</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ полный</td>
-<td>❌</td>
-<td>✅ CapabilityRegistry</td>
-</tr>
-<tr>
-<td><strong>11. Workflow Engine</strong></td>
-<td>✅ Branch+Merge+Parallel+Send</td>
-<td>⚠️ LCEL parallel</td>
-<td>✅ @start/@listen/@router</td>
-<td>❌</td>
-<td>⚠️ Swarm/RoundRobin</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ step+events+parallel</td>
-<td>✅ Branch/Merge/Saga/Human</td>
-</tr>
-<tr>
-<td><strong>12. Scheduler</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Cron+Delayed+Recurring</td>
-</tr>
-<tr>
-<td><strong>13. Observability (OTEL)</strong></td>
-<td>✅ TaskPayload+debug stream</td>
-<td>⚠️ callbacks only</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>✅ trace_create_agent_span</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ OTEL GenAI semantic conventions</td>
-</tr>
-<tr>
-<td><strong>14. Sandbox System</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Docker+Process+Limits</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ DockerSandbox+ResourceLimits</td>
-</tr>
-<tr>
-<td><strong>15. Model Router</strong></td>
-<td>⚠️ RunnableConfig</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ AIServiceSelector</td>
-<td>❌</td>
-<td>✅ Cost/Latency/Fallback Router</td>
-</tr>
-<tr>
-<td><strong>16. Multi-Agent Coordination</strong></td>
-<td>✅ Subgraphs+Send</td>
-<td>❌</td>
-<td>✅ Crew+hierarchical</td>
-<td>❌</td>
-<td>✅ Swarm+RoundRobin+Selector</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ can_handoff_to</td>
-<td>✅ Coordinator+Arbiter</td>
-</tr>
-<tr>
-<td><strong>17. Security (Prompt Injection)</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ NFKC+Firewall+PII+RBAC</td>
-</tr>
-<tr>
-<td><strong>18. Self-Reflection</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ reflection crews</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Critic+Evaluator</td>
-</tr>
-<tr>
-<td><strong>19. Governance</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Audit+Compliance+Risk</td>
-</tr>
-<tr>
-<td><strong>20. Enterprise HA</strong></td>
-<td>⚠️ stateless nodes</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ HA+Scaling+DR</td>
-</tr>
-</tbody>
-</table>
-<h2 id="1-05-0">Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)</h2>
-<table>
-<thead>
-<tr>
-<th>Фреймворк</th>
-<th>Балл / 20</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Манифест 5.0.0</strong></td>
-<td><strong>20/20</strong></td>
-</tr>
-<tr>
-<td>LangGraph</td>
-<td>11.5/20</td>
-</tr>
-<tr>
-<td>LangChain</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>CrewAI</td>
-<td>6/20</td>
-</tr>
-<tr>
-<td>AutoGen</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>LlamaIndex</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>Semantic Kernel</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>OpenHands</td>
-<td>3.5/20</td>
-</tr>
-<tr>
-<td>PydanticAI</td>
-<td>2/20</td>
-</tr>
-</tbody>
-</table>
+<h1 id="leviathan-adr-002">🚀 СТАРТ НОВОЙ СЕССИИ — Leviathan / ADR-002</h1>
+<blockquote>
+<p>Этот файл — точка входа для новой сессии с нуля. Прочитай весь файл перед тем как что-либо делать.
+Обновлён: 2026-07-02</p>
+</blockquote>
+<hr />
+<h2 id="_1">⚡ БЫСТРЫЙ СТАРТ (если времени мало)</h2>
+<pre><code class="language-bash">cat /root/analysis/SESSION_CONTEXT_2026-07-02.md   # что было сделано за весь день 1–2 июля
+cat /root/analysis/ADR-002/ADR-002-FINAL.md        # что делать дальше (архитектура)
+cat /root/analysis/ADR-002/BUFFY-AUDIT-PROMPT.md   # готовый execution mandate для Фазы 1
+</code></pre>
+<p>→ Затем выполни “Проверка живого состояния” ниже — там всё, чтобы не повторить уже сделанное.</p>
+<hr />
+<h2 id="_2">🌐 Живой сайт документации (альтернатива)</h2>
+<p><strong>https://lidenal85-blip.github.io/leviathan-docs/</strong></p>
+<p>Сайт рабочий (проверено 2026-07-02, HTTP 200), содержит 24 документа из <code>/root/analysis/</code>, включая <code>SESSION_CONTEXT_2026-07-02.md</code>.
+⚠️ <strong>На сайте НЕТ папки <code>ADR-002/</code></strong> — сам мандат на выполнение читать только с сервера напрямую (пути выше). Если хочешь видеть и его на сайте — скажи следующей сессии скопировать <code>ADR-002/*</code> в <code>/root/leviathan-docs/docs/context/adr-002/</code> и запушить — это не сделано сейчас сознательно, чтобы не делать лишнего без запроса.</p>
+<p>GitHub-репо: <code>https://github.com/lidenal85-blip/leviathan-docs</code> (ветка <code>main</code>, deploy через <code>.github/workflows/docs.yml</code>, Pages включён в режиме <code>build_type: workflow</code>).</p>
+<hr />
+<h2 id="_3">📌 Кто ты и что происходит</h2>
+<p>Ты — Claude Code на сервере LEVIATHAN (78.17.24.96), работаешь над <code>/opt/leviathan_engine/agent_service</code> — ядром AI-оркестратора Leviathan. За 1–2 июля была реализована Manifest 5.1.0 и утверждён ADR-002 — переход с pipeline-агента на runtime decision-making kernel. Аудит инфраструктуры перед стартом Фазы 1 пройден и выдал “READY”. Кода Фазы 1 ещё нет.</p>
+<hr />
+<h2 id="_4">🔍 Проверка живого состояния (выполни ОБЯЗАТЕЛЬНО перед любой работой)</h2>
+<p>Состояние меняется быстрее чем обновляются эти заметки — не доверяй тексту, проверь живьём:</p>
+<pre><code class="language-bash"># 1. Где мы по code
+cd /opt/leviathan_engine/agent_service
+git log --oneline -5
+git status --short
+git branch --show-current   # ожидается feature/claude-multi-account
+
+# 2. Началась ли уже Фаза 1 ADR-002? (когда-то до тебя могли начать без чекпоинта)
+ls -la core/scenarios/ 2&gt;&amp;1
+ls -la core/agent/kernel.py core/agent/decision_engine.py core/agent/execution_loop.py 2&gt;&amp;1
+
+# 3. Сервисы живы?
+systemctl is-active leviathan_agent den4ik-claude leviathan_mcp_server
+curl -s http://127.0.0.1:8400/health   # Secrets Vault
+curl -s http://127.0.0.1:8083/health   # Gemini Proxy (если есть health)
+</code></pre>
+<p>Если <code>core/scenarios/loader.py</code> уже существует — ЗНАЧИТ, КТО-ТО НАЧАЛ ФАЗУ 1 ПОСЛЕ этого файла — читай его первым, не переписывай с нуля.</p>
+<hr />
+<h2 id="_5">✅ Что точно сделано (не переделывать)</h2>
+<ul>
+<li>Manifest 5.1.0: StateMachine, Runnable, Middleware — в <code>agent/core.py</code></li>
+<li>Callback System + Workflow Engine + Memory V2</li>
+<li>LongTermMemory на SQLite (<code>db/long_term_memory.db</code>), <code>asyncio.to_thread()</code></li>
+<li>Всё это запушено в коммите <code>f1e3e6a</code>, ветка <code>feature/claude-multi-account</code></li>
+<li>Buffy-аудит инфраструктуры пройден, вывод: READY FOR ADR-002 PHASE 1</li>
+<li>Сайт документации <code>leviathan-docs</code> починен и задеплоен (была отдельная задача про Pages/submodules — закрыта, см. ниже)</li>
+</ul>
+<hr />
+<h2 id="_6">⚠️ Незакрытые хвосты</h2>
+<ol>
+<li><strong><code>db/memory_system.py</code></strong> — однострочный незакоммиченный фикс (второй <code>sqlite3.connect()</code> без <code>check_same_thread=False</code>). <code>git diff db/memory_system.py</code> чтобы проверить, закоммитить или откатить.</li>
+<li><strong><code>feature/claude-multi-account</code> → <code>main</code></strong> — не решено, мержить ли. Спроси у Дениса перед тем как мержить.</li>
+<li><strong>ADR-002 Фаза 1</strong> не начата. Первый файл к созданию: <code>core/scenarios/loader.py</code>, класс <code>ScenarioPolicy</code> (Pydantic). Полный план — в <code>ADR-002-FINAL.md</code>.</li>
+<li>Сайт <code>leviathan-docs</code>: папка <code>ADR-002/</code> не синхронизирована туда (см. выше). Также лишние черновики (<code>MANIFEST_5.0.0.md</code>, возможно устаревший <code>TASK_PROMPT.md</code>) попали туда же — можно почистить навигацию, если попросят.</li>
+</ol>
+<hr />
+<h2 id="_7">🎯 Рекомендуемый первый шаг</h2>
+<p>Если Денис не дал иной конкретный приоритет, по умолчанию:
+1. Закрыть мелкие хвосты выше (коммит memory_system.py, уточнить merge-вопрос)
+2. Прочитать <code>BUFFY-AUDIT-PROMPT.md</code> полностью — там готовый execution mandate для Фазы 1
+3. Начать Фазу 1 ADR-002: создать <code>core/scenarios/loader.py</code> по спецификации из <code>ADR-002-FINAL.md</code></p>
+<hr />
+<p><em>Источники: <code>/root/analysis/SESSION_CONTEXT_2026-07-02.md</code>, <code>/root/analysis/ADR-002/*</code>, живая проверка git+systemctl+GitHub API на момент написания.</em></p>
 
 
 

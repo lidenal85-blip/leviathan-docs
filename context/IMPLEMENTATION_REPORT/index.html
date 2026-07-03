@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPARISON/">
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/IMPLEMENTATION_REPORT/">
       
       
+        <link rel="prev" href="../SECRETS_ANALYSIS/">
+      
+      
+        <link rel="next" href="../../tools/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0 - Leviathan Agent Platform</title>
+        <title>Отчёт реализации - Leviathan Agent Platform</title>
       
     
     
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vs-500" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0
+              Отчёт реализации
             
           </span>
         </div>
@@ -210,10 +214,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
           
   
@@ -310,26 +316,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -347,7 +358,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -530,10 +541,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -549,6 +587,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выполненные задачи:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выполненные задачи:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 0: Анализ секретов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-secrets-vault-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 1: Secrets Vault API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 1.2: Миграция секретов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 2: Интеграция с проектами
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 3: Улучшения из анализа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 4: Отчёты и документация
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метрики:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура проекта:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Endpoints:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Следующие шаги:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Статус Vault:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -815,10 +1011,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Легенда
+        Выполненные задачи:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выполненные задачи:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 0: Анализ секретов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-secrets-vault-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 1: Secrets Vault API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 1.2: Миграция секретов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 2: Интеграция с проектами
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 3: Улучшения из анализа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Этап 4: Отчёты и документация
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метрики:
       
     </span>
   </a>
@@ -826,10 +1105,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-05-0" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)
+        Структура проекта:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Endpoints:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Следующие шаги:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Статус Vault:
       
     </span>
   </a>
@@ -853,315 +1165,174 @@
 
 
 
-<h1 id="vs-500">СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0</h1>
-<p><strong>Дата:</strong> 2026-07-01 | <strong>Источник:</strong> реальный код из GitHub</p>
-<h2 id="_1">Легенда</h2>
-<p>✅ Полная реализация | ⚠️ Частичная | ❌ Отсутствует | 🔶 Иначе реализовано</p>
+<h1 id="_1">ОТЧЁТ О РЕАЛИЗАЦИИ</h1>
+<p><strong>Дата:</strong> 2026-07-01</p>
+<h2 id="_2">Выполненные задачи:</h2>
+<h3 id="0">✅ Этап 0: Анализ секретов</h3>
+<ul>
+<li>Найдено 4 проекта с секретами</li>
+<li>Обнаружено 14 уникальных ключей</li>
+<li>Выявлены проблемы: дублирование, hardcoded ключи, отсутствие ротации</li>
+<li>Создан отчёт: /root/analysis/SECRETS_ANALYSIS.md</li>
+</ul>
+<h3 id="1-secrets-vault-api">✅ Этап 1: Secrets Vault API</h3>
+<ul>
+<li>Создан проект /opt/secrets_vault/</li>
+<li>Реализовано шифрование AES-256 (PBKDF2 + Fernet)</li>
+<li>Создан REST API на FastAPI (порт 8400)</li>
+<li>Реализован аудит доступа (audit_log)</li>
+<li>Создан systemd сервис secrets-vault</li>
+<li>Запущен и работает: ✅</li>
+</ul>
+<h3 id="12">✅ Этап 1.2: Миграция секретов</h3>
+<ul>
+<li>Leviathan Engine: 4 секрета ✅</li>
+<li>Triton Agent: 1 секрет ✅</li>
+<li>Pelleto AI: 4 секрета ✅</li>
+<li>Free Claude Code: 5 секретов ✅</li>
+</ul>
+<h3 id="2">✅ Этап 2: Интеграция с проектами</h3>
+<ul>
+<li>Созданы .vault.env для всех проектов</li>
+<li>Создан VaultClient для доступа к Vault</li>
+<li>Создан интеграционный скрипт</li>
+</ul>
+<h3 id="3">✅ Этап 3: Улучшения из анализа</h3>
+<ul>
+<li>AgentState FSM (12 состояний, async safe) ✅</li>
+<li>Runnable Interface (invoke/stream/batch/sequence/parallel) ✅</li>
+<li>Middleware Pipeline (before/after hooks) ✅</li>
+</ul>
+<h3 id="4">✅ Этап 4: Отчёты и документация</h3>
+<ul>
+<li>/root/implementation_log.md — лог реализации</li>
+<li>/root/analysis/SECRETS_ANALYSIS.md — анализ секретов</li>
+<li>/root/analysis/SECRETS_MIGRATION_REPORT.md — отчёт миграции</li>
+<li>/root/analysis/IMPLEMENTATION_REPORT.md — финальный отчёт (этот файл)</li>
+</ul>
+<h2 id="_3">Метрики:</h2>
 <table>
 <thead>
 <tr>
-<th>Область</th>
-<th>LangGraph</th>
-<th>LangChain</th>
-<th>CrewAI</th>
-<th>OpenHands</th>
-<th>AutoGen</th>
-<th>PydanticAI</th>
-<th>Semantic Kernel</th>
-<th>LlamaIndex</th>
-<th><strong>Манифест 5.0.0</strong></th>
+<th>Метрика</th>
+<th>Значение</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1. Agent Lifecycle (FSM)</strong></td>
-<td>✅ StateGraph + Pregel</td>
-<td>❌</td>
-<td>✅ Flow decorators</td>
-<td>✅ AgentController</td>
-<td>⚠️ BaseChatAgent</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ BaseWorkflowAgent</td>
-<td>✅ AgentLifecycle</td>
+<td>Секретов мигрировано</td>
+<td>14</td>
 </tr>
 <tr>
-<td><strong>2. Runnable Interface</strong></td>
-<td>✅ Runnable+RunnableConfig</td>
-<td>✅ LCEL полный</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ on_messages/stream</td>
-<td>❌</td>
-<td>⚠️ invoke_stream</td>
-<td>⚠️ Workflow+step</td>
-<td>✅ Runnable+Sequence+Parallel</td>
+<td>Проектов интегрировано</td>
+<td>4/4</td>
 </tr>
 <tr>
-<td><strong>3. Middleware Pipeline</strong></td>
-<td>✅ before/after model hooks</td>
-<td>✅ AgentMiddleware v1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelFilterExtension</td>
-<td>❌</td>
-<td>✅ MiddlewarePipeline</td>
+<td>Улучшений реализовано</td>
+<td>3/3</td>
 </tr>
 <tr>
-<td><strong>4. Callback System</strong></td>
-<td>✅ StreamMode+events</td>
-<td>✅ BaseCallbackHandler</td>
-<td>⚠️ @listen decorator</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>✅ FilterTypes (3 типа)</td>
-<td>⚠️ WorkflowHandler</td>
-<td>✅ CallbackManager (12 hooks)</td>
+<td>Файлов создано</td>
+<td>15+</td>
 </tr>
 <tr>
-<td><strong>5. Typed State (Pydantic v2)</strong></td>
-<td>✅ TypedDict+Annotated+reducers</td>
-<td>⚠️</td>
-<td>✅ Pydantic BaseModel</td>
-<td>❌ dict</td>
-<td>✅ BaseState Pydantic</td>
-<td>✅ полный</td>
-<td>⚠️ KernelArguments</td>
-<td>✅ AgentContext Pydantic</td>
-<td>✅ TypedState Pydantic v2</td>
-</tr>
-<tr>
-<td><strong>6. Checkpointing</strong></td>
-<td>✅ InMemory+Postgres+Redis+branch</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ CheckpointStore multi-backend</td>
-</tr>
-<tr>
-<td><strong>7. Durable Execution</strong></td>
-<td>✅ Durability(sync/async/exit)+ACK</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ ACK/NACK+idempotency+DLQ</td>
-</tr>
-<tr>
-<td><strong>8. Memory System</strong></td>
-<td>⚠️ BaseStore only</td>
-<td>⚠️ ConversationBuffer</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>✅ ChatMemoryBuffer+retrieval</td>
-<td>✅ Short/Long/Episodic/Semantic</td>
-</tr>
-<tr>
-<td><strong>9. Plugin SDK</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Plugin lifecycle full</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelPlugin+discovery</td>
-<td>❌</td>
-<td>✅ install/load/enable/uninstall</td>
-</tr>
-<tr>
-<td><strong>10. Capability Discovery</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ полный</td>
-<td>❌</td>
-<td>✅ CapabilityRegistry</td>
-</tr>
-<tr>
-<td><strong>11. Workflow Engine</strong></td>
-<td>✅ Branch+Merge+Parallel+Send</td>
-<td>⚠️ LCEL parallel</td>
-<td>✅ @start/@listen/@router</td>
-<td>❌</td>
-<td>⚠️ Swarm/RoundRobin</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ step+events+parallel</td>
-<td>✅ Branch/Merge/Saga/Human</td>
-</tr>
-<tr>
-<td><strong>12. Scheduler</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Cron+Delayed+Recurring</td>
-</tr>
-<tr>
-<td><strong>13. Observability (OTEL)</strong></td>
-<td>✅ TaskPayload+debug stream</td>
-<td>⚠️ callbacks only</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>✅ trace_create_agent_span</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ OTEL GenAI semantic conventions</td>
-</tr>
-<tr>
-<td><strong>14. Sandbox System</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Docker+Process+Limits</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ DockerSandbox+ResourceLimits</td>
-</tr>
-<tr>
-<td><strong>15. Model Router</strong></td>
-<td>⚠️ RunnableConfig</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ AIServiceSelector</td>
-<td>❌</td>
-<td>✅ Cost/Latency/Fallback Router</td>
-</tr>
-<tr>
-<td><strong>16. Multi-Agent Coordination</strong></td>
-<td>✅ Subgraphs+Send</td>
-<td>❌</td>
-<td>✅ Crew+hierarchical</td>
-<td>❌</td>
-<td>✅ Swarm+RoundRobin+Selector</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ can_handoff_to</td>
-<td>✅ Coordinator+Arbiter</td>
-</tr>
-<tr>
-<td><strong>17. Security (Prompt Injection)</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ NFKC+Firewall+PII+RBAC</td>
-</tr>
-<tr>
-<td><strong>18. Self-Reflection</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ reflection crews</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Critic+Evaluator</td>
-</tr>
-<tr>
-<td><strong>19. Governance</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Audit+Compliance+Risk</td>
-</tr>
-<tr>
-<td><strong>20. Enterprise HA</strong></td>
-<td>⚠️ stateless nodes</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ HA+Scaling+DR</td>
+<td>Строк кода написано</td>
+<td>~2000</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-05-0">Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)</h2>
+<h2 id="_4">Структура проекта:</h2>
+<pre><code>/opt/secrets_vault/
+├── api/
+│   ├── main.py              # FastAPI (порт 8400)
+│   └── routes/
+│       ├── secrets.py       # CRUD секретов
+│       ├── projects.py      # Управление проектами
+│       └── audit.py         # Аудит доступа
+├── core/
+│   └── vault.py             # AES-256 шифрование + SQLite
+├── client/
+│   └── vault_client.py      # Клиент для интеграции
+├── improvements/
+│   ├── agent_state.py       # State Machine (Манифест 5.0.0)
+│   ├── runnable.py          # Runnable Interface
+│   └── middleware.py        # Middleware Pipeline
+├── envs/                    # .vault.env для проектов
+├── data/vault.db            # SQLite БД с шифрованием
+├── migrate_secrets.py       # Скрипт миграции
+├── integrate_projects.sh    # Скрипт интеграции
+├── requirements.txt
+└── README.md
+</code></pre>
+<h2 id="api-endpoints">API Endpoints:</h2>
 <table>
 <thead>
 <tr>
-<th>Фреймворк</th>
-<th>Балл / 20</th>
+<th>Метод</th>
+<th>Эндпоинт</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Манифест 5.0.0</strong></td>
-<td><strong>20/20</strong></td>
+<td>GET</td>
+<td>/health</td>
+<td>Health check</td>
 </tr>
 <tr>
-<td>LangGraph</td>
-<td>11.5/20</td>
+<td>POST</td>
+<td>/api/v1/projects/register/{id}</td>
+<td>Регистрация проекта</td>
 </tr>
 <tr>
-<td>LangChain</td>
-<td>5.5/20</td>
+<td>POST</td>
+<td>/api/v1/secrets/{project}</td>
+<td>Сохранить секрет</td>
 </tr>
 <tr>
-<td>CrewAI</td>
-<td>6/20</td>
+<td>POST</td>
+<td>/api/v1/secrets/{project}/batch</td>
+<td>Пакетное сохранение</td>
 </tr>
 <tr>
-<td>AutoGen</td>
-<td>5.5/20</td>
+<td>GET</td>
+<td>/api/v1/secrets/{project}/{key}</td>
+<td>Получить секрет</td>
 </tr>
 <tr>
-<td>LlamaIndex</td>
-<td>5/20</td>
+<td>GET</td>
+<td>/api/v1/secrets/{project}</td>
+<td>Список секретов</td>
 </tr>
 <tr>
-<td>Semantic Kernel</td>
-<td>5/20</td>
+<td>DELETE</td>
+<td>/api/v1/secrets/{project}/{key}</td>
+<td>Удалить секрет</td>
 </tr>
 <tr>
-<td>OpenHands</td>
-<td>3.5/20</td>
-</tr>
-<tr>
-<td>PydanticAI</td>
-<td>2/20</td>
+<td>GET</td>
+<td>/api/v1/audit</td>
+<td>Лог аудита</td>
 </tr>
 </tbody>
 </table>
+<h2 id="_5">Следующие шаги:</h2>
+<ol>
+<li>Настроить ротацию ключей (ежемесячно)</li>
+<li>Добавить мониторинг доступа к секретам</li>
+<li>Внедрить backup для Vault БД</li>
+<li>Интегрировать AgentState FSM в LeviathanAgent (agent/core.py)</li>
+<li>Интегрировать Runnable Interface в Leviathan компоненты</li>
+<li>Заменить hardcoded ключи в production_gateway.py на VaultClient</li>
+</ol>
+<h2 id="vault">Статус Vault:</h2>
+<ul>
+<li>Сервис: secrets-vault.service</li>
+<li>Порт: 8400</li>
+<li>Статус: active (running)</li>
+<li>Шифрование: AES-256 (PBKDF2HMAC + Fernet)</li>
+<li>БД: SQLite с WAL</li>
+</ul>
 
 
 

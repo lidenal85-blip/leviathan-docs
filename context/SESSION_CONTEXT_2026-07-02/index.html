@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPARISON/">
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/SESSION_CONTEXT_2026-07-02/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0 - Leviathan Agent Platform</title>
+        <title>FreeBuff / Leviathan — Контекст последней сессии - Leviathan Agent Platform</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vs-500" class="md-skip">
+        <a href="#freebuff-leviathan" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0
+              FreeBuff / Leviathan — Контекст последней сессии
             
           </span>
         </div>
@@ -815,10 +815,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#tldr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Легенда
+        TL;DR
       
     </span>
   </a>
@@ -826,10 +826,104 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-05-0" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)
+        Хронология
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manifest-510" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что реализовано технически (Manifest 5.1.0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adr-002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR-002 — новый архитектурный виток (главное, что нужно знать дальше)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ADR-002 — новый архитектурный виток (главное, что нужно знать дальше)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Идея
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые компоненты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        План: 5 фаз, 17 дней
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffy-audit-2026-07-02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Инфраструктура подтверждена готовой (buffy-audit, 2026-07-02)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#freebuff-vs-freeb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расхождение в наименовании: freebuff vs freeb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Незакрытые вопросы для следующей сессии
       
     </span>
   </a>
@@ -853,315 +947,209 @@
 
 
 
-<h1 id="vs-500">СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0</h1>
-<p><strong>Дата:</strong> 2026-07-01 | <strong>Источник:</strong> реальный код из GitHub</p>
-<h2 id="_1">Легенда</h2>
-<p>✅ Полная реализация | ⚠️ Частичная | ❌ Отсутствует | 🔶 Иначе реализовано</p>
+<h1 id="freebuff-leviathan">FreeBuff / Leviathan — Контекст последней сессии</h1>
+<p><strong>Свод от:</strong> 2026-07-02
+<strong>Охват:</strong> вся работа 1 июля (07:33–17:03) + продолжение в ночь на 2 июля (23:37–00:07)
+<strong>Источник:</strong> 20 tmux-сессий (<code>freebuff-0..6</code>, <code>freeb-7..23</code>) + <code>/root/analysis/*.md</code></p>
+<hr />
+<h2 id="tldr">TL;DR</h2>
+<p>Один длинный рабочий день (5 из 5 доступных Claude Code сессий использовано) ушёл на:
+1. Аудит и сравнение архитектуры Leviathan CLI с LangGraph/CrewAI/OpenHands (утро)
+2. Реализацию Manifest 5.1.0 — StateMachine, Callbacks, Workflow Engine, Memory V2, SQLite-персистентность (день)
+3. Ночью (уже после формального конца дня) — новый архитектурный виток: <strong>ADR-002</strong>, решение о переходе с pipeline-агента на <strong>runtime decision-making kernel</strong></p>
+<p>Система сейчас в состоянии "аудит пройден, ждёт исполнителя для Фазы 1 ADR-002". Один незакоммиченный однострочный фикс в git.</p>
+<hr />
+<h2 id="_1">Хронология</h2>
 <table>
 <thead>
 <tr>
-<th>Область</th>
-<th>LangGraph</th>
-<th>LangChain</th>
-<th>CrewAI</th>
-<th>OpenHands</th>
-<th>AutoGen</th>
-<th>PydanticAI</th>
-<th>Semantic Kernel</th>
-<th>LlamaIndex</th>
-<th><strong>Манифест 5.0.0</strong></th>
+<th>Время</th>
+<th>Событие</th>
+<th>Файл-источник</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1. Agent Lifecycle (FSM)</strong></td>
-<td>✅ StateGraph + Pregel</td>
-<td>❌</td>
-<td>✅ Flow decorators</td>
-<td>✅ AgentController</td>
-<td>⚠️ BaseChatAgent</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ BaseWorkflowAgent</td>
-<td>✅ AgentLifecycle</td>
+<td>06:02</td>
+<td>Написан манифест 5.0.0 — архитектурный аудит</td>
+<td><code>MANIFEST_5.0.0.md</code> (104K)</td>
 </tr>
 <tr>
-<td><strong>2. Runnable Interface</strong></td>
-<td>✅ Runnable+RunnableConfig</td>
-<td>✅ LCEL полный</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ on_messages/stream</td>
-<td>❌</td>
-<td>⚠️ invoke_stream</td>
-<td>⚠️ Workflow+step</td>
-<td>✅ Runnable+Sequence+Parallel</td>
+<td>06:28</td>
+<td>Сравнение с конкурентами (LangGraph и др.)</td>
+<td><code>COMPARISON.md</code></td>
 </tr>
 <tr>
-<td><strong>3. Middleware Pipeline</strong></td>
-<td>✅ before/after model hooks</td>
-<td>✅ AgentMiddleware v1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelFilterExtension</td>
-<td>❌</td>
-<td>✅ MiddlewarePipeline</td>
+<td>07:55</td>
+<td>Системный анализ (свой код)</td>
+<td><code>MY_SYSTEM_ANALYSIS.md</code> (37K)</td>
 </tr>
 <tr>
-<td><strong>4. Callback System</strong></td>
-<td>✅ StreamMode+events</td>
-<td>✅ BaseCallbackHandler</td>
-<td>⚠️ @listen decorator</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>✅ FilterTypes (3 типа)</td>
-<td>⚠️ WorkflowHandler</td>
-<td>✅ CallbackManager (12 hooks)</td>
+<td>08:21</td>
+<td>Составлен TASK_PROMPT для следующего шага</td>
+<td><code>TASK_PROMPT.md</code> (35K)</td>
 </tr>
 <tr>
-<td><strong>5. Typed State (Pydantic v2)</strong></td>
-<td>✅ TypedDict+Annotated+reducers</td>
-<td>⚠️</td>
-<td>✅ Pydantic BaseModel</td>
-<td>❌ dict</td>
-<td>✅ BaseState Pydantic</td>
-<td>✅ полный</td>
-<td>⚠️ KernelArguments</td>
-<td>✅ AgentContext Pydantic</td>
-<td>✅ TypedState Pydantic v2</td>
+<td>08:30–08:47</td>
+<td>Аудит секретов + план миграции манифеста</td>
+<td><code>SECRETS_ANALYSIS.md</code>, <code>MANIFEST_MIGRATION_PLAN.md</code></td>
 </tr>
 <tr>
-<td><strong>6. Checkpointing</strong></td>
-<td>✅ InMemory+Postgres+Redis+branch</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ CheckpointStore multi-backend</td>
+<td>09:43</td>
+<td>План выполнения (P1/P2/P3)</td>
+<td><code>EXECUTION_PLAN.md</code></td>
 </tr>
 <tr>
-<td><strong>7. Durable Execution</strong></td>
-<td>✅ Durability(sync/async/exit)+ACK</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ ACK/NACK+idempotency+DLQ</td>
+<td>10:43</td>
+<td>Собран полный анализ (189K) — база знаний на весь день</td>
+<td><code>ALL_ANALYSIS.md</code></td>
 </tr>
 <tr>
-<td><strong>8. Memory System</strong></td>
-<td>⚠️ BaseStore only</td>
-<td>⚠️ ConversationBuffer</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>✅ ChatMemoryBuffer+retrieval</td>
-<td>✅ Short/Long/Episodic/Semantic</td>
+<td>14:05</td>
+<td>Чекпоинт восстановления сессии (после лимита)</td>
+<td><code>restore.md</code></td>
 </tr>
 <tr>
-<td><strong>9. Plugin SDK</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Plugin lifecycle full</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelPlugin+discovery</td>
-<td>❌</td>
-<td>✅ install/load/enable/uninstall</td>
+<td>Шаг P1</td>
+<td>StateMachine + Runnable + Middleware вшиты в core.py</td>
+<td>коммит <code>4c25966</code></td>
 </tr>
 <tr>
-<td><strong>10. Capability Discovery</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ полный</td>
-<td>❌</td>
-<td>✅ CapabilityRegistry</td>
+<td>Шаг P2</td>
+<td>Callback System + Workflow Engine + Memory V2</td>
+<td>коммит <code>4c25966</code>/<code>f1e3e6a</code></td>
 </tr>
 <tr>
-<td><strong>11. Workflow Engine</strong></td>
-<td>✅ Branch+Merge+Parallel+Send</td>
-<td>⚠️ LCEL parallel</td>
-<td>✅ @start/@listen/@router</td>
-<td>❌</td>
-<td>⚠️ Swarm/RoundRobin</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ step+events+parallel</td>
-<td>✅ Branch/Merge/Saga/Human</td>
+<td>Шаг P3</td>
+<td>GitHub sync всех проектов</td>
+<td><code>P3_GITHUB_SYNC.md</code></td>
 </tr>
 <tr>
-<td><strong>12. Scheduler</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Cron+Delayed+Recurring</td>
+<td>16:46</td>
+<td>LLM emits задокументированы</td>
+<td><code>LLM_EMITS.md</code></td>
 </tr>
 <tr>
-<td><strong>13. Observability (OTEL)</strong></td>
-<td>✅ TaskPayload+debug stream</td>
-<td>⚠️ callbacks only</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>✅ trace_create_agent_span</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ OTEL GenAI semantic conventions</td>
+<td>Шаг 3</td>
+<td>LongTermMemory переведена на SQLite (<code>db/long_term_memory.db</code>)</td>
+<td><code>MEMORY_SQLITE.md</code></td>
 </tr>
 <tr>
-<td><strong>14. Sandbox System</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Docker+Process+Limits</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ DockerSandbox+ResourceLimits</td>
+<td>16:50</td>
+<td>Финальный отчёт Manifest 5.1.0 (138 строк)</td>
+<td><code>MANIFEST_5.1_FINAL_REPORT.md</code></td>
 </tr>
 <tr>
-<td><strong>15. Model Router</strong></td>
-<td>⚠️ RunnableConfig</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ AIServiceSelector</td>
-<td>❌</td>
-<td>✅ Cost/Latency/Fallback Router</td>
+<td>16:50</td>
+<td>Анализ логов → найдена версия Freebuff v3.5 (AES-256-KW, signed checkpoints, ThreadPool 32)</td>
+<td><code>LOGS_ANALYSIS.md</code></td>
 </tr>
 <tr>
-<td><strong>16. Multi-Agent Coordination</strong></td>
-<td>✅ Subgraphs+Send</td>
-<td>❌</td>
-<td>✅ Crew+hierarchical</td>
-<td>❌</td>
-<td>✅ Swarm+RoundRobin+Selector</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ can_handoff_to</td>
-<td>✅ Coordinator+Arbiter</td>
+<td><strong>17:03</strong></td>
+<td><strong>Коммит и пуш</strong> <code>f1e3e6a</code> в <code>feature/claude-multi-account</code>, все 6 smoke-тестов ✅</td>
+<td>конец <code>freeb-23</code>, "5 of 5 sessions used today"</td>
 </tr>
 <tr>
-<td><strong>17. Security (Prompt Injection)</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ NFKC+Firewall+PII+RBAC</td>
+<td>23:37–23:44</td>
+<td><strong>Новая ветка работы (уже 2 июля по факту):</strong> buffy-аудит инфраструктуры перед стартом нового этапа</td>
+<td><code>buffy-audit-1782949444.txt</code></td>
 </tr>
 <tr>
-<td><strong>18. Self-Reflection</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ reflection crews</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Critic+Evaluator</td>
+<td>23:42–23:57</td>
+<td>Написан и утверждён <strong>ADR-002</strong> (2.0 FINAL, синтез v1+v2)</td>
+<td><code>ADR-002-EXECUTOR-PROMPT.md</code>, <code>ADR-002-FINAL.md</code> (33K)</td>
 </tr>
 <tr>
-<td><strong>19. Governance</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Audit+Compliance+Risk</td>
-</tr>
-<tr>
-<td><strong>20. Enterprise HA</strong></td>
-<td>⚠️ stateless nodes</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ HA+Scaling+DR</td>
+<td><strong>00:07 (2 июля)</strong></td>
+<td>Финальный промпт для агента-исполнителя ADR-002, аудит подтверждает готовность</td>
+<td><code>BUFFY-AUDIT-PROMPT.md</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-05-0">Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)</h2>
+<hr />
+<h2 id="manifest-510">Что реализовано технически (Manifest 5.1.0)</h2>
+<ul>
+<li><strong>StateMachine + Runnable + Middleware</strong> — вшиты напрямую в <code>agent/core.py</code></li>
+<li><strong>Callback System + Workflow Engine + Memory V2</strong> — второй слой поверх ядра</li>
+<li><strong>LongTermMemory на SQLite</strong> (<code>db/long_term_memory.db</code>), <code>check_same_thread=False</code> + <code>asyncio.to_thread()</code>, индексы по <code>importance DESC, created_at DESC</code></li>
+<li><strong>Secrets Vault</strong> интегрирован (порт 8400, <code>curl 127.0.0.1:8400/health</code>)</li>
+<li><strong>Gemini Proxy</strong> на порту 8083</li>
+<li>Все изменения запушены в ветку <code>feature/claude-multi-account</code> (не в <code>main</code>)</li>
+</ul>
+<p><strong>Git-состояние сейчас</strong> (<code>/opt/leviathan_engine/agent_service</code>):
+- HEAD = <code>f1e3e6a</code>, ветка <code>feature/claude-multi-account</code>, синхронна с origin (0 ahead/behind)
+- ⚠️ Один незакоммиченный фикс: <code>db/memory_system.py</code> — второй вызов <code>sqlite3.connect()</code> не получил <code>check_same_thread=False</code> в прошлом коммите. Однострочная правка, не запушена.</p>
+<hr />
+<h2 id="adr-002">ADR-002 — новый архитектурный виток (главное, что нужно знать дальше)</h2>
+<p><strong>Статус:</strong> APPROVED, аудит инфраструктуры пройден, ждёт исполнителя.</p>
+<h3 id="_2">Идея</h3>
+<p>Перевести Leviathan CLI из <strong>pipeline-агента</strong> (<code>Task → Step1 → Step2 → ... → Result</code>, жёсткая последовательность) в <strong>runtime decision-making kernel</strong>:
+- Сценарий = <strong>Policy</strong> (правила поведения), а не Pipeline (список шагов)
+- Агент сам планирует, выбирает роли, инструменты, <strong>перепланирует</strong> при неудаче
+- Cost-aware (бюджет на LLM), observability (каждое решение логируется), safety guards (защита от зацикливания/перерасхода)</p>
+<h3 id="_3">Ключевые компоненты</h3>
+<ul>
+<li><code>ScenarioPolicy</code> — YAML-контракт: <code>intent</code>, <code>roles_available</code>, <code>decision_policy</code> (adaptive/strict/cost_optimized), <code>constraints</code> (max_steps, max_replans, max_cost_usd, max_execution_time_minutes)</li>
+<li><code>AgentKernel</code> — 5 подсистем: Decision Engine, Role Selector, Execution Loop, Replanning Engine, Safety Guards</li>
+<li>Output contract: <code>artifacts/state.json</code>, <code>reasoning_trace.json</code>, <code>execution_log.jsonl</code>, <code>final_output.json</code></li>
+</ul>
+<h3 id="5-17">План: 5 фаз, 17 дней</h3>
+<p><strong>Фаза 1 (3 дня) — Core Kernel</strong>, первый файл к созданию:
+<code>/opt/leviathan_engine/agent_service/core/scenarios/loader.py</code> — класс <code>ScenarioPolicy</code> (Pydantic)</p>
+<h3 id="buffy-audit-2026-07-02">Инфраструктура подтверждена готовой (buffy-audit, 2026-07-02)</h3>
 <table>
 <thead>
 <tr>
-<th>Фреймворк</th>
-<th>Балл / 20</th>
+<th>Метрика</th>
+<th>Значение</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Манифест 5.0.0</strong></td>
-<td><strong>20/20</strong></td>
+<td>Python-файлов</td>
+<td>2,692</td>
 </tr>
 <tr>
-<td>LangGraph</td>
-<td>11.5/20</td>
+<td>Всего строк кода</td>
+<td>412,775</td>
 </tr>
 <tr>
-<td>LangChain</td>
-<td>5.5/20</td>
+<td>Активных сервисов</td>
+<td>10+ (den4ik-claude, leviathan-daemon, leviathan-hq, leviathan_agent, leviathan_mcp, savdabot, sport-observer, voicestudio, djvu2fb2_web, qemu-guest-agent)</td>
 </tr>
 <tr>
-<td>CrewAI</td>
-<td>6/20</td>
+<td>Диск свободно</td>
+<td>6.1 GB (79% used)</td>
 </tr>
 <tr>
-<td>AutoGen</td>
-<td>5.5/20</td>
+<td>Открытых портов</td>
+<td>30+</td>
 </tr>
 <tr>
-<td>LlamaIndex</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>Semantic Kernel</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>OpenHands</td>
-<td>3.5/20</td>
-</tr>
-<tr>
-<td>PydanticAI</td>
-<td>2/20</td>
+<td><strong>Вывод аудита</strong></td>
+<td><strong>READY FOR ADR-002 PHASE 1: YES</strong></td>
 </tr>
 </tbody>
 </table>
+<p>Полный текст решения: <code>/root/analysis/ADR-002/ADR-002-FINAL.md</code> (33K, есть YAML-примеры контракта и полная 5-фазная разбивка).
+Промпт для передачи исполнителю: <code>/root/analysis/ADR-002/BUFFY-AUDIT-PROMPT.md</code>.</p>
+<hr />
+<h2 id="freebuff-vs-freeb">Расхождение в наименовании: freebuff vs freeb</h2>
+<p>Оба имена встречаются на сервере как один и тот же проект в разное время:
+- <code>/usr/bin/freebuff</code>, <code>/root/freebuff/</code>, <code>freebuffd.service</code>, <code>freebuff_v35_install.sh</code> — установленный продукт
+- tmux-группы <code>freebuff-*</code> (утро) → <code>freeb-*</code> (день) — похоже на сокращение имени сессии в процессе работы, не смена проекта</p>
+<p><code>LOGS_ANALYSIS.md</code> (16:50) явно называет проанализированную версию <strong>Freebuff v3.5</strong> с фичами AES-256-KW и signed checkpoints — это про systemd-сервис <code>freebuffd</code>, отдельный от <code>leviathan_engine/agent_service</code>, над которым шла основная дневная работа. Не путать одно с другим при дальнейшей работе.</p>
+<hr />
+<h2 id="_4">Незакрытые вопросы для следующей сессии</h2>
+<ol>
+<li><strong>Закоммитить и запушить</strong> правку <code>db/memory_system.py</code> (или откатить, если она была экспериментальной)</li>
+<li><strong>Решить: <code>feature/claude-multi-account</code> → <code>main</code>?</strong> Ветка не смёржена, 5.1.0 живёт отдельно от main</li>
+<li><strong>ADR-002 Фаза 1</strong> не начата фактически — только спланирована и зааудичена. Первый файл: <code>core/scenarios/loader.py</code></li>
+<li>Уточнить у Дениса: приоритет — доделывать ADR-002 (17 дней, сложность 7/10) или что-то более срочное параллельно (freebuff v3.5 продакшн, diet_platform и т.д.)</li>
+<li>Полный архив анализа за день — 17 markdown-файлов в <code>/root/analysis/</code> (228K только в <code>ALL_ANALYSIS.md</code>) — можно почистить старые черновики (<code>MANIFEST_5.0.0.md</code> заменён на 5.1, <code>TASK_PROMPT.md</code> вероятно устарел) если место на диске понадобится (сейчас 79% занято).</li>
+</ol>
+<hr />
+<p><em>Составлено сведением 20 tmux-буферов и 17 markdown-файлов в <code>/root/analysis/</code>. Полные первоисточники не удалены, этот файл — навигационная карта поверх ними.</em></p>
 
 
 

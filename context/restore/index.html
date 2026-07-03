@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPARISON/">
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/restore/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0 - Leviathan Agent Platform</title>
+        <title>Restore - Leviathan Agent Platform</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vs-500" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0
+              Restore
             
           </span>
         </div>
@@ -805,8 +805,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -818,7 +816,68 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Легенда
+        ПРИ СТАРТЕ СЕССИИ ВЫПОЛНИ:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ПРИ СТАРТЕ СЕССИИ ВЫПОЛНИ:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Прочитай базу знаний
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Проверь статус сервисов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Проверь проект
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Продолжи с последнего этапа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ТЕКУЩИЙ КОНТЕКСТ
       
     </span>
   </a>
@@ -826,10 +885,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-05-0" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)
+        КЛЮЧЕВЫЕ ФАЙЛЫ
       
     </span>
   </a>
@@ -853,315 +912,51 @@
 
 
 
-<h1 id="vs-500">СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0</h1>
-<p><strong>Дата:</strong> 2026-07-01 | <strong>Источник:</strong> реальный код из GitHub</p>
-<h2 id="_1">Легенда</h2>
-<p>✅ Полная реализация | ⚠️ Частичная | ❌ Отсутствует | 🔶 Иначе реализовано</p>
-<table>
-<thead>
-<tr>
-<th>Область</th>
-<th>LangGraph</th>
-<th>LangChain</th>
-<th>CrewAI</th>
-<th>OpenHands</th>
-<th>AutoGen</th>
-<th>PydanticAI</th>
-<th>Semantic Kernel</th>
-<th>LlamaIndex</th>
-<th><strong>Манифест 5.0.0</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1. Agent Lifecycle (FSM)</strong></td>
-<td>✅ StateGraph + Pregel</td>
-<td>❌</td>
-<td>✅ Flow decorators</td>
-<td>✅ AgentController</td>
-<td>⚠️ BaseChatAgent</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ BaseWorkflowAgent</td>
-<td>✅ AgentLifecycle</td>
-</tr>
-<tr>
-<td><strong>2. Runnable Interface</strong></td>
-<td>✅ Runnable+RunnableConfig</td>
-<td>✅ LCEL полный</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ on_messages/stream</td>
-<td>❌</td>
-<td>⚠️ invoke_stream</td>
-<td>⚠️ Workflow+step</td>
-<td>✅ Runnable+Sequence+Parallel</td>
-</tr>
-<tr>
-<td><strong>3. Middleware Pipeline</strong></td>
-<td>✅ before/after model hooks</td>
-<td>✅ AgentMiddleware v1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelFilterExtension</td>
-<td>❌</td>
-<td>✅ MiddlewarePipeline</td>
-</tr>
-<tr>
-<td><strong>4. Callback System</strong></td>
-<td>✅ StreamMode+events</td>
-<td>✅ BaseCallbackHandler</td>
-<td>⚠️ @listen decorator</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>✅ FilterTypes (3 типа)</td>
-<td>⚠️ WorkflowHandler</td>
-<td>✅ CallbackManager (12 hooks)</td>
-</tr>
-<tr>
-<td><strong>5. Typed State (Pydantic v2)</strong></td>
-<td>✅ TypedDict+Annotated+reducers</td>
-<td>⚠️</td>
-<td>✅ Pydantic BaseModel</td>
-<td>❌ dict</td>
-<td>✅ BaseState Pydantic</td>
-<td>✅ полный</td>
-<td>⚠️ KernelArguments</td>
-<td>✅ AgentContext Pydantic</td>
-<td>✅ TypedState Pydantic v2</td>
-</tr>
-<tr>
-<td><strong>6. Checkpointing</strong></td>
-<td>✅ InMemory+Postgres+Redis+branch</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ CheckpointStore multi-backend</td>
-</tr>
-<tr>
-<td><strong>7. Durable Execution</strong></td>
-<td>✅ Durability(sync/async/exit)+ACK</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ ACK/NACK+idempotency+DLQ</td>
-</tr>
-<tr>
-<td><strong>8. Memory System</strong></td>
-<td>⚠️ BaseStore only</td>
-<td>⚠️ ConversationBuffer</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>✅ ChatMemoryBuffer+retrieval</td>
-<td>✅ Short/Long/Episodic/Semantic</td>
-</tr>
-<tr>
-<td><strong>9. Plugin SDK</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Plugin lifecycle full</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelPlugin+discovery</td>
-<td>❌</td>
-<td>✅ install/load/enable/uninstall</td>
-</tr>
-<tr>
-<td><strong>10. Capability Discovery</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ полный</td>
-<td>❌</td>
-<td>✅ CapabilityRegistry</td>
-</tr>
-<tr>
-<td><strong>11. Workflow Engine</strong></td>
-<td>✅ Branch+Merge+Parallel+Send</td>
-<td>⚠️ LCEL parallel</td>
-<td>✅ @start/@listen/@router</td>
-<td>❌</td>
-<td>⚠️ Swarm/RoundRobin</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ step+events+parallel</td>
-<td>✅ Branch/Merge/Saga/Human</td>
-</tr>
-<tr>
-<td><strong>12. Scheduler</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Cron+Delayed+Recurring</td>
-</tr>
-<tr>
-<td><strong>13. Observability (OTEL)</strong></td>
-<td>✅ TaskPayload+debug stream</td>
-<td>⚠️ callbacks only</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>✅ trace_create_agent_span</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ OTEL GenAI semantic conventions</td>
-</tr>
-<tr>
-<td><strong>14. Sandbox System</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Docker+Process+Limits</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ DockerSandbox+ResourceLimits</td>
-</tr>
-<tr>
-<td><strong>15. Model Router</strong></td>
-<td>⚠️ RunnableConfig</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ AIServiceSelector</td>
-<td>❌</td>
-<td>✅ Cost/Latency/Fallback Router</td>
-</tr>
-<tr>
-<td><strong>16. Multi-Agent Coordination</strong></td>
-<td>✅ Subgraphs+Send</td>
-<td>❌</td>
-<td>✅ Crew+hierarchical</td>
-<td>❌</td>
-<td>✅ Swarm+RoundRobin+Selector</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ can_handoff_to</td>
-<td>✅ Coordinator+Arbiter</td>
-</tr>
-<tr>
-<td><strong>17. Security (Prompt Injection)</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ NFKC+Firewall+PII+RBAC</td>
-</tr>
-<tr>
-<td><strong>18. Self-Reflection</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ reflection crews</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Critic+Evaluator</td>
-</tr>
-<tr>
-<td><strong>19. Governance</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Audit+Compliance+Risk</td>
-</tr>
-<tr>
-<td><strong>20. Enterprise HA</strong></td>
-<td>⚠️ stateless nodes</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ HA+Scaling+DR</td>
-</tr>
-</tbody>
-</table>
-<h2 id="1-05-0">Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)</h2>
-<table>
-<thead>
-<tr>
-<th>Фреймворк</th>
-<th>Балл / 20</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Манифест 5.0.0</strong></td>
-<td><strong>20/20</strong></td>
-</tr>
-<tr>
-<td>LangGraph</td>
-<td>11.5/20</td>
-</tr>
-<tr>
-<td>LangChain</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>CrewAI</td>
-<td>6/20</td>
-</tr>
-<tr>
-<td>AutoGen</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>LlamaIndex</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>Semantic Kernel</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>OpenHands</td>
-<td>3.5/20</td>
-</tr>
-<tr>
-<td>PydanticAI</td>
-<td>2/20</td>
-</tr>
-</tbody>
-</table>
+  <h1>Restore</h1>
+
+<p>🔄 FREEBUFF SESSION RECOVERY</p>
+<h2 id="_1">ПРИ СТАРТЕ СЕССИИ ВЫПОЛНИ:</h2>
+<h3 id="1">1. Прочитай базу знаний</h3>
+<pre><code class="language-bash">cat /root/analysis/ALL_ANALYSIS.md
+</code></pre>
+<h3 id="2">2. Проверь статус сервисов</h3>
+<pre><code class="language-bash"># Gemini Proxy
+curl -s http://127.0.0.1:8083/v1/messages -H &quot;Content-Type: application/json&quot; -d '{&quot;model&quot;:&quot;test&quot;,&quot;max_tokens&quot;:10,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;test&quot;}]}' | jq .
+
+# Secrets Vault
+curl -s http://127.0.0.1:8400/health
+
+# Leviathan Agent
+curl -s http://127.0.0.1:8200/health 2&gt;/dev/null || echo &quot;Agent не запущен&quot;
+</code></pre>
+<h3 id="3">3. Проверь проект</h3>
+<pre><code class="language-bash">cd /opt/leviathan_engine/agent_service
+git status --short
+git log --oneline -5
+ls -la agent/state.py agent/runnable.py middleware/pipeline.py 2&gt;/dev/null
+</code></pre>
+<h3 id="4">4. Продолжи с последнего этапа</h3>
+<p>Смотри EXECUTION_PLAN.md — что осталось сделать:
+- P1: Вшивание StateMachine, Runnable, Middleware в core.py
+- P2: Callback System, Workflow Engine, Memory V2
+- P3: GitHub push всех проектов</p>
+<h2 id="_2">ТЕКУЩИЙ КОНТЕКСТ</h2>
+<ul>
+<li>Сервер: LEVIATHAN (78.17.24.96)</li>
+<li>Проект: /opt/leviathan_engine/agent_service/</li>
+<li>Манифест: 5.1.0 (Фаза 2 — реализация)</li>
+<li>Secrets Vault: порт 8400 ✅</li>
+<li>Gemini Proxy: порт 8083 ✅</li>
+<li>GitHub: lidenal85-blip (токен в .netrc)</li>
+</ul>
+<h2 id="_3">КЛЮЧЕВЫЕ ФАЙЛЫ</h2>
+<ul>
+<li>/root/analysis/ALL_ANALYSIS.md — полная база знаний</li>
+<li>/root/analysis/MANIFEST_MIGRATION_PLAN.md — план миграции</li>
+<li>/root/analysis/EXECUTION_PLAN.md — план выполнения</li>
+<li>/root/implementation_log.md — лог реализации</li>
+<li>/opt/leviathan_engine/agent_service/agent/core.py — основной агент</li>
+</ul>
 
 
 

@@ -11,10 +11,6 @@
         <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/MANIFEST_5.1_AGENT_IMPLEMENTATION/">
       
       
-        <link rel="prev" href="../MANIFEST_5.0.0/">
-      
-      
-        <link rel="next" href="../MANIFEST_5.1_FINAL_REPORT/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Манифест 5.1 (Агент) - Leviathan Agent Platform</title>
+        <title>ЗАДАЧА: ПОЛНАЯ РЕАЛИЗАЦИЯ МАНИФЕСТА 5.1.0 — АГЕНТНОЕ ЯДРО - Leviathan Agent Platform</title>
       
     
     
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Манифест 5.1 (Агент)
+              ЗАДАЧА: ПОЛНАЯ РЕАЛИЗАЦИЯ МАНИФЕСТА 5.1.0 — АГЕНТНОЕ ЯДРО
             
           </span>
         </div>
@@ -214,17 +210,35 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
           
   
   
   Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/" class="md-tabs__link">
+          
+  
+  
+  Инструменты CLI
 
         </a>
       </li>
@@ -296,31 +310,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -338,7 +347,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -364,520 +373,6 @@
     
   
     Манифест 5.0.0
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Манифест 5.1 (Агент)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Манифест 5.1 (Агент)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ⚠️ КРИТИЧЕСКИЕ ТРЕБОВАНИЯ
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        КОНТЕКСТ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="КОНТЕКСТ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#78172496-leviathan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Сервер: 78.17.24.96 (LEVIATHAN)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optleviathan_engineagent_service-25k" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Основной проект: /opt/leviathan_engine/agent_service/ (~25K строк кода)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#my_system_analysismd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Текущее состояние (из анализа MY_SYSTEM_ANALYSIS.md):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#leviathan-engine-510" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Цель: Превратить Leviathan Engine в полноценную систему уровня Манифест 5.1.0
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#0" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 0: ВОССТАНОВЛЕНИЕ КОНТЕКСТА
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-agent-lifecycle-fsm-critical" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-statemachine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.1 Создание StateMachine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-leviathanagent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.2 Интеграция в LeviathanAgent
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-dispatcher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3 Интеграция в Dispatcher
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-runnable-interface-critical" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 2: RUNNABLE INTERFACE — CRITICAL
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 2: RUNNABLE INTERFACE — CRITICAL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-runnable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1 Создание протокола Runnable
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 Обёртка компонентов
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-middleware-pipeline-critical" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 Создание Pipeline
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 Реализация базовых мидлварей
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 Интеграция
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-callback-system-high" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 4: CALLBACK SYSTEM — HIGH
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 4: CALLBACK SYSTEM — HIGH">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-callbackmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 Создание CallbackManager
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-eventbus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 Интеграция с существующим EventBus
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-workflow-engine-high" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 5: WORKFLOW ENGINE — HIGH
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 5: WORKFLOW ENGINE — HIGH">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-workflowengine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.1 Создание WorkflowEngine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.2 Декораторы Flow (опционально, но желательно)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#53-checkpointing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5.3 Интеграция с Checkpointing
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-memory-system-v2-high" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 6: MEMORY SYSTEM V2 — HIGH
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 6: MEMORY SYSTEM V2 — HIGH">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.1 Рефакторинг памяти
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.2 Миграция
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#71-smoke-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7.1 Smoke Tests
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#72" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7.2 Финальный отчёт
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ЛОГИРОВАНИЕ (ОБЯЗАТЕЛЬНО)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        НАЧНИ НЕМЕДЛЕННО
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../MANIFEST_5.1_FINAL_REPORT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Манифест 5.1 (Финальный отчёт)
   
 
     
@@ -926,14 +421,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../AGENT_STATE_IMPLEMENTATION/" class="md-nav__link">
+      <a href="../COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AgentState Implementation
+    План объединения
   
 
     
@@ -954,14 +449,325 @@
   
   
     <li class="md-nav__item">
-      <a href="../COMPARISON/" class="md-nav__link">
+      <a href="../MY_SYSTEM_ANALYSIS/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Сравнение
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Секреты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструменты CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инструменты CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ LEVIATHAN CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-cli — Главный CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-status — Статус системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-health — Healthcheck
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-audit — Аудит проектов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-backup — Бэкап проектов
   
 
     

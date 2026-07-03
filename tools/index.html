@@ -8,27 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPARISON/">
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/tools/">
       
       
+        <link rel="prev" href="../context/IMPLEMENTATION_REPORT/">
+      
+      
+        <link rel="next" href="lev-cli/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0 - Leviathan Agent Platform</title>
+        <title>🛠️ LEVIATHAN CLI Tools - Leviathan Agent Platform</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vs-500" class="md-skip">
+        <a href="#leviathan-cli-tools" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -86,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+    <a href=".." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0
+              🛠️ LEVIATHAN CLI Tools
             
           </span>
         </div>
@@ -193,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -214,7 +218,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
+        <a href="../context/MANIFEST_5.0.0/" class="md-tabs__link">
           
   
   
@@ -230,11 +234,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../tools/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -268,7 +274,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+    <a href=".." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -286,7 +292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -365,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MANIFEST_5.0.0/" class="md-nav__link">
+      <a href="../context/MANIFEST_5.0.0/" class="md-nav__link">
         
   
   
@@ -393,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADR-002/ADR-002-FINAL/" class="md-nav__link">
+      <a href="../context/ADR-002/ADR-002-FINAL/" class="md-nav__link">
         
   
   
@@ -421,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
+      <a href="../context/COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
         
   
   
@@ -449,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+      <a href="../context/MY_SYSTEM_ANALYSIS/" class="md-nav__link">
         
   
   
@@ -477,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AGENT_MERGE_PLAN/" class="md-nav__link">
+      <a href="../context/AGENT_MERGE_PLAN/" class="md-nav__link">
         
   
   
@@ -505,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+      <a href="../context/SECRETS_ANALYSIS/" class="md-nav__link">
         
   
   
@@ -533,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+      <a href="../context/IMPLEMENTATION_REPORT/" class="md-nav__link">
         
   
   
@@ -565,26 +571,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -602,7 +613,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -617,10 +628,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../tools/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ LEVIATHAN CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -636,6 +674,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Установка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Инструменты
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Использование
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -648,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/lev-cli/" class="md-nav__link">
+      <a href="lev-cli/" class="md-nav__link">
         
   
   
@@ -676,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/lev-status/" class="md-nav__link">
+      <a href="lev-status/" class="md-nav__link">
         
   
   
@@ -704,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/lev-health/" class="md-nav__link">
+      <a href="lev-health/" class="md-nav__link">
         
   
   
@@ -732,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/lev-audit/" class="md-nav__link">
+      <a href="lev-audit/" class="md-nav__link">
         
   
   
@@ -760,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/lev-backup/" class="md-nav__link">
+      <a href="lev-backup/" class="md-nav__link">
         
   
   
@@ -818,7 +909,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Легенда
+        Установка
       
     </span>
   </a>
@@ -826,10 +917,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-05-0" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)
+        Инструменты
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Использование
       
     </span>
   </a>
@@ -853,315 +955,61 @@
 
 
 
-<h1 id="vs-500">СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0</h1>
-<p><strong>Дата:</strong> 2026-07-01 | <strong>Источник:</strong> реальный код из GitHub</p>
-<h2 id="_1">Легенда</h2>
-<p>✅ Полная реализация | ⚠️ Частичная | ❌ Отсутствует | 🔶 Иначе реализовано</p>
+<h1 id="leviathan-cli-tools">🛠️ LEVIATHAN CLI Tools</h1>
+<p>Набор CLI-утилит для управления платформой LEVIATHAN.</p>
+<h2 id="_1">Установка</h2>
+<p>Инструменты находятся в <code>/opt/leviathan-docs/tools/</code> и доступны через симлинки в <code>/usr/local/bin/</code>:</p>
+<pre><code class="language-bash">ls -la /usr/local/bin/lev-*
+</code></pre>
+<h2 id="_2">Инструменты</h2>
 <table>
 <thead>
 <tr>
-<th>Область</th>
-<th>LangGraph</th>
-<th>LangChain</th>
-<th>CrewAI</th>
-<th>OpenHands</th>
-<th>AutoGen</th>
-<th>PydanticAI</th>
-<th>Semantic Kernel</th>
-<th>LlamaIndex</th>
-<th><strong>Манифест 5.0.0</strong></th>
+<th>Команда</th>
+<th>Описание</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1. Agent Lifecycle (FSM)</strong></td>
-<td>✅ StateGraph + Pregel</td>
-<td>❌</td>
-<td>✅ Flow decorators</td>
-<td>✅ AgentController</td>
-<td>⚠️ BaseChatAgent</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ BaseWorkflowAgent</td>
-<td>✅ AgentLifecycle</td>
+<td><code>lev-cli</code></td>
+<td>Главный CLI — точка входа для всех команд</td>
 </tr>
 <tr>
-<td><strong>2. Runnable Interface</strong></td>
-<td>✅ Runnable+RunnableConfig</td>
-<td>✅ LCEL полный</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ on_messages/stream</td>
-<td>❌</td>
-<td>⚠️ invoke_stream</td>
-<td>⚠️ Workflow+step</td>
-<td>✅ Runnable+Sequence+Parallel</td>
+<td><code>lev-status</code></td>
+<td>Статус системы — RAM, SWAP, LOAD, DISK, сервисы</td>
 </tr>
 <tr>
-<td><strong>3. Middleware Pipeline</strong></td>
-<td>✅ before/after model hooks</td>
-<td>✅ AgentMiddleware v1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelFilterExtension</td>
-<td>❌</td>
-<td>✅ MiddlewarePipeline</td>
+<td><code>lev-health</code></td>
+<td>Healthcheck — проверка сервисов и портов</td>
 </tr>
 <tr>
-<td><strong>4. Callback System</strong></td>
-<td>✅ StreamMode+events</td>
-<td>✅ BaseCallbackHandler</td>
-<td>⚠️ @listen decorator</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>✅ FilterTypes (3 типа)</td>
-<td>⚠️ WorkflowHandler</td>
-<td>✅ CallbackManager (12 hooks)</td>
+<td><code>lev-audit</code></td>
+<td>Аудит проектов — список с Tier-классификацией</td>
 </tr>
 <tr>
-<td><strong>5. Typed State (Pydantic v2)</strong></td>
-<td>✅ TypedDict+Annotated+reducers</td>
-<td>⚠️</td>
-<td>✅ Pydantic BaseModel</td>
-<td>❌ dict</td>
-<td>✅ BaseState Pydantic</td>
-<td>✅ полный</td>
-<td>⚠️ KernelArguments</td>
-<td>✅ AgentContext Pydantic</td>
-<td>✅ TypedState Pydantic v2</td>
-</tr>
-<tr>
-<td><strong>6. Checkpointing</strong></td>
-<td>✅ InMemory+Postgres+Redis+branch</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ CheckpointStore multi-backend</td>
-</tr>
-<tr>
-<td><strong>7. Durable Execution</strong></td>
-<td>✅ Durability(sync/async/exit)+ACK</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ ACK/NACK+idempotency+DLQ</td>
-</tr>
-<tr>
-<td><strong>8. Memory System</strong></td>
-<td>⚠️ BaseStore only</td>
-<td>⚠️ ConversationBuffer</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>✅ ChatMemoryBuffer+retrieval</td>
-<td>✅ Short/Long/Episodic/Semantic</td>
-</tr>
-<tr>
-<td><strong>9. Plugin SDK</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Plugin lifecycle full</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelPlugin+discovery</td>
-<td>❌</td>
-<td>✅ install/load/enable/uninstall</td>
-</tr>
-<tr>
-<td><strong>10. Capability Discovery</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ полный</td>
-<td>❌</td>
-<td>✅ CapabilityRegistry</td>
-</tr>
-<tr>
-<td><strong>11. Workflow Engine</strong></td>
-<td>✅ Branch+Merge+Parallel+Send</td>
-<td>⚠️ LCEL parallel</td>
-<td>✅ @start/@listen/@router</td>
-<td>❌</td>
-<td>⚠️ Swarm/RoundRobin</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ step+events+parallel</td>
-<td>✅ Branch/Merge/Saga/Human</td>
-</tr>
-<tr>
-<td><strong>12. Scheduler</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Cron+Delayed+Recurring</td>
-</tr>
-<tr>
-<td><strong>13. Observability (OTEL)</strong></td>
-<td>✅ TaskPayload+debug stream</td>
-<td>⚠️ callbacks only</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>✅ trace_create_agent_span</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ OTEL GenAI semantic conventions</td>
-</tr>
-<tr>
-<td><strong>14. Sandbox System</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Docker+Process+Limits</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ DockerSandbox+ResourceLimits</td>
-</tr>
-<tr>
-<td><strong>15. Model Router</strong></td>
-<td>⚠️ RunnableConfig</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ AIServiceSelector</td>
-<td>❌</td>
-<td>✅ Cost/Latency/Fallback Router</td>
-</tr>
-<tr>
-<td><strong>16. Multi-Agent Coordination</strong></td>
-<td>✅ Subgraphs+Send</td>
-<td>❌</td>
-<td>✅ Crew+hierarchical</td>
-<td>❌</td>
-<td>✅ Swarm+RoundRobin+Selector</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ can_handoff_to</td>
-<td>✅ Coordinator+Arbiter</td>
-</tr>
-<tr>
-<td><strong>17. Security (Prompt Injection)</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ NFKC+Firewall+PII+RBAC</td>
-</tr>
-<tr>
-<td><strong>18. Self-Reflection</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ reflection crews</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Critic+Evaluator</td>
-</tr>
-<tr>
-<td><strong>19. Governance</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Audit+Compliance+Risk</td>
-</tr>
-<tr>
-<td><strong>20. Enterprise HA</strong></td>
-<td>⚠️ stateless nodes</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ HA+Scaling+DR</td>
+<td><code>lev-backup</code></td>
+<td>Бэкап проектов — архивация в /root/backups/</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-05-0">Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)</h2>
-<table>
-<thead>
-<tr>
-<th>Фреймворк</th>
-<th>Балл / 20</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Манифест 5.0.0</strong></td>
-<td><strong>20/20</strong></td>
-</tr>
-<tr>
-<td>LangGraph</td>
-<td>11.5/20</td>
-</tr>
-<tr>
-<td>LangChain</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>CrewAI</td>
-<td>6/20</td>
-</tr>
-<tr>
-<td>AutoGen</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>LlamaIndex</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>Semantic Kernel</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>OpenHands</td>
-<td>3.5/20</td>
-</tr>
-<tr>
-<td>PydanticAI</td>
-<td>2/20</td>
-</tr>
-</tbody>
-</table>
+<h2 id="_3">Использование</h2>
+<pre><code class="language-bash"># Статус системы
+lev-cli status
+lev-cli status --json
+
+# Healthcheck
+lev-cli health
+lev-cli health --json
+
+# Аудит проектов
+lev-cli audit
+lev-cli audit --json
+lev-cli audit --project leviathan_engine
+
+# Бэкап
+lev-cli backup
+lev-cli backup --json
+</code></pre>
 
 
 
@@ -1211,10 +1059,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

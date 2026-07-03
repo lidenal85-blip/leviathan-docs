@@ -1,0 +1,2367 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/AGENT_MERGE_PLAN/">
+      
+      
+        <link rel="prev" href="../MY_SYSTEM_ANALYSIS/">
+      
+      
+        <link rel="next" href="../SECRETS_ANALYSIS/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Слияние агентов - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Слияние агентов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/" class="md-tabs__link">
+          
+  
+  
+  Инструменты CLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План объединения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leviathan-engine-triton-pelleto-den4ik-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектурное объединение Leviathan Engine + Triton + Pelleto + den4ik-claude
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 1. Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 1. Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проблема
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔍 Текущий ландшафт
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔍 Текущий ландшафт">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Текущие точки интеграции
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Дублирование компонентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-leviathan-agent-platform-lap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: LEVIATHAN AGENT PLATFORM (LAP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: LEVIATHAN AGENT PLATFORM (LAP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Принципы дизайна
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Схема целевой архитектуры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Модульная структура кода
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🔄 ПЛАН МИГРАЦИИ: 4 ФАЗЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🔄 ПЛАН МИГРАЦИИ: 4 ФАЗЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 0: Подготовка (1-2 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-shared-services-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 1: Миграция Shared Services (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 2: Миграция агентов (5-8 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-adr-002-kernel-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 3: ADR-002 Kernel (5-7 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-production-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 4: Интерфейсы и Production (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 🧩 ДЕТАЛЬНАЯ СХЕМА ИНТЕГРАЦИИ АГЕНТОВ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 🧩 ДЕТАЛЬНАЯ СХЕМА ИНТЕГРАЦИИ АГЕНТОВ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-baseagent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 BaseAgent Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-agentregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 AgentRegistry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Схема роутинга задач
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-llm-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Унификация LLM Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 🗓️ ОЦЕНКА ВРЕМЕНИ И ПРИОРИТЕТЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ⚠️ РИСКИ И ИХ МИТИГАЦИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 📊 МЕТРИКИ УСПЕХА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 📁 ФАЙЛЫ ДЛЯ ПЕРВОГО ШАГА (Фаза 0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 📝 ЗАКЛЮЧЕНИЕ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Секреты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструменты CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инструменты CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ LEVIATHAN CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-cli — Главный CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-status — Статус системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-health — Healthcheck
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-audit — Аудит проектов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/lev-backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-backup — Бэкап проектов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leviathan-engine-triton-pelleto-den4ik-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Архитектурное объединение Leviathan Engine + Triton + Pelleto + den4ik-claude
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 1. Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 1. Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проблема
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔍 Текущий ландшафт
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔍 Текущий ландшафт">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Текущие точки интеграции
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Дублирование компонентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-leviathan-agent-platform-lap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: LEVIATHAN AGENT PLATFORM (LAP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: LEVIATHAN AGENT PLATFORM (LAP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Принципы дизайна
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Схема целевой архитектуры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Модульная структура кода
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🔄 ПЛАН МИГРАЦИИ: 4 ФАЗЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🔄 ПЛАН МИГРАЦИИ: 4 ФАЗЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 0: Подготовка (1-2 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-shared-services-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 1: Миграция Shared Services (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 2: Миграция агентов (5-8 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-adr-002-kernel-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 3: ADR-002 Kernel (5-7 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-production-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 4: Интерфейсы и Production (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 🧩 ДЕТАЛЬНАЯ СХЕМА ИНТЕГРАЦИИ АГЕНТОВ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 🧩 ДЕТАЛЬНАЯ СХЕМА ИНТЕГРАЦИИ АГЕНТОВ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-baseagent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 BaseAgent Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-agentregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 AgentRegistry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Схема роутинга задач
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-llm-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Унификация LLM Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 🗓️ ОЦЕНКА ВРЕМЕНИ И ПРИОРИТЕТЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ⚠️ РИСКИ И ИХ МИТИГАЦИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. 📊 МЕТРИКИ УСПЕХА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 📁 ФАЙЛЫ ДЛЯ ПЕРВОГО ШАГА (Фаза 0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 📝 ЗАКЛЮЧЕНИЕ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">🏗️ ПЛАН СЛИЯНИЯ АГЕНТНЫХ СИСТЕМ</h1>
+<h2 id="leviathan-engine-triton-pelleto-den4ik-claude">Архитектурное объединение Leviathan Engine + Triton + Pelleto + den4ik-claude</h2>
+<p><strong>Дата:</strong> 2026-07-02
+<strong>Сервер:</strong> LEVIATHAN (78.17.24.96)
+<strong>Статус:</strong> DRAFT — Требует утверждения
+<strong>Автор:</strong> BUFFY (Architecture Analysis)</p>
+<hr />
+<h2 id="1-executive-summary">📋 1. Executive Summary</h2>
+<h3 id="_2">Проблема</h3>
+<p>На сервере работает <strong>6+ независимых агентных систем</strong>, каждая со своей архитектурой, конфигурацией и точками входа. Это приводит к:
+- ❌ Дублированию кода (LLM-провайдеры, модели данных, инструменты)
+- ❌ Раздуванию памяти (несколько Python-процессов)
+- ❌ Отсутствию единого управления (разные systemd-сервисы)
+- ❌ Невозможности роутинга задач между агентами
+- ❌ Разным уровням безопасности и observability</p>
+<h3 id="_3">Решение</h3>
+<p>Построить <strong>единую Leviathan Agent Platform (LAP)</strong>, которая объединит:
+1. <strong>Ядро (Manifest 5.1.0 + ADR-002)</strong> — runtime decision-making kernel
+2. <strong>Шлюз</strong> — единая точка входа (CLI / API / MCP / Telegram)
+3. <strong>Агент-регистр</strong> — все специализированные агенты как подключаемые модули
+4. <strong>Единые сервисы</strong> — LLM-маршрутизация, память, безопасность, observability</p>
+<hr />
+<h2 id="2">2. 🔍 Текущий ландшафт</h2>
+<table>
+<thead>
+<tr>
+<th>Система</th>
+<th>Расположение</th>
+<th>Язык</th>
+<th>Строк кода</th>
+<th>Статус</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Leviathan Engine</strong></td>
+<td><code>/opt/leviathan_engine/agent_service/</code></td>
+<td>Python</td>
+<td>~25,000</td>
+<td>🟢 Production</td>
+<td>Основной агент (инструменты, MCP, Telegram)</td>
+</tr>
+<tr>
+<td><strong>Triton Agent</strong></td>
+<td><code>/opt/triton_agent/</code></td>
+<td>Python</td>
+<td>~3,900</td>
+<td>🟢 Production</td>
+<td>Спорт-обозреватель (футбол)</td>
+</tr>
+<tr>
+<td><strong>Pelleto AI</strong></td>
+<td><code>/opt/pelleto-ai/</code></td>
+<td>Python</td>
+<td>~5,000</td>
+<td>🟡 MCP broken</td>
+<td>Общий AI-агент</td>
+</tr>
+<tr>
+<td><strong>den4ik-claude</strong></td>
+<td><code>/opt/den4ik-claude/</code></td>
+<td>Python</td>
+<td>~125,000</td>
+<td>🟢 Production</td>
+<td>Telegram-бот (монолит)</td>
+</tr>
+<tr>
+<td><strong>ArbitrCockpit</strong></td>
+<td><code>/opt/arbitr_cockpit/</code></td>
+<td>Python</td>
+<td>~8,000</td>
+<td>🟢 Production</td>
+<td>Панель управления</td>
+</tr>
+<tr>
+<td><strong>Freebuff</strong></td>
+<td><code>/root/freebuff/</code></td>
+<td>Python</td>
+<td>~2,000</td>
+<td>🔴 Crashing</td>
+<td>CLI-аудитор</td>
+</tr>
+<tr>
+<td><strong>free-claude-code</strong></td>
+<td><code>/root/free-claude-code/</code></td>
+<td>Python</td>
+<td>~10,000</td>
+<td>🟡 External</td>
+<td>Внешний проект</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21">2.1 Текущие точки интеграции</h3>
+<pre><code>┌──────────────┐  ┌────────────────┐  ┌─────────────────┐
+│  Leviathan   │  │    Triton      │  │   den4ik-claude │
+│  :8200, 8300 │  │    :8201       │  │   (Telegram)    │
+│  Agent + MCP │  │  FastAPI + Bot │  │   Pyrogram      │
+└──────┬───────┘  └───────┬────────┘  └───────┬─────────┘
+       │                  │                   │
+       │         ┌────────┴────────┐          │
+       │         │  LLM Gateway    │          │
+       │         │  Groq→Gemini→   │          │
+       │         │  →Leviathan     │          │
+       │         └─────────────────┘          │
+       └──────────────────┬───────────────────┘
+                          │
+              ┌───────────┴───────────┐
+              │    EventBus (pub/sub)  │
+              │    task_queued/started │
+              │    /done/failed        │
+              └───────────────────────┘
+</code></pre>
+<h3 id="22">2.2 Дублирование компонентов</h3>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Leviathan</th>
+<th>Triton</th>
+<th>den4ik-claude</th>
+<th>Pelleto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM-провайдеры</td>
+<td>✅ providers.py</td>
+<td>✅ LLMGateway</td>
+<td>✅ Встроен</td>
+<td>✅ Встроен</td>
+</tr>
+<tr>
+<td>Telegram Bot</td>
+<td>✅ tg_bot.py</td>
+<td>✅ bot/</td>
+<td>✅ bot.py (125K)</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>FastAPI API</td>
+<td>✅ api/</td>
+<td>✅ delivery/miniapp</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>База данных</td>
+<td>✅ SQLite (4 БД)</td>
+<td>✅ InMemory+PG</td>
+<td>✅ SQLite</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Circuit Breaker</td>
+<td>❌</td>
+<td>✅ В LLMGateway</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Memory System</td>
+<td>✅ V2 (5 типов)</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅ Knowledge Base</td>
+</tr>
+<tr>
+<td>Auth/Security</td>
+<td>✅ PII Detection</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-leviathan-agent-platform-lap">3. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: LEVIATHAN AGENT PLATFORM (LAP)</h2>
+<h3 id="31">3.1 Принципы дизайна</h3>
+<ol>
+<li><strong>Single Kernel</strong> — одно ядро (runtime decision-making из ADR-002), все агенты — плагины</li>
+<li><strong>Shared Services</strong> — LLM-роутинг, память, безопасность — единые сервисы</li>
+<li><strong>No Monoliths</strong> — den4ik-claude разделяется на модули</li>
+<li><strong>Multi-Interface</strong> — один backend, много frontends (CLI, API, MCP, TG, Web)</li>
+<li><strong>Runtime Hot-Plug</strong> — агенты можно добавлять/удалять без перезапуска</li>
+<li><strong>Cost-Aware</strong> — единый budget-management для всех LLM-вызовов</li>
+<li><strong>Hybrid Mode</strong> — pipeline (старый) и runtime (новый) режимы сосуществуют</li>
+</ol>
+<h3 id="32">3.2 Схема целевой архитектуры</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│                     LEVIATHAN AGENT PLATFORM (LAP)                       │
+│                                                                          │
+│  ┌──────────────────── INTERFACE LAYER ──────────────────────────────┐  │
+│  │                                                                     │  │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐            │  │
+│  │  │  CLI     │  │  HTTP    │  │   MCP    │  │ Telegram │            │  │
+│  │  │ lev-cli  │  │  :8200   │  │  :8300   │  │  TG Bot  │            │  │
+│  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘            │  │
+│  │       │              │             │              │                  │  │
+│  │       └──────────────┴─────────────┴──────────────┘                  │  │
+│  │                                                                     │  │
+│  └──────────────────────────┬─────────────────────────────────────────┘  │
+│                             │                                            │
+│  ┌──────────────────────────▼─────────────────────────────────────────┐  │
+│  │                    API GATEWAY / ROUTER                             │  │
+│  │  Аутентификация → Rate Limiting → Маршрутизация → Логирование      │  │
+│  └──────────────────────────┬─────────────────────────────────────────┘  │
+│                             │                                            │
+│  ┌──────────────────────────▼─────────────────────────────────────────┐  │
+│  │                    EXECUTION KERNEL (ADR-002)                       │  │
+│  │                                                                     │  │
+│  │  ┌──────────────────────────────────────────────────────────────┐  │  │
+│  │  │  AgentKernel (ScenarioPolicy → DecisionEngine → ExecutionLo  │  │  │
+│  │  │              → ReplanningEngine → SafetyGuards)              │  │  │
+│  │  └──────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                     │  │
+│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐  ┌────────────┐  │  │
+│  │  │  Pipeline  │  │  Runtime   │  │  Parallel  │  │   Saga     │  │  │
+│  │  │  Executor  │  │  Executor  │  │  Executor  │  │  Executor  │  │  │
+│  │  │ (legacy)   │  │ (ADR-002)  │  │            │  │            │  │  │
+│  │  └────────────┘  └────────────┘  └────────────┘  └────────────┘  │  │
+│  └──────────────────────────┬─────────────────────────────────────────┘  │
+│                             │                                            │
+│  ┌──────────────────────────▼─────────────────────────────────────────┐  │
+│  │                    AGENT REGISTRY                                   │  │
+│  │  ┌────────┐  ┌────────┐  ┌────────┐  ┌────────┐  ┌──────────┐     │  │
+│  │  │General │  │ Sport  │  │Analyst │  │  TG    │  │ External │     │  │
+│  │  │ Agent  │  │ Obsrv. │  │Arbitr  │  │  Bot   │  │(Pelleto) │     │  │
+│  │  │(core)  │  │(Triton)│  │Cockpit │  │Agent   │  │          │     │  │
+│  │  └────────┘  └────────┘  └────────┘  └────────┘  └──────────┘     │  │
+│  └──────────────────────────┬─────────────────────────────────────────┘  │
+│                             │                                            │
+│  ┌──────────────────────────▼─────────────────────────────────────────┐  │
+│  │                    SHARED SERVICES                                  │  │
+│  │                                                                     │  │
+│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌─────────┐  │  │
+│  │  │  LLM     │ │ Memory   │ │ Security │ │  Event   │ │ Secrets │  │  │
+│  │  │  Router  │ │ System   │ │ Firewall │ │   Bus    │ │  Vault  │  │  │
+│  │  │ cost-    │ │ V2 (5    │ │ PII+RBAC │ │ Durable  │ │ AES-256 │  │  │
+│  │  │ aware    │ │ types)   │ │          │ │ +DLQ     │ │  :8400  │  │  │
+│  │  └──────────┘ └──────────┘ └────────┘ └──────────┘ └─────────┘  │  │
+│  │                                                                     │  │
+│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐              │  │
+│  │  │Observ.   │ │Checkpoint│ │Scheduler │ │Sandbox   │              │  │
+│  │  │OTEL+Cost │ │SQLite/   │ │Cron/Delay│ │Docker    │              │  │
+│  │  │Tracking  │ │Postgres  │ │          │ │Isolation │              │  │
+│  │  └──────────┘ └──────────┘ └──────────┘ └──────────┘              │  │
+│  └─────────────────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="33">3.3 Модульная структура кода</h3>
+<pre><code>/opt/leviathan_engine/agent_service/
+├── lap/                              # 🆕 LEVIATHAN AGENT PLATFORM ROOT
+│   ├── __init__.py
+│   ├── kernel/                       # ADR-002 ядро
+│   │   ├── __init__.py
+│   │   ├── loader.py                 # ScenarioPolicy Pydantic parser
+│   │   ├── decision_engine.py        # DecisionEngine
+│   │   ├── execution_loop.py         # ExecutionLoop
+│   │   ├── replanner.py              # ReplanningEngine
+│   │   └── safety_guards.py          # SafetyGuards (max_steps, cost, timeout)
+│   ├── agents/                       # 🆕 Agent Registry
+│   │   ├── __init__.py
+│   │   ├── registry.py              # AgentRegistry (hot-plug)
+│   │   ├── base.py                  # BaseAgent(Runnable) — единый интерфейс
+│   │   ├── general/                 # → из agent/core.py
+│   │   ├── sport_observer/          # → из /opt/triton_agent/
+│   │   ├── arbitr/                  # → из /opt/arbitr_cockpit/
+│   │   ├── tg_bot/                  # → из agent/tg_bot.py + den4ik-claude
+│   │   └── pelleto/                 # → из /opt/pelleto-ai/
+│   ├── interfaces/                   # 🆕 Interface Layer
+│   │   ├── __init__.py
+│   │   ├── cli.py                   # lev-cli (CLI entry point)
+│   │   ├── mcp.py                   # MCP сервер (из mcp_server/)
+│   │   ├── api.py                   # HTTP API (из api/)
+│   │   └── telegram.py             # Telegram Bot (из den4ik-claude + tg_bot)
+│   └── shared/                       # 🆕 Shared Services
+│       ├── __init__.py
+│       ├── llm_router.py            # ModelRouter (cost/latency/fallback)
+│       ├── cost_manager.py          # Budget management
+│       └── gateway.py               # Unified LLM Gateway
+│
+│   ⚠️ Ниже — существующие модули, которые НЕ переезжают:
+├── agent/          — остаётся как pipeline-режим (legacy)
+├── mcp_server/     — расширяется / переезжает в lap/interfaces/mcp.py
+├── middleware/     — переезжает в shared (станет глобальным)
+├── callbacks/     — расширяется для всех агентов
+├── workflow/      — становится частью lap/kernel/
+├── db/            — остаётся, расширяется shared-сервисами
+├── heads/         — переезжает в lap/agents/
+├── execution/     — переезжает в shared (pipeline_log, backoff, idempotency)
+│
+├── main.py        — упрощается: только загрузка LAP
+└── event_bus.py   — расширяется до DurableEventBus
+</code></pre>
+<hr />
+<h2 id="4-4">4. 🔄 ПЛАН МИГРАЦИИ: 4 ФАЗЫ</h2>
+<h3 id="0-1-2">Фаза 0: Подготовка (1-2 дня)</h3>
+<p><strong>Цель:</strong> Создать каркас LAP без нарушения существующей работы</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Действие</th>
+<th>Файлы</th>
+<th>Кто</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>Создать директорию <code>lap/</code> с <strong>init</strong>.py</td>
+<td><code>lap/__init__.py</code></td>
+<td>Dev</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>Создать <code>BaseAgent(Runnable)</code> — единый интерфейс для всех агентов</td>
+<td><code>lap/agents/base.py</code></td>
+<td>Dev</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>Создать <code>AgentRegistry</code> — hot-plug регистр</td>
+<td><code>lap/agents/registry.py</code></td>
+<td>Dev</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>Создать <code>lap/shared/</code> с <strong>init</strong>.py</td>
+<td><code>lap/shared/__init__.py</code></td>
+<td>Dev</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>Создать <code>lap/interfaces/</code> с <strong>init</strong>.py</td>
+<td><code>lap/interfaces/__init__.py</code></td>
+<td>Dev</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>Написать тест: <code>BaseAgent → AgentRegistry → invoke</code></td>
+<td><code>tests/test_lap_base.py</code></td>
+<td>Dev</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Критерий приёмки:</strong> Можно создать агента, зарегистрировать и выполнить через <code>invoke()</code></p>
+<hr />
+<h3 id="1-shared-services-3-5">Фаза 1: Миграция Shared Services (3-5 дней)</h3>
+<p><strong>Цель:</strong> Вынести общие сервисы из дублирующихся реализаций в единый shared-слой</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Действие</th>
+<th>Источник</th>
+<th>Цель</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td><strong>Unified LLM Gateway</strong></td>
+<td>Triton <code>LLMGateway</code> + Leviathan <code>providers.py</code> + <code>model_router.py</code></td>
+<td><code>lap/shared/gateway.py</code></td>
+</tr>
+<tr>
+<td>1.2</td>
+<td><strong>Cost Manager</strong> — budget enforcement</td>
+<td>ADR-002 спецификация</td>
+<td><code>lap/shared/cost_manager.py</code></td>
+</tr>
+<tr>
+<td>1.3</td>
+<td><strong>Durable EventBus</strong></td>
+<td><code>event_bus.py</code> + ADR-002 DurableEventBus</td>
+<td><code>lap/shared/event_bus.py</code></td>
+</tr>
+<tr>
+<td>1.4</td>
+<td><strong>Circuit Breaker</strong></td>
+<td>Triton <code>LLMGateway</code> → вынести в shared</td>
+<td><code>lap/shared/circuit_breaker.py</code></td>
+</tr>
+<tr>
+<td>1.5</td>
+<td><strong>Memory System</strong> → сделать глобальным</td>
+<td><code>db/memory_system.py</code></td>
+<td><code>lap/shared/memory.py</code></td>
+</tr>
+<tr>
+<td>1.6</td>
+<td><strong>Security</strong> — объединить PII, RBAC, Firewall</td>
+<td><code>agent/tools_security.py</code> + ADR-002</td>
+<td><code>lap/shared/security.py</code></td>
+</tr>
+<tr>
+<td>1.7</td>
+<td><strong>Checkpoint Manager</strong></td>
+<td><code>mcp_server/lev_context.py</code> (ContextKeeper)</td>
+<td><code>lap/shared/checkpoint.py</code></td>
+</tr>
+<tr>
+<td>1.8</td>
+<td><strong>Observability</strong> — OTEL + Cost Tracking</td>
+<td>ADR-002 + <code>pipeline_log.py</code> + <code>db/journal.py</code></td>
+<td><code>lap/shared/observability.py</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Критерий приёмки:</strong> Все 4 существующих агента могут использовать единый LLM Gateway</p>
+<hr />
+<h3 id="2-5-8">Фаза 2: Миграция агентов (5-8 дней)</h3>
+<p><strong>Цель:</strong> Перевести каждый агент на <code>BaseAgent</code> интерфейс и подключить к LAP</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Действие</th>
+<th>Откуда</th>
+<th>Куда</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td><strong>General Agent</strong> — обёртка <code>LeviathanAgent</code> в <code>BaseAgent</code></td>
+<td><code>agent/core.py</code></td>
+<td><code>lap/agents/general/</code></td>
+</tr>
+<tr>
+<td>2.2</td>
+<td><strong>Sport Observer</strong> — импорт Triton как плагина</td>
+<td><code>/opt/triton_agent/</code></td>
+<td><code>lap/agents/sport_observer/</code></td>
+</tr>
+<tr>
+<td>2.3</td>
+<td><strong>TG Bot Agent</strong> — разделить den4ik-claude на модули</td>
+<td><code>/opt/den4ik-claude/bot.py</code></td>
+<td><code>lap/agents/tg_bot/</code></td>
+</tr>
+<tr>
+<td>2.4</td>
+<td><strong>Arbitr Cockpit</strong> — обёртка в BaseAgent</td>
+<td><code>/opt/arbitr_cockpit/</code></td>
+<td><code>lap/agents/arbitr/</code></td>
+</tr>
+<tr>
+<td>2.5</td>
+<td><strong>Pelleto AI</strong> — починить MCP + обёртка</td>
+<td><code>/opt/pelleto-ai/</code></td>
+<td><code>lap/agents/pelleto/</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Критерий приёмки:</strong> Все 5 агентов зарегистрированы в <code>AgentRegistry</code> и доступны через единый API</p>
+<hr />
+<h3 id="3-adr-002-kernel-5-7">Фаза 3: ADR-002 Kernel (5-7 дней)</h3>
+<p><strong>Цель:</strong> Построить runtime decision-making kernel (ADR-002)</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Действие</th>
+<th>Спецификация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1</td>
+<td>ScenarioPolicy Loader (Pydantic YAML)</td>
+<td>ADR-002 Фаза 1</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>DecisionEngine (Rule Filter + LLM Ranking + Cost Estimation)</td>
+<td>ADR-002 Фаза 1</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>ExecutionLoop (observe → decide → act → eval)</td>
+<td>ADR-002 Фаза 1</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>ReplanningEngine (adaptive plan changes)</td>
+<td>ADR-002 Фаза 2</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>SafetyGuards (max_steps, max_cost, timeout, circuit_breaker)</td>
+<td>ADR-002 Фаза 2</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>CLI команды (<code>lev-cli run scenario --mode PRO</code>)</td>
+<td>ADR-002 Фаза 3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Критерий приёмки:</strong> <code>lev-cli run scenario freelance --mode PRO</code> запускает полный цикл</p>
+<hr />
+<h3 id="4-production-3-5">Фаза 4: Интерфейсы и Production (3-5 дней)</h3>
+<p><strong>Цель:</strong> Единые точки входа, документация, тесты</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1</td>
+<td>Unified CLI (<code>lev-cli</code>) — замена всех отдельных точек входа</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Unified HTTP API (<code>:8200</code>) — OpenAI-compatible + Agent API</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>Unified MCP (<code>:8300</code>) — все инструменты всех агентов</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>Unified Telegram Bot — один бот, все агенты через роутинг</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>Тесты (unit + integration ≥ 70%)</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td>Документация (ARCHITECTURE.md, API.md, CLI_GUIDE.md)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Критерий приёмки:</strong> Одной командой <code>lev-cli run sport-observer</code> запускается Triton через LAP</p>
+<hr />
+<h2 id="5">5. 🧩 ДЕТАЛЬНАЯ СХЕМА ИНТЕГРАЦИИ АГЕНТОВ</h2>
+<h3 id="51-baseagent-interface">5.1 BaseAgent Interface</h3>
+<pre><code class="language-python"># lap/agents/base.py
+class BaseAgent(Runnable[AgentTask, AgentResult]):
+    &quot;&quot;&quot;Единый интерфейс для всех агентов LAP.&quot;&quot;&quot;
+
+    agent_id: str                          # Уникальный ID
+    agent_type: str                        # general | sport | arbitr | tg_bot | pelleto
+    version: str                           # Семантическая версия
+    capabilities: List[str]                # [&quot;sport_observation&quot;, &quot;seo&quot;, &quot;arbitration&quot;]
+
+    # Жизненный цикл
+    async def initialize(self) -&gt; None     # Загрузка, инициализация БД
+    async def invoke(self, task) -&gt; Result  # Выполнение задачи
+    async def health_check(self) -&gt; Status  # Проверка здоровья
+    async def shutdown(self) -&gt; None       # Graceful shutdown
+
+    # Метаданные
+    def get_manifest(self) -&gt; AgentManifest  # Манифест для регистра
+    def get_metrics(self) -&gt; Dict            # Метрики для observability
+</code></pre>
+<h3 id="52-agentregistry">5.2 AgentRegistry</h3>
+<pre><code class="language-python"># lap/agents/registry.py
+class AgentRegistry:
+    &quot;&quot;&quot;Hot-plug регистр агентов.&quot;&quot;&quot;
+
+    async def register(self, agent: BaseAgent) -&gt; None
+    async def unregister(self, agent_id: str) -&gt; None
+    async def get(self, agent_id: str) -&gt; BaseAgent
+    async def find_by_capability(self, capability: str) -&gt; List[BaseAgent]
+    async def route(self, task: AgentTask) -&gt; BaseAgent  # Авто-роутинг
+    async def list_agents(self) -&gt; List[AgentManifest]
+    async def health_all(self) -&gt; Dict[str, Status]
+</code></pre>
+<h3 id="53">5.3 Схема роутинга задач</h3>
+<pre><code>User Input → Intent Detection
+    ├→ &quot;напиши код&quot;          → General Agent
+    ├→ &quot;последние матчи&quot;     → Sport Observer (Triton)
+    ├→ &quot;статус арбитража&quot;    → Arbitr Cockpit
+    ├→ &quot;отправь сообщение&quot;   → TG Bot Agent
+    └→ &quot;создай дизайн&quot;      → Pelleto AI
+</code></pre>
+<h3 id="54-llm-gateway">5.4 Унификация LLM Gateway</h3>
+<pre><code class="language-python"># lap/shared/gateway.py — объединение providers.py + LLMGateway + model_router.py
+
+class LLMGateway:
+    &quot;&quot;&quot;Единый шлюз к LLM с circuit breaker, cost tracking, fallback.&quot;&quot;&quot;
+
+    PROVIDERS = {
+        &quot;gemini&quot;: GeminiProvider,       # из agent/providers.py
+        &quot;groq&quot;: GroqProvider,           # из Triton LLMGateway
+        &quot;deepseek&quot;: DeepSeekProvider,   # новый
+        &quot;claude&quot;: ClaudeAdapter,        # из core_bridge/
+    }
+
+    async def complete(
+        self,
+        prompt: str,
+        model: str = &quot;auto&quot;,           # &quot;auto&quot; → ModelRouter
+        budget: float = None,          # Cost-aware
+        fallback: bool = True          # Circuit Breaker fallback
+    ) -&gt; ProviderResponse:
+        ...
+</code></pre>
+<hr />
+<h2 id="6">6. 🗓️ ОЦЕНКА ВРЕМЕНИ И ПРИОРИТЕТЫ</h2>
+<table>
+<thead>
+<tr>
+<th>Фаза</th>
+<th>Дней</th>
+<th>Приоритет</th>
+<th>Зависимости</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Фаза 0: Подготовка</strong></td>
+<td>1-2</td>
+<td>🔴 P0</td>
+<td>Нет</td>
+<td>Каркас LAP + BaseAgent</td>
+</tr>
+<tr>
+<td><strong>Фаза 1: Shared Services</strong></td>
+<td>3-5</td>
+<td>🔴 P0</td>
+<td>Фаза 0</td>
+<td>Единый LLM Gateway, EventBus, Security</td>
+</tr>
+<tr>
+<td><strong>Фаза 2: Миграция агентов</strong></td>
+<td>5-8</td>
+<td>🟡 P1</td>
+<td>Фаза 1</td>
+<td>Все агенты в LAP</td>
+</tr>
+<tr>
+<td><strong>Фаза 3: ADR-002 Kernel</strong></td>
+<td>5-7</td>
+<td>🟡 P1</td>
+<td>Фаза 2</td>
+<td>Runtime decision-making</td>
+</tr>
+<tr>
+<td><strong>Фаза 4: Интерфейсы</strong></td>
+<td>3-5</td>
+<td>🟢 P2</td>
+<td>Фаза 3</td>
+<td>CLI, API, MCP, TG unified</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Итого:</strong> ~17-27 рабочих дней до полного объединения</p>
+<hr />
+<h2 id="7">7. ⚠️ РИСКИ И ИХ МИТИГАЦИЯ</h2>
+<table>
+<thead>
+<tr>
+<th>Риск</th>
+<th>Вероятность</th>
+<th>Влияние</th>
+<th>Митигация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Поломка production</strong> при миграции</td>
+<td>Средняя</td>
+<td>Критическое</td>
+<td>Фаза 0: всё в <code>lap/</code> без изменения существующего кода</td>
+</tr>
+<tr>
+<td><strong>den4ik-claude (125K монолит)</strong></td>
+<td>Высокая</td>
+<td>Высокое</td>
+<td>Постепенная декомпозиция: сначала обёртка, потом модуляризация</td>
+</tr>
+<tr>
+<td><strong>Совместимость API</strong></td>
+<td>Средняя</td>
+<td>Среднее</td>
+<td>Сохранить старые эндпоинты (:8200, :8300) как forward-совместимые</td>
+</tr>
+<tr>
+<td><strong>Triton LLMGateway vs Leviathan providers</strong></td>
+<td>Низкая</td>
+<td>Среднее</td>
+<td>Выбрать лучшую реализацию (Triton — circuit breaker, Leviathan — multi-provider)</td>
+</tr>
+<tr>
+<td><strong>Freebuffd падает</strong></td>
+<td>Высокая</td>
+<td>Низкое</td>
+<td>Не входит в LAP, лечится отдельно</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. 📊 МЕТРИКИ УСПЕХА</h2>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>До</th>
+<th>После</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Количество Python-процессов</strong></td>
+<td>5+</td>
+<td>1-2 (ядро + worker pool)</td>
+</tr>
+<tr>
+<td><strong>Количество systemd-сервисов</strong></td>
+<td>4 (leviathan_agent, leviathan_mcp, den4ik-claude, sport-observer)</td>
+<td>2 (leviathan-core, leviathan-worker)</td>
+</tr>
+<tr>
+<td><strong>Общее RAM</strong></td>
+<td>~1.5-2 GiB</td>
+<td>~500-800 MiB</td>
+</tr>
+<tr>
+<td><strong>Время настройки нового агента</strong></td>
+<td>1-2 дня</td>
+<td>1-2 часа (реализовать BaseAgent)</td>
+</tr>
+<tr>
+<td><strong>Duplicate code</strong></td>
+<td>~1500 строк</td>
+<td>0 строк</td>
+</tr>
+<tr>
+<td><strong>Тестовое покрытие</strong></td>
+<td>~5% (только Triton)</td>
+<td>≥ 70%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-0">9. 📁 ФАЙЛЫ ДЛЯ ПЕРВОГО ШАГА (Фаза 0)</h2>
+<p>Следующие файлы — <strong>первое, что нужно создать</strong>:</p>
+<pre><code>/opt/leviathan_engine/agent_service/lap/__init__.py
+/opt/leviathan_engine/agent_service/lap/agents/__init__.py
+/opt/leviathan_engine/agent_service/lap/agents/base.py      — BaseAgent(Runnable)
+/opt/leviathan_engine/agent_service/lap/agents/registry.py   — AgentRegistry
+/opt/leviathan_engine/agent_service/lap/shared/__init__.py
+/opt/leviathan_engine/agent_service/lap/interfaces/__init__.py
+</code></pre>
+<hr />
+<h2 id="10">10. 📝 ЗАКЛЮЧЕНИЕ</h2>
+<p>Leviathan Agent Platform (LAP) — это не переписывание с нуля, а <strong>архитектурная унификация</strong> существующих наработок:</p>
+<ul>
+<li><strong>Manifest 5.1.0</strong> дал формальный lifecycle, memory, workflow</li>
+<li><strong>ADR-002</strong> даёт runtime decision-making kernel</li>
+<li><strong>LAP</strong> склеивает всё в единую платформу</li>
+</ul>
+<p><strong>Рекомендуемый следующий шаг:</strong> Создать каркас Фазы 0 и обернуть один из агентов (например, Triton Sport Observer) в <code>BaseAgent</code>, чтобы проверить концепцию на реальном коде.</p>
+<hr />
+<p><em>Документ создан: 2026-07-02 | Leviathan Architecture Team</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

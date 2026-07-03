@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPARISON/">
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/EXECUTION_PLAN/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0 - Leviathan Agent Platform</title>
+        <title>ПЛАН ВЫПОЛНЕНИЯ: Manifest 5.1 + GitHub Sync - Leviathan Agent Platform</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vs-500" class="md-skip">
+        <a href="#manifest-51-github-sync" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0
+              ПЛАН ВЫПОЛНЕНИЯ: Manifest 5.1 + GitHub Sync
             
           </span>
         </div>
@@ -818,21 +818,110 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Легенда
+        ПРИОРИТЕТЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ПРИОРИТЕТЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0 — CRITICAL: Сохранить код перед изменениями
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#1-05-0" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#p1-highest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)
+        P1 — HIGHEST: Вшивание существующих файлов улучшений
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2 — HIGH: Новые компоненты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-medium-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P3 — MEDIUM: GitHub полная синхронизация
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-sync-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Sync Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitHub Sync Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repositories-to-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repositories to sync:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token management:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branch strategy:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -853,315 +942,171 @@
 
 
 
-<h1 id="vs-500">СРАВНЕНИЕ АГЕНТНЫХ ФРЕЙМВОРКОВ vs МАНИФЕСТ 5.0.0</h1>
-<p><strong>Дата:</strong> 2026-07-01 | <strong>Источник:</strong> реальный код из GitHub</p>
-<h2 id="_1">Легенда</h2>
-<p>✅ Полная реализация | ⚠️ Частичная | ❌ Отсутствует | 🔶 Иначе реализовано</p>
+<h1 id="manifest-51-github-sync">ПЛАН ВЫПОЛНЕНИЯ: Manifest 5.1 + GitHub Sync</h1>
+<p><strong>Сессия MCP:</strong> <code>1782898455_leviathan_ag_Manifest_5.1_impleme</code>
+<strong>Дата:</strong> 2026-07-01</p>
+<hr />
+<h2 id="_1">ПРИОРИТЕТЫ</h2>
+<h3 id="p0-critical">P0 — CRITICAL: Сохранить код перед изменениями</h3>
 <table>
 <thead>
 <tr>
-<th>Область</th>
-<th>LangGraph</th>
-<th>LangChain</th>
-<th>CrewAI</th>
-<th>OpenHands</th>
-<th>AutoGen</th>
-<th>PydanticAI</th>
-<th>Semantic Kernel</th>
-<th>LlamaIndex</th>
-<th><strong>Манифест 5.0.0</strong></th>
+<th>#</th>
+<th>Задача</th>
+<th>Статус</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1. Agent Lifecycle (FSM)</strong></td>
-<td>✅ StateGraph + Pregel</td>
-<td>❌</td>
-<td>✅ Flow decorators</td>
-<td>✅ AgentController</td>
-<td>⚠️ BaseChatAgent</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ BaseWorkflowAgent</td>
-<td>✅ AgentLifecycle</td>
+<td>0.1</td>
+<td>GitHub push <code>leviathan_agent</code> (feature/claude-multi-account)</td>
+<td>🔄 Таймаут (большой репо)</td>
 </tr>
 <tr>
-<td><strong>2. Runnable Interface</strong></td>
-<td>✅ Runnable+RunnableConfig</td>
-<td>✅ LCEL полный</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ on_messages/stream</td>
-<td>❌</td>
-<td>⚠️ invoke_stream</td>
-<td>⚠️ Workflow+step</td>
-<td>✅ Runnable+Sequence+Parallel</td>
+<td>0.2</td>
+<td>GitHub push <code>leviathan-engine</code> (main)</td>
+<td>🔄 Таймаут</td>
 </tr>
 <tr>
-<td><strong>3. Middleware Pipeline</strong></td>
-<td>✅ before/after model hooks</td>
-<td>✅ AgentMiddleware v1</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelFilterExtension</td>
-<td>❌</td>
-<td>✅ MiddlewarePipeline</td>
+<td>0.3</td>
+<td>GitHub push <code>arbitr-cockpit</code> (master)</td>
+<td>⏳ Ожидает</td>
 </tr>
 <tr>
-<td><strong>4. Callback System</strong></td>
-<td>✅ StreamMode+events</td>
-<td>✅ BaseCallbackHandler</td>
-<td>⚠️ @listen decorator</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>✅ FilterTypes (3 типа)</td>
-<td>⚠️ WorkflowHandler</td>
-<td>✅ CallbackManager (12 hooks)</td>
+<td>0.4</td>
+<td>Создать репо <code>secrets-vault</code> → git init + push</td>
+<td>✅ Репо создано, пуш ожидает</td>
 </tr>
 <tr>
-<td><strong>5. Typed State (Pydantic v2)</strong></td>
-<td>✅ TypedDict+Annotated+reducers</td>
-<td>⚠️</td>
-<td>✅ Pydantic BaseModel</td>
-<td>❌ dict</td>
-<td>✅ BaseState Pydantic</td>
-<td>✅ полный</td>
-<td>⚠️ KernelArguments</td>
-<td>✅ AgentContext Pydantic</td>
-<td>✅ TypedState Pydantic v2</td>
-</tr>
-<tr>
-<td><strong>6. Checkpointing</strong></td>
-<td>✅ InMemory+Postgres+Redis+branch</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ CheckpointStore multi-backend</td>
-</tr>
-<tr>
-<td><strong>7. Durable Execution</strong></td>
-<td>✅ Durability(sync/async/exit)+ACK</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ CancellationToken</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ ACK/NACK+idempotency+DLQ</td>
-</tr>
-<tr>
-<td><strong>8. Memory System</strong></td>
-<td>⚠️ BaseStore only</td>
-<td>⚠️ ConversationBuffer</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>❌</td>
-<td>⚠️ ChatHistory</td>
-<td>✅ ChatMemoryBuffer+retrieval</td>
-<td>✅ Short/Long/Episodic/Semantic</td>
-</tr>
-<tr>
-<td><strong>9. Plugin SDK</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Plugin lifecycle full</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ KernelPlugin+discovery</td>
-<td>❌</td>
-<td>✅ install/load/enable/uninstall</td>
-</tr>
-<tr>
-<td><strong>10. Capability Discovery</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ полный</td>
-<td>❌</td>
-<td>✅ CapabilityRegistry</td>
-</tr>
-<tr>
-<td><strong>11. Workflow Engine</strong></td>
-<td>✅ Branch+Merge+Parallel+Send</td>
-<td>⚠️ LCEL parallel</td>
-<td>✅ @start/@listen/@router</td>
-<td>❌</td>
-<td>⚠️ Swarm/RoundRobin</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ step+events+parallel</td>
-<td>✅ Branch/Merge/Saga/Human</td>
-</tr>
-<tr>
-<td><strong>12. Scheduler</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Cron+Delayed+Recurring</td>
-</tr>
-<tr>
-<td><strong>13. Observability (OTEL)</strong></td>
-<td>✅ TaskPayload+debug stream</td>
-<td>⚠️ callbacks only</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>✅ trace_create_agent_span</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ OTEL GenAI semantic conventions</td>
-</tr>
-<tr>
-<td><strong>14. Sandbox System</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Docker+Process+Limits</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ DockerSandbox+ResourceLimits</td>
-</tr>
-<tr>
-<td><strong>15. Model Router</strong></td>
-<td>⚠️ RunnableConfig</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>✅ AIServiceSelector</td>
-<td>❌</td>
-<td>✅ Cost/Latency/Fallback Router</td>
-</tr>
-<tr>
-<td><strong>16. Multi-Agent Coordination</strong></td>
-<td>✅ Subgraphs+Send</td>
-<td>❌</td>
-<td>✅ Crew+hierarchical</td>
-<td>❌</td>
-<td>✅ Swarm+RoundRobin+Selector</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ can_handoff_to</td>
-<td>✅ Coordinator+Arbiter</td>
-</tr>
-<tr>
-<td><strong>17. Security (Prompt Injection)</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ NFKC+Firewall+PII+RBAC</td>
-</tr>
-<tr>
-<td><strong>18. Self-Reflection</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️ reflection crews</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Critic+Evaluator</td>
-</tr>
-<tr>
-<td><strong>19. Governance</strong></td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ Audit+Compliance+Risk</td>
-</tr>
-<tr>
-<td><strong>20. Enterprise HA</strong></td>
-<td>⚠️ stateless nodes</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅ HA+Scaling+DR</td>
+<td>0.5</td>
+<td>Создать ветку <code>manifest-5.1</code> в leviathan_agent</td>
+<td>⏳ Ожидает пуша</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-05-0">Счёт (✅ = 1, ⚠️ = 0.5, ❌ = 0)</h2>
+<h3 id="p1-highest">P1 — HIGHEST: Вшивание существующих файлов улучшений</h3>
 <table>
 <thead>
 <tr>
-<th>Фреймворк</th>
-<th>Балл / 20</th>
+<th>#</th>
+<th>Задача</th>
+<th>Файлы</th>
+<th>Статус</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Манифест 5.0.0</strong></td>
-<td><strong>20/20</strong></td>
+<td>1.1</td>
+<td>StateMachine в core.py: импорт, атрибут, переходы в run()</td>
+<td><code>core.py</code> + <code>improvements/agent_state.py</code></td>
+<td>⏳</td>
 </tr>
 <tr>
-<td>LangGraph</td>
-<td>11.5/20</td>
+<td>1.2</td>
+<td>Runnable Interface: наследование LeviathanAgent от Runnable</td>
+<td><code>core.py</code> + <code>improvements/runnable.py</code></td>
+<td>⏳</td>
 </tr>
 <tr>
-<td>LangChain</td>
-<td>5.5/20</td>
+<td>1.3</td>
+<td>Middleware Pipeline: хуки BEFORE_MODEL, AFTER_MODEL, WRAP_TOOL_CALL</td>
+<td><code>core.py</code> + <code>improvements/middleware.py</code></td>
+<td>⏳</td>
 </tr>
 <tr>
-<td>CrewAI</td>
-<td>6/20</td>
-</tr>
-<tr>
-<td>AutoGen</td>
-<td>5.5/20</td>
-</tr>
-<tr>
-<td>LlamaIndex</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>Semantic Kernel</td>
-<td>5/20</td>
-</tr>
-<tr>
-<td>OpenHands</td>
-<td>3.5/20</td>
-</tr>
-<tr>
-<td>PydanticAI</td>
-<td>2/20</td>
+<td>1.4</td>
+<td>Dispatcher: интеграция PAUSED/RESUMED/INTERRUPTED</td>
+<td><code>dispatcher.py</code></td>
+<td>⏳</td>
 </tr>
 </tbody>
 </table>
+<h3 id="p2-high">P2 — HIGH: Новые компоненты</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Задача</th>
+<th>Путь</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td>Callback System (CallbackManager с событиями)</td>
+<td><code>agent/callbacks/</code></td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Workflow Engine (Branch/Merge/Parallel)</td>
+<td><code>agent/workflow/</code></td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Memory System V2 (ShortTerm/LongTerm/Working)</td>
+<td><code>agent/memory/</code></td>
+<td>⏳</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p3-medium-github">P3 — MEDIUM: GitHub полная синхронизация</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Задача</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1</td>
+<td>Push всех 15+ проектов в GitHub</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>Создать issues для критических улучшений</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Обновить .claude/claude.md</td>
+<td>⏳</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="github-sync-plan">GitHub Sync Plan</h2>
+<h3 id="repositories-to-sync">Repositories to sync:</h3>
+<pre><code>1. lidenal85-blip/Leviathan_Agent     → /opt/leviathan_engine/agent_service/   (feature/claude-multi-account)
+2. den4ikorm1985/leviathan-engine      → /opt/leviathan_engine/                 (main)
+3. den4ikorm1985/kinovibe              → /var/www/kinovibe/                     (master)
+4. den4ikorm1985/voice-studio          → /var/www/voice_studio/                 (main)
+5. den4ikorm1985/pelleto-ai            → /opt/pelleto-ai/                       (main)
+6. den4ikorm1985/arbitr-cockpit        → /opt/arbitr_cockpit/                   (master)
+7. lidenal85-blip/secrets-vault        → /opt/secrets_vault/                    (master) NEW
+8. lidenal85-blip/diet_platform        → /opt/diet_platform/                    (main)
+9. den4ikorm1985/kwork-dispatcher      → /opt/kwork_dispatcher/                 (main)
+10. den4ikorm1985/vocal-bot            → /opt/vocal_bot/                        (main)
+11. den4ikorm1985/citrus-aura          → /opt/citrus_aura/                      (master)
+12. den4ikorm1985/fri-messenger        → /opt/fri-messenger/                    (main)
+</code></pre>
+<h3 id="token-management">Token management:</h3>
+<ul>
+<li>GitHub tokens in remotes (embedded in URLs)</li>
+<li>Main token: <code>ghp_YOUR_TOKEN_HERE</code> (lidenal85-blip)</li>
+<li>Secondary: <code>ghp_YOUR_TOKEN_HERE</code> (den4ikorm1985)</li>
+<li>Token from git.md: <code>ghp_YOUR_TOKEN_HERE</code> (lidenal85-blip-alt)</li>
+</ul>
+<h3 id="branch-strategy">Branch strategy:</h3>
+<ul>
+<li><code>manifest-5.1</code> — от feature/claude-multi-account для разработки</li>
+<li>После завершения → merge в main/master</li>
+</ul>
 
 
 
