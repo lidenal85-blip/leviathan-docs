@@ -12,6 +12,26 @@ theme:
   - search.suggest
 nav:
 - Главная: index.md
+- Проекты:
+  - projects/INDEX.md
+  - projects/OVERVIEW.md
+  - projects/INTERACTION_MAP.md
+  - projects/DECISIONS.md
+  - projects/leviathan_engine.md
+  - projects/den4ik-claude.md
+  - projects/arbitr_cockpit.md
+  - projects/savdabot.md
+  - projects/diet_platform.md
+  - projects/pelleto-ai.md
+  - projects/triton_agent.md
+  - projects/secrets_vault.md
+  - projects/kinovibe.md
+  - projects/kwork_bot.md
+  - projects/fashion-stylist.md
+  - projects/leviathan-docs.md
+  - projects/hermes_agent.md
+  - projects/hq.md
+  - projects/core.md
 - Документация:
   - Манифест 5.0.0: context/MANIFEST_5.0.0.md
   - ADR-002 Final: context/ADR-002/ADR-002-FINAL.md
