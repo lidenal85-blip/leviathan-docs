@@ -12,6 +12,8 @@ theme:
   - search.suggest
 nav:
 - Главная: index.md
+- IMPLEMENTATION_LOG.md
+- AI_README.md
 - Проекты:
   - projects/INDEX.md
   - projects/OVERVIEW.md
