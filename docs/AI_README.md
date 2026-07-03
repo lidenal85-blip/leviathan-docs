@@ -57,6 +57,12 @@ curl -s https://lidenal85-blip.github.io/leviathan-docs/projects/INDEX/ | grep '
 cd /opt/leviathan-docs && python3 -m mkdocs build 2>&1 | tail -5
 ```
 
+## Platform References
+
+- [🗺️ Master Roadmap](MASTER_ROADMAP.md) — Source of truth for architecture
+- [✅ Session Checklist](SESSION_CHECKLIST.md) — Anti-Chaos protocol
+- [🖥️ Server Metrics](SERVER_METRICS_COMPARISON.md) — Real vs stated metrics
+
 ## Server Info (for AI context)
 
 - **IP:** 78.17.24.96
