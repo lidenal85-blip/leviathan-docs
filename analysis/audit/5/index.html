@@ -1,0 +1,2794 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/analysis/audit/5/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🏗️ ПРОМТ: АРХИТЕКТУРНЫЙ АУДИТ В ФОРМАТЕ GITHUB-СТАТЬИ - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🏗️ ПРОМТ: АРХИТЕКТУРНЫЙ АУДИТ В ФОРМАТЕ GITHUB-СТАТЬИ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../IMPLEMENTATION_LOG/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📋 Implementation Log
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI_README/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI Agent Guide — leviathan-docs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MASTER_ROADMAP/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/INDEX/" class="md-tabs__link">
+          
+  
+  
+  Проекты
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../context/MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Аналитика
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tools/" class="md-tabs__link">
+          
+  
+  
+  Инструменты CLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMPLEMENTATION_LOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Implementation Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI_README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Agent Guide — leviathan-docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MASTER_ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ Master Roadmap — LEVIATHAN Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SESSION_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✅ Anti-Chaos Protocol — Session Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SERVER_METRICS_COMPARISON/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🖥️ Server Metrics Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проекты
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Проекты
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 LEVIATHAN Project Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ LEVIATHAN Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/INTERACTION_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔄 LEVIATHAN Interaction Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/DECISIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ LEVIATHAN Architectural Decision Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/leviathan_engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚂 Leviathan Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/den4ik-claude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Den4ik Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/arbitr_cockpit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Arbitr Cockpit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/savdabot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 SavdaBot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/diet_platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🥗 Diet Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/pelleto-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 Pelleto AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/triton_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Triton Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/secrets_vault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔐 Secrets Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/kinovibe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎬 Kinovibe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/kwork_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💼 Kwork Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/fashion-stylist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👗 Fashion Stylist — Полный отчёт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/leviathan-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Leviathan Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/hermes_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧘 Hermes Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/hq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ HQ (Command Center)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Core Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аналитика
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Аналитика
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Аналитика LEVIATHAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудиты проектов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ARCHITECTURAL_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ ПОЛНЫЙ АРХИТЕКТУРНЫЙ АУДИТ LEVIATHAN PLATFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SYSTEM_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLAUDE_SESSIONS_ANALYSIS_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 ПОЛНЫЙ АНАЛИЗ СЕССИЙ CLAUDE CODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LEVIATHAN_MASTER_REPORT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ LEVIATHAN — СВОДНЫЙ МАСТЕР-ОТЧЁТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_INTERIOR_COMPOSER_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎨 АУДИТ AI INTERIOR COMPOSER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FREE_CLAUDE_CODE_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🆓 АУДИТ FREE CLAUDE CODE (FCC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MCP_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Audit Report — LEVIATHAN Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструменты CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инструменты CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ LEVIATHAN CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-cli — Main CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-status — System Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-health — Healthcheck
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-audit — Project Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-backup — Project Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#claude-fabi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 ГОТОВЫЙ ПРОМТ ДЛЯ CLAUDE (FABI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 ГОТОВЫЙ ПРОМТ ДЛЯ CLAUDE (FABI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Для КАЖДОГО проекта создать отдельную страницу-статью
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 ШАБЛОН СТАТЬИ ПО ПРОЕКТУ (как в GitHub)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ Дорожная карта
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗺️ Дорожная карта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q3-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q3 2026 (текущий)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q4 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2027" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2027
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Дополнительные ресурсы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 КРИТЕРИИ КАЧЕСТВА СТАТЬИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 ПЛАН РАБОТЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ ДЕПЛОЙ НА GITHUB PAGES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        На сайте:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для LLM через raw:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        На сервере:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 ПРИНЦИПЫ РАБОТЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 ЧТО ПОЛУЧИМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="github-">🏗️ ПРОМТ: АРХИТЕКТУРНЫЙ АУДИТ В ФОРМАТЕ GITHUB-СТАТЬИ</h1>
+<h2 id="claude-fabi">📋 ГОТОВЫЙ ПРОМТ ДЛЯ CLAUDE (FABI)</h2>
+<pre><code class="language-markdown"># 📚 АРХИТЕКТУРНЫЙ АУДИТ ВСЕХ ПРОЕКТОВ LEVIATHAN
+## В формате документации для GitHub (как статья)
+
+## 🎯 ТВОЯ РОЛЬ
+
+Ты — **Technical Writer + Senior Architect**. У тебя есть **4 часа** на сервере LEVIATHAN для создания **качественной архитектурной документации** по КАЖДОМУ проекту — в том стиле, в котором пишут документацию Netflix, Uber, Spotify, Anthropic для своих open-source проектов.
+
+**Формат:** как README.md в топовых GitHub-репозиториях или статьи в engineering blogs.
+
+---
+
+## 📍 ЧТО НУЖНО СДЕЛАТЬ
+
+### 1. Найти ВСЕ проекты на сервере
+
+```bash
+# Ищи ВЕЗДЕ, не только в /opt/
+ls -la /opt/ /root/ /home/*/ /srv/ /var/www/ /var/lib/ 2&gt;/dev/null
+find / -name &quot;.git&quot; -type d 2&gt;/dev/null | grep -v &quot;/proc\|/sys\|/dev&quot;
+find / -type f \( -name &quot;package.json&quot; -o -name &quot;requirements.txt&quot; -o -name &quot;pyproject.toml&quot; -o -name &quot;go.mod&quot; -o -name &quot;Dockerfile&quot; -o -name &quot;docker-compose.yml&quot; \) 2&gt;/dev/null | grep -v &quot;/proc\|/sys\|/usr/lib\|node_modules&quot;
+systemctl list-units --type=service --state=running
+docker ps -a
+crontab -l
+ps aux | grep -E &quot;(python|node|go|java|ruby|php)&quot; | grep -v grep
+</code></pre>
+<h3 id="2-">2. Для КАЖДОГО проекта создать отдельную страницу-статью</h3>
+<hr />
+<h2 id="github">📄 ШАБЛОН СТАТЬИ ПО ПРОЕКТУ (как в GitHub)</h2>
+<p>Каждый проект оформи как <strong>полноценную архитектурную статью</strong> в <code>docs/projects/PROJECT_NAME.md</code>:</p>
+<pre><code class="language-markdown"># 🏗️ [PROJECT_NAME] — Архитектурный обзор
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;strong&gt;Одна строка о проекте&lt;/strong&gt;&lt;br&gt;
+  &lt;em&gt;Версия: X.Y.Z | Статус: 🟢 Active | Стек: Python 3.11 + FastAPI&lt;/em&gt;
+&lt;/p&gt;
+
+---
+
+## 📖 Оглавление
+
+- [Обзор](#-обзор)
+- [Архитектура](#-архитектура)
+- [Стек технологий](#-стек-технологий)
+- [Сильные стороны](#-сильные-стороны)
+- [Слабые стороны](#-слабые-стороны)
+- [Зависимости](#-зависимости)
+- [Дорожная карта](#-дорожная-карта)
+- [Метрики](#-метрики)
+
+---
+
+## 🎯 Обзор
+
+**Что это:** [2-3 предложения о проекте простыми словами]
+
+**Зачем нужен:** [Какую проблему решает]
+
+**Для кого:** [Кто пользователи/клиенты]
+
+**Масштаб:** [LOC, количество пользователей, нагрузка]
+
+### Ключевые возможности
+
+- ✅ [Возможность 1]
+- ✅ [Возможность 2]
+- ✅ [Возможность 3]
+
+---
+
+## 🏛️ Архитектура
+
+### Высокоуровневая схема
+
+</code></pre>
+<p>┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   Client    │────▶│   API Layer │────▶│   Database  │
+└─────────────┘     └──────┬──────┘     └─────────────┘
+                           │
+                    ┌──────▼──────┐
+                    │  Worker Pool│
+                    └─────────────┘</p>
+<pre><code>
+### Основные компоненты
+
+| Компонент | Назначение | Файл/Папка |
+|-----------|-----------|-----------|
+| **API Gateway** | Приём HTTP запросов | `src/api/` |
+| **Business Logic** | Обработка логики | `src/services/` |
+| **Data Layer** | Работа с БД | `src/models/` |
+
+### Паттерны проектирования
+
+- **Repository Pattern** — для работы с БД
+- **Dependency Injection** — для тестируемости
+- **Event-driven** — для асинхронных операций
+
+### Поток данных
+
+1. Клиент отправляет запрос
+2. API валидирует входные данные
+3. Service обрабатывает бизнес-логику
+4. Repository сохраняет в БД
+5. Результат возвращается клиенту
+
+---
+
+## 🛠️ Стек технологий
+
+### Backend
+- **Язык:** Python 3.11
+- **Фреймворк:** FastAPI 0.104
+- **ORM:** SQLAlchemy 2.0
+- **База данных:** PostgreSQL 15
+
+### Infrastructure
+- **Контейнеры:** Docker + docker-compose
+- **Оркестрация:** systemd
+- **Мониторинг:** Prometheus + Grafana
+
+### DevOps
+- **CI/CD:** GitHub Actions
+- **Деплой:** Docker Hub → systemd
+- **Секреты:** Vault (порт 8400)
+
+---
+
+## ✅ Сильные стороны
+
+### 🏆 Архитектурные преимущества
+
+1. **Чистая слоистая архитектура**
+   - Чёткое разделение на API / Service / Repository
+   - Легко тестировать каждый слой независимо
+   - Новые разработчики быстро входят в проект
+
+2. **Современный асинхронный стек**
+   - FastAPI + async/await для высокой производительности
+   - До 10K RPS на одном ядре
+   - Non-blocking I/O для сетевых операций
+
+3. **Хорошее тестовое покрытие (78%)**
+   - Unit тесты для всех сервисов
+   - Integration тесты для API
+   - Автоматические тесты в CI/CD
+
+### 🎯 Бизнес-преимущества
+
+1. **Быстрый time-to-market**
+   - Новый эндпоинт за 30 минут
+   - Hot-reload в development
+   - Автогенерация OpenAPI docs
+
+2. **Надёжность**
+   - Graceful degradation
+   - Circuit breakers для внешних API
+   - Retry logic с exponential backoff
+
+---
+
+## ❌ Слабые стороны
+
+### 🔴 Критические проблемы
+
+1. **Single Point of Failure**
+   - **Проблема:** Весь проект на одном сервере, нет репликации
+   - **Влияние:** При падении — полный простой
+   - **Решение:** Добавить PostgreSQL replication + load balancer
+   - **Время:** 2-3 дня
+
+2. **Отсутствие rate limiting**
+   - **Проблема:** Любой клиент может положить API
+   - **Влияние:** Уязвимость к DoS атакам
+   - **Решение:** Добавить Redis + rate-limit middleware
+   - **Время:** 4 часа
+
+### 🟡 Технические долги
+
+1. **Устаревшие зависимости (12 CVE)**
+   ```
+   ⚠️  requests 2.25.1 (latest: 2.31.0) - CVE-2023-32681
+   ⚠️  urllib3 1.26.5 (latest: 2.0.7) - CVE-2023-43804
+   ```
+   - **Решение:** `pip install --upgrade -r requirements.txt`
+
+2. **Монолитная структура**
+   - **Проблема:** Все 25K LOC в одном проекте
+   - **Влияние:** Сложно масштабировать, долгий деплой
+   - **Решение:** Разбить на 3-4 микросервиса
+
+3. **Недостаточное логирование**
+   - **Проблема:** Логи только INFO уровня, нет trace IDs
+   - **Влияние:** Сложно дебажить production проблемы
+   - **Решение:** Добавить structured logging + correlation IDs
+
+### 🟢 Мелкие проблемы
+
+1. **Нет API versioning** — `/api/v1/` вместо `/api/`
+2. **Отсутствует health check endpoint** — нужен `/health`
+3. **Документация частично устарела** — обновить README
+
+---
+
+## 🔗 Зависимости
+
+### Зависит от (upstream)
+</code></pre>
+<p>[PROJECT_NAME]
+    ├── secrets_vault (получение API ключей)
+    ├── PostgreSQL (хранение данных)
+    └── Redis (кэширование)</p>
+<pre><code>
+### От него зависят (downstream)
+</code></pre>
+<p>[PROJECT_NAME]
+    ├── den4ik-claude (Telegram бот)
+    ├── arbitr_cockpit (арбитраж)
+    └── web-dashboard (UI)</p>
+<pre><code>
+### Общие библиотеки с другими проектами
+- `leviathan-core` — общая библиотека (используется 5 проектами)
+- `shared-utils` — утилиты (используется 3 проектами)
+
+---
+
+## 📊 Метрики
+
+| Метрика | Текущее | Цель | Статус |
+|---------|---------|------|--------|
+| **LOC** | 25,432 | &lt; 30,000 | ✅ OK |
+| **Test Coverage** | 78% | &gt; 80% | 🟡 Близко |
+| **Response Time (p95)** | 245ms | &lt; 200ms | 🔴 Нужна оптимизация |
+| **Error Rate** | 0.8% | &lt; 0.5% | 🟡 Средне |
+| **Uptime (30d)** | 99.2% | &gt; 99.9% | 🔴 Низкий |
+| **Deployment Frequency** | 2/week | Daily | 🟡 Можно чаще |
+
+### Использование ресурсов
+
+```bash
+CPU:    2.3% avg, 15% peak
+RAM:    150MB avg, 400MB peak
+Disk:   1.2GB code, 15GB data
+Network: 50MB/hour in, 200MB/hour out
+</code></pre>
+<hr />
+<h2 id="_1">🗺️ Дорожная карта</h2>
+<h3 id="q3-2026">Q3 2026 (текущий)</h3>
+<ul>
+<li>[ ] 🔴 Устранить Single Point of Failure</li>
+<li>[ ] 🔴 Обновить уязвимые зависимости</li>
+<li>[ ] 🟡 Добавить rate limiting</li>
+<li>[ ] 🟡 Улучшить observability</li>
+</ul>
+<h3 id="q4-2026">Q4 2026</h3>
+<ul>
+<li>[ ] 🟢 Разбить на микросервисы</li>
+<li>[ ] 🟢 Добавить API versioning</li>
+<li>[ ] 🟢 Kubernetes migration</li>
+</ul>
+<h3 id="2027">2027</h3>
+<ul>
+<li>[ ] 🔵 Auto-scaling</li>
+<li>[ ] 🔵 Multi-region deployment</li>
+<li>[ ] 🔵 Real-time streaming API</li>
+</ul>
+<hr />
+<h2 id="_2">📚 Дополнительные ресурсы</h2>
+<ul>
+<li><strong>Репозиторий:</strong> <a href="https://github.com/...">github.com/...</a></li>
+<li><strong>API Docs:</strong> <a href="/docs">Swagger UI</a></li>
+<li><strong>Runbook:</strong> <code>/docs/runbook.md</code></li>
+<li><strong>Контакты:</strong> @owner в Telegram</li>
+</ul>
+<hr />
+<p><strong>Последнее обновление:</strong> 2026-07-03<br />
+<strong>Автор аудита:</strong> Claude (Fabi)<br />
+<strong>Следующий аудит:</strong> 2026-08-03</p>
+<pre><code>
+---
+
+## 📁 СТРУКТУРА РЕЗУЛЬТАТОВ
+
+</code></pre>
+<p>/opt/leviathan-docs/docs/
+├── projects/
+│   ├── INDEX.md                    # 📋 Каталог всех проектов
+│   ├── leviathan_engine.md         # 🏗️ Статья по проекту
+│   ├── triton_agent.md             # 🏗️ Статья по проекту
+│   ├── pelleto-ai.md               # 🏗️ Статья по проекту
+│   ├── den4ik-claude.md            # 🏗️ Статья по проекту
+│   ├── arbitr_cockpit.md           # 🏗️ Статья по проекту
+│   ├── secrets_vault.md            # 🏗️ Статья по проекту
+│   └── ... (60+ файлов)
+├── architecture/
+│   ├── OVERVIEW.md                 # Общая архитектура платформы
+│   ├── INTERACTION_MAP.md          # Карта связей между проектами
+│   └── DECISIONS.md                # ADR (Architectural Decision Records)
+└── AI_README.md                    # Raw URLs для LLM</p>
+<pre><code>
+---
+
+## 📋 INDEX.md — КАТАЛОГ ВСЕХ ПРОЕКТОВ
+
+Создай `docs/projects/INDEX.md`:
+
+```markdown
+# 📚 Каталог проектов Leviathan Platform
+
+**Всего проектов:** 60+  
+**Последнее обновление:** 2026-07-03
+
+---
+
+## 🔴 Критические проекты (P0)
+
+| Проект | Описание | Статус | Статья |
+|--------|----------|--------|--------|
+| **leviathan_engine** | Ядро платформы, обработка запросов | 🟢 Active | [Читать →](leviathan_engine.md) |
+| **secrets_vault** | Хранилище секретов, Vault API | 🟢 Active | [Читать →](secrets_vault.md) |
+| **arbitr_cockpit** | Арбитражный движок | 🟢 Active | [Читать →](arbitr_cockpit.md) |
+
+## 🟡 Важные проекты (P1)
+
+| Проект | Описание | Статус | Статья |
+|--------|----------|--------|--------|
+| **triton_agent** | Спортивный агент | 🟢 Active | [Читать →](triton_agent.md) |
+| **den4ik-claude** | Telegram бот | 🟢 Active | [Читать →](den4ik-claude.md) |
+| ... | ... | ... | ... |
+
+## 🟢 Периферийные проекты (P2)
+
+| Проект | Описание | Статус | Статья |
+|--------|----------|--------|--------|
+| **pelleto-ai** | Экспериментальный AI | 🟡 Maintenance | [Читать →](pelleto-ai.md) |
+| ... | ... | ... | ... |
+
+## ⚫ Мёртвые проекты (предложено к удалению)
+
+| Проект | Описание | Последняя активность | Статья |
+|--------|----------|---------------------|--------|
+| **old-project-1** | Устаревший микросервис | 2024 | [Читать →](old-project-1.md) |
+| ... | ... | ... | ... |
+
+---
+
+## 📊 Статистика
+
+</code></pre>
+<p>Всего проектов:     62
+🟢 Active:         28 (45%)
+🟡 Maintenance:    18 (29%)
+🔴 Dead:           16 (26%)</p>
+<p>Всего LOC:         245,000+
+Средний возраст:   1.8 года</p>
+<pre><code>
+## 🔗 Быстрые ссылки
+
+- [Общая архитектура](../architecture/OVERVIEW.md)
+- [Карта связей](../architecture/INTERACTION_MAP.md)
+- [Архитектурные решения](../architecture/DECISIONS.md)
+</code></pre>
+<hr />
+<h2 id="_3">🎯 КРИТЕРИИ КАЧЕСТВА СТАТЬИ</h2>
+<p>Каждая статья по проекту должна соответствовать:</p>
+<ol>
+<li>✅ <strong>Понятно новичку</strong> — можно разобраться за 10 минут</li>
+<li>✅ <strong>Конкретные метрики</strong> — не "быстро", а "245ms p95"</li>
+<li>✅ <strong>Сильные и слабые стороны</strong> — честная оценка</li>
+<li>✅ <strong>Диаграммы</strong> — ASCII или mermaid</li>
+<li>✅ <strong>Ссылки на код</strong> — <code>src/api/main.py:42</code></li>
+<li>✅ <strong>Приоритеты проблем</strong> — 🔴/🟡/🟢</li>
+<li>✅ <strong>Время на исправление</strong> — "4 часа", "2 дня"</li>
+<li>✅ <strong>Дорожная карта</strong> — что делать дальше</li>
+<li>✅ <strong>Минимум 1500 слов</strong> — глубокий анализ</li>
+<li>✅ <strong>Обновляемость</strong> — дата последнего аудита</li>
+</ol>
+<hr />
+<h2 id="_4">🚀 ПЛАН РАБОТЫ</h2>
+<table>
+<thead>
+<tr>
+<th>Фаза</th>
+<th>Время</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Инвентаризация</strong></td>
+<td>30 мин</td>
+<td>Найти все 60+ проектов</td>
+</tr>
+<tr>
+<td><strong>2. Классификация</strong></td>
+<td>30 мин</td>
+<td>Распределить по P0/P1/P2/Dead</td>
+</tr>
+<tr>
+<td><strong>3. Критические (P0)</strong></td>
+<td>90 мин</td>
+<td>10 проектов × 9 мин = глубокий анализ</td>
+</tr>
+<tr>
+<td><strong>4. Важные (P1)</strong></td>
+<td>60 мин</td>
+<td>18 проектов × 3 мин = средний анализ</td>
+</tr>
+<tr>
+<td><strong>5. Периферия (P2)</strong></td>
+<td>30 мин</td>
+<td>18 проектов × 2 мин = краткий обзор</td>
+</tr>
+<tr>
+<td><strong>6. Мёртвые</strong></td>
+<td>20 мин</td>
+<td>16 проектов × 1 мин = констатация</td>
+</tr>
+<tr>
+<td><strong>7. INDEX + OVERVIEW</strong></td>
+<td>30 мин</td>
+<td>Каталог + общая архитектура</td>
+</tr>
+<tr>
+<td><strong>8. Деплой</strong></td>
+<td>30 мин</td>
+<td>GitHub + Pages</td>
+</tr>
+<tr>
+<td><strong>ИТОГО</strong></td>
+<td><strong>4 часа</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="github-pages">✅ ДЕПЛОЙ НА GITHUB PAGES</h2>
+<p>После создания всех статей:</p>
+<pre><code class="language-bash">cd /opt/leviathan-docs
+
+# 1. Коммит в main
+git add docs/projects/ docs/architecture/
+git config user.email &quot;agent@leviathan.local&quot;
+git config user.name &quot;Leviathan Agent&quot;
+git commit -m &quot;docs: Add architectural audit for all 60+ projects
+
+- Individual articles for each project (GitHub README style)
+- Projects catalog with priorities (P0/P1/P2/Dead)
+- Architecture overview and interaction map
+- Strengths/weaknesses analysis for each
+- Roadmap and metrics&quot;
+
+git push origin main
+
+# 2. Обновить mkdocs.yml (добавить навигацию)
+# Добавить в nav:
+#   - Проекты:
+#     - Каталог: projects/INDEX.md
+#     - leviathan_engine: projects/leviathan_engine.md
+#     - ... (все проекты)
+
+# 3. Собрать и задеплоить
+source /opt/mkdocs-venv/bin/activate
+mkdocs build
+
+rm -rf /tmp/leviathan-site
+cp -r site /tmp/leviathan-site
+git checkout gh-pages
+find . -maxdepth 1 -not -name '.' -not -name '.git' -exec rm -rf {} +
+cp -r /tmp/leviathan-site/* .
+touch .nojekyll
+git add .
+git commit -m &quot;deploy: architectural audit articles&quot;
+git push origin gh-pages
+git checkout main
+</code></pre>
+<hr />
+<h2 id="_5">🎯 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ</h2>
+<p>Через 4 часа у тебя будет:</p>
+<h3 id="_6">На сайте:</h3>
+<ul>
+<li>🏠 https://lidenal85-blip.github.io/leviathan-docs/</li>
+<li>📚 https://lidenal85-blip.github.io/leviathan-docs/projects/ — каталог</li>
+<li>🏗️ https://lidenal85-blip.github.io/leviathan-docs/projects/leviathan_engine/ — пример статьи</li>
+</ul>
+<h3 id="llm-raw">Для LLM через raw:</h3>
+<pre><code class="language-bash">curl -s https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/projects/INDEX.md
+curl -s https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/projects/leviathan_engine.md
+</code></pre>
+<h3 id="_7">На сервере:</h3>
+<pre><code>/root/analysis/
+└── (существующие файлы)
+
+/opt/leviathan-docs/docs/
+├── projects/ (60+ статей по проектам)
+└── architecture/ (OVERVIEW, INTERACTION_MAP, DECISIONS)
+</code></pre>
+<hr />
+<h2 id="_8">🎯 ПРИНЦИПЫ РАБОТЫ</h2>
+<ol>
+<li><strong>Пиши как для людей</strong> — не для галочки</li>
+<li><strong>Каждая статья — мини-документ</strong> — можно показать новому разработчику</li>
+<li><strong>Честно о слабых сторонах</strong> — без этого аудит бесполезен</li>
+<li><strong>Конкретные цифры</strong> — метрики, LOC, время</li>
+<li><strong>Красивое оформление</strong> — эмодзи, таблицы, диаграммы</li>
+<li><strong>Не пропускай проекты</strong> — даже маленькие</li>
+</ol>
+<hr />
+<p><strong>Удачи! 🔥</strong></p>
+<p>Финальный файл-каталог:</p>
+<pre><code>/opt/leviathan-docs/docs/projects/INDEX.md
+</code></pre>
+<p>```</p>
+<hr />
+<h2 id="_9">📌 ЧТО ПОЛУЧИМ</h2>
+<table>
+<thead>
+<tr>
+<th>Результат</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>60+ статей</strong></td>
+<td>По одной на каждый проект, в стиле GitHub README</td>
+</tr>
+<tr>
+<td><strong>Каталог проектов</strong></td>
+<td><code>INDEX.md</code> с приоритетами P0/P1/P2/Dead</td>
+</tr>
+<tr>
+<td><strong>Общая архитектура</strong></td>
+<td><code>OVERVIEW.md</code> — как всё связано</td>
+</tr>
+<tr>
+<td><strong>Карта связей</strong></td>
+<td><code>INTERACTION_MAP.md</code> с диаграммой</td>
+</tr>
+<tr>
+<td><strong>Честный анализ</strong></td>
+<td>Сильные/слабые стороны каждого проекта</td>
+</tr>
+<tr>
+<td><strong>Конкретные метрики</strong></td>
+<td>LOC, coverage, response time</td>
+</tr>
+<tr>
+<td><strong>Дорожные карты</strong></td>
+<td>Что делать с каждым проектом</td>
+</tr>
+<tr>
+<td><strong>LLM-доступ</strong></td>
+<td>Всё через raw URLs + GitHub Pages</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Это будет полноценная архитектурная документация уровня Netflix/Uber engineering blog!</strong> 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

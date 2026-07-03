@@ -1,0 +1,2608 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/analysis/audit/promt4/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🎯 ПРОМТ: АУДИТ MCP-ИНСТРУМЕНТАРИЯ LEVIATHAN - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mcp-leviathan" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🎯 ПРОМТ: АУДИТ MCP-ИНСТРУМЕНТАРИЯ LEVIATHAN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../IMPLEMENTATION_LOG/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  📋 Implementation Log
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI_README/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  🤖 AI Agent Guide — leviathan-docs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MASTER_ROADMAP/" class="md-tabs__link">
+          
+  
+  
+  Платформа
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/INDEX/" class="md-tabs__link">
+          
+  
+  
+  Проекты
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../context/MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Аналитика
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tools/" class="md-tabs__link">
+          
+  
+  
+  Инструменты CLI
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMPLEMENTATION_LOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Implementation Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI_README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 AI Agent Guide — leviathan-docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Платформа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MASTER_ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ Master Roadmap — LEVIATHAN Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SESSION_CHECKLIST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✅ Anti-Chaos Protocol — Session Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SERVER_METRICS_COMPARISON/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🖥️ Server Metrics Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проекты
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Проекты
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 LEVIATHAN Project Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/OVERVIEW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ LEVIATHAN Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/INTERACTION_MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔄 LEVIATHAN Interaction Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/DECISIONS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ LEVIATHAN Architectural Decision Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/leviathan_engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚂 Leviathan Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/den4ik-claude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Den4ik Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/arbitr_cockpit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Arbitr Cockpit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/savdabot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 SavdaBot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/diet_platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🥗 Diet Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/pelleto-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 Pelleto AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/triton_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Triton Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/secrets_vault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔐 Secrets Vault
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/kinovibe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎬 Kinovibe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/kwork_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💼 Kwork Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/fashion-stylist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👗 Fashion Stylist — Полный отчёт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/leviathan-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Leviathan Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/hermes_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧘 Hermes Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/hq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ HQ (Command Center)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Core Library
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context/IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аналитика
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Аналитика
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Аналитика LEVIATHAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудиты проектов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ARCHITECTURAL_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ ПОЛНЫЙ АРХИТЕКТУРНЫЙ АУДИТ LEVIATHAN PLATFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SYSTEM_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CLAUDE_SESSIONS_ANALYSIS_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 ПОЛНЫЙ АНАЛИЗ СЕССИЙ CLAUDE CODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LEVIATHAN_MASTER_REPORT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ LEVIATHAN — СВОДНЫЙ МАСТЕР-ОТЧЁТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_INTERIOR_COMPOSER_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎨 АУДИТ AI INTERIOR COMPOSER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FREE_CLAUDE_CODE_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🆓 АУДИТ FREE CLAUDE CODE (FCC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MCP_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Audit Report — LEVIATHAN Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструменты CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инструменты CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ LEVIATHAN CLI Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-cli — Main CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-status — System Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-health — Healthcheck
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-audit — Project Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/lev-backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lev-backup — Project Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#claude-fabi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 ГОТОВЫЙ ПРОМТ ДЛЯ CLAUDE (FABI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 ЭТАП 2: ИНВЕНТАРИЗАЦИЯ ИНСТРУМЕНТОВ (30 минут)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ ЭТАП 3: КЛАССИФИКАЦИЯ ПО МОДУЛЯМ (40 минут)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗂️ ЭТАП 3: КЛАССИФИКАЦИЯ ПО МОДУЛЯМ (40 минут)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-internet-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 МОДУЛЬ 1: INTERNET &amp; WEB (Интернет)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 МОДУЛЬ 2: FILE SYSTEM (Файлы)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-shell-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 МОДУЛЬ 3: SHELL &amp; EXECUTION (Выполнение)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-code-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 МОДУЛЬ 4: CODE &amp; GIT (Код)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-database-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ МОДУЛЬ 5: DATABASE &amp; STORAGE (Данные)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ai-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤖 МОДУЛЬ 6: AI &amp; LLM (ИИ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 МОДУЛЬ 7: COMMUNICATION (Коммуникация)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-security-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 МОДУЛЬ 8: SECURITY &amp; SECRETS (Безопасность)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-monitoring-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 МОДУЛЬ 9: MONITORING &amp; SYSTEM (Мониторинг)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 МОДУЛЬ 10: INTEGRATIONS (Интеграции)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📄 ЭТАП 4: СТРУКТУРА ОТЧЁТА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ КРИТЕРИИ ЗАВЕРШЕНИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 ПРИНЦИПЫ РАБОТЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 НАЧИНАЙ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 ЧТО ПОЛУЧИМ ОТ ПРОМТА
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mcp-leviathan">🎯 ПРОМТ: АУДИТ MCP-ИНСТРУМЕНТАРИЯ LEVIATHAN</h1>
+<h2 id="claude-fabi">📋 ГОТОВЫЙ ПРОМТ ДЛЯ CLAUDE (FABI)</h2>
+<pre><code class="language-markdown"># 🔬 АУДИТ MCP-ИНСТРУМЕНТАРИЯ LEVIATHAN PLATFORM
+
+## 🎯 ТВОЯ РОЛЬ
+
+Ты — **MCP (Model Context Protocol) Architect**. У тебя есть **2 часа** на сервере LEVIATHAN для:
+1. Нахождения **ВСЕХ MCP-серверов** и их инструментов
+2. Проведения **детального аудита** каждого инструмента
+3. **Классификации по модулям** (категориям)
+4. Выдачи **10 конкретных рекомендаций** по улучшению
+
+---
+
+## 📍 ЧТО ТАКОЕ MCP
+
+**MCP (Model Context Protocol)** — протокол подключения инструментов к LLM-агентам (Claude, Qwen, Gemini).
+
+**MCP-сервер** = набор инструментов (tools), которые LLM может вызывать.
+**MCP-инструмент** = одна функция (например: `read_file`, `web_search`, `execute_command`).
+
+**Наша задача:** найти все MCP-серверы на LEVIATHAN, разобрать их на модули и понять:
+- Что есть
+- Чего не хватает
+- Что дублируется
+- Что улучшить
+
+---
+
+## 🔍 ЭТАП 1: ПОИСК ВСЕХ MCP-СЕРВЕРОВ (20 минут)
+
+### Где искать MCP-конфиги:
+
+```bash
+# 1. Claude Desktop / Claude Code конфиги
+cat ~/.claude.json 2&gt;/dev/null
+cat ~/.claude/claude_desktop_config.json 2&gt;/dev/null
+find /root -name &quot;*.mcp.json&quot; -o -name &quot;claude_desktop_config.json&quot; 2&gt;/dev/null
+find /root -name &quot;.mcp.json&quot; 2&gt;/dev/null
+
+# 2. В проектах (часто в корне репо)
+find /opt /root /home -name &quot;mcp*.json&quot; -o -name &quot;.mcp.json&quot; 2&gt;/dev/null | head -50
+find /opt /root /home -name &quot;claude_desktop_config.json&quot; 2&gt;/dev/null
+
+# 3. MCP-серверы как Python/Node пакеты
+find / -type d -name &quot;mcp-*&quot; 2&gt;/dev/null | grep -v &quot;/proc\|/sys&quot;
+pip list 2&gt;/dev/null | grep -i mcp
+npm list -g 2&gt;/dev/null | grep -i mcp
+
+# 4. Запущенные MCP-серверы (процессы)
+ps aux | grep -i &quot;mcp\|stdio&quot; | grep -v grep
+
+# 5. Systemd сервисы MCP
+systemctl list-units | grep -i mcp
+ls -la /etc/systemd/system/*mcp* 2&gt;/dev/null
+
+# 6. Docker MCP контейнеры
+docker ps -a | grep -i mcp
+
+# 7. Конфиги в репозиториях leviathan
+grep -r &quot;mcpServers&quot; /opt /root --include=&quot;*.json&quot; -l 2&gt;/dev/null | head -20
+</code></pre>
+<p><strong>Результат этапа 1:</strong> Список ВСЕХ MCP-серверов с путями к конфигам.</p>
+<hr />
+<h2 id="2-30">📊 ЭТАП 2: ИНВЕНТАРИЗАЦИЯ ИНСТРУМЕНТОВ (30 минут)</h2>
+<p>Для <strong>КАЖДОГО</strong> найденного MCP-сервера:</p>
+<pre><code class="language-bash"># Прочитать конфиг
+cat /path/to/mcp-config.json | jq
+
+# Найти реализацию сервера
+find / -path &quot;*mcp-server*&quot; -name &quot;*.py&quot; -o -name &quot;*.js&quot; -o -name &quot;*.ts&quot; 2&gt;/dev/null
+
+# Вытащить список tools
+grep -rh &quot;@mcp.tool\|registerTool\|name:.*description&quot; /path/to/server/ 2&gt;/dev/null
+</code></pre>
+<p><strong>Для каждого инструмента собери:</strong>
+- Имя
+- Описание
+- Параметры (input schema)
+- Что возвращает
+- Какой сервер предоставляет
+- Где реализация (файл)</p>
+<hr />
+<h2 id="3-40">🗂️ ЭТАП 3: КЛАССИФИКАЦИЯ ПО МОДУЛЯМ (40 минут)</h2>
+<p><strong>Обязательно</strong> распредели все инструменты по этим <strong>10 модулям</strong>:</p>
+<h3 id="1-internet-web">📡 МОДУЛЬ 1: INTERNET &amp; WEB (Интернет)</h3>
+<ul>
+<li><code>web_search</code> — поиск в интернете</li>
+<li><code>web_fetch</code> / <code>http_request</code> — скачивание страниц</li>
+<li><code>web_scrape</code> — парсинг сайтов</li>
+<li><code>browser_*</code> — автоматизация браузера</li>
+<li><code>download_*</code> — скачивание файлов</li>
+<li><code>upload_*</code> — загрузка файлов</li>
+</ul>
+<h3 id="2-file-system">📁 МОДУЛЬ 2: FILE SYSTEM (Файлы)</h3>
+<ul>
+<li><code>read_file</code> / <code>write_file</code></li>
+<li><code>list_directory</code></li>
+<li><code>search_files</code> / <code>grep_files</code></li>
+<li><code>create_directory</code> / <code>delete_file</code></li>
+<li><code>file_metadata</code></li>
+</ul>
+<h3 id="3-shell-execution">💻 МОДУЛЬ 3: SHELL &amp; EXECUTION (Выполнение)</h3>
+<ul>
+<li><code>execute_command</code> / <code>run_shell</code></li>
+<li><code>execute_python</code> / <code>execute_javascript</code></li>
+<li><code>spawn_process</code></li>
+<li><code>kill_process</code></li>
+</ul>
+<h3 id="4-code-git">🔧 МОДУЛЬ 4: CODE &amp; GIT (Код)</h3>
+<ul>
+<li><code>git_*</code> — операции с git</li>
+<li><code>parse_code</code> / <code>analyze_code</code></li>
+<li><code>create_pr</code> / <code>merge_pr</code></li>
+<li><code>code_search</code></li>
+</ul>
+<h3 id="5-database-storage">🗄️ МОДУЛЬ 5: DATABASE &amp; STORAGE (Данные)</h3>
+<ul>
+<li><code>sql_query</code></li>
+<li><code>redis_*</code> / <code>mongo_*</code></li>
+<li><code>s3_*</code> / <code>storage_*</code></li>
+</ul>
+<h3 id="6-ai-llm">🤖 МОДУЛЬ 6: AI &amp; LLM (ИИ)</h3>
+<ul>
+<li><code>call_llm</code> / <code>ask_ai</code></li>
+<li><code>generate_image</code></li>
+<li><code>transcribe_audio</code></li>
+<li><code>embed_text</code></li>
+</ul>
+<h3 id="7-communication">💬 МОДУЛЬ 7: COMMUNICATION (Коммуникация)</h3>
+<ul>
+<li><code>send_email</code></li>
+<li><code>send_telegram</code></li>
+<li><code>send_slack</code> / <code>send_discord</code></li>
+<li><code>send_sms</code></li>
+</ul>
+<h3 id="8-security-secrets">🔐 МОДУЛЬ 8: SECURITY &amp; SECRETS (Безопасность)</h3>
+<ul>
+<li><code>get_secret</code> / <code>vault_*</code></li>
+<li><code>encrypt</code> / <code>decrypt</code></li>
+<li><code>scan_secrets</code></li>
+<li><code>auth_*</code></li>
+</ul>
+<h3 id="9-monitoring-system">📊 МОДУЛЬ 9: MONITORING &amp; SYSTEM (Мониторинг)</h3>
+<ul>
+<li><code>get_metrics</code></li>
+<li><code>check_health</code></li>
+<li><code>list_processes</code></li>
+<li><code>system_info</code></li>
+</ul>
+<h3 id="10-integrations">🔌 МОДУЛЬ 10: INTEGRATIONS (Интеграции)</h3>
+<ul>
+<li><code>github_*</code> / <code>gitlab_*</code></li>
+<li><code>jira_*</code> / <code>notion_*</code></li>
+<li><code>stripe_*</code> / <code>payment_*</code></li>
+<li><code>aws_*</code> / <code>gcp_*</code> / <code>azure_*</code></li>
+</ul>
+<hr />
+<h2 id="4">📄 ЭТАП 4: СТРУКТУРА ОТЧЁТА</h2>
+<p>Создай файл <code>/root/analysis/MCP_AUDIT_2026-07-03.md</code>:</p>
+<pre><code class="language-markdown"># 🔬 MCP АУДИТ LEVIATHAN PLATFORM
+
+**Дата:** 2026-07-03
+**Всего MCP-серверов:** X
+**Всего инструментов:** Y
+
+---
+
+## 📊 СВОДКА ПО МОДУЛЯМ
+
+| Модуль | Инструментов | Покрытие | Статус |
+|--------|--------------|----------|--------|
+| 📡 Internet &amp; Web | X | 80% | 🟢 OK |
+| 📁 File System | X | 100% | 🟢 OK |
+| 💻 Shell &amp; Execution | X | 60% | 🟡 Средне |
+| 🔧 Code &amp; Git | X | 40% | 🔴 Слабо |
+| 🗄️ Database | X | 20% | 🔴 Слабо |
+| 🤖 AI &amp; LLM | X | 50% | 🟡 Средне |
+| 💬 Communication | X | 30% | 🔴 Слабо |
+| 🔐 Security | X | 70% | 🟢 OK |
+| 📊 Monitoring | X | 40% | 🔴 Слабо |
+| 🔌 Integrations | X | 25% | 🔴 Слабо |
+
+---
+
+## 📡 МОДУЛЬ 1: INTERNET &amp; WEB
+
+### Найденные инструменты
+
+| Инструмент | Сервер | Описание | Параметры | Оценка |
+|-----------|--------|----------|-----------|--------|
+| `web_search` | mcp-server-brave | Поиск через Brave API | query, count | 🟢 OK |
+| `web_fetch` | mcp-server-fetch | Скачивание URL | url, max_length | 🟢 OK |
+| ... | ... | ... | ... | ... |
+
+### Что есть ✅
+- [Список]
+
+### Чего не хватает ❌
+- [ ] Browser automation (Puppeteer/Playwright)
+- [ ] Скачивание больших файлов с прогрессом
+- [ ] Парсинг JavaScript-сайтов
+- [ ] RSS/Atom feed reader
+- [ ] Sitemap parser
+
+### Дублирование
+- [Если несколько инструментов делают одно и то же]
+
+---
+
+## 📁 МОДУЛЬ 2: FILE SYSTEM
+[Аналогичная структура для каждого модуля]
+
+...
+
+---
+
+## 🎯 10 РЕКОМЕНДАЦИЙ ПО УЛУЧШЕНИЮ
+
+### 🔴 КРИТИЧЕСКИЕ (сделать в первую очередь)
+
+**1. [Рекомендация 1]**
+- **Проблема:** [Что плохо сейчас]
+- **Решение:** [Что сделать]
+- **Время:** X часов
+- **Приоритет:** P0
+
+**2. [Рекомендация 2]**
+...
+
+### 🟡 ВАЖНЫЕ (сделать в течение недели)
+
+**3. [Рекомендация 3]**
+...
+
+### 🟢 ПОЛЕЗНЫЕ (сделать при возможности)
+
+**4-10. [Рекомендации]**
+...
+
+---
+
+## 📈 ДОРОЖНАЯ КАРТА РАЗВИТИЯ MCP
+
+### Неделя 1: Критические gaps
+- [ ] [Задача 1]
+- [ ] [Задача 2]
+
+### Месяц 1: Дополнить модули
+- [ ] [Задача 1]
+- [ ] [Задача 2]
+
+### Квартал 1: Продвинутые возможности
+- [ ] [Задача 1]
+- [ ] [Задача 2]
+
+---
+
+## 🔗 МАТРИЦА СОВМЕСТИМОСТИ С AGENTS
+
+| Агент | Доступно инструментов | Покрытие |
+|-------|----------------------|----------|
+| Claude Code | X из Y | Z% |
+| Qwen | X из Y | Z% |
+| Gemini | X из Y | Z% |
+
+---
+
+## ❓ ВОПРОСЫ К ВЛАДЕЛЬЦУ
+
+1. [Вопрос 1]
+2. [Вопрос 2]
+</code></pre>
+<hr />
+<h2 id="_1">✅ КРИТЕРИИ ЗАВЕРШЕНИЯ</h2>
+<ol>
+<li>[ ] <strong>Все MCP-серверы найдены</strong> (ожидаемо 5-15 серверов)</li>
+<li>[ ] <strong>Все инструменты инвентаризированы</strong> (ожидаемо 50-200 инструментов)</li>
+<li>[ ] <strong>Распределены по 10 модулям</strong></li>
+<li>[ ] <strong>Для каждого модуля</strong> — список что есть и чего не хватает</li>
+<li>[ ] <strong>10 рекомендаций</strong> — конкретные, с приоритетами</li>
+<li>[ ] <strong>Дорожная карта</strong> — план развития</li>
+<li>[ ] <strong>Отчёт сохранён</strong> в <code>/root/analysis/MCP_AUDIT_2026-07-03.md</code></li>
+</ol>
+<hr />
+<h2 id="_2">🎯 ПРИНЦИПЫ РАБОТЫ</h2>
+<ol>
+<li><strong>Будь конкретным</strong> — называй инструменты по именам</li>
+<li><strong>Сравнивай с best practices</strong> — какие MCP-инструменты есть у Anthropic, OpenAI</li>
+<li><strong>Не бойся жёстких оценок</strong> — "этот инструмент бесполезен" если так</li>
+<li><strong>Ищи дублирование</strong> — часто один инструмент имеет 3 реализации</li>
+<li><strong>Думай о безопасности</strong> — какие инструменты опасны, какие требуют sandbox</li>
+</ol>
+<hr />
+<h2 id="_3">🚀 НАЧИНАЙ</h2>
+<p><strong>Финальный файл:</strong></p>
+<pre><code>/root/analysis/MCP_AUDIT_2026-07-03.md
+</code></pre>
+<p><strong>Удачи! 🔥</strong></p>
+<pre><code>
+---
+
+# 📘 ЧТО ТАКОЕ CI/CD (кратко)
+
+**CI/CD** — это **автоматизация** работы с кодом:
+
+## 🔵 CI = Continuous Integration (Непрерывная интеграция)
+
+**Что делает:** Автоматически проверяет каждый коммит.
+
+**Пример:**
+1. Ты сделал `git push`
+2. GitHub Actions **автоматически**:
+   - Запускает тесты (`pytest`, `npm test`)
+   - Проверяет код линтером (`flake8`, `eslint`)
+   - Проверяет безопасность (`snyk`, `trivy`)
+3. Если всё OK — коммит принимается
+4. Если нет — падает с ошибкой
+
+**Файлы:** `.github/workflows/*.yml`, `.gitlab-ci.yml`
+
+## 🟢 CD = Continuous Delivery / Deployment
+
+### Continuous **Delivery** (непрерывная доставка)
+- Код автоматически готов к деплою
+- Но **деплоит человек** кнопкой
+
+### Continuous **Deployment** (непрерывный деплой)
+- Код автоматически **деплоится в production**
+- Без участия человека
+
+**Пример полного CI/CD:**
+</code></pre>
+<p>git push → тесты → сборка Docker → деплой на сервер → мониторинг</p>
+<pre><code>
+## 💡 ЗАЧЕМ НУЖНО
+
+| Без CI/CD | С CI/CD |
+|-----------|---------|
+| 🐛 Баги попадают в прод | ✅ Тесты ловят баги |
+| 🐌 Деплой вручную 30 мин | ⚡ Деплой за 2 минуты |
+| 😰 &quot;А работает ли?&quot; | 📊 Всегда видно статус |
+| 🤷 &quot;Кто сломал?&quot; | 🔍 Виновник известен |
+
+## 🛠️ ПОПУЛЯРНЫЕ ИНСТРУМЕНТЫ
+
+- **GitHub Actions** (у тебя уже используется для MkDocs)
+- **GitLab CI**
+- **Jenkins** (старая школа)
+- **CircleCI**
+- **ArgoCD** (для Kubernetes)
+
+---
+
+## 🎯 ПРИМЕР ДЛЯ LEVIATHAN
+
+**CI/CD для leviathan-docs (уже работает!):**
+</code></pre>
+<p>git push → GitHub Actions → mkdocs build → deploy to gh-pages
+```</p>
+<p><strong>Что можно добавить:</strong>
+- Автотесты для MCP-серверов
+- Линтинг кода
+- Проверка безопасности
+- Автодеплой новых MCP-инструментов</p>
+<hr />
+<h2 id="_4">📌 ЧТО ПОЛУЧИМ ОТ ПРОМТА</h2>
+<p>✅ <strong>Полный список</strong> всех MCP-серверов и инструментов<br />
+✅ <strong>Классификация по 10 модулям</strong> (Internet, File, Shell, Code, DB, AI, Communication, Security, Monitoring, Integrations)<br />
+✅ <strong>10 конкретных рекомендаций</strong> по улучшению<br />
+✅ <strong>Дорожная карта</strong> развития MCP<br />
+✅ <strong>Отчёт:</strong> <code>/root/analysis/MCP_AUDIT_2026-07-03.md</code></p>
+<p><strong>Готов отправить Fabi?</strong> 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
