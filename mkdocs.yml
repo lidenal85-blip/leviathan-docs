@@ -19,9 +19,18 @@ nav:
   - Слияние агентов: context/AGENT_MERGE_PLAN.md
   - Отчёт реализации: context/IMPLEMENTATION_REPORT.md
 - Аналитика:
+  - analysis/index.md
   - analysis/ARCHITECTURAL_AUDIT_2026-07-03.md
   - analysis/SYSTEM_AUDIT_2026-07-03.md
   - analysis/CLAUDE_SESSIONS_ANALYSIS_2026-07-03.md
   - analysis/LEVIATHAN_MASTER_REPORT_2026-07-03.md
   - analysis/AI_INTERIOR_COMPOSER_AUDIT_2026-07-03.md
   - analysis/FREE_CLAUDE_CODE_AUDIT_2026-07-03.md
+  - analysis/MCP_AUDIT_2026-07-03.md
+- Инструменты CLI:
+  - tools/index.md
+  - tools/lev-cli.md
+  - tools/lev-status.md
+  - tools/lev-health.md
+  - tools/lev-audit.md
+  - tools/lev-backup.md

@@ -6,7 +6,7 @@
 
 - [Манифест 5.0.0](context/MANIFEST_5.0.0.md)
 - [ADR-002 Final](context/ADR-002/ADR-002-FINAL.md)
-- [План объединения](context/COMPREHENSIVE_UNIFICATION_PLAN.md)
+
 - [Анализ системы](context/MY_SYSTEM_ANALYSIS.md)
 - [Слияние агентов](context/AGENT_MERGE_PLAN.md)
 
