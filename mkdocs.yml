@@ -4,19 +4,24 @@ theme:
   name: material
   language: ru
   palette:
-    - scheme: slate
-      primary: indigo
+  - scheme: slate
+    primary: indigo
   features:
-    - navigation.tabs
-    - navigation.sections
-    - search.suggest
+  - navigation.tabs
+  - navigation.sections
+  - search.suggest
 nav:
-  - Главная: index.md
-  - Документация:
-    - Манифест 5.0.0: context/MANIFEST_5.0.0.md
-    - ADR-002 Final: context/ADR-002/ADR-002-FINAL.md
-    - План объединения: context/COMPREHENSIVE_UNIFICATION_PLAN.md
-    - Анализ системы: context/MY_SYSTEM_ANALYSIS.md
-    - Слияние агентов: context/AGENT_MERGE_PLAN.md
-    - Секреты: context/SECRETS_ANALYSIS.md
-    - Отчёт реализации: context/IMPLEMENTATION_REPORT.md
+- Главная: index.md
+- Документация:
+  - Манифест 5.0.0: context/MANIFEST_5.0.0.md
+  - ADR-002 Final: context/ADR-002/ADR-002-FINAL.md
+  - Анализ системы: context/MY_SYSTEM_ANALYSIS.md
+  - Слияние агентов: context/AGENT_MERGE_PLAN.md
+  - Отчёт реализации: context/IMPLEMENTATION_REPORT.md
+- Аналитика:
+  - analysis/ARCHITECTURAL_AUDIT_2026-07-03.md
+  - analysis/SYSTEM_AUDIT_2026-07-03.md
+  - analysis/CLAUDE_SESSIONS_ANALYSIS_2026-07-03.md
+  - analysis/LEVIATHAN_MASTER_REPORT_2026-07-03.md
+  - analysis/AI_INTERIOR_COMPOSER_AUDIT_2026-07-03.md
+  - analysis/FREE_CLAUDE_CODE_AUDIT_2026-07-03.md
