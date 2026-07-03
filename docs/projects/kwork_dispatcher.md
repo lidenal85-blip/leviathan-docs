@@ -4,11 +4,11 @@
 
 ## Brief
 
-Auxiliary project in the LEVIATHAN ecosystem.
+Task dispatcher for Kwork freelance orders — routes work to available agents
 
 | Attribute | Value |
 |-----------|-------|
-| **Status** | ⚠️ Partial / 💀 Legacy |
+| **Status** | ⚠️ Partial / Legacy |
 | **Maintenance** | Low |
 
 ---

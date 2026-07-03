@@ -36,3 +36,7 @@ Autonomous AI orchestration agent with MCP client capabilities. Can discover and
 3. **FastMCP support** — can create new servers on-the-fly
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/hermes_agent_audit/)

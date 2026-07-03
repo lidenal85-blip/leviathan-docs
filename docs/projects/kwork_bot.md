@@ -26,3 +26,7 @@ Telegram bot for freelance marketplace (Kwork). Automates order management, clie
 | 🟡 No error alerts | High |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/kwork_bot_audit/)

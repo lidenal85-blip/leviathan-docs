@@ -66,3 +66,7 @@ AI assistant running on Termux (Android) with 23 MCP tools across 7 groups. Conn
 
 ---
 *Built with ❤️ by LEVIATHAN Team*
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/pelleto_ai_audit/)

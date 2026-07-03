@@ -1,32 +1,18 @@
-# citrus_aura
+# 🍊 Citrus Aura
 
-**Priority:** P1 🟡 Important
+**Path:** `/opt/citrus_aura` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Web service project with its own development devlog. Part of the LEVIATHAN ecosystem of web applications.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
+| **Language** | Python |
+| **Type** | Web Service |
 
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+[📊 Аудит](../analysis/audit/citrus_aura_audit/)
 
 ---

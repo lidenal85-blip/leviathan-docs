@@ -4,11 +4,11 @@
 
 ## Brief
 
-Auxiliary project in the LEVIATHAN ecosystem.
+Deep voice analysis tools — extends Voice Studio capabilities
 
 | Attribute | Value |
 |-----------|-------|
-| **Status** | ⚠️ Partial / 💀 Legacy |
+| **Status** | ⚠️ Partial / Legacy |
 | **Maintenance** | Low |
 
 ---

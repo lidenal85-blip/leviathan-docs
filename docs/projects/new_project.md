@@ -4,11 +4,11 @@
 
 ## Brief
 
-Auxiliary project in the LEVIATHAN ecosystem.
+Project template/scaffold — starting point for new LEVIATHAN projects
 
 | Attribute | Value |
 |-----------|-------|
-| **Status** | ⚠️ Partial / 💀 Legacy |
+| **Status** | ⚠️ Partial / Legacy |
 | **Maintenance** | Low |
 
 ---

@@ -28,3 +28,7 @@ AI-powered diet planning service. Creates personalized meal plans, tracks nutrit
 | 🟢 Add tests | Medium |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/diet_platform_audit/)

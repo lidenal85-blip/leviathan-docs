@@ -1,32 +1,18 @@
-# agrobot
+# 🤖 AgroBot
 
-**Priority:** P1 🟡 Important
+**Path:** `/opt/agrobot` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Agricultural automation bot — monitors and manages agricultural processes through automated Telegram interactions.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
+| **Language** | Python |
+| **Type** | Telegram Bot |
 
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+[📊 Аудит](../analysis/audit/agrobot_audit/)
 
 ---

@@ -4,11 +4,11 @@
 
 ## Brief
 
-Auxiliary project in the LEVIATHAN ecosystem.
+Service registry — tracks available services and their endpoints
 
 | Attribute | Value |
 |-----------|-------|
-| **Status** | ⚠️ Partial / 💀 Legacy |
+| **Status** | ⚠️ Partial / Legacy |
 | **Maintenance** | Low |
 
 ---

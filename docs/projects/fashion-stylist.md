@@ -20,3 +20,7 @@ AI fashion stylist — provides outfit recommendations, style analysis, and fash
 2. **Active service** — monitored
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/fashion-stylist_audit/)

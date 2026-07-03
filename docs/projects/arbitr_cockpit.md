@@ -62,3 +62,7 @@ Business intelligence platform and order management system. Handles project comp
 
 ---
 *Built with ❤️ by LEVIATHAN Team*
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/arbitr_cockpit_audit/)

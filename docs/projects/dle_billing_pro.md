@@ -4,11 +4,11 @@
 
 ## Brief
 
-Auxiliary project in the LEVIATHAN ecosystem.
+DLE billing system — payment processing for DLE-based sites
 
 | Attribute | Value |
 |-----------|-------|
-| **Status** | ⚠️ Partial / 💀 Legacy |
+| **Status** | ⚠️ Partial / Legacy |
 | **Maintenance** | Low |
 
 ---

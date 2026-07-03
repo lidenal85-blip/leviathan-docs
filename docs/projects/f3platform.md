@@ -1,32 +1,18 @@
-# f3platform
+# 🌐 F3 Platform
 
-**Priority:** P1 🟡 Important
+**Path:** `/var/www/f3platform` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Web platform served via Nginx. Part of the web application layer of LEVIATHAN.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
+| **Hosting** | Nginx, `/var/www/` |
+| **Type** | Web Application |
 
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+[📊 Аудит](../analysis/audit/f3platform_audit/)
 
 ---

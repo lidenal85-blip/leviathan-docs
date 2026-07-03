@@ -1,32 +1,18 @@
-# agent-hub
+# 🤖 Agent Hub
 
-**Priority:** P1 🟡 Important
+**Path:** `/opt/agent-hub` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Central registry and management hub for AI agents — tracks agent states, capabilities, and availability.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
+| **Language** | Python |
+| **Type** | Agent registry |
 
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+[📊 Аудит](../analysis/audit/agent-hub_audit/)
 
 ---

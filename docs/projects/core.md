@@ -29,3 +29,7 @@ Shared library used by leviathan_engine and other services. Contains:
 | **Design Pattern** | Factory, Strategy, Observer |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/core_audit/)

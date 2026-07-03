@@ -1,32 +1,17 @@
-# fri-messenger
+# 💬 Fri Messenger
 
-**Priority:** P1 🟡 Important
+**Path:** `/opt/fri-messenger` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Messaging platform integration service — connects multiple messaging channels into a unified interface. ~403MB project.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
 | **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
-
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+| **Size** | ~403MB |
+| **Features** | Multi-channel messaging |
 
 ---

@@ -24,3 +24,7 @@ This documentation site! Built with MkDocs Material, deployed to GitHub Pages. C
 [https://lidenal85-blip.github.io/leviathan-docs/](https://lidenal85-blip.github.io/leviathan-docs/)
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/leviathan_docs_audit/)

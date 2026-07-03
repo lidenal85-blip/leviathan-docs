@@ -80,3 +80,7 @@ Central AI orchestrator of the LEVIATHAN platform. Manages AI agents, MCP tools,
 
 ---
 *Built with ❤️ by LEVIATHAN Team*
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/leviathan_engine_audit/)

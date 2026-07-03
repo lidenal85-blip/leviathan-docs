@@ -1,32 +1,17 @@
-# free-claude-code
+# 🔓 Free Claude Code
 
-**Priority:** P1 🟡 Important
+**Path:** `/root/free-claude-code` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Tool for using Claude Code without API costs — manages Claude accounts, sessions, and provides free access to Claude's coding capabilities.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
-
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+| **Language** | Python, Shell |
+| **Size** | ~193MB |
+| **Includes** | freebuff sub-project |
 
 ---

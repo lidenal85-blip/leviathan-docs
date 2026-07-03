@@ -25,3 +25,7 @@ The strategic command center of LEVIATHAN. Contains:
 - `/opt/leviathan_engine/HQ/sessions/`
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/hq_audit/)

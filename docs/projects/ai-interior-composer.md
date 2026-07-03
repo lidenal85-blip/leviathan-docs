@@ -1,32 +1,23 @@
-# ai-interior-composer
+# 🎨 AI Interior Composer
 
-**Priority:** P1 🟡 Important
+**Path:** `/root/ai-interior-composer` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+AI-powered interior design generator. Creates photorealistic room visualizations from text descriptions using Stable Diffusion / ComfyUI.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
+| **Language** | Python |
+| **AI Model** | Stable Diffusion / ComfyUI |
+| **Size** | ~391MB |
 
 ## Status
 
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
+✅ Active | Has README.md | AI image generation
 
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+[📊 Аудит](../analysis/audit/aic_audit/)
 
 ---

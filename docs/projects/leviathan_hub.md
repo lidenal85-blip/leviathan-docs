@@ -18,3 +18,7 @@ Web portal for the LEVIATHAN platform — management interface and dashboard.
 ⚠️ Partially active
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/leviathan_hub_audit/)

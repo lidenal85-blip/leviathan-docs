@@ -19,3 +19,7 @@ Voice processing platform — provides voice synthesis, recognition, and audio p
 ✅ Active systemd service, monitored via lev-health
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/vocalplatform_audit/)

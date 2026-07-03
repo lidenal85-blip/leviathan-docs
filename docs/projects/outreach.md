@@ -18,3 +18,7 @@ Outreach platform for client communication and campaign management.
 ✅ Active
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/outreach_audit/)

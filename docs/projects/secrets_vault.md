@@ -31,3 +31,7 @@ Centralized secrets management — stores API keys, credentials, tokens for all 
 ⚠️ Audit revealed hardcoded tokens in configs. See MCP_AUDIT for details.
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/secrets_vault_audit/)

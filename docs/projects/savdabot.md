@@ -53,3 +53,7 @@ Multi-functional Telegram bot providing services to users. One of the key revenu
 
 ---
 *Built with ❤️ by LEVIATHAN Team*
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/savdabot_audit/)

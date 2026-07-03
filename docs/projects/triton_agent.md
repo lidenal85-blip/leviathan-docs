@@ -26,3 +26,7 @@ Specialized AI agent for autonomous task execution. Part of the LEVIATHAN agent 
 | 🟡 Limited documentation | High |
 
 ---
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/triton_agent_audit/)

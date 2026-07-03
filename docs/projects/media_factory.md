@@ -1,32 +1,16 @@
-# media_factory
+# 🎬 Media Factory
 
-**Priority:** P1 🟡 Important
+**Path:** `/opt/media_factory` | **Priority:** P1 🟡 Important
 
 ## Overview
 
-Part of the LEVIATHAN ecosystem, providing specialized functionality.
+Media processing pipeline — handles video/audio conversion, thumbnail generation, and media asset management.
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Language** | Python 3.12 |
-| **Type** | Web Service / Bot / Utility |
-
-## Status
-
-✅ Active | ⚙️ Systemd-managed | 🌐 Nginx-enabled (if web)
-
-## Strengths ✅
-
-1. Integrated with LEVIATHAN ecosystem
-2. Active development
-3. Specific domain focus
-
-## Weaknesses ❌
-
-| Issue | Priority |
-|-------|----------|
-| 🟢 Limited documentation | Medium |
+| **Language** | Python |
+| **Type** | Media processing |
 
 ---

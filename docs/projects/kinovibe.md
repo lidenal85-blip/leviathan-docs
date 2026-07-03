@@ -48,3 +48,7 @@ Movie discovery platform — a web application for browsing, searching, and disc
 
 ---
 *Built with ❤️ by LEVIATHAN Team*
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/kinovibe_audit/)

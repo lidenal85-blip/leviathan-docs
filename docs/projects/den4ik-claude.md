@@ -66,3 +66,7 @@ Claude AI session manager — manages a pool of Claude accounts, handles authent
 
 ---
 *Built with ❤️ by LEVIATHAN Team*
+
+## Full Audit
+
+[📊 Полный аудит проекта](../analysis/audit/den4ik_claude_audit/)
