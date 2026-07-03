@@ -1,0 +1,3514 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/MANIFEST_5.0.0/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../ADR-002/ADR-002-FINAL/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Манифест 5.0.0 - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#500" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Манифест 5.0.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План объединения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Секреты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="500">Вставь туда полный текст Манифеста 5.0.0</h1>
+<h1 id="450-500">АРХИТЕКТУРНЫЙ АУДИТ Манифест 4.5.0 → 5.0.0</h1>
+<h2 id="1-450">1. АРХИТЕКТУРНЫЙ АУДИТ ВЕРСИИ 4.5.0</h2>
+<h3 id="v450">Сильные стороны v4.5.0 ✅</h3>
+<table>
+<thead>
+<tr>
+<th>Область</th>
+<th>Оценка</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Durable Delivery</strong></td>
+<td>10/10</td>
+<td>DLQ + Retry Policy + Worker Pool — production-ready</td>
+</tr>
+<tr>
+<td><strong>Security Layer</strong></td>
+<td>10/10</td>
+<td>NFKC + Two-Layer Firewall + Smart PII</td>
+</tr>
+<tr>
+<td><strong>Observability</strong></td>
+<td>9/10</td>
+<td>JSON logs + OTEL + correlation_id</td>
+</tr>
+<tr>
+<td><strong>Pluggable RBAC</strong></td>
+<td>10/10</td>
+<td>Policy Registry + Approval Gates</td>
+</tr>
+<tr>
+<td><strong>Agent-as-Tool</strong></td>
+<td>9/10</td>
+<td>ToolRegistry + DI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v450_1">Слабые места v4.5.0 ❌</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Проблема</th>
+<th>Критичность</th>
+<th>Источник идеи</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Отсутствие Agent Lifecycle</strong></td>
+<td>CRITICAL</td>
+<td>LangGraph State Machine</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Нет Runnable Interface</strong></td>
+<td>HIGH</td>
+<td>LangChain Runnable</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Нет Middleware Pipeline</strong></td>
+<td>CRITICAL</td>
+<td>LangChain v1.0 Middleware</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Нет Callback System</strong></td>
+<td>HIGH</td>
+<td>LangChain Callbacks</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Хаотичный State (dict)</strong></td>
+<td>CRITICAL</td>
+<td>PydanticAI Typed State</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Нет Checkpointing</strong></td>
+<td>CRITICAL</td>
+<td>LangGraph Checkpointer</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Event Bus без ACK/NACK</strong></td>
+<td>HIGH</td>
+<td>Temporal Durable Execution</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Memory System v1</strong></td>
+<td>HIGH</td>
+<td>Hermes Memory Manager</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Нет Plugin SDK</strong></td>
+<td>HIGH</td>
+<td>OpenHands Plugin System</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Нет Capability Discovery</strong></td>
+<td>MEDIUM</td>
+<td>Semantic Kernel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Нет Workflow Engine</strong></td>
+<td>CRITICAL</td>
+<td>CrewAI Flows</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Нет Scheduler</strong></td>
+<td>HIGH</td>
+<td>OpenClaw Cron</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Observability без Cost Tracking</strong></td>
+<td>MEDIUM</td>
+<td>OTEL GenAI Conventions</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Нет Sandbox System</strong></td>
+<td>CRITICAL</td>
+<td>OpenHands Runtime</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Нет Model Router</strong></td>
+<td>HIGH</td>
+<td>MTRouter</td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>Нет Self-Reflection</strong></td>
+<td>HIGH</td>
+<td>Hermes skill_manage</td>
+</tr>
+<tr>
+<td>17</td>
+<td><strong>Security без Prompt Injection Taxonomy</strong></td>
+<td>HIGH</td>
+<td>OpenClaw Trusted Tool Policy</td>
+</tr>
+<tr>
+<td>18</td>
+<td><strong>Нет Multi-Agent Coordination</strong></td>
+<td>CRITICAL</td>
+<td>AutoGen Conversation Pattern</td>
+</tr>
+<tr>
+<td>19</td>
+<td><strong>Нет Governance</strong></td>
+<td>HIGH</td>
+<td>Microsoft Agent Governance</td>
+</tr>
+<tr>
+<td>20</td>
+<td><strong>Нет Enterprise Readiness</strong></td>
+<td>HIGH</td>
+<td>Temporal HA</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. СРАВНЕНИЕ С ФРЕЙМВОРКАМИ</h2>
+<h3 id="21-langgraph">2.1 Сравнение с LangGraph</h3>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>LangGraph</th>
+<th>v4.5.0</th>
+<th>v5.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>State Machine</strong></td>
+<td>✅ Typed State + Reducers</td>
+<td>❌ Нет</td>
+<td>✅ AgentState FSM</td>
+</tr>
+<tr>
+<td><strong>Checkpointing</strong></td>
+<td>✅ MemorySaver + PostgresSaver</td>
+<td>❌ Нет</td>
+<td>✅ CheckpointStore</td>
+</tr>
+<tr>
+<td><strong>Middleware</strong></td>
+<td>✅ before_model, modify_model_request, after_model</td>
+<td>❌ Нет</td>
+<td>✅ MiddlewarePipeline</td>
+</tr>
+<tr>
+<td><strong>Interrupt/Resume</strong></td>
+<td>✅ Human-in-the-loop</td>
+<td>❌ Нет</td>
+<td>✅ Durable Execution</td>
+</tr>
+<tr>
+<td><strong>Branching</strong></td>
+<td>✅ Conditional Edges</td>
+<td>❌ Нет</td>
+<td>✅ Workflow Engine</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вывод</strong>: LangGraph вводит state machine + checkpointing, которых нет в v4.5.0 [[2]].</p>
+<h3 id="22-langchain">2.2 Сравнение с LangChain</h3>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>LangChain</th>
+<th>v4.5.0</th>
+<th>v5.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Runnable Interface</strong></td>
+<td>✅ invoke/ainvoke/stream/batch</td>
+<td>❌ Нет</td>
+<td>✅ Runnable Protocol</td>
+</tr>
+<tr>
+<td><strong>Callbacks</strong></td>
+<td>✅ before_llm, after_tool, on_retry</td>
+<td>❌ Нет</td>
+<td>✅ CallbackManager</td>
+</tr>
+<tr>
+<td><strong>Middleware v1.0</strong></td>
+<td>✅ AgentMiddleware</td>
+<td>❌ Нет</td>
+<td>✅ Middleware Chain</td>
+</tr>
+<tr>
+<td><strong>LCEL Composition</strong></td>
+<td>✅ RunnableSequence</td>
+<td>❌ Нет</td>
+<td>✅ Pipeline Composition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вывод</strong>: LangChain предоставляет единый интерфейс Runnable для всех компонентов [[11]].</p>
+<h3 id="23-crewai">2.3 Сравнение с CrewAI</h3>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>CrewAI</th>
+<th>v4.5.0</th>
+<th>v5.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flows</strong></td>
+<td>✅ @start, @listen, @router</td>
+<td>❌ Нет</td>
+<td>✅ Workflow Engine</td>
+</tr>
+<tr>
+<td><strong>Event-Driven</strong></td>
+<td>✅ Decorator-based</td>
+<td>⚠️ EventBus только</td>
+<td>✅ Event Sourcing</td>
+</tr>
+<tr>
+<td><strong>Typed State</strong></td>
+<td>✅ Pydantic BaseModel</td>
+<td>❌ dict</td>
+<td>✅ TypedDict</td>
+</tr>
+<tr>
+<td><strong>Conditional Logic</strong></td>
+<td>✅ or_, and_</td>
+<td>❌ Нет</td>
+<td>✅ Branch/Merge</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вывод</strong>: CrewAI Flows используют декораторы для event-driven оркестрации [[85]].</p>
+<h3 id="24-openhands">2.4 Сравнение с OpenHands</h3>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>OpenHands</th>
+<th>v4.5.0</th>
+<th>v5.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sandbox</strong></td>
+<td>✅ Docker Runtime + Isolation</td>
+<td>❌ Нет</td>
+<td>✅ ExecutionSandbox</td>
+</tr>
+<tr>
+<td><strong>Plugin SDK</strong></td>
+<td>✅ install/load/enable/disable/uninstall</td>
+<td>❌ Нет</td>
+<td>✅ PluginManager</td>
+</tr>
+<tr>
+<td><strong>Skills</strong></td>
+<td>✅ Markdown + YAML frontmatter</td>
+<td>❌ Нет</td>
+<td>✅ SkillRegistry</td>
+</tr>
+<tr>
+<td><strong>Resource Limits</strong></td>
+<td>✅ CPU/Memory/Network</td>
+<td>❌ Нет</td>
+<td>✅ ResourceQuotas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вывод</strong>: OpenHands использует Docker Runtime для изолированного выполнения [[27]].</p>
+<h3 id="25-openclaw">2.5 Сравнение с OpenClaw</h3>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>OpenClaw</th>
+<th>v4.5.0</th>
+<th>v5.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plugin API</strong></td>
+<td>✅ OpenClawPluginApi</td>
+<td>❌ Нет</td>
+<td>✅ PluginSDK</td>
+</tr>
+<tr>
+<td><strong>Hooks</strong></td>
+<td>✅ before_tool_call, message_sending</td>
+<td>❌ Нет</td>
+<td>✅ LifecycleHooks</td>
+</tr>
+<tr>
+<td><strong>Session State</strong></td>
+<td>✅ registerSessionExtension</td>
+<td>❌ Нет</td>
+<td>✅ SessionStore</td>
+</tr>
+<tr>
+<td><strong>Scheduler</strong></td>
+<td>✅ scheduleSessionTurn</td>
+<td>❌ Нет</td>
+<td>✅ Scheduler</td>
+</tr>
+<tr>
+<td><strong>Trusted Tool Policy</strong></td>
+<td>✅ registerTrustedToolPolicy</td>
+<td>❌ Нет</td>
+<td>✅ ToolPolicy</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вывод</strong>: OpenClaw предоставляет typed contracts для плагинов через OpenClawPluginApi [[140]].</p>
+<h3 id="26-hermes">2.6 Сравнение с Hermes</h3>
+<table>
+<thead>
+<tr>
+<th>Аспект</th>
+<th>Hermes</th>
+<th>v4.5.0</th>
+<th>v5.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Self-Reflection</strong></td>
+<td>✅ skill_manage tool</td>
+<td>❌ Нет</td>
+<td>✅ ReflectionAgent</td>
+</tr>
+<tr>
+<td><strong>Memory Manager</strong></td>
+<td>✅ SQLite + FTS5</td>
+<td>⚠️ Basic</td>
+<td>✅ MemorySystemV2</td>
+</tr>
+<tr>
+<td><strong>Plugin Hooks</strong></td>
+<td>✅ pre_llm, post_tool, session_start</td>
+<td>❌ Нет</td>
+<td>✅ PluginLifecycle</td>
+</tr>
+<tr>
+<td><strong>Tools Registry</strong></td>
+<td>✅ Self-registering + availability</td>
+<td>⚠️ ToolRegistry</td>
+<td>✅ EnhancedRegistry</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вывод</strong>: Hermes использует self-reflection через skill_manage для обучения на опыте [[50]].</p>
+<hr />
+<h2 id="3-500">3. ПОЛНЫЙ МАНИФЕСТ 5.0.0</h2>
+<p>```python</p>
+<h1 id="_1">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="-llm-">МАНИФЕСТ-КОНСТРУКТОР МУЛЬТИАГЕНТНЫХ LLM-СИСТЕМ</h1>
+<h1 id="version-500-enterprise-platform">VERSION: 5.0.0 (ENTERPRISE PLATFORM)</h1>
+<h1 id="date-2026-07-01">DATE: 2026-07-01</h1>
+<h1 id="status-production-ready-durable-secure-observable-extensible">STATUS: PRODUCTION-READY | DURABLE | SECURE | OBSERVABLE | EXTENSIBLE</h1>
+<h1 id="_2">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="_3">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="0-500">## 0. ФИЛОСОФИЯ 5.0.0</h1>
+<h1 id="_4">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="500-enterprise-platform">5.0.0 — это enterprise platform для мультиагентных систем:</h1>
+<h1 id="-stateful-lifecycle-checkpointing">- Stateful: каждый агент имеет явный lifecycle и checkpointing</h1>
+<h1 id="-composable-runnable-interface">- Composable: Runnable interface для всех компонентов</h1>
+<h1 id="-extensible-plugin-sdk-lifecycle">- Extensible: Plugin SDK с полным lifecycle</h1>
+<h1 id="-durable-durable-execution-acknack-idempotency">- Durable: Durable Execution с ACK/NACK и idempotency</h1>
+<h1 id="-observable-otel-genai-semantic-conventions">- Observable: OTEL GenAI semantic conventions</h1>
+<h1 id="-secure-zero-trust-prompt-injection-protection">- Secure: Zero-trust + Prompt Injection Protection</h1>
+<h1 id="-governed-audit-trail-decision-history-compliance">- Governed: Audit trail + Decision history + Compliance</h1>
+<h1 id="vs-450">Ключевые улучшения vs 4.5.0:</h1>
+<h1 id="agent-lifecycle-state-machine">+ Agent Lifecycle (State Machine)</h1>
+<h1 id="runnable-interface-invokestreambatch">+ Runnable Interface (invoke/stream/batch)</h1>
+<h1 id="middleware-pipeline-beforeafter-hooks">+ Middleware Pipeline (before/after hooks)</h1>
+<h1 id="callback-system-12-hooks">+ Callback System (12+ hooks)</h1>
+<h1 id="typed-state-pydantic-v2">+ Typed State (Pydantic v2)</h1>
+<h1 id="checkpointing-resumeinterruptrollback">+ Checkpointing (Resume/Interrupt/Rollback)</h1>
+<h1 id="durable-execution-v2-acknackidempotency">+ Durable Execution v2 (ACK/NACK/Idempotency)</h1>
+<h1 id="memory-system-v2-shortlongepisodicsemantic">+ Memory System v2 (Short/Long/Episodic/Semantic)</h1>
+<h1 id="plugin-sdk-installloadenabledisableuninstall">+ Plugin SDK (install/load/enable/disable/uninstall)</h1>
+<h1 id="capability-discovery">+ Capability Discovery</h1>
+<h1 id="workflow-engine-branchmergeparallelsaga">+ Workflow Engine (Branch/Merge/Parallel/Saga)</h1>
+<h1 id="scheduler-crondelayedrecurring">+ Scheduler (Cron/Delayed/Recurring)</h1>
+<h1 id="observability-v2-costtokenlatency-tracking">+ Observability v2 (Cost/Token/Latency Tracking)</h1>
+<h1 id="sandbox-system-docker-isolation">+ Sandbox System (Docker Isolation)</h1>
+<h1 id="model-router-costlatencyfallback">+ Model Router (Cost/Latency/Fallback)</h1>
+<h1 id="self-reflection-criticevaluator">+ Self-Reflection (Critic/Evaluator)</h1>
+<h1 id="security-v3-prompt-injection-taxonomy">+ Security v3 (Prompt Injection Taxonomy)</h1>
+<h1 id="multi-agent-coordination-coordinatorarbiter">+ Multi-Agent Coordination (Coordinator/Arbiter)</h1>
+<h1 id="governance-auditcompliancerisk">+ Governance (Audit/Compliance/Risk)</h1>
+<h1 id="enterprise-readiness-hascalingdr">+ Enterprise Readiness (HA/Scaling/DR)</h1>
+<h1 id="_5">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="1-agent-lifecycle-state-machine">## 1. AGENT LIFECYCLE (STATE MACHINE)</h1>
+<h1 id="_6">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="langgraph-state-machine">Источник: LangGraph State Machine</h1>
+<h1 id="pauseresumeinterrupt">Зачем: Явное управление состоянием агента, возможность pause/resume/interrupt</h1>
+<h1 id="recovery">Преимущества: Предсказуемость, отладка, recovery</h1>
+<h1 id="overhead-transitions">Риски: Сложность реализации, overhead на transitions</h1>
+<p>from enum import Enum
+from typing import Optional, Dict, Any, List
+from dataclasses import dataclass, field
+from datetime import datetime
+import asyncio</p>
+<p>class AgentState(Enum):
+    """Состояния жизненного цикла агента"""
+    INIT = "init"                    # Инициализация
+    PLAN = "plan"                    # Планирование
+    REASON = "reason"                # Рассуждение
+    ACT = "act"                      # Выполнение действия
+    OBSERVE = "observe"              # Наблюдение за результатом
+    REFLECT = "reflect"              # Самоанализ
+    LEARN = "learn"                  # Обучение на опыте
+    COMPLETE = "complete"            # Успешное завершение
+    FAILED = "failed"                # Ошибка
+    INTERRUPTED = "interrupted"      # Прервано (human-in-the-loop)
+    PAUSED = "paused"                # Пауза (checkpoint)
+    RESUMED = "resumed"              # Возобновлено</p>
+<p>@dataclass
+class StateTransition:
+    """Переход между состояниями"""
+    from_state: AgentState
+    to_state: AgentState
+    condition: Optional[str] = None
+    timestamp: datetime = field(default_factory=datetime.utcnow)
+    metadata: Dict[str, Any] = field(default_factory=dict)</p>
+<p>class AgentLifecycle:
+    """
+    State Machine для управления жизненным циклом агента.
+    Вдохновлено LangGraph State Machine.
+    """</p>
+<pre><code># Допустимые переходы
+VALID_TRANSITIONS = {
+    AgentState.INIT: [AgentState.PLAN, AgentState.FAILED],
+    AgentState.PLAN: [AgentState.REASON, AgentState.INTERRUPTED, AgentState.FAILED],
+    AgentState.REASON: [AgentState.ACT, AgentState.REFLECT, AgentState.FAILED],
+    AgentState.ACT: [AgentState.OBSERVE, AgentState.INTERRUPTED, AgentState.FAILED],
+    AgentState.OBSERVE: [AgentState.REFLECT, AgentState.REASON, AgentState.COMPLETE, AgentState.FAILED],
+    AgentState.REFLECT: [AgentState.LEARN, AgentState.REASON, AgentState.FAILED],
+    AgentState.LEARN: [AgentState.REASON, AgentState.COMPLETE, AgentState.FAILED],
+    AgentState.COMPLETE: [],  # Terminal state
+    AgentState.FAILED: [AgentState.INIT],  # Retry
+    AgentState.INTERRUPTED: [AgentState.RESUMED, AgentState.FAILED],
+    AgentState.PAUSED: [AgentState.RESUMED, AgentState.FAILED],
+    AgentState.RESUMED: [AgentState.REASON, AgentState.PLAN],
+}
+
+def __init__(self, agent_id: str):
+    self.agent_id = agent_id
+    self.current_state = AgentState.INIT
+    self.history: List[StateTransition] = []
+    self._lock = asyncio.Lock()
+
+async def transition(self, to_state: AgentState, metadata: Dict[str, Any] = None) -&gt; bool:
+    """Выполнить переход в новое состояние"""
+    async with self._lock:
+        if to_state not in self.VALID_TRANSITIONS.get(self.current_state, []):
+            raise ValueError(
+                f"Invalid transition: {self.current_state} -&gt; {to_state}"
+            )
+
+        transition = StateTransition(
+            from_state=self.current_state,
+            to_state=to_state,
+            metadata=metadata or {}
+        )
+
+        self.history.append(transition)
+        self.current_state = to_state
+
+        return True
+
+def can_transition(self, to_state: AgentState) -&gt; bool:
+    """Проверить возможность перехода"""
+    return to_state in self.VALID_TRANSITIONS.get(self.current_state, [])
+
+def get_history(self) -&gt; List[Dict[str, Any]]:
+    """Получить историю переходов"""
+    return [
+        {
+            "from": t.from_state.value,
+            "to": t.to_state.value,
+            "timestamp": t.timestamp.isoformat(),
+            "metadata": t.metadata
+        }
+        for t in self.history
+    ]
+</code></pre>
+<h1 id="_7">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="2-runnable-interface">## 2. RUNNABLE INTERFACE</h1>
+<h1 id="_8">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="langchain-runnable">Источник: LangChain Runnable</h1>
+<h1 id="agent-tool-workflow-memory">Зачем: Единый интерфейс для всех компонентов (Agent, Tool, Workflow, Memory)</h1>
+<h1 id="_9">Преимущества: Композиция, переиспользование, тестирование</h1>
+<h1 id="_10">Риски: Абстракция может скрывать детали</h1>
+<p>from abc import ABC, abstractmethod
+from typing import TypeVar, Generic, AsyncIterator, List, Any
+import asyncio</p>
+<p>T = TypeVar('T')
+R = TypeVar('R')</p>
+<p>class Runnable(Generic[T, R], ABC):
+    """
+    Единый интерфейс для всех исполняемых компонентов.
+    Вдохновлено LangChain Runnable.
+    """</p>
+<pre><code>@abstractmethod
+async def invoke(self, input: T, config: Dict[str, Any] = None) -&gt; R:
+    """Выполнить синхронно (один вход → один выход)"""
+    pass
+
+@abstractmethod
+async def ainvoke(self, input: T, config: Dict[str, Any] = None) -&gt; R:
+    """Выполнить асинхронно"""
+    pass
+
+@abstractmethod
+async def stream(self, input: T, config: Dict[str, Any] = None) -&gt; AsyncIterator[R]:
+    """Потоковое выполнение"""
+    pass
+
+@abstractmethod
+async def batch(self, inputs: List[T], config: Dict[str, Any] = None) -&gt; List[R]:
+    """Batch выполнение"""
+    pass
+
+def __or__(self, other: 'Runnable[R, Any]') -&gt; 'RunnableSequence':
+    """Композиция: self | other"""
+    return RunnableSequence([self, other])
+
+def __ror__(self, other: 'Runnable[Any, T]') -&gt; 'RunnableSequence':
+    """Композиция: other | self"""
+    return RunnableSequence([other, self])
+</code></pre>
+<p>class RunnableSequence(Runnable[T, R]):
+    """Последовательность Runnable компонентов"""</p>
+<pre><code>def __init__(self, steps: List[Runnable]):
+    self.steps = steps
+
+async def invoke(self, input: T, config: Dict[str, Any] = None) -&gt; R:
+    result = input
+    for step in self.steps:
+        result = await step.invoke(result, config)
+    return result
+
+async def ainvoke(self, input: T, config: Dict[str, Any] = None) -&gt; R:
+    return await self.invoke(input, config)
+
+async def stream(self, input: T, config: Dict[str, Any] = None) -&gt; AsyncIterator[R]:
+    result = input
+    for i, step in enumerate(self.steps):
+        if i == len(self.steps) - 1:
+            async for chunk in step.stream(result, config):
+                yield chunk
+        else:
+            result = await step.invoke(result, config)
+
+async def batch(self, inputs: List[T], config: Dict[str, Any] = None) -&gt; List[R]:
+    results = inputs
+    for step in self.steps:
+        results = await step.batch(results, config)
+    return results
+</code></pre>
+<p>class RunnableParallel(Runnable[T, Dict[str, R]]):
+    """Параллельное выполнение Runnable компонентов"""</p>
+<pre><code>def __init__(self, **kwargs: Runnable[T, R]):
+    self.steps = kwargs
+
+async def invoke(self, input: T, config: Dict[str, Any] = None) -&gt; Dict[str, R]:
+    tasks = {
+        name: step.ainvoke(input, config)
+        for name, step in self.steps.items()
+    }
+    results = await asyncio.gather(*tasks.values())
+    return dict(zip(tasks.keys(), results))
+
+async def ainvoke(self, input: T, config: Dict[str, Any] = None) -&gt; Dict[str, R]:
+    return await self.invoke(input, config)
+
+async def stream(self, input: T, config: Dict[str, Any] = None) -&gt; AsyncIterator[Dict[str, R]]:
+    result = await self.invoke(input, config)
+    yield result
+
+async def batch(self, inputs: List[T], config: Dict[str, Any] = None) -&gt; List[Dict[str, R]]:
+    return [await self.invoke(inp, config) for inp in inputs]
+</code></pre>
+<h1 id="_11">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="3-middleware-pipeline">## 3. MIDDLEWARE PIPELINE</h1>
+<h1 id="_12">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="langchain-v10-middleware">Источник: LangChain v1.0 Middleware</h1>
+<h1 id="before_model-after_model">Зачем: Перехват выполнения на ключевых точках (before_model, after_model)</h1>
+<h1 id="aop">Преимущества: Модульность, переиспользование, AOP</h1>
+<h1 id="performance-overhead">Риски: Performance overhead, сложность отладки</h1>
+<p>from typing import Callable, Awaitable
+from abc import ABC, abstractmethod</p>
+<p>@dataclass
+class ModelRequest:
+    """Запрос к модели"""
+    model: str
+    messages: List[Dict[str, str]]
+    tools: List[Dict[str, Any]]
+    system_prompt: str
+    temperature: float = 0.7
+    max_tokens: int = 4096
+    response_format: Optional[Any] = None</p>
+<p>@dataclass
+class AgentState:
+    """Состояние агента"""
+    messages: List[Dict[str, str]]
+    metadata: Dict[str, Any] = field(default_factory=dict)</p>
+<p>class AgentMiddleware(ABC):
+    """
+    Базовый класс для middleware.
+    Вдохновлено LangChain AgentMiddleware.
+    """</p>
+<pre><code>async def before_model(self, state: AgentState) -&gt; Optional[Dict[str, Any]]:
+    """Вызывается перед вызовом модели"""
+    return None
+
+async def modify_model_request(
+    self, 
+    request: ModelRequest, 
+    state: AgentState
+) -&gt; ModelRequest:
+    """Модифицирует запрос к модели"""
+    return request
+
+async def after_model(self, state: AgentState) -&gt; Optional[Dict[str, Any]]:
+    """Вызывается после вызова модели"""
+    return None
+</code></pre>
+<p>class MiddlewarePipeline:
+    """
+    Pipeline для выполнения middleware.
+    Порядок выполнения:
+    1. before_model (A → B → C)
+    2. modify_model_request (A → B → C)
+    3. [Model Call]
+    4. after_model (C → B → A) - обратный порядок
+    """</p>
+<pre><code>def __init__(self, middlewares: List[AgentMiddleware]):
+    self.middlewares = middlewares
+
+async def execute_before_model(self, state: AgentState) -&gt; AgentState:
+    """Выполнить before_model для всех middleware"""
+    for middleware in self.middlewares:
+        result = await middleware.before_model(state)
+        if result:
+            if "jump_to" in result:
+                return result  # Early exit
+            state.messages.extend(result.get("messages", []))
+    return state
+
+async def execute_modify_request(
+    self, 
+    request: ModelRequest, 
+    state: AgentState
+) -&gt; ModelRequest:
+    """Модифицировать запрос через все middleware"""
+    for middleware in self.middlewares:
+        request = await middleware.modify_model_request(request, state)
+    return request
+
+async def execute_after_model(self, state: AgentState) -&gt; AgentState:
+    """Выполнить after_model в обратном порядке"""
+    for middleware in reversed(self.middlewares):
+        result = await middleware.after_model(state)
+        if result:
+            if "jump_to" in result:
+                return result
+            state.messages.extend(result.get("messages", []))
+    return state
+</code></pre>
+<h1 id="middleware">Примеры middleware</h1>
+<p>class LoggingMiddleware(AgentMiddleware):
+    """Логирование всех операций"""</p>
+<pre><code>async def before_model(self, state: AgentState) -&gt; None:
+    print(f"[LOG] Before model: {len(state.messages)} messages")
+
+async def after_model(self, state: AgentState) -&gt; None:
+    print(f"[LOG] After model: {len(state.messages)} messages")
+</code></pre>
+<p>class SecurityMiddleware(AgentMiddleware):
+    """Проверка безопасности"""</p>
+<pre><code>async def before_model(self, state: AgentState) -&gt; None:
+    # Проверка на prompt injection
+    last_message = state.messages[-1]["content"] if state.messages else ""
+    if "ignore previous" in last_message.lower():
+        raise ValueError("Prompt injection detected")
+
+async def modify_model_request(
+    self, 
+    request: ModelRequest, 
+    state: AgentState
+) -&gt; ModelRequest:
+    # Маскировка PII
+    from core.security.dlp import SmartPIIDetector
+    detector = SmartPIIDetector()
+    for msg in request.messages:
+        msg["content"], _ = detector.mask(msg["content"])
+    return request
+</code></pre>
+<p>class RateLimitMiddleware(AgentMiddleware):
+    """Rate limiting"""</p>
+<pre><code>def __init__(self, max_calls: int = 100, period: float = 60.0):
+    self.max_calls = max_calls
+    self.period = period
+    self.calls = []
+
+async def before_model(self, state: AgentState) -&gt; None:
+    now = asyncio.get_event_loop().time()
+    self.calls = [t for t in self.calls if now - t &lt; self.period]
+
+    if len(self.calls) &gt;= self.max_calls:
+        raise ValueError("Rate limit exceeded")
+
+    self.calls.append(now)
+</code></pre>
+<p>class CacheMiddleware(AgentMiddleware):
+    """Кэширование результатов"""</p>
+<pre><code>def __init__(self):
+    self.cache = {}
+
+async def before_model(self, state: AgentState) -&gt; Optional[Dict[str, Any]]:
+    # Проверка кэша
+    key = str(state.messages[-1])
+    if key in self.cache:
+        return {"messages": [{"role": "assistant", "content": self.cache[key]}]}
+    return None
+
+async def after_model(self, state: AgentState) -&gt; None:
+    # Сохранение в кэш
+    if state.messages:
+        key = str(state.messages[-2])  # Предыдущее сообщение
+        value = state.messages[-1]["content"]
+        self.cache[key] = value
+</code></pre>
+<p>class MetricsMiddleware(AgentMiddleware):
+    """Сбор метрик"""</p>
+<pre><code>async def before_model(self, state: AgentState) -&gt; None:
+    state.metadata["start_time"] = asyncio.get_event_loop().time()
+
+async def after_model(self, state: AgentState) -&gt; None:
+    start_time = state.metadata.get("start_time")
+    if start_time:
+        duration = asyncio.get_event_loop().time() - start_time
+        state.metadata["latency_ms"] = duration * 1000
+</code></pre>
+<h1 id="_13">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="4-callback-system">## 4. CALLBACK SYSTEM</h1>
+<h1 id="_14">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="langchain-callbacks">Источник: LangChain Callbacks</h1>
+<h1 id="_15">Зачем: Наблюдение за всеми событиями в системе</h1>
+<h1 id="observability-debugging-monitoring">Преимущества: Observability, debugging, monitoring</h1>
+<h1 id="overhead">Риски: Overhead, сложность управления подписчиками</h1>
+<p>from typing import Callable, Awaitable, List, Dict, Any
+from abc import ABC, abstractmethod
+import asyncio</p>
+<p>class BaseCallbackHandler(ABC):
+    """Базовый класс для callback handlers"""</p>
+<pre><code>async def on_llm_start(self, serialized: Dict[str, Any], prompts: List[str]) -&gt; None:
+    """Перед вызовом LLM"""
+    pass
+
+async def on_llm_end(self, response: Any) -&gt; None:
+    """После вызова LLM"""
+    pass
+
+async def on_llm_error(self, error: Exception) -&gt; None:
+    """Ошибка LLM"""
+    pass
+
+async def on_tool_start(self, serialized: Dict[str, Any], input_str: str) -&gt; None:
+    """Перед вызовом инструмента"""
+    pass
+
+async def on_tool_end(self, output: str) -&gt; None:
+    """После вызова инструмента"""
+    pass
+
+async def on_tool_error(self, error: Exception) -&gt; None:
+    """Ошибка инструмента"""
+    pass
+
+async def on_agent_start(self, serialized: Dict[str, Any], inputs: Dict[str, Any]) -&gt; None:
+    """Перед началом работы агента"""
+    pass
+
+async def on_agent_end(self, outputs: Dict[str, Any]) -&gt; None:
+    """После завершения работы агента"""
+    pass
+
+async def on_retry(self, retry_state: Dict[str, Any]) -&gt; None:
+    """При повторной попытке"""
+    pass
+
+async def on_stream(self, chunk: Any) -&gt; None:
+    """При потоковой передаче"""
+    pass
+</code></pre>
+<p>class CallbackManager:
+    """
+    Менеджер callback'ов.
+    Вдохновлено LangChain CallbackManager.
+    """</p>
+<pre><code>def __init__(self):
+    self.handlers: List[BaseCallbackHandler] = []
+
+def add_handler(self, handler: BaseCallbackHandler) -&gt; None:
+    """Добавить handler"""
+    self.handlers.append(handler)
+
+def remove_handler(self, handler: BaseCallbackHandler) -&gt; None:
+    """Удалить handler"""
+    self.handlers.remove(handler)
+
+async def on_llm_start(self, serialized: Dict[str, Any], prompts: List[str]) -&gt; None:
+    """Уведомить о начале LLM"""
+    await asyncio.gather(*[
+        handler.on_llm_start(serialized, prompts)
+        for handler in self.handlers
+    ])
+
+async def on_llm_end(self, response: Any) -&gt; None:
+    """Уведомить о завершении LLM"""
+    await asyncio.gather(*[
+        handler.on_llm_end(response)
+        for handler in self.handlers
+    ])
+
+async def on_tool_start(self, serialized: Dict[str, Any], input_str: str) -&gt; None:
+    """Уведомить о начале инструмента"""
+    await asyncio.gather(*[
+        handler.on_tool_start(serialized, input_str)
+        for handler in self.handlers
+    ])
+
+async def on_tool_end(self, output: str) -&gt; None:
+    """Уведомить о завершении инструмента"""
+    await asyncio.gather(*[
+        handler.on_tool_end(output)
+        for handler in self.handlers
+    ])
+
+async def on_agent_start(self, serialized: Dict[str, Any], inputs: Dict[str, Any]) -&gt; None:
+    """Уведомить о начале агента"""
+    await asyncio.gather(*[
+        handler.on_agent_start(serialized, inputs)
+        for handler in self.handlers
+    ])
+
+async def on_agent_end(self, outputs: Dict[str, Any]) -&gt; None:
+    """Уведомить о завершении агента"""
+    await asyncio.gather(*[
+        handler.on_agent_end(outputs)
+        for handler in self.handlers
+    ])
+</code></pre>
+<h1 id="callback-handler">Пример callback handler</h1>
+<p>class LoggingCallbackHandler(BaseCallbackHandler):
+    """Логирование всех событий"""</p>
+<pre><code>async def on_llm_start(self, serialized: Dict[str, Any], prompts: List[str]) -&gt; None:
+    print(f"[CALLBACK] LLM Start: {serialized.get('name', 'unknown')}")
+
+async def on_llm_end(self, response: Any) -&gt; None:
+    print(f"[CALLBACK] LLM End: {response}")
+
+async def on_tool_start(self, serialized: Dict[str, Any], input_str: str) -&gt; None:
+    print(f"[CALLBACK] Tool Start: {serialized.get('name', 'unknown')}")
+
+async def on_tool_end(self, output: str) -&gt; None:
+    print(f"[CALLBACK] Tool End: {output[:100]}...")
+</code></pre>
+<p>class MetricsCallbackHandler(BaseCallbackHandler):
+    """Сбор метрик"""</p>
+<pre><code>def __init__(self):
+    self.metrics = {
+        "llm_calls": 0,
+        "tool_calls": 0,
+        "errors": 0
+    }
+
+async def on_llm_start(self, serialized: Dict[str, Any], prompts: List[str]) -&gt; None:
+    self.metrics["llm_calls"] += 1
+
+async def on_tool_start(self, serialized: Dict[str, Any], input_str: str) -&gt; None:
+    self.metrics["tool_calls"] += 1
+
+async def on_llm_error(self, error: Exception) -&gt; None:
+    self.metrics["errors"] += 1
+
+async def on_tool_error(self, error: Exception) -&gt; None:
+    self.metrics["errors"] += 1
+</code></pre>
+<h1 id="_16">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="5-typed-state-pydantic-v2">## 5. TYPED STATE (PYDANTIC V2)</h1>
+<h1 id="_17">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="pydanticai-langgraph">Источник: PydanticAI, LangGraph</h1>
+<h1 id="type-safety-validation-schema-generation">Зачем: Type safety, validation, schema generation</h1>
+<h1 id="ide">Преимущества: Автодокументация, валидация, IDE поддержка</h1>
+<h1 id="overhead_1">Риски: Overhead на валидацию, сложность миграции</h1>
+<p>from pydantic import BaseModel, Field, field_validator
+from typing import Optional, List, Dict, Any, Literal
+from datetime import datetime
+import json</p>
+<p>class AgentStateSchema(BaseModel):
+    """
+    Типизированная схема состояния агента.
+    Вдохновлено PydanticAI и LangGraph.
+    """</p>
+<pre><code># Метаданные
+agent_id: str = Field(..., description="Уникальный идентификатор агента")
+session_id: str = Field(..., description="Идентификатор сессии")
+correlation_id: Optional[str] = Field(None, description="Корреляционный ID для tracing")
+
+# Состояние
+messages: List[Dict[str, str]] = Field(default_factory=list, description="История сообщений")
+current_task: Optional[str] = Field(None, description="Текущая задача")
+lifecycle_state: Literal[
+    "init", "plan", "reason", "act", "observe", 
+    "reflect", "learn", "complete", "failed", 
+    "interrupted", "paused", "resumed"
+] = Field(default="init", description="Состояние lifecycle")
+
+# Memory
+short_term_memory: List[Dict[str, Any]] = Field(
+    default_factory=list, 
+    description="Кратковременная память"
+)
+long_term_memory: List[Dict[str, Any]] = Field(
+    default_factory=list,
+    description="Долговременная память"
+)
+
+# Metadata
+metadata: Dict[str, Any] = Field(default_factory=dict, description="Дополнительные метаданные")
+created_at: datetime = Field(default_factory=datetime.utcnow, description="Время создания")
+updated_at: datetime = Field(default_factory=datetime.utcnow, description="Время обновления")
+
+# Versioning
+schema_version: str = Field(default="1.0.0", description="Версия схемы")
+
+@field_validator('messages')
+@classmethod
+def validate_messages(cls, v):
+    """Валидация структуры сообщений"""
+    for msg in v:
+        if "role" not in msg or "content" not in msg:
+            raise ValueError("Each message must have 'role' and 'content'")
+        if msg["role"] not in ["system", "user", "assistant", "tool"]:
+            raise ValueError(f"Invalid role: {msg['role']}")
+    return v
+
+def to_json(self) -&gt; str:
+    """Сериализация в JSON"""
+    return self.model_dump_json()
+
+@classmethod
+def from_json(cls, json_str: str) -&gt; 'AgentStateSchema':
+    """Десериализация из JSON"""
+    return cls.model_validate_json(json_str)
+</code></pre>
+<p>class StateMigration:
+    """Миграция между версиями схемы"""</p>
+<pre><code>MIGRATIONS = {
+    "1.0.0": lambda state: state,  # No-op
+    "1.1.0": lambda state: {**state, "new_field": "default"},
+}
+
+@classmethod
+def migrate(cls, state: Dict[str, Any], from_version: str, to_version: str) -&gt; Dict[str, Any]:
+    """Выполнить миграцию"""
+    current_version = from_version
+
+    while current_version != to_version:
+        if current_version not in cls.MIGRATIONS:
+            raise ValueError(f"No migration from {current_version}")
+
+        state = cls.MIGRATIONS[current_version](state)
+        current_version = cls._next_version(current_version)
+
+    return state
+
+@classmethod
+def _next_version(cls, version: str) -&gt; str:
+    """Получить следующую версию"""
+    versions = list(cls.MIGRATIONS.keys())
+    idx = versions.index(version)
+    if idx + 1 &gt;= len(versions):
+        return version
+    return versions[idx + 1]
+</code></pre>
+<h1 id="_18">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="6-checkpointing">## 6. CHECKPOINTING</h1>
+<h1 id="_19">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="langgraph-checkpointer">Источник: LangGraph Checkpointer</h1>
+<h1 id="persistence-resume-interrupt-recovery">Зачем: Persistence, resume, interrupt, recovery</h1>
+<h1 id="durable-execution-human-in-the-loop">Преимущества: Durable execution, human-in-the-loop</h1>
+<h1 id="storage-overhead-consistency">Риски: Storage overhead, consistency</h1>
+<p>from abc import ABC, abstractmethod
+from typing import Optional, Dict, Any, List
+from dataclasses import dataclass, field
+from datetime import datetime
+import json
+import asyncio</p>
+<p>@dataclass
+class Checkpoint:
+    """Снимок состояния"""
+    checkpoint_id: str
+    agent_id: str
+    session_id: str
+    state: Dict[str, Any]
+    metadata: Dict[str, Any] = field(default_factory=dict)
+    created_at: datetime = field(default_factory=datetime.utcnow)
+    parent_checkpoint_id: Optional[str] = None</p>
+<p>class CheckpointStore(ABC):
+    """Абстракция для хранения checkpoint'ов"""</p>
+<pre><code>@abstractmethod
+async def save(self, checkpoint: Checkpoint) -&gt; None:
+    """Сохранить checkpoint"""
+    pass
+
+@abstractmethod
+async def load(self, checkpoint_id: str) -&gt; Optional[Checkpoint]:
+    """Загрузить checkpoint"""
+    pass
+
+@abstractmethod
+async def get_latest(self, agent_id: str, session_id: str) -&gt; Optional[Checkpoint]:
+    """Получить последний checkpoint"""
+    pass
+
+@abstractmethod
+async def list_checkpoints(
+    self, 
+    agent_id: str, 
+    session_id: str,
+    limit: int = 10
+) -&gt; List[Checkpoint]:
+    """Список checkpoint'ов"""
+    pass
+
+@abstractmethod
+async def delete(self, checkpoint_id: str) -&gt; None:
+    """Удалить checkpoint"""
+    pass
+</code></pre>
+<p>class InMemoryCheckpointStore(CheckpointStore):
+    """In-memory хранилище (для тестирования)"""</p>
+<pre><code>def __init__(self):
+    self._store: Dict[str, Checkpoint] = {}
+
+async def save(self, checkpoint: Checkpoint) -&gt; None:
+    self._store[checkpoint.checkpoint_id] = checkpoint
+
+async def load(self, checkpoint_id: str) -&gt; Optional[Checkpoint]:
+    return self._store.get(checkpoint_id)
+
+async def get_latest(self, agent_id: str, session_id: str) -&gt; Optional[Checkpoint]:
+    checkpoints = [
+        cp for cp in self._store.values()
+        if cp.agent_id == agent_id and cp.session_id == session_id
+    ]
+    if not checkpoints:
+        return None
+    return max(checkpoints, key=lambda cp: cp.created_at)
+
+async def list_checkpoints(
+    self, 
+    agent_id: str, 
+    session_id: str,
+    limit: int = 10
+) -&gt; List[Checkpoint]:
+    checkpoints = [
+        cp for cp in self._store.values()
+        if cp.agent_id == agent_id and cp.session_id == session_id
+    ]
+    checkpoints.sort(key=lambda cp: cp.created_at, reverse=True)
+    return checkpoints[:limit]
+
+async def delete(self, checkpoint_id: str) -&gt; None:
+    self._store.pop(checkpoint_id, None)
+</code></pre>
+<p>class PostgresCheckpointStore(CheckpointStore):
+    """PostgreSQL хранилище (production)"""</p>
+<pre><code>def __init__(self, connection_string: str):
+    self.connection_string = connection_string
+    self._pool = None
+
+async def _get_pool(self):
+    if self._pool is None:
+        import asyncpg
+        self._pool = await asyncpg.create_pool(self.connection_string)
+    return self._pool
+
+async def save(self, checkpoint: Checkpoint) -&gt; None:
+    pool = await self._get_pool()
+    async with pool.acquire() as conn:
+        await conn.execute(
+            """
+            INSERT INTO checkpoints (
+                checkpoint_id, agent_id, session_id, state, 
+                metadata, created_at, parent_checkpoint_id
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+            """,
+            checkpoint.checkpoint_id,
+            checkpoint.agent_id,
+            checkpoint.session_id,
+            json.dumps(checkpoint.state),
+            json.dumps(checkpoint.metadata),
+            checkpoint.created_at,
+            checkpoint.parent_checkpoint_id
+        )
+
+async def load(self, checkpoint_id: str) -&gt; Optional[Checkpoint]:
+    pool = await self._get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM checkpoints WHERE checkpoint_id = $1",
+            checkpoint_id
+        )
+        if row:
+            return Checkpoint(
+                checkpoint_id=row['checkpoint_id'],
+                agent_id=row['agent_id'],
+                session_id=row['session_id'],
+                state=json.loads(row['state']),
+                metadata=json.loads(row['metadata']),
+                created_at=row['created_at'],
+                parent_checkpoint_id=row['parent_checkpoint_id']
+            )
+    return None
+
+async def get_latest(self, agent_id: str, session_id: str) -&gt; Optional[Checkpoint]:
+    pool = await self._get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """
+            SELECT * FROM checkpoints 
+            WHERE agent_id = $1 AND session_id = $2
+            ORDER BY created_at DESC
+            LIMIT 1
+            """,
+            agent_id,
+            session_id
+        )
+        if row:
+            return Checkpoint(
+                checkpoint_id=row['checkpoint_id'],
+                agent_id=row['agent_id'],
+                session_id=row['session_id'],
+                state=json.loads(row['state']),
+                metadata=json.loads(row['metadata']),
+                created_at=row['created_at'],
+                parent_checkpoint_id=row['parent_checkpoint_id']
+            )
+    return None
+
+async def list_checkpoints(
+    self, 
+    agent_id: str, 
+    session_id: str,
+    limit: int = 10
+) -&gt; List[Checkpoint]:
+    pool = await self._get_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            """
+            SELECT * FROM checkpoints 
+            WHERE agent_id = $1 AND session_id = $2
+            ORDER BY created_at DESC
+            LIMIT $3
+            """,
+            agent_id,
+            session_id,
+            limit
+        )
+        return [
+            Checkpoint(
+                checkpoint_id=row['checkpoint_id'],
+                agent_id=row['agent_id'],
+                session_id=row['session_id'],
+                state=json.loads(row['state']),
+                metadata=json.loads(row['metadata']),
+                created_at=row['created_at'],
+                parent_checkpoint_id=row['parent_checkpoint_id']
+            )
+            for row in rows
+        ]
+
+async def delete(self, checkpoint_id: str) -&gt; None:
+    pool = await self._get_pool()
+    async with pool.acquire() as conn:
+        await conn.execute(
+            "DELETE FROM checkpoints WHERE checkpoint_id = $1",
+            checkpoint_id
+        )
+</code></pre>
+<p>class CheckpointManager:
+    """Менеджер checkpoint'ов"""</p>
+<pre><code>def __init__(self, store: CheckpointStore):
+    self.store = store
+
+async def create_checkpoint(
+    self,
+    agent_id: str,
+    session_id: str,
+    state: Dict[str, Any],
+    metadata: Dict[str, Any] = None,
+    parent_checkpoint_id: Optional[str] = None
+) -&gt; Checkpoint:
+    """Создать новый checkpoint"""
+    import uuid
+
+    checkpoint = Checkpoint(
+        checkpoint_id=str(uuid.uuid4()),
+        agent_id=agent_id,
+        session_id=session_id,
+        state=state,
+        metadata=metadata or {},
+        parent_checkpoint_id=parent_checkpoint_id
+    )
+
+    await self.store.save(checkpoint)
+    return checkpoint
+
+async def restore_checkpoint(self, checkpoint_id: str) -&gt; Optional[Dict[str, Any]]:
+    """Восстановить состояние из checkpoint"""
+    checkpoint = await self.store.load(checkpoint_id)
+    if checkpoint:
+        return checkpoint.state
+    return None
+
+async def interrupt(
+    self,
+    agent_id: str,
+    session_id: str,
+    state: Dict[str, Any],
+    reason: str
+) -&gt; Checkpoint:
+    """Прервать выполнение и сохранить checkpoint"""
+    return await self.create_checkpoint(
+        agent_id=agent_id,
+        session_id=session_id,
+        state={**state, "interrupted": True, "interrupt_reason": reason},
+        metadata={"interrupted": True, "reason": reason}
+    )
+
+async def resume(self, checkpoint_id: str) -&gt; Optional[Dict[str, Any]]:
+    """Возобновить выполнение из checkpoint"""
+    state = await self.restore_checkpoint(checkpoint_id)
+    if state and state.get("interrupted"):
+        state["interrupted"] = False
+        state["resumed"] = True
+    return state
+
+async def rollback(
+    self,
+    agent_id: str,
+    session_id: str,
+    steps: int = 1
+) -&gt; Optional[Dict[str, Any]]:
+    """Откатить состояние на N шагов"""
+    checkpoints = await self.store.list_checkpoints(
+        agent_id=agent_id,
+        session_id=session_id,
+        limit=steps + 1
+    )
+
+    if len(checkpoints) &lt;= steps:
+        return None
+
+    target_checkpoint = checkpoints[steps]
+    return target_checkpoint.state
+
+async def branch(
+    self,
+    checkpoint_id: str,
+    branch_name: str
+) -&gt; Checkpoint:
+    """Создать ветку от checkpoint"""
+    checkpoint = await self.store.load(checkpoint_id)
+    if not checkpoint:
+        raise ValueError(f"Checkpoint {checkpoint_id} not found")
+
+    import uuid
+    branch_checkpoint = Checkpoint(
+        checkpoint_id=str(uuid.uuid4()),
+        agent_id=checkpoint.agent_id,
+        session_id=checkpoint.session_id,
+        state=checkpoint.state.copy(),
+        metadata={**checkpoint.metadata, "branch": branch_name},
+        parent_checkpoint_id=checkpoint.checkpoint_id
+    )
+
+    await self.store.save(branch_checkpoint)
+    return branch_checkpoint
+</code></pre>
+<h1 id="_20">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="7-durable-execution-v2">## 7. DURABLE EXECUTION V2</h1>
+<h1 id="_21">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="temporal-event-bus-patterns">Источник: Temporal, Event Bus patterns</h1>
+<h1 id="exactly-once-semantics-idempotency-backpressure">Зачем: Exactly-once semantics, idempotency, backpressure</h1>
+<h1 id="reliability-recovery-monitoring">Преимущества: Reliability, recovery, monitoring</h1>
+<h1 id="complexity-storage-overhead">Риски: Complexity, storage overhead</h1>
+<p>import asyncio
+from typing import Callable, Awaitable, Optional, Dict, Any, List
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+import hashlib
+import json</p>
+<p>@dataclass
+class DurableEvent:
+    """Durable событие с idempotency"""
+    event_id: str
+    event_type: str
+    source: str
+    payload: Dict[str, Any]
+    idempotency_key: str  # Для deduplication
+    correlation_id: Optional[str] = None
+    priority: int = 0  # 0=normal, 1=high, 2=critical
+    ttl: Optional[timedelta] = None
+    created_at: datetime = field(default_factory=datetime.utcnow)
+    retry_count: int = 0
+    max_retries: int = 3</p>
+<p>class DurableEventBusV2:
+    """
+    Durable Event Bus v2 с ACK/NACK, idempotency, backpressure.
+    Вдохновлено Temporal и Kafka.
+    """</p>
+<pre><code>def __init__(
+    self,
+    max_queue_size: int = 10000,
+    worker_count: int = 3,
+    enable_backpressure: bool = True
+):
+    self._queue: asyncio.PriorityQueue = asyncio.PriorityQueue(maxsize=max_queue_size)
+    self._dlq: asyncio.Queue = asyncio.Queue()
+    self._handlers: Dict[str, List[Callable]] = {}
+    self._workers: List[asyncio.Task] = []
+    self._processed_events: Dict[str, datetime] = {}  # Idempotency cache
+    self._ack_callbacks: Dict[str, Callable] = {}
+    self._nack_callbacks: Dict[str, Callable] = {}
+    self._running = False
+    self._worker_count = worker_count
+    self._enable_backpressure = enable_backpressure
+    self._metrics = {
+        "processed": 0,
+        "failed": 0,
+        "dlq": 0,
+        "duplicates": 0
+    }
+
+def subscribe(self, event_type: str, handler: Callable) -&gt; None:
+    """Подписаться на события"""
+    if event_type not in self._handlers:
+        self._handlers[event_type] = []
+    self._handlers[event_type].append(handler)
+
+def on_ack(self, event_id: str, callback: Callable) -&gt; None:
+    """Регистрация callback для ACK"""
+    self._ack_callbacks[event_id] = callback
+
+def on_nack(self, event_id: str, callback: Callable) -&gt; None:
+    """Регистрация callback для NACK"""
+    self._nack_callbacks[event_id] = callback
+
+async def publish(self, event: DurableEvent) -&gt; bool:
+    """Публикация события с backpressure"""
+    # Проверка idempotency
+    if event.idempotency_key in self._processed_events:
+        self._metrics["duplicates"] += 1
+        return False  # Duplicate
+
+    # Backpressure
+    if self._enable_backpressure and self._queue.full():
+        raise RuntimeError("Queue is full (backpressure)")
+
+    # Приоритет (инвертируем для PriorityQueue)
+    priority = -event.priority
+    await self._queue.put((priority, event))
+    return True
+
+async def _process_event(self, event: DurableEvent) -&gt; bool:
+    """Обработка события с retry"""
+    # Проверка idempotency
+    if event.idempotency_key in self._processed_events:
+        self._metrics["duplicates"] += 1
+        return True
+
+    for attempt in range(event.max_retries):
+        try:
+            handlers = self._handlers.get(event.event_type, [])
+            for handler in handlers:
+                await handler(event)
+
+            # ACK
+            self._processed_events[event.idempotency_key] = datetime.utcnow()
+            self._metrics["processed"] += 1
+
+            if event.event_id in self._ack_callbacks:
+                await self._ack_callbacks[event.event_id](event)
+
+            return True
+
+        except Exception as e:
+            event.retry_count = attempt + 1
+            if attempt &lt; event.max_retries - 1:
+                delay = min(2 ** attempt, 60)
+                await asyncio.sleep(delay)
+
+    # NACK → DLQ
+    self._metrics["failed"] += 1
+    await self._dlq.put(event)
+    self._metrics["dlq"] += 1
+
+    if event.event_id in self._nack_callbacks:
+        await self._nack_callbacks[event.event_id](event, e)
+
+    return False
+
+async def _worker_loop(self) -&gt; None:
+    """Worker loop"""
+    while self._running:
+        try:
+            priority, event = await self._queue.get()
+            await self._process_event(event)
+        except asyncio.CancelledError:
+            break
+        except Exception as e:
+            print(f"Worker error: {e}")
+
+async def start(self) -&gt; None:
+    """Запуск bus"""
+    self._running = True
+    for _ in range(self._worker_count):
+        self._workers.append(asyncio.create_task(self._worker_loop()))
+
+async def stop(self) -&gt; None:
+    """Остановка bus"""
+    self._running = False
+    for worker in self._workers:
+        worker.cancel()
+    await asyncio.gather(*self._workers, return_exceptions=True)
+
+def get_metrics(self) -&gt; Dict[str, int]:
+    """Получить метрики"""
+    return {
+        **self._metrics,
+        "queue_size": self._queue.qsize(),
+        "dlq_size": self._dlq.qsize()
+    }
+
+async def cleanup_idempotency_cache(self, max_age: timedelta = timedelta(hours=1)) -&gt; int:
+    """Очистка idempotency cache"""
+    now = datetime.utcnow()
+    to_remove = [
+        key for key, timestamp in self._processed_events.items()
+        if now - timestamp &gt; max_age
+    ]
+    for key in to_remove:
+        del self._processed_events[key]
+    return len(to_remove)
+</code></pre>
+<h1 id="_22">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="8-memory-system-v2">## 8. MEMORY SYSTEM V2</h1>
+<h1 id="_23">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="hermes-memory-manager-langgraph-memory">Источник: Hermes Memory Manager, LangGraph Memory</h1>
+<h1 id="_24">Зачем: Разные типы памяти для разных сценариев</h1>
+<h1 id="_25">Преимущества: Гибкость, эффективность, контекст</h1>
+<h1 id="storage-overhead">Риски: Сложность, storage overhead</h1>
+<p>from abc import ABC, abstractmethod
+from typing import List, Dict, Any, Optional
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+import asyncio</p>
+<p>@dataclass
+class MemoryItem:
+    """Элемент памяти"""
+    id: str
+    content: str
+    memory_type: str  # short_term, long_term, episodic, semantic, working
+    metadata: Dict[str, Any] = field(default_factory=dict)
+    created_at: datetime = field(default_factory=datetime.utcnow)
+    accessed_at: datetime = field(default_factory=datetime.utcnow)
+    access_count: int = 0
+    ttl: Optional[timedelta] = None
+    importance: float = 0.5  # 0.0 - 1.0</p>
+<p>class MemoryStore(ABC):
+    """Абстракция для хранилища памяти"""</p>
+<pre><code>@abstractmethod
+async def store(self, item: MemoryItem) -&gt; None:
+    """Сохранить элемент"""
+    pass
+
+@abstractmethod
+async def retrieve(self, query: str, limit: int = 10) -&gt; List[MemoryItem]:
+    """Извлечь элементы по запросу"""
+    pass
+
+@abstractmethod
+async def delete(self, item_id: str) -&gt; None:
+    """Удалить элемент"""
+    pass
+
+@abstractmethod
+async def list_items(
+    self, 
+    memory_type: Optional[str] = None,
+    limit: int = 100
+) -&gt; List[MemoryItem]:
+    """Список элементов"""
+    pass
+</code></pre>
+<p>class ShortTermMemory:
+    """Кратковременная память (рабочая память)"""</p>
+<pre><code>def __init__(self, max_size: int = 100, ttl: timedelta = timedelta(minutes=30)):
+    self.max_size = max_size
+    self.ttl = ttl
+    self._items: List[MemoryItem] = []
+    self._lock = asyncio.Lock()
+
+async def add(self, content: str, metadata: Dict[str, Any] = None) -&gt; MemoryItem:
+    """Добавить в кратковременную память"""
+    async with self._lock:
+        import uuid
+        item = MemoryItem(
+            id=str(uuid.uuid4()),
+            content=content,
+            memory_type="short_term",
+            metadata=metadata or {},
+            ttl=self.ttl
+        )
+
+        self._items.append(item)
+
+        # Eviction если превышен размер
+        if len(self._items) &gt; self.max_size:
+            self._items.pop(0)
+
+        return item
+
+async def get_recent(self, limit: int = 10) -&gt; List[MemoryItem]:
+    """Получить недавние элементы"""
+    now = datetime.utcnow()
+    valid_items = [
+        item for item in self._items
+        if item.ttl is None or (now - item.created_at) &lt; item.ttl
+    ]
+    return valid_items[-limit:]
+
+async def clear(self) -&gt; None:
+    """Очистить память"""
+    async with self._lock:
+        self._items.clear()
+</code></pre>
+<p>class LongTermMemory:
+    """Долговременная память"""</p>
+<pre><code>def __init__(self, store: MemoryStore):
+    self.store = store
+
+async def store_memory(
+    self, 
+    content: str, 
+    metadata: Dict[str, Any] = None,
+    importance: float = 0.5
+) -&gt; MemoryItem:
+    """Сохранить в долговременную память"""
+    import uuid
+    item = MemoryItem(
+        id=str(uuid.uuid4()),
+        content=content,
+        memory_type="long_term",
+        metadata=metadata or {},
+        importance=importance
+    )
+
+    await self.store.store(item)
+    return item
+
+async def retrieve(self, query: str, limit: int = 10) -&gt; List[MemoryItem]:
+    """Извлечь из долговременной памяти"""
+    return await self.store.retrieve(query, limit)
+</code></pre>
+<p>class EpisodicMemory:
+    """Эпизодическая память (события, опыт)"""</p>
+<pre><code>def __init__(self, store: MemoryStore):
+    self.store = store
+
+async def record_episode(
+    self,
+    episode_type: str,
+    context: Dict[str, Any],
+    outcome: str,
+    metadata: Dict[str, Any] = None
+) -&gt; MemoryItem:
+    """Записать эпизод"""
+    import uuid
+    content = f"Episode: {episode_type}\nContext: {context}\nOutcome: {outcome}"
+
+    item = MemoryItem(
+        id=str(uuid.uuid4()),
+        content=content,
+        memory_type="episodic",
+        metadata={**(metadata or {}), "episode_type": episode_type, "outcome": outcome}
+    )
+
+    await self.store.store(item)
+    return item
+
+async def retrieve_similar(
+    self,
+    episode_type: str,
+    limit: int = 5
+) -&gt; List[MemoryItem]:
+    """Извлечь похожие эпизоды"""
+    items = await self.store.list_items(memory_type="episodic", limit=100)
+    filtered = [
+        item for item in items
+        if item.metadata.get("episode_type") == episode_type
+    ]
+    return filtered[:limit]
+</code></pre>
+<p>class SemanticMemory:
+    """Семантическая память (факты, знания)"""</p>
+<pre><code>def __init__(self, store: MemoryStore):
+    self.store = store
+
+async def store_fact(
+    self,
+    subject: str,
+    predicate: str,
+    object: str,
+    metadata: Dict[str, Any] = None
+) -&gt; MemoryItem:
+    """Сохранить факт (триплет)"""
+    import uuid
+    content = f"{subject} {predicate} {object}"
+
+    item = MemoryItem(
+        id=str(uuid.uuid4()),
+        content=content,
+        memory_type="semantic",
+        metadata={**(metadata or {}), "subject": subject, "predicate": predicate, "object": object}
+    )
+
+    await self.store.store(item)
+    return item
+
+async def query_facts(
+    self,
+    subject: Optional[str] = None,
+    predicate: Optional[str] = None,
+    object: Optional[str] = None
+) -&gt; List[MemoryItem]:
+    """Запросить факты"""
+    items = await self.store.list_items(memory_type="semantic", limit=1000)
+
+    filtered = items
+    if subject:
+        filtered = [i for i in filtered if i.metadata.get("subject") == subject]
+    if predicate:
+        filtered = [i for i in filtered if i.metadata.get("predicate") == predicate]
+    if object:
+        filtered = [i for i in filtered if i.metadata.get("object") == object]
+
+    return filtered
+</code></pre>
+<p>class WorkingMemory:
+    """Рабочая память (текущий контекст)"""</p>
+<pre><code>def __init__(self, max_size: int = 20):
+    self.max_size = max_size
+    self._context: Dict[str, Any] = {}
+    self._lock = asyncio.Lock()
+
+async def set(self, key: str, value: Any) -&gt; None:
+    """Установить значение"""
+    async with self._lock:
+        self._context[key] = value
+
+        # Eviction если превышен размер
+        if len(self._context) &gt; self.max_size:
+            # Удаляем наименее важное
+            oldest_key = next(iter(self._context))
+            del self._context[oldest_key]
+
+async def get(self, key: str) -&gt; Optional[Any]:
+    """Получить значение"""
+    return self._context.get(key)
+
+async def get_all(self) -&gt; Dict[str, Any]:
+    """Получить весь контекст"""
+    return self._context.copy()
+
+async def clear(self) -&gt; None:
+    """Очистить"""
+    async with self._lock:
+        self._context.clear()
+</code></pre>
+<p>class MemoryManager:
+    """Менеджер памяти (объединяет все типы)"""</p>
+<pre><code>def __init__(self, store: MemoryStore):
+    self.short_term = ShortTermMemory()
+    self.long_term = LongTermMemory(store)
+    self.episodic = EpisodicMemory(store)
+    self.semantic = SemanticMemory(store)
+    self.working = WorkingMemory()
+
+async def add_to_short_term(self, content: str, metadata: Dict[str, Any] = None):
+    return await self.short_term.add(content, metadata)
+
+async def add_to_long_term(
+    self, 
+    content: str, 
+    metadata: Dict[str, Any] = None,
+    importance: float = 0.5
+):
+    return await self.long_term.store_memory(content, metadata, importance)
+
+async def record_episode(
+    self,
+    episode_type: str,
+    context: Dict[str, Any],
+    outcome: str
+):
+    return await self.episodic.record_episode(episode_type, context, outcome)
+
+async def store_fact(self, subject: str, predicate: str, object: str):
+    return await self.semantic.store_fact(subject, predicate, object)
+
+async def set_working_context(self, key: str, value: Any):
+    await self.working.set(key, value)
+
+async def get_context_summary(self) -&gt; Dict[str, Any]:
+    """Получить сводку контекста"""
+    return {
+        "short_term": await self.short_term.get_recent(5),
+        "working": await self.working.get_all()
+    }
+</code></pre>
+<h1 id="_26">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="9-plugin-sdk">## 9. PLUGIN SDK</h1>
+<h1 id="_27">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="openhands-plugin-system-semantic-kernel-plugins">Источник: OpenHands Plugin System, Semantic Kernel Plugins</h1>
+<h1 id="extensibility-modularity-ecosystem">Зачем: Extensibility, modularity, ecosystem</h1>
+<h1 id="community">Преимущества: Переиспользование, community</h1>
+<h1 id="security-compatibility">Риски: Security, compatibility</h1>
+<p>from abc import ABC, abstractmethod
+from typing import List, Dict, Any, Optional, Callable
+from dataclasses import dataclass, field
+from datetime import datetime
+import json
+import os</p>
+<p>@dataclass
+class PluginManifest:
+    """Манифест плагина"""
+    name: str
+    version: str
+    description: str
+    author: str
+    dependencies: List[str] = field(default_factory=list)
+    permissions: List[str] = field(default_factory=list)  # tool_access, memory_access, etc.
+    capabilities: List[str] = field(default_factory=list)  # tools, hooks, skills
+    enabled: bool = True
+    installed_at: datetime = field(default_factory=datetime.utcnow)</p>
+<p>@dataclass
+class PluginInfo:
+    """Информация об установленном плагине"""
+    manifest: PluginManifest
+    path: str
+    enabled: bool = True</p>
+<p>class Plugin(ABC):
+    """Базовый класс для плагина"""</p>
+<pre><code>@abstractmethod
+def register(self, api: 'PluginAPI') -&gt; None:
+    """Регистрация плагина"""
+    pass
+
+@abstractmethod
+def get_manifest(self) -&gt; PluginManifest:
+    """Получить манифест"""
+    pass
+</code></pre>
+<p>class PluginAPI:
+    """API для плагинов"""</p>
+<pre><code>def __init__(self):
+    self._tools: Dict[str, Callable] = {}
+    self._hooks: Dict[str, List[Callable]] = {}
+    self._skills: List[Dict[str, Any]] = []
+
+def register_tool(self, name: str, handler: Callable, schema: Dict[str, Any]) -&gt; None:
+    """Зарегистрировать инструмент"""
+    self._tools[name] = {
+        "handler": handler,
+        "schema": schema
+    }
+
+def register_hook(self, hook_name: str, handler: Callable) -&gt; None:
+    """Зарегистрировать hook"""
+    if hook_name not in self._hooks:
+        self._hooks[hook_name] = []
+    self._hooks[hook_name].append(handler)
+
+def register_skill(self, skill: Dict[str, Any]) -&gt; None:
+    """Зарегистрировать skill"""
+    self._skills.append(skill)
+
+def get_tools(self) -&gt; Dict[str, Dict[str, Any]]:
+    return self._tools
+
+def get_hooks(self) -&gt; Dict[str, List[Callable]]:
+    return self._hooks
+
+def get_skills(self) -&gt; List[Dict[str, Any]]:
+    return self._skills
+</code></pre>
+<p>class PluginManager:
+    """Менеджер плагинов"""</p>
+<pre><code>def __init__(self, plugins_dir: str = "~/.agent/plugins"):
+    self.plugins_dir = os.path.expanduser(plugins_dir)
+    self._plugins: Dict[str, PluginInfo] = {}
+    self._api = PluginAPI()
+
+    # Создаём директорию если не существует
+    os.makedirs(self.plugins_dir, exist_ok=True)
+
+def install(self, plugin_path: str) -&gt; PluginInfo:
+    """Установить плагин"""
+    # Загрузка манифеста
+    manifest_path = os.path.join(plugin_path, "manifest.json")
+    with open(manifest_path, 'r') as f:
+        manifest_data = json.load(f)
+
+    manifest = PluginManifest(**manifest_data)
+
+    # Копирование в plugins_dir
+    import shutil
+    dest_path = os.path.join(self.plugins_dir, manifest.name)
+    if os.path.exists(dest_path):
+        shutil.rmtree(dest_path)
+    shutil.copytree(plugin_path, dest_path)
+
+    # Сохранение info
+    info = PluginInfo(manifest=manifest, path=dest_path, enabled=True)
+    self._plugins[manifest.name] = info
+
+    # Сохранение в installed.json
+    self._save_installed()
+
+    return info
+
+def load(self, plugin_name: str) -&gt; Plugin:
+    """Загрузить плагин"""
+    if plugin_name not in self._plugins:
+        raise ValueError(f"Plugin {plugin_name} not installed")
+
+    info = self._plugins[plugin_name]
+
+    # Динамическая загрузка модуля
+    import sys
+    sys.path.insert(0, info.path)
+
+    try:
+        import plugin as plugin_module
+        plugin_instance = plugin_module.Plugin()
+
+        # Регистрация
+        plugin_instance.register(self._api)
+
+        return plugin_instance
+    finally:
+        sys.path.remove(info.path)
+
+def enable(self, plugin_name: str) -&gt; None:
+    """Включить плагин"""
+    if plugin_name not in self._plugins:
+        raise ValueError(f"Plugin {plugin_name} not installed")
+
+    self._plugins[plugin_name].enabled = True
+    self._save_installed()
+
+def disable(self, plugin_name: str) -&gt; None:
+    """Выключить плагин"""
+    if plugin_name not in self._plugins:
+        raise ValueError(f"Plugin {plugin_name} not installed")
+
+    self._plugins[plugin_name].enabled = False
+    self._save_installed()
+
+def uninstall(self, plugin_name: str) -&gt; None:
+    """Удалить плагин"""
+    if plugin_name not in self._plugins:
+        raise ValueError(f"Plugin {plugin_name} not installed")
+
+    info = self._plugins[plugin_name]
+
+    # Удаление директории
+    import shutil
+    if os.path.exists(info.path):
+        shutil.rmtree(info.path)
+
+    del self._plugins[plugin_name]
+    self._save_installed()
+
+def list_installed(self) -&gt; List[PluginInfo]:
+    """Список установленных плагинов"""
+    return list(self._plugins.values())
+
+def load_all_enabled(self) -&gt; List[Plugin]:
+    """Загрузить все включенные плагины"""
+    plugins = []
+    for name, info in self._plugins.items():
+        if info.enabled:
+            try:
+                plugin = self.load(name)
+                plugins.append(plugin)
+            except Exception as e:
+                print(f"Failed to load plugin {name}: {e}")
+    return plugins
+
+def _save_installed(self) -&gt; None:
+    """Сохранить список установленных"""
+    installed_path = os.path.join(self.plugins_dir, "installed.json")
+    data = {
+        name: {
+            "manifest": {
+                "name": info.manifest.name,
+                "version": info.manifest.version,
+                "description": info.manifest.description,
+                "author": info.manifest.author,
+                "dependencies": info.manifest.dependencies,
+                "permissions": info.manifest.permissions,
+                "capabilities": info.manifest.capabilities,
+                "enabled": info.enabled,
+                "installed_at": info.manifest.installed_at.isoformat()
+            },
+            "path": info.path,
+            "enabled": info.enabled
+        }
+        for name, info in self._plugins.items()
+    }
+
+    with open(installed_path, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def _load_installed(self) -&gt; None:
+    """Загрузить список установленных"""
+    installed_path = os.path.join(self.plugins_dir, "installed.json")
+    if not os.path.exists(installed_path):
+        return
+
+    with open(installed_path, 'r') as f:
+        data = json.load(f)
+
+    for name, info_data in data.items():
+        manifest = PluginManifest(**info_data["manifest"])
+        self._plugins[name] = PluginInfo(
+            manifest=manifest,
+            path=info_data["path"],
+            enabled=info_data["enabled"]
+        )
+</code></pre>
+<h1 id="_28">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="10-capability-discovery">## 10. CAPABILITY DISCOVERY</h1>
+<h1 id="_29">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="semantic-kernel">Источник: Semantic Kernel</h1>
+<h1 id="_30">Зачем: Динамическое определение возможностей</h1>
+<h1 id="flexibility-adaptability">Преимущества: Flexibility, adaptability</h1>
+<h1 id="overhead-complexity">Риски: Overhead, complexity</h1>
+<p>from typing import List, Dict, Any, Optional
+from dataclasses import dataclass</p>
+<p>@dataclass
+class Capability:
+    """Описание возможности"""
+    name: str
+    type: str  # tool, skill, policy, model, plugin
+    description: str
+    schema: Optional[Dict[str, Any]] = None
+    metadata: Dict[str, Any] = None</p>
+<p>class CapabilityRegistry:
+    """Реестр возможностей"""</p>
+<pre><code>def __init__(self):
+    self._capabilities: Dict[str, Capability] = {}
+
+def register(self, capability: Capability) -&gt; None:
+    """Зарегистрировать возможность"""
+    self._capabilities[capability.name] = capability
+
+def unregister(self, name: str) -&gt; None:
+    """Удалить возможность"""
+    self._capabilities.pop(name, None)
+
+def get(self, name: str) -&gt; Optional[Capability]:
+    """Получить возможность"""
+    return self._capabilities.get(name)
+
+def list_all(self) -&gt; List[Capability]:
+    """Список всех возможностей"""
+    return list(self._capabilities.values())
+
+def list_by_type(self, capability_type: str) -&gt; List[Capability]:
+    """Список по типу"""
+    return [c for c in self._capabilities.values() if c.type == capability_type]
+
+def discover(self, query: str) -&gt; List[Capability]:
+    """Поиск возможностей"""
+    query_lower = query.lower()
+    return [
+        c for c in self._capabilities.values()
+        if query_lower in c.name.lower() or query_lower in c.description.lower()
+    ]
+
+def get_capabilities_summary(self) -&gt; Dict[str, Any]:
+    """Получить сводку возможностей"""
+    return {
+        "total": len(self._capabilities),
+        "by_type": {
+            t: len(self.list_by_type(t))
+            for t in set(c.type for c in self._capabilities.values())
+        },
+        "capabilities": [
+            {
+                "name": c.name,
+                "type": c.type,
+                "description": c.description
+            }
+            for c in self._capabilities.values()
+        ]
+    }
+</code></pre>
+<p>class CapabilityDiscovery:
+    """Сервис обнаружения возможностей"""</p>
+<pre><code>def __init__(self, registry: CapabilityRegistry):
+    self.registry = registry
+
+async def what_can_i_do(self) -&gt; Dict[str, Any]:
+    """Что я умею?"""
+    return self.registry.get_capabilities_summary()
+
+async def find_tools(self, query: str) -&gt; List[Capability]:
+    """Найти инструменты"""
+    tools = self.registry.list_by_type("tool")
+    if query:
+        tools = [t for t in tools if query.lower() in t.name.lower()]
+    return tools
+
+async def find_skills(self, query: str) -&gt; List[Capability]:
+    """Найти skills"""
+    skills = self.registry.list_by_type("skill")
+    if query:
+        skills = [s for s in skills if query.lower() in s.name.lower()]
+    return skills
+
+async def find_policies(self) -&gt; List[Capability]:
+    """Найти политики"""
+    return self.registry.list_by_type("policy")
+
+async def find_models(self) -&gt; List[Capability]:
+    """Найти модели"""
+    return self.registry.list_by_type("model")
+
+async def find_plugins(self) -&gt; List[Capability]:
+    """Найти плагины"""
+    return self.registry.list_by_type("plugin")
+</code></pre>
+<h1 id="_31">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="11-workflow-engine">## 11. WORKFLOW ENGINE</h1>
+<h1 id="_32">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="crewai-flows-temporal">Источник: CrewAI Flows, Temporal</h1>
+<h1 id="workflow">Зачем: Оркестрация сложных workflow</h1>
+<h1 id="declarative-composable-recoverable">Преимущества: Declarative, composable, recoverable</h1>
+<h1 id="complexity-debugging">Риски: Complexity, debugging</h1>
+<p>from typing import List, Dict, Any, Callable, Awaitable, Optional
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+import asyncio</p>
+<p>@dataclass
+class WorkflowStep:
+    """Шаг workflow"""
+    name: str
+    handler: Callable[[Dict[str, Any]], Awaitable[Dict[str, Any]]]
+    timeout: Optional[timedelta] = None
+    retry_policy: Optional[Dict[str, Any]] = None
+    compensation: Optional[Callable[[Dict[str, Any]], Awaitable[None]]] = None</p>
+<p>@dataclass
+class WorkflowContext:
+    """Контекст выполнения workflow"""
+    workflow_id: str
+    state: Dict[str, Any] = field(default_factory=dict)
+    started_at: datetime = field(default_factory=datetime.utcnow)
+    completed_steps: List[str] = field(default_factory=list)
+    failed_step: Optional[str] = None</p>
+<p>class WorkflowEngine:
+    """
+    Workflow Engine с поддержкой branch, merge, parallel, saga.
+    Вдохновлено CrewAI Flows и Temporal.
+    """</p>
+<pre><code>def __init__(self):
+    self._workflows: Dict[str, List[WorkflowStep]] = {}
+
+def register_workflow(self, name: str, steps: List[WorkflowStep]) -&gt; None:
+    """Зарегистрировать workflow"""
+    self._workflows[name] = steps
+
+async def execute(
+    self,
+    workflow_name: str,
+    initial_state: Dict[str, Any] = None
+) -&gt; WorkflowContext:
+    """Выполнить workflow"""
+    if workflow_name not in self._workflows:
+        raise ValueError(f"Workflow {workflow_name} not found")
+
+    steps = self._workflows[workflow_name]
+    context = WorkflowContext(
+        workflow_id=f"{workflow_name}_{datetime.utcnow().timestamp()}",
+        state=initial_state or {}
+    )
+
+    for step in steps:
+        try:
+            # Timeout
+            if step.timeout:
+                result = await asyncio.wait_for(
+                    step.handler(context.state),
+                    timeout=step.timeout.total_seconds()
+                )
+            else:
+                result = await step.handler(context.state)
+
+            context.state.update(result)
+            context.completed_steps.append(step.name)
+
+        except asyncio.TimeoutError:
+            context.failed_step = step.name
+            await self._compensate(context, steps[:steps.index(step)])
+            raise TimeoutError(f"Step {step.name} timed out")
+
+        except Exception as e:
+            context.failed_step = step.name
+            await self._compensate(context, steps[:steps.index(step)])
+            raise
+
+    return context
+
+async def _compensate(
+    self,
+    context: WorkflowContext,
+    completed_steps: List[WorkflowStep]
+) -&gt; None:
+    """Компенсация (Saga pattern)"""
+    for step in reversed(completed_steps):
+        if step.compensation:
+            try:
+                await step.compensation(context.state)
+            except Exception as e:
+                print(f"Compensation failed for {step.name}: {e}")
+
+async def execute_parallel(
+    self,
+    steps: List[WorkflowStep],
+    initial_state: Dict[str, Any] = None
+) -&gt; WorkflowContext:
+    """Параллельное выполнение"""
+    context = WorkflowContext(
+        workflow_id=f"parallel_{datetime.utcnow().timestamp()}",
+        state=initial_state or {}
+    )
+
+    tasks = [step.handler(context.state) for step in steps]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    for i, result in enumerate(results):
+        if isinstance(result, Exception):
+            context.failed_step = steps[i].name
+            raise result
+        context.state.update(result)
+        context.completed_steps.append(steps[i].name)
+
+    return context
+
+async def execute_branch(
+    self,
+    condition: Callable[[Dict[str, Any]], bool],
+    true_steps: List[WorkflowStep],
+    false_steps: List[WorkflowStep],
+    initial_state: Dict[str, Any] = None
+) -&gt; WorkflowContext:
+    """Branching (если/иначе)"""
+    context = WorkflowContext(
+        workflow_id=f"branch_{datetime.utcnow().timestamp()}",
+        state=initial_state or {}
+    )
+
+    if condition(context.state):
+        steps = true_steps
+    else:
+        steps = false_steps
+
+    for step in steps:
+        result = await step.handler(context.state)
+        context.state.update(result)
+        context.completed_steps.append(step.name)
+
+    return context
+</code></pre>
+<h1 id="_33">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="12-scheduler">## 12. SCHEDULER</h1>
+<h1 id="_34">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="openclaw-cron-celery">Источник: OpenClaw Cron, Celery</h1>
+<h1 id="periodic-tasks-delayed-execution">Зачем: Periodic tasks, delayed execution</h1>
+<h1 id="automation-scheduling">Преимущества: Automation, scheduling</h1>
+<h1 id="complexity-reliability">Риски: Complexity, reliability</h1>
+<p>from typing import Callable, Awaitable, Optional, Dict, Any
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+import asyncio</p>
+<p>@dataclass
+class ScheduledJob:
+    """Запланированная задача"""
+    job_id: str
+    name: str
+    handler: Callable[[], Awaitable[None]]
+    schedule: str  # cron expression or interval
+    next_run: datetime
+    last_run: Optional[datetime] = None
+    enabled: bool = True
+    metadata: Dict[str, Any] = field(default_factory=dict)</p>
+<p>class Scheduler:
+    """Планировщик задач"""</p>
+<pre><code>def __init__(self):
+    self._jobs: Dict[str, ScheduledJob] = {}
+    self._running = False
+    self._task: Optional[asyncio.Task] = None
+
+def add_cron_job(
+    self,
+    name: str,
+    handler: Callable[[], Awaitable[None]],
+    cron_expression: str,
+    job_id: Optional[str] = None
+) -&gt; str:
+    """Добавить cron задачу"""
+    import uuid
+
+    job_id = job_id or str(uuid.uuid4())
+    next_run = self._parse_cron(cron_expression)
+
+    job = ScheduledJob(
+        job_id=job_id,
+        name=name,
+        handler=handler,
+        schedule=cron_expression,
+        next_run=next_run
+    )
+
+    self._jobs[job_id] = job
+    return job_id
+
+def add_delayed_job(
+    self,
+    name: str,
+    handler: Callable[[], Awaitable[None]],
+    delay: timedelta,
+    job_id: Optional[str] = None
+) -&gt; str:
+    """Добавить отложенную задачу"""
+    import uuid
+
+    job_id = job_id or str(uuid.uuid4())
+    next_run = datetime.utcnow() + delay
+
+    job = ScheduledJob(
+        job_id=job_id,
+        name=name,
+        handler=handler,
+        schedule=f"delay:{delay.total_seconds()}",
+        next_run=next_run
+    )
+
+    self._jobs[job_id] = job
+    return job_id
+
+def add_periodic_job(
+    self,
+    name: str,
+    handler: Callable[[], Awaitable[None]],
+    interval: timedelta,
+    job_id: Optional[str] = None
+) -&gt; str:
+    """Добавить периодическую задачу"""
+    import uuid
+
+    job_id = job_id or str(uuid.uuid4())
+    next_run = datetime.utcnow() + interval
+
+    job = ScheduledJob(
+        job_id=job_id,
+        name=name,
+        handler=handler,
+        schedule=f"interval:{interval.total_seconds()}",
+        next_run=next_run
+    )
+
+    self._jobs[job_id] = job
+    return job_id
+
+def remove_job(self, job_id: str) -&gt; None:
+    """Удалить задачу"""
+    self._jobs.pop(job_id, None)
+
+def enable_job(self, job_id: str) -&gt; None:
+    """Включить задачу"""
+    if job_id in self._jobs:
+        self._jobs[job_id].enabled = True
+
+def disable_job(self, job_id: str) -&gt; None:
+    """Выключить задачу"""
+    if job_id in self._jobs:
+        self._jobs[job_id].enabled = False
+
+async def start(self) -&gt; None:
+    """Запустить планировщик"""
+    self._running = True
+    self._task = asyncio.create_task(self._scheduler_loop())
+
+async def stop(self) -&gt; None:
+    """Остановить планировщик"""
+    self._running = False
+    if self._task:
+        self._task.cancel()
+        try:
+            await self._task
+        except asyncio.CancelledError:
+            pass
+
+async def _scheduler_loop(self) -&gt; None:
+    """Цикл планировщика"""
+    while self._running:
+        now = datetime.utcnow()
+
+        for job in list(self._jobs.values()):
+            if job.enabled and job.next_run &lt;= now:
+                try:
+                    await job.handler()
+                    job.last_run = now
+
+                    # Обновление next_run
+                    if job.schedule.startswith("delay:"):
+                        # Одноразовая задача
+                        del self._jobs[job.job_id]
+                    elif job.schedule.startswith("interval:"):
+                        interval = float(job.schedule.split(":")[1])
+                        job.next_run = now + timedelta(seconds=interval)
+                    else:
+                        # Cron
+                        job.next_run = self._parse_cron(job.schedule)
+
+                except Exception as e:
+                    print(f"Job {job.name} failed: {e}")
+
+        await asyncio.sleep(1)
+
+def _parse_cron(self, cron_expression: str) -&gt; datetime:
+    """Парсинг cron expression (упрощенный)"""
+    # Упрощенная реализация
+    # В production использовать croniter
+    return datetime.utcnow() + timedelta(minutes=1)
+
+def list_jobs(self) -&gt; List[ScheduledJob]:
+    """Список задач"""
+    return list(self._jobs.values())
+</code></pre>
+<h1 id="_35">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="13-observability-v2-otel-genai">## 13. OBSERVABILITY V2 (OTEL GenAI)</h1>
+<h1 id="_36">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="opentelemetry-genai-semantic-conventions">Источник: OpenTelemetry GenAI Semantic Conventions</h1>
+<h1 id="observability-llm">Зачем: Полная observability для LLM систем</h1>
+<h1 id="standardization-monitoring-debugging">Преимущества: Standardization, monitoring, debugging</h1>
+<h1 id="overhead-complexity_1">Риски: Overhead, complexity</h1>
+<p>from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+from typing import Dict, Any, Optional
+from dataclasses import dataclass, field
+from datetime import datetime
+import time</p>
+<p>@dataclass
+class LLMMetrics:
+    """Метрики LLM вызова"""
+    model: str
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
+    latency_ms: float = 0.0
+    cost_usd: float = 0.0
+    success: bool = True
+    error: Optional[str] = None</p>
+<p>class ObservabilityV2:
+    """
+    Observability v2 с OTEL GenAI semantic conventions.
+    """</p>
+<pre><code>def __init__(self, otlp_endpoint: str = "http://localhost:4317"):
+    # Настройка tracer
+    self.tracer_provider = TracerProvider()
+    exporter = OTLPSpanExporter(endpoint=otlp_endpoint)
+    self.tracer_provider.add_span_processor(BatchSpanProcessor(exporter))
+    trace.set_tracer_provider(self.tracer_provider)
+
+    self.tracer = trace.get_tracer("agent.system")
+
+    # Метрики
+    self._metrics: Dict[str, LLMMetrics] = {}
+
+def trace_llm_call(
+    self,
+    model: str,
+    messages: list,
+    response: Any,
+    usage: Dict[str, int],
+    latency_ms: float,
+    cost_usd: float = 0.0
+) -&gt; None:
+    """Трассировка LLM вызова"""
+    with self.tracer.start_as_current_span("llm.call") as span:
+        span.set_attribute("gen_ai.system", "llm")
+        span.set_attribute("gen_ai.request.model", model)
+        span.set_attribute("gen_ai.request.temperature", 0.7)
+        span.set_attribute("gen_ai.usage.prompt_tokens", usage.get("prompt_tokens", 0))
+        span.set_attribute("gen_ai.usage.completion_tokens", usage.get("completion_tokens", 0))
+        span.set_attribute("gen_ai.usage.total_tokens", usage.get("total_tokens", 0))
+        span.set_attribute("gen_ai.response.finish_reasons", ["stop"])
+        span.set_attribute("gen_ai.cost.usd", cost_usd)
+        span.set_attribute("gen_ai.latency.ms", latency_ms)
+
+        # Сохранение метрик
+        metrics = LLMMetrics(
+            model=model,
+            prompt_tokens=usage.get("prompt_tokens", 0),
+            completion_tokens=usage.get("completion_tokens", 0),
+            total_tokens=usage.get("total_tokens", 0),
+            latency_ms=latency_ms,
+            cost_usd=cost_usd
+        )
+        self._metrics[f"llm_{datetime.utcnow().timestamp()}"] = metrics
+
+def trace_tool_call(
+    self,
+    tool_name: str,
+    input_data: Dict[str, Any],
+    output_data: Any,
+    latency_ms: float
+) -&gt; None:
+    """Трассировка вызова инструмента"""
+    with self.tracer.start_as_current_span("tool.call") as span:
+        span.set_attribute("tool.name", tool_name)
+        span.set_attribute("tool.input", str(input_data))
+        span.set_attribute("tool.output", str(output_data)[:1000])  # Truncate
+        span.set_attribute("tool.latency.ms", latency_ms)
+
+def trace_agent_step(
+    self,
+    agent_id: str,
+    step_type: str,
+    state: Dict[str, Any],
+    duration_ms: float
+) -&gt; None:
+    """Трассировка шага агента"""
+    with self.tracer.start_as_current_span("agent.step") as span:
+        span.set_attribute("agent.id", agent_id)
+        span.set_attribute("agent.step.type", step_type)
+        span.set_attribute("agent.step.duration.ms", duration_ms)
+
+def get_cost_summary(self) -&gt; Dict[str, Any]:
+    """Получить сводку по стоимости"""
+    total_cost = sum(m.cost_usd for m in self._metrics.values())
+    total_tokens = sum(m.total_tokens for m in self._metrics.values())
+
+    return {
+        "total_cost_usd": total_cost,
+        "total_tokens": total_tokens,
+        "total_calls": len(self._metrics),
+        "avg_latency_ms": sum(m.latency_ms for m in self._metrics.values()) / len(self._metrics) if self._metrics else 0
+    }
+
+def get_token_summary(self) -&gt; Dict[str, Any]:
+    """Получить сводку по токенам"""
+    return {
+        "prompt_tokens": sum(m.prompt_tokens for m in self._metrics.values()),
+        "completion_tokens": sum(m.completion_tokens for m in self._metrics.values()),
+        "total_tokens": sum(m.total_tokens for m in self._metrics.values())
+    }
+</code></pre>
+<h1 id="_37">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="14-sandbox-system">## 14. SANDBOX SYSTEM</h1>
+<h1 id="_38">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="openhands-runtime">Источник: OpenHands Runtime</h1>
+<h1 id="_39">Зачем: Безопасное выполнение кода</h1>
+<h1 id="isolation-security-resource-limits">Преимущества: Isolation, security, resource limits</h1>
+<h1 id="complexity-overhead">Риски: Complexity, overhead</h1>
+<p>from abc import ABC, abstractmethod
+from typing import Dict, Any, Optional
+from dataclasses import dataclass
+import subprocess
+import asyncio</p>
+<p>@dataclass
+class ResourceLimits:
+    """Лимиты ресурсов"""
+    cpu_cores: float = 1.0
+    memory_mb: int = 512
+    disk_mb: int = 1024
+    network_enabled: bool = False
+    timeout_seconds: int = 60</p>
+<p>@dataclass
+class ExecutionResult:
+    """Результат выполнения"""
+    success: bool
+    stdout: str
+    stderr: str
+    exit_code: int
+    duration_ms: float</p>
+<p>class Sandbox(ABC):
+    """Абстракция sandbox"""</p>
+<pre><code>@abstractmethod
+async def execute(
+    self,
+    command: str,
+    limits: ResourceLimits = None
+) -&gt; ExecutionResult:
+    """Выполнить команду"""
+    pass
+
+@abstractmethod
+async def upload_file(self, path: str, content: bytes) -&gt; None:
+    """Загрузить файл"""
+    pass
+
+@abstractmethod
+async def download_file(self, path: str) -&gt; bytes:
+    """Скачать файл"""
+    pass
+</code></pre>
+<p>class DockerSandbox(Sandbox):
+    """Docker-based sandbox"""</p>
+<pre><code>def __init__(self, image: str = "python:3.11-slim"):
+    self.image = image
+    self.container_id: Optional[str] = None
+
+async def start(self) -&gt; None:
+    """Запустить контейнер"""
+    proc = await asyncio.create_subprocess_exec(
+        "docker", "run", "-d", "--rm",
+        "--memory=512m",
+        "--cpus=1.0",
+        "--network=none",
+        self.image,
+        "sleep", "infinity",
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+    stdout, _ = await proc.communicate()
+    self.container_id = stdout.decode().strip()
+
+async def stop(self) -&gt; None:
+    """Остановить контейнер"""
+    if self.container_id:
+        await asyncio.create_subprocess_exec(
+            "docker", "stop", self.container_id
+        )
+
+async def execute(
+    self,
+    command: str,
+    limits: ResourceLimits = None
+) -&gt; ExecutionResult:
+    """Выполнить команду в контейнере"""
+    if not self.container_id:
+        await self.start()
+
+    start_time = asyncio.get_event_loop().time()
+
+    proc = await asyncio.create_subprocess_exec(
+        "docker", "exec", self.container_id,
+        "sh", "-c", command,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+
+    try:
+        stdout, stderr = await asyncio.wait_for(
+            proc.communicate(),
+            timeout=limits.timeout_seconds if limits else 60
+        )
+
+        duration_ms = (asyncio.get_event_loop().time() - start_time) * 1000
+
+        return ExecutionResult(
+            success=proc.returncode == 0,
+            stdout=stdout.decode(),
+            stderr=stderr.decode(),
+            exit_code=proc.returncode,
+            duration_ms=duration_ms
+        )
+
+    except asyncio.TimeoutError:
+        proc.kill()
+        return ExecutionResult(
+            success=False,
+            stdout="",
+            stderr="Timeout",
+            exit_code=-1,
+            duration_ms=limits.timeout_seconds * 1000 if limits else 60000
+        )
+
+async def upload_file(self, path: str, content: bytes) -&gt; None:
+    """Загрузить файл в контейнер"""
+    # Упрощенная реализация
+    pass
+
+async def download_file(self, path: str) -&gt; bytes:
+    """Скачать файл из контейнера"""
+    # Упрощенная реализация
+    return b""
+</code></pre>
+<p>class ProcessSandbox(Sandbox):
+    """Process-based sandbox (для тестирования)"""</p>
+<pre><code>async def execute(
+    self,
+    command: str,
+    limits: ResourceLimits = None
+) -&gt; ExecutionResult:
+    """Выполнить команду"""
+    start_time = asyncio.get_event_loop().time()
+
+    proc = await asyncio.create_subprocess_shell(
+        command,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+
+    try:
+        stdout, stderr = await asyncio.wait_for(
+            proc.communicate(),
+            timeout=limits.timeout_seconds if limits else 60
+        )
+
+        duration_ms = (asyncio.get_event_loop().time() - start_time) * 1000
+
+        return ExecutionResult(
+            success=proc.returncode == 0,
+            stdout=stdout.decode(),
+            stderr=stderr.decode(),
+            exit_code=proc.returncode,
+            duration_ms=duration_ms
+        )
+
+    except asyncio.TimeoutError:
+        proc.kill()
+        return ExecutionResult(
+            success=False,
+            stdout="",
+            stderr="Timeout",
+            exit_code=-1,
+            duration_ms=limits.timeout_seconds * 1000 if limits else 60000
+        )
+
+async def upload_file(self, path: str, content: bytes) -&gt; None:
+    with open(path, 'wb') as f:
+        f.write(content)
+
+async def download_file(self, path: str) -&gt; bytes:
+    with open(path, 'rb') as f:
+        return f.read()
+</code></pre>
+<h1 id="_40">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="15-model-router">## 15. MODEL ROUTER</h1>
+<h1 id="_41">═══════════════════════════════════════════════════════════════════════════════</h1>
+<h1 id="mtrouter-cost-aware-routing">Источник: MTRouter, Cost-Aware Routing</h1>
+<h1 id="_42">Зачем: Оптимальный выбор модели</h1>
+<h1 id="cost-optimization-performance">Преимущества: Cost optimization, performance</h1>
+<h1 id="complexity-routing-errors">Риски: Complexity, routing errors</h1>
+<p>from typing import List, Dict, Any, Optional
+from dataclasses import dataclass
+from enum import Enum</p>
+<p>class ModelTier(Enum):
+    """Уровень модели"""
+    SLM = "slm"  # Small Language Model
+    LLM = "llm"  # Large Language Model
+    REASONING = "reasoning"  # Reasoning Model
+    CODE = "code"  # Code Model
+    VISION = "vision"  # Vision Model</p>
+<p>@dataclass
+class ModelConfig:
+    """Конфигурация модели"""
+    name: str
+    tier: ModelTier
+    cost_per_1k_tokens: float
+    avg_latency_ms: float
+    max_context_length: int
+    capabilities: List[str]</p>
+<p>@dataclass
+class RoutingDecision:
+    """Решение о маршрутизации"""
+    model: str
+    reason: str
+    estimated_cost: float
+    estimated_latency_ms: float</p>
+<p>class ModelRouter:
+    """
+    Model Router с cost-aware и latency-aware routing.
+    """</p>
+<pre><code>def __init__(self):
+    self._models: Dict[str, ModelConfig] = {}
+    self._routing_policies: Dict[str, callable] = {}
+
+def register_model(self, config: ModelConfig) -&gt; None:
+    """Зарегистрировать модель"""
+    self._models[config.name] = config
+
+def register_policy(self, name: str, policy: callable) -&gt; None:
+    """Зарегистрировать политику маршрутизации"""
+    self._routing_policies[name] = policy
+
+async def route(
+    self,
+    task: str,
+    context: Dict[str, Any] = None,
+    policy: str = "cost_aware"
+) -&gt; RoutingDecision:
+    """Маршрутизация запроса"""
+    context = context or {}
+
+    if policy in self._routing_policies:
+        return await self._routing_policies[policy](task, context, self._models)
+
+    # Default: cost-aware routing
+    return await self._cost_aware_routing(task, context)
+
+async def _cost_aware_routing(
+    self,
+    task: str,
+    context: Dict[str, Any]
+) -&gt; RoutingDecision:
+    """Cost-aware routing"""
+    # Определение требуемых capabilities
+    required_caps = self._infer_capabilities(task)
+
+    # Фильтрация моделей
+    suitable_models = [
+        m for m in self._models.values()
+        if all(cap in m.capabilities for cap in required_caps)
+    ]
+
+    if not suitable_models:
+        # Fallback на самую мощную модель
+        suitable_models = list(self._models.values())
+
+    # Выбор самой дешевой
+    best_model = min(suitable_models, key=lambda m: m.cost_per_1k_tokens)
+
+    return RoutingDecision(
+        model=best_model.name,
+        reason=f"Cheapest model with required capabilities",
+        estimated_cost=best_model.cost_per_1k_tokens,
+        estimated_latency_ms=best_model.avg_latency_ms
+    )
+
+async def _latency_aware_routing(
+    self,
+    task: str,
+    context: Dict[str, Any]
+) -&gt; RoutingDecision:
+    """Latency-aware routing"""
+    required_caps = self._infer_capabilities(task)
+
+    suitable_models = [
+        m for m in self._models.values()
+        if all(cap in m.capabilities for cap in required_caps)
+    ]
+
+    if not suitable_models:
+        suitable_models = list(self._models.values())
+
+    best_model = min(suitable_models, key=lambda m: m.avg_latency_ms)
+
+    return RoutingDecision(
+        model=best_model.name,
+        reason=f"Fastest model with required capabilities",
+        estimated_cost=best_model.cost_per_1k_tokens,
+        estimated_latency_ms=best_model.avg_latency_ms
+    )
+
+def _infer_capability
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

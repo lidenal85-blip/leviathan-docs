@@ -1,0 +1,3040 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/COMPREHENSIVE_UNIFICATION_PLAN/">
+      
+      
+        <link rel="prev" href="../ADR-002/ADR-002-FINAL/">
+      
+      
+        <link rel="next" href="../MY_SYSTEM_ANALYSIS/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>План объединения - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              План объединения
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План объединения
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План объединения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 1. EXECUTIVE SUMMARY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 1. EXECUTIVE SUMMARY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Состояние системы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Оценка архитектуры: 4/10 ⚠️
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔍 ПОЛНЫЙ АУДИТ СИСТЕМЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔍 ПОЛНЫЙ АУДИТ СИСТЕМЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Все сервисы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Все сервисы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟢 Активные (Production)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔴 Проблемные
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Все проекты (по размеру кодовой базы)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-20-sqlite-1-postgres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Базы данных (20+ SQLite, 1 Postgres)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Инфраструктура LLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Система логирования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Секреты и ключи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🎯 ПРИОРИТЕТЫ ПО ВАЖНОСТИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🎯 ПРИОРИТЕТЫ ПО ВАЖНОСТИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0: Критическая инфраструктура (делать сейчас)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1: Базовые сервисы (следующая неделя)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2: Улучшения (2-3 неделя)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P3: Оптимизация (3-4 неделя)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P4: Будущее
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: ЕДИНЫЙ ОРГАНИЗМ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: ЕДИНЫЙ ОРГАНИЗМ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Концепция
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Ключевые решения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Ключевые решения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-llm-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 1: Единый LLM Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 2: Централизованное логирование
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 3: Централизованное хранение ключей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-unified-agent-interface-baserole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 4: Unified Agent Interface (BaseRole)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 5: Единая система авторизации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 📋 ДЕТАЛЬНЫЙ ПЛАН РЕАЛИЗАЦИИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 📋 ДЕТАЛЬНЫЙ ПЛАН РЕАЛИЗАЦИИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 0: Экстренное спасение (1-2 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 1: Ядро (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 2: Сервисы (5-7 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 3: Миграция агентов (5-7 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-production-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 4: Production (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 📊 ДЕТАЛЬНЫЙ ПЛАН ПО ПОДСИСТЕМАМ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 📊 ДЕТАЛЬНЫЙ ПЛАН ПО ПОДСИСТЕМАМ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Система логирования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Хранение ключей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Ротация LLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-agent-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Agent Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Базы данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 🗓️ ТАЙМЛАЙН (календарь)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ⚡ ЧТО МОЖНО СДЕЛАТЬ ПРЯМО СЕЙЧАС
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 📎 ЧЕКЛИСТ ГОТОВНОСТИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 📎 ЧЕКЛИСТ ГОТОВНОСТИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔴 Блокеры (решить до начала)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 📝 ЗАКЛЮЧЕНИЕ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Секреты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 1. EXECUTIVE SUMMARY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 1. EXECUTIVE SUMMARY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Состояние системы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Оценка архитектуры: 4/10 ⚠️
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔍 ПОЛНЫЙ АУДИТ СИСТЕМЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔍 ПОЛНЫЙ АУДИТ СИСТЕМЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Все сервисы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Все сервисы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟢 Активные (Production)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔴 Проблемные
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Все проекты (по размеру кодовой базы)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-20-sqlite-1-postgres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Базы данных (20+ SQLite, 1 Postgres)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Инфраструктура LLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Система логирования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Секреты и ключи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🎯 ПРИОРИТЕТЫ ПО ВАЖНОСТИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🎯 ПРИОРИТЕТЫ ПО ВАЖНОСТИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0: Критическая инфраструктура (делать сейчас)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1: Базовые сервисы (следующая неделя)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2: Улучшения (2-3 неделя)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P3: Оптимизация (3-4 неделя)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P4: Будущее
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: ЕДИНЫЙ ОРГАНИЗМ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: ЕДИНЫЙ ОРГАНИЗМ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Концепция
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Ключевые решения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Ключевые решения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-llm-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 1: Единый LLM Gateway
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 2: Централизованное логирование
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 3: Централизованное хранение ключей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-unified-agent-interface-baserole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 4: Unified Agent Interface (BaseRole)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение 5: Единая система авторизации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 📋 ДЕТАЛЬНЫЙ ПЛАН РЕАЛИЗАЦИИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 📋 ДЕТАЛЬНЫЙ ПЛАН РЕАЛИЗАЦИИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 0: Экстренное спасение (1-2 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 1: Ядро (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 2: Сервисы (5-7 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 3: Миграция агентов (5-7 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-production-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фаза 4: Production (3-5 дней)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 📊 ДЕТАЛЬНЫЙ ПЛАН ПО ПОДСИСТЕМАМ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 📊 ДЕТАЛЬНЫЙ ПЛАН ПО ПОДСИСТЕМАМ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Система логирования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Хранение ключей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Ротация LLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-agent-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Agent Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Базы данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 🗓️ ТАЙМЛАЙН (календарь)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ⚡ ЧТО МОЖНО СДЕЛАТЬ ПРЯМО СЕЙЧАС
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. 📎 ЧЕКЛИСТ ГОТОВНОСТИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. 📎 ЧЕКЛИСТ ГОТОВНОСТИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔴 Блокеры (решить до начала)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Критерии готовности Фазы 4
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. 📝 ЗАКЛЮЧЕНИЕ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">🏗️ ПОЛНЫЙ АУДИТ СЕРВЕРА И ПЛАН ОБЪЕДИНЕНИЯ В ЦЕЛОСТНЫЙ ОРГАНИЗМ</h1>
+<p><strong>Сервер:</strong> LEVIATHAN (78.17.24.96)<br />
+<strong>Дата:</strong> 2026-07-02<br />
+<strong>Статус:</strong> COMPREHENSIVE AUDIT v1.0<br />
+<strong>Охват:</strong> 30+ проектов, ~50 системных сервисов, 20+ БД, 30+ портов</p>
+<hr />
+<h2 id="1-executive-summary">📋 1. EXECUTIVE SUMMARY</h2>
+<h3 id="11">1.1 Состояние системы</h3>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Значение</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Проектов в /opt</td>
+<td>52</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>Python-файлов (суммарно)</td>
+<td>~8,000+</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td>Строк кода</td>
+<td>~50,000+ (без free-claude-code)</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td>Системных сервисов</td>
+<td>~50+ (20+ кастомных)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>Открытых портов</td>
+<td>30+</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td>Баз данных SQLite</td>
+<td>20+</td>
+<td>🟠</td>
+</tr>
+<tr>
+<td>Процессов freebuff</td>
+<td>5 (по 7-12% RAM каждый)</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td>Диск</td>
+<td>23/30G (80%)</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>2.5/3.8 GiB (66%)</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td>Swap</td>
+<td>4.4/5.0 GiB (88%)</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td>Load avg</td>
+<td>~10+ на 4 ядра</td>
+<td>🔴</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-410">1.2 Оценка архитектуры: 4/10 ⚠️</h3>
+<p><strong>Сильные стороны:</strong>
+- ✅ Богатая экосистема: 30+ проектов, интеграции с Telegram, MCP, HTTP
+- ✅ Secrets Vault на порту 8400 (AES-256)
+- ✅ ModelRouter с AUTO-режимом и fallback
+- ✅ EventBus pub/sub
+- ✅ Manifest 5.1.0 — формальный lifecycle, memory, workflow</p>
+<p><strong>Критические проблемы:</strong>
+- 🔴 <strong>Нет централизованного логирования</strong> — каждый проект пишет в своё
+- 🔴 <strong>Ключи разбросаны</strong> — TG_BOT_TOKEN, GITHUB_TOKEN, .env файлы в 7+ местах
+- 🔴 <strong>freebuffd жрёт ресурсы</strong> — 5 процессов по 10% RAM каждый, циклические рестарты
+- 🔴 <strong>Swap под 88%</strong> — систем под нагрузкой, load 10+
+- 🔴 <strong>Нет единого LLM Gateway</strong> — 5+ независимых реализаций
+- 🔴 <strong>Нет единой системы авторизации</strong> — каждый сервис сам по себе
+- 🔴 <strong>20+ SQLite БД</strong> — нет централизации, каждая со своей схемой
+- 🔴 <strong>125KB bot.py монолит</strong> (den4ik-claude) — невозможно поддерживать</p>
+<hr />
+<h2 id="2">2. 🔍 ПОЛНЫЙ АУДИТ СИСТЕМЫ</h2>
+<h3 id="21">2.1 Все сервисы</h3>
+<h4 id="production">🟢 Активные (Production)</h4>
+<table>
+<thead>
+<tr>
+<th>Сервис</th>
+<th>Назначение</th>
+<th>Порт</th>
+<th>Зависимости</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>leviathan-daemon</strong></td>
+<td>Leviathan Engine Daemon</td>
+<td>—</td>
+<td>Python 3.12</td>
+</tr>
+<tr>
+<td><strong>leviathan_agent</strong></td>
+<td>Leviathan Agent</td>
+<td>:8200</td>
+<td>providers, tools, MCP</td>
+</tr>
+<tr>
+<td><strong>leviathan_mcp</strong></td>
+<td>MCP Server</td>
+<td>:8300</td>
+<td>leviathan_agent</td>
+</tr>
+<tr>
+<td><strong>leviathan-hq</strong></td>
+<td>Leviathan HQ Web</td>
+<td>:8120</td>
+<td>leviathan_agent</td>
+</tr>
+<tr>
+<td><strong>den4ik-claude</strong></td>
+<td>Telegram Bot (Leviathan Hub)</td>
+<td>TG only</td>
+<td>Pyrogram</td>
+</tr>
+<tr>
+<td><strong>triton_agent</strong></td>
+<td>Sport Observer</td>
+<td>:8201</td>
+<td>LLM Gateway</td>
+</tr>
+<tr>
+<td><strong>vocal-bot</strong></td>
+<td>Vocal AI Bot</td>
+<td>—</td>
+<td>VocalPlatform</td>
+</tr>
+<tr>
+<td><strong>vocal-gateway</strong></td>
+<td>Vocal Gateway</td>
+<td>—</td>
+<td>vocal-bot</td>
+</tr>
+<tr>
+<td><strong>vocal-web</strong></td>
+<td>Vocal Web UI</td>
+<td>—</td>
+<td>vocal-gateway</td>
+</tr>
+<tr>
+<td><strong>vocal-workers</strong></td>
+<td>Vocal Workers</td>
+<td>—</td>
+<td>vocal-web</td>
+</tr>
+<tr>
+<td><strong>fashion-stylist</strong></td>
+<td>AI Fashion Stylist</td>
+<td>—</td>
+<td>LLM</td>
+</tr>
+<tr>
+<td><strong>savdabot</strong></td>
+<td>SavdaBot</td>
+<td>—</td>
+<td>Postgres, Redis</td>
+</tr>
+<tr>
+<td><strong>arbitr_cockpit</strong></td>
+<td>Arbitr Dashboard</td>
+<td>:8090</td>
+<td>FastAPI, SQLAlchemy</td>
+</tr>
+<tr>
+<td><strong>diet_platform</strong></td>
+<td>Diet Platform «Пухляш»</td>
+<td>—</td>
+<td>FastAPI + TG</td>
+</tr>
+<tr>
+<td><strong>pelleto</strong></td>
+<td>Pelleto AI</td>
+<td>:8131</td>
+<td>FastAPI, MCP</td>
+</tr>
+<tr>
+<td><strong>fcc-server</strong></td>
+<td>Free Claude Code</td>
+<td>:8083</td>
+<td>Claude API</td>
+</tr>
+<tr>
+<td><strong>sport-observer</strong></td>
+<td>AI Football Agent</td>
+<td>:8201</td>
+<td>Triton</td>
+</tr>
+<tr>
+<td><strong>voicestudio</strong></td>
+<td>VoiceStudio</td>
+<td>—</td>
+<td>FastAPI</td>
+</tr>
+<tr>
+<td><strong>kinovibe</strong></td>
+<td>KinoVibe Backend</td>
+<td>—</td>
+<td>FastAPI</td>
+</tr>
+<tr>
+<td><strong>secrets-vault</strong></td>
+<td>Secrets Vault API</td>
+<td>:8400</td>
+<td>AES-256</td>
+</tr>
+<tr>
+<td><strong>survey-finder</strong></td>
+<td>Survey Finder</td>
+<td>—</td>
+<td>FastAPI</td>
+</tr>
+<tr>
+<td><strong>hh_sniper</strong></td>
+<td>HH Sniper</td>
+<td>—</td>
+<td>FastAPI</td>
+</tr>
+<tr>
+<td><strong>minusfabrika</strong></td>
+<td>Gemini Proxy</td>
+<td>—</td>
+<td>Gemini API</td>
+</tr>
+<tr>
+<td><strong>djvu2fb2_web</strong></td>
+<td>DjVu → FB2 Converter</td>
+<td>—</td>
+<td>Web UI</td>
+</tr>
+<tr>
+<td><strong>torrserver</strong></td>
+<td>TorrServer</td>
+<td>:8099</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>openclaw-gateway</strong></td>
+<td>OpenClaw Gateway</td>
+<td>—</td>
+<td>Node.js</td>
+</tr>
+<tr>
+<td><strong>x-ui</strong></td>
+<td>X-UI Panel</td>
+<td>:2096</td>
+<td>x-ray</td>
+</tr>
+<tr>
+<td><strong>nginx</strong></td>
+<td>Reverse Proxy</td>
+<td>:80, :443</td>
+<td>12 сайтов</td>
+</tr>
+<tr>
+<td><strong>postgresql</strong></td>
+<td>PostgreSQL</td>
+<td>:5434</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>redis-server</strong></td>
+<td>Redis</td>
+<td>:6379</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_2">🔴 Проблемные</h4>
+<table>
+<thead>
+<tr>
+<th>Сервис</th>
+<th>Проблема</th>
+<th>Влияние</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>freebuffd</strong></td>
+<td>Циклический рестарт (exit code 1), 5 процессов</td>
+<td>40% RAM, аномальный load</td>
+</tr>
+<tr>
+<td><strong>citrus_aura</strong></td>
+<td>DOWN</td>
+<td>Недоступен</td>
+</tr>
+<tr>
+<td><strong>lawu</strong></td>
+<td>DOWN</td>
+<td>Недоступен</td>
+</tr>
+<tr>
+<td><strong>arbitr</strong></td>
+<td>DOWN (но arbitr_cockpit работает)</td>
+<td>?</td>
+</tr>
+<tr>
+<td><strong>agent-hub</strong></td>
+<td>INACTIVE</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>pelleto MCP</strong></td>
+<td>fastmcp не установлен</td>
+<td>MCP-инструменты недоступны</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 Все проекты (по размеру кодовой базы)</h3>
+<table>
+<thead>
+<tr>
+<th>Проект</th>
+<th>Python файлов</th>
+<th>LOC</th>
+<th>Приоритет</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Leviathan Engine</strong></td>
+<td>1,941</td>
+<td>~23,627</td>
+<td>🔴 P0 — ЯДРО</td>
+</tr>
+<tr>
+<td><strong>Dispatcher Simulator</strong></td>
+<td>1,359</td>
+<td>~?</td>
+<td>🟡 P3</td>
+</tr>
+<tr>
+<td><strong>Triton Agent</strong></td>
+<td>45</td>
+<td>~3,905</td>
+<td>🔴 P0 — CORE AGENT</td>
+</tr>
+<tr>
+<td><strong>Vocal Bot</strong></td>
+<td>49</td>
+<td>~?</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>HH Sniper</strong></td>
+<td>48</td>
+<td>~?</td>
+<td>🟢 P4</td>
+</tr>
+<tr>
+<td><strong>Diet Platform</strong></td>
+<td>43</td>
+<td>~?</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>Pelleto AI</strong></td>
+<td>37</td>
+<td>~4,730</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>Vocal Platform</strong></td>
+<td>34</td>
+<td>~?</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>Arbitr Cockpit</strong></td>
+<td>27</td>
+<td>~3,169</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>SavdaBot</strong></td>
+<td>25</td>
+<td>~?</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>Media Factory</strong></td>
+<td>24</td>
+<td>~?</td>
+<td>🟡 P2</td>
+</tr>
+<tr>
+<td><strong>Citrus Aura</strong></td>
+<td>20</td>
+<td>~?</td>
+<td>🟢 P4</td>
+</tr>
+<tr>
+<td><strong>Secrets Vault</strong></td>
+<td>19</td>
+<td>~?</td>
+<td>🔴 P0 — SECURITY</td>
+</tr>
+<tr>
+<td><strong>Fashion Stylist</strong></td>
+<td>15</td>
+<td>~?</td>
+<td>🟢 P4</td>
+</tr>
+<tr>
+<td><strong>den4ik-claude</strong></td>
+<td>8</td>
+<td>~5,098</td>
+<td>🔴 P0 — TG INTERFACE</td>
+</tr>
+<tr>
+<td><strong>Freebuff</strong></td>
+<td>6</td>
+<td>~891</td>
+<td>🟡 P2 — AUDIT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-20-sqlite-1-postgres">2.3 Базы данных (20+ SQLite, 1 Postgres)</h3>
+<pre><code>Leviathan Engine (8 БД):
+  ├── leviathan.db (18MB) — основная
+  ├── context_memory.db (208K) — память контекста
+  ├── leviathan_kb.db (392K) — база знаний
+  ├── leviathan_routes.db (36K) — маршруты
+  ├── claude_sessions.db (24K) — сессии Claude
+  ├── claude_accounts.db (32K) — аккаунты Claude
+  ├── claude_projects.db (20K) — проекты Claude
+  └── mcp_gateway.db — MCP шлюз
+
+Остальные проекты:
+  ├── /opt/arbitr_cockpit/data/arbitr.db
+  ├── /opt/savdabot/data/ (6 БД: competitors, cards, query_cache, feedback, analytics, catalog)
+  ├── /opt/diet_platform/diet_platform.db
+  ├── /opt/pelleto-ai/data/pelleto.db
+  ├── /opt/media_factory/db/media_factory.db
+  ├── /opt/citrus_aura/pearl.db
+  ├── /opt/hh_sniper/data/hh_sniper.db
+  ├── /opt/filebrowser/fb.db
+  ├── /opt/agent-hub/data/hub.db
+  └── /opt/secrets_vault/data/vault.db
+</code></pre>
+<h3 id="24-llm">2.4 Инфраструктура LLM</h3>
+<pre><code>LLM Providers (5+ независимых реализаций):
+├── Leviathan Engine
+│   ├── GeminiProvider (HTTP, httpx) — основной
+│   ├── GroqProvider (groq SDK) — fallback
+│   ├── ClaudeProvider (ClaudeAdapter) — fallback
+│   └── ModelRouter — AUTO/GEMINI/CLAUDE/GROQ/FULL режимы
+├── Triton Agent
+│   └── ProductionLLMGateway — Groq→Gemini→Leviathan chain
+├── den4ik-claude
+│   └── Встроенный LLM-вызов (свой формат)
+├── Pelleto
+│   └── Встроенный (через FastAPI)
+└── Gemini Proxy (:8083)
+    └── Anthropic API → Gemini API конвертер
+</code></pre>
+<h3 id="25">2.5 Система логирования</h3>
+<pre><code>Логи (разрозненные):
+├── Systemd journal — все сервисы пишут в journal
+├── /var/log/
+│   ├── den4ik_claude.log
+│   ├── djvu2fb2_web.log
+│   └── f3_watchdog.log
+├── /opt/leviathan_engine/.leviathan/logs/
+│   ├── daemon.log
+│   └── daemon_error.log
+├── /opt/leviathan_engine/agent_service/logs/
+│   ├── pipeline.log
+│   └── claude_manager.log
+├── /root/freebuff/state/
+│   ├── chains/ (AES-256-шифрованные логи команд)
+│   └── checkpoints/ (подписанные)
+└── EventBus (6 событий)
+    ├── task_queued
+    ├── task_started
+    ├── task_done
+    ├── task_failed
+    ├── task_evaluated
+    └── worker_spawned
+</code></pre>
+<h3 id="26">2.6 Секреты и ключи</h3>
+<pre><code>Ключи разбросаны по .env файлам (7+ мест):
+├── /opt/leviathan_engine/agent_service/.env
+│   ├── TG_BOT_TOKEN=86046...
+│   ├── LEV_MCP_TOKEN=den4ik1985!
+│   └── GITHUB_TOKEN=ghp_G9J...
+├── /root/.env
+├── /root/free-claude-code/.env
+├── /root/.fcc/.env
+├── /root/leviathan-property/.env
+├── /root/ai-interior-composer/.env
+├── /root/tszh-bot/.env
+├── /root/survey-finder/.env
+├── SSH keys (~/.ssh/): id_ed25519, levi_key, termux_rsa
+└── Secrets Vault (:8400) — работает, но не все используют
+</code></pre>
+<hr />
+<h2 id="3">3. 🎯 ПРИОРИТЕТЫ ПО ВАЖНОСТИ</h2>
+<h3 id="p0">P0: Критическая инфраструктура (делать сейчас)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Что</th>
+<th>Почему</th>
+<th>Системы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Починить freebuffd</strong></td>
+<td>Жрёт 40% RAM, load 10+</td>
+<td>freebuff</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Централизовать ключи</strong></td>
+<td>Токены и ключи в 7+ местах</td>
+<td>Все</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Единый LLM Gateway</strong></td>
+<td>5 независимых реализаций</td>
+<td>Leviathan + Triton + den4ik + Pelleto</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>ADR-002 Core Kernel</strong></td>
+<td>Фундамент для всего</td>
+<td>Leviathan</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Agent Registry</strong></td>
+<td>Управление агентами из единого центра</td>
+<td>Все агенты</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p1">P1: Базовые сервисы (следующая неделя)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Что</th>
+<th>Почему</th>
+<th>Системы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td><strong>Централизованное логирование</strong></td>
+<td>Нет единого log-агрегатора</td>
+<td>Все</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Единая система авторизации</strong></td>
+<td>Каждый сервис сам по себе</td>
+<td>Все HTTP</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Мониторинг и алерты</strong></td>
+<td>Load 10+ никто не заметил</td>
+<td>Система</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Memory System глобальная</strong></td>
+<td>5 типов памяти для всех агентов</td>
+<td>Все агенты</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Обёртка агентов в BaseRole</strong></td>
+<td>Triton, den4ik, Arbitr → единый интерфейс</td>
+<td>Все агенты</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p2-2-3">P2: Улучшения (2-3 неделя)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Что</th>
+<th>Почему</th>
+<th>Системы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td><strong>Декомпозиция den4ik-claude</strong></td>
+<td>125KB монолит → модули</td>
+<td>den4ik</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Postgres для агентов</strong></td>
+<td>Вместо 20+ SQLite</td>
+<td>Все</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Распределённое кэширование</strong></td>
+<td>Redis для всех</td>
+<td>Все</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Freebuff как аудит-слой</strong></td>
+<td>А не отдельный демон</td>
+<td>freebuff</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>CI/CD для деплоя</strong></td>
+<td>git push → авто-деплой</td>
+<td>Leviathan</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p3-3-4">P3: Оптимизация (3-4 неделя)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Что</th>
+<th>Почему</th>
+<th>Системы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td><strong>Docker-контейнеризация</strong></td>
+<td>Изоляция, масштабирование</td>
+<td>Leviathan, Triton</td>
+</tr>
+<tr>
+<td>17</td>
+<td><strong>Performance: RAM/CPU</strong></td>
+<td>88% swap — это критично</td>
+<td>Все</td>
+</tr>
+<tr>
+<td>18</td>
+<td><strong>Тесты (≥70%)</strong></td>
+<td>0 тестов в Leviathan</td>
+<td>Leviathan</td>
+</tr>
+<tr>
+<td>19</td>
+<td><strong>Документация</strong></td>
+<td>ARCHITECTURE, API, CLI</td>
+<td>Все</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p4">P4: Будущее</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Что</th>
+<th>Системы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>Plugin SDK (hot-plug агенты)</td>
+<td>LAP</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Multi-Agent Coordination (AutoGen-style)</td>
+<td>LAP</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Sandbox (Docker изоляция кода)</td>
+<td>LAP</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Health Dashboard</td>
+<td>Все</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 🏛️ ЦЕЛЕВАЯ АРХИТЕКТУРА: ЕДИНЫЙ ОРГАНИЗМ</h2>
+<h3 id="41">4.1 Концепция</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                        LEVIATHAN ECOSYSTEM                             │
+│                    Единый организм из 5 слоёв                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  СЛОЙ 1: ИНТЕРФЕЙСЫ (Единые точки входа)                              │
+│                                                                          │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐                │
+│  │  CLI     │  │  HTTP    │  │   MCP    │  │ Telegram │                │
+│  │  lev-cli │  │  :8200   │  │  :8300   │  │  @bot    │                │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘                │
+│       │              │             │              │                      │
+│       └──────────────┴─────────────┴──────────────┘                      │
+└──────────────────────────┬──────────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────────┐
+│  СЛОЙ 2: API GATEWAY (Единый шлюз)                                     │
+│                                                                          │
+│  ┌─────────────┐  ┌─────────────┐  ┌────────────┐  ┌────────────────┐  │
+│  │  Auth       │  │  Rate Limit │  │  Router    │  │  Logging       │  │
+│  │  (JWT/OAuth)│  │  (Redis)    │  │  Agent→Svc │  │  (центральное) │  │
+│  └─────────────┘  └─────────────┘  └────────────┘  └────────────────┘  │
+└──────────────────────────┬──────────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────────┐
+│  СЛОЙ 3: ADR-002 KERNEL (Мозг)                                         │
+│                                                                          │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │  DecisionEngine → RoleSelector → ExecutionLoop → Replanner     │     │
+│  │  SafetyGuards (max_steps, max_cost, timeout, circuit_breaker)  │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+│                           │                                             │
+│  ┌────────────────────────────────────────────────────────────────┐     │
+│  │  AgentRegistry (все агенты зарегистрированы)                    │     │
+│  │  ┌──────────┐ ┌──────────┐ ┌────────┐ ┌──────────┐ ┌────────┐ │     │
+│  │  │ General  │ │  Sport   │ │Arbitr  │ │  TG      │ │ Voice  │ │     │
+│  │  │ (core)   │ │(Triton)  │ │Cockpit │ │  Handler │ │  Bot   │ │     │
+│  │  └──────────┘ └──────────┘ └────────┘ └──────────┘ └────────┘ │     │
+│  └────────────────────────────────────────────────────────────────┘     │
+└──────────────────────────┬──────────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────────┐
+│  СЛОЙ 4: SHARED SERVICES (Органы)                                       │
+│                                                                          │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐  │
+│  │  LLM     │  │ Memory   │  │ Logging  │  │ Secrets  │  │  Event  │  │
+│  │  Gateway  │  │  System  │  │  System  │  │  Vault   │  │  Bus    │  │
+│  │  unified │  │  V2      │  │  central │  │  AES-256 │  │ Dur+DLQ │  │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └─────────┘  │
+│                                                                          │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐               │
+│  │  Cache   │  │ Database │  │ Monitor  │  │  Auth    │               │
+│  │  (Redis) │  │ (PG+SQL) │  │ +Alert   │  │  Service │               │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘               │
+└──────────────────────────┬──────────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────────┐
+│  СЛОЙ 5: INFRASTRUCTURE (Скелет)                                        │
+│                                                                          │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐               │
+│  │  nginx   │  │ Postgres │  │  Redis   │  │ systemd  │               │
+│  │  reverse │  │  :5434   │  │  :6379   │  │  сервисы │               │
+│  │  proxy   │  │          │  │          │  │          │               │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘               │
+└─────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="42">4.2 Ключевые решения</h3>
+<h4 id="1-llm-gateway">Решение 1: Единый LLM Gateway</h4>
+<p><strong>Проблема:</strong> 5 независимых реализаций LLM-провайдеров
+<strong>Решение:</strong> Объединить <code>providers.py</code> + <code>ProductionLLMGateway</code> (Triton) + встроенный den4ik → единый <code>LLMGateway</code>
+<strong>Архитектура:</strong></p>
+<pre><code class="language-python">class LLMGateway:
+    PROVIDERS = ProviderFactory(...)  # Gemini, Groq, Claude, DeepSeek
+    ROUTER = ModelRouter(...)         # cost-aware, latency-aware
+    CIRCUIT = CircuitBreaker(...)     # из Triton
+    COST = CostManager(...)           # budget enforcement
+</code></pre>
+<p><strong>Влияет на:</strong> Leviathan + Triton + den4ik + Pelleto</p>
+<h4 id="2_1">Решение 2: Централизованное логирование</h4>
+<p><strong>Проблема:</strong> Логи разбросаны по 10+ местам, нет поиска, нет алертов
+<strong>Решение:</strong> Все логи → единый pipeline: <code>JSON Log → Redis/Loki → аггрегация</code>
+<strong>Схема:</strong></p>
+<pre><code>[Приложение] → JSON Log → [Redis Stream / File] → [Log Aggregator]
+                                                       ├── search (grep/лoki)
+                                                       ├── alerts (telegram)
+                                                       └── metrics (grafana)
+</code></pre>
+<p><strong>Влияет на:</strong> Все сервисы</p>
+<h4 id="3_1">Решение 3: Централизованное хранение ключей</h4>
+<p><strong>Проблема:</strong> Токены и ключи в 7+ .env файлах
+<strong>Решение:</strong> Все ключи → Secrets Vault (:8400), .env → только VAULT_TOKEN
+<strong>Процесс:</strong>
+1. Проверить, что в Vault есть все ключи из всех .env
+2. Заменить .env на ссылки на Vault
+3. Добавить auto-rotation для токенов с истечением
+<strong>Влияет на:</strong> Leviathan, Triton, den4ik, Pelleto, Arbitr</p>
+<h4 id="4-unified-agent-interface-baserole">Решение 4: Unified Agent Interface (BaseRole)</h4>
+<p><strong>Проблема:</strong> Каждый агент имеет свой интерфейс
+<strong>Решение:</strong> Все агенты → <code>BaseRole(Runnable)</code> + <code>ScenarioPolicy(YAML)</code>
+<strong>Схема:</strong></p>
+<pre><code class="language-python">class SportObserverRole(BaseRole):
+    &quot;&quot;&quot;Бывший Triton Agent&quot;&quot;&quot;
+    agent_id = &quot;sport-observer&quot;
+    capabilities = [&quot;sport_observation&quot;, &quot;football&quot;]
+
+    async def execute(self, policy: ScenarioPolicy, state: ExecutionState):
+        return await self.orchestrator.run(...)  # старый Triton код
+
+class TelegramHandlerRole(BaseRole):
+    &quot;&quot;&quot;Бывший den4ik-claude&quot;&quot;&quot;
+    agent_id = &quot;tg-handler&quot;
+    capabilities = [&quot;telegram&quot;, &quot;messaging&quot;]
+
+    async def execute(self, policy: ScenarioPolicy, state: ExecutionState):
+        return await self.bot_adapter.handle(...)
+</code></pre>
+<h4 id="5">Решение 5: Единая система авторизации</h4>
+<p><strong>Проблема:</strong> Каждый HTTP-сервис имеет свою аутентификацию (или не имеет)
+<strong>Решение:</strong> nginx → Auth Service (JWT) → Backend</p>
+<pre><code>[Client] → nginx → [Auth: JWT/OAuth] → Backend Service
+                          │
+                    [Redis: sessions]
+</code></pre>
+<hr />
+<h2 id="5_1">5. 📋 ДЕТАЛЬНЫЙ ПЛАН РЕАЛИЗАЦИИ</h2>
+<h3 id="0-1-2">Фаза 0: Экстренное спасение (1-2 дня)</h3>
+<p><strong>Цель:</strong> Стабилизировать систему, остановить кровотечение ресурсов</p>
+<pre><code>День 1: 
+├── 0.1 🔴 Починить freebuffd
+│   ├── journalctl -u freebuffd -n 50 — диагностика
+│   ├── Исправить ошибку (скорее всего интеграция с free-claude-code)
+│   └── Перезапустить или отключить до лучших времён
+│
+├── 0.2 🟡 Собрать ВСЕ ключи в Vault
+│   ├── Сканировать все .env файлы
+│   ├── Загрузить в /opt/secrets_vault/
+│   └── Проверить curl 127.0.0.1:8400/health
+│
+├── 0.3 🟡 Убрать мёртвые сервисы из systemd
+│   └── citrus_aura, lawu, arbitr (дубликаты), agent-hub
+│
+└── 0.4 🟡 Остановить freebuffd если не чинится
+    └── systemctl stop freebuffd &amp;&amp; systemctl disable freebuffd
+</code></pre>
+<h3 id="1-3-5">Фаза 1: Ядро (3-5 дней)</h3>
+<p><strong>Цель:</strong> Построить фундамент ADR-002 + AgentRegistry</p>
+<pre><code>День 2-3: ADR-002 Core Kernel
+├── 1.1 core/scenarios/loader.py — ScenarioPolicy (Pydantic)
+├── 1.2 core/agent/kernel.py — AgentKernel
+├── 1.3 core/agent/decision_engine.py — DecisionEngine
+├── 1.4 core/agent/execution_loop.py — ExecutionLoop
+└── 1.5 core/safety/guards.py — SafetyGuards
+
+День 4-5: Agent Registry
+├── 1.6 core/roles/base.py — BaseRole(Runnable)
+├── 1.7 core/roles/registry.py — AgentRegistry (hot-plug)
+├── 1.8 core/roles/general_role.py — обёртка LeviathanAgent
+└── 1.9 Тест: kernel + registry работают
+
+День 6: Unified LLM Gateway
+├── 1.10 lap/shared/llm_gateway.py — слияние providers + LLMGateway
+├── 1.11 lap/shared/cost_manager.py — budget enforcement
+└── 1.12 Замена старых вызовов на gateway
+</code></pre>
+<h3 id="2-5-7">Фаза 2: Сервисы (5-7 дней)</h3>
+<p><strong>Цель:</strong> Построить единую инфраструктуру</p>
+<pre><code>День 7-8: Логирование
+├── 2.1 Определить единый формат: JSON {timestamp, service, level, message, correlation_id}
+├── 2.2 Обернуть существующие логи (systemd journal → JSON)
+├── 2.3 Создать LogAggregator (чтение из всех источников)
+├── 2.4 Интеграция с EventBus: логировать все события
+└── 2.5 Alert на ошибки (TG notification при CRITICAL)
+
+День 9-10: Хранение ключей
+├── 2.6 Миграция всех .env → Secrets Vault
+├── 2.7 Auto-rotation для TG_BOT_TOKEN и GITHUB_TOKEN
+├── 2.8 Проверка: ни один .env не содержит живых ключей
+└── 2.9 Документация: как добавить новый ключ
+
+День 11-12: Авторизация + мониторинг
+├── 2.10 Auth Service на nginx (JWT для всех HTTP)
+├── 2.11 Health endpoint для каждого сервиса
+├── 2.12 Мониторинг: load, RAM, swap, disk → алерт в TG
+└── 2.13 Dashboard: systemd status всех сервисов
+</code></pre>
+<h3 id="3-5-7">Фаза 3: Миграция агентов (5-7 дней)</h3>
+<p><strong>Цель:</strong> Все агенты под единым управлением</p>
+<pre><code>День 13-15: Агенты → BaseRole
+├── 3.1 Triton → SportObserverRole (1 день)
+│   ├── Обёртка ContentOrchestrator в BaseRole
+│   └── CircuitBreaker → shared services
+│
+├── 3.2 ArbitrCockpit → ArbitrRole (0.5 дня)
+│   └── Обёртка FastAPI в BaseRole
+│
+├── 3.3 den4ik-claude → TelegramHandlerRole (2 дня)
+│   ├── Разделение bot.py на модули:
+│   │   ├── handler_message.py
+│   │   ├── handler_command.py
+│   │   ├── session_manager.py
+│   │   └── llm_adapter.py → LLM Gateway
+│   └── Исходный bot.py — резервная копия
+│
+├── 3.4 Pelleto → PelletoRole (1 день)
+│   ├── Починить MCP: pip install mcp fastmcp
+│   └── KnowledgeBase → Memory System
+│
+└── 3.5 Vocal bot, Media Factory → Roles (0.5 дня каждый)
+
+День 16-17: Интеграция
+├── 3.6 Единый CLI: lev-cli run scenario X
+├── 3.7 Единый MCP: :8300 — все инструменты всех агентов
+├── 3.8 Единый TG: один бот роутит к разным агентам
+└── 3.9 Единый API: :8200 — OpenAI-compatible
+</code></pre>
+<h3 id="4-production-3-5">Фаза 4: Production (3-5 дней)</h3>
+<p><strong>Цель:</strong> Надёжность, тесты, документация</p>
+<pre><code>День 18-19: Тесты
+├── 4.1 Unit: DecisionEngine, ExecutionLoop, SafetyGuards (≥80%)
+├── 4.2 Integration: full loop, replan, safety violation
+└── 4.3 Performance: decision &lt;2s, checkpoint &lt;100ms, memory &lt;500MB
+
+День 20-21: Документация
+├── 4.4 ARCHITECTURE.md — полная схема
+├── 4.5 API.md — все эндпоинты
+├── 4.6 CLI_GUIDE.md — все команды
+├── 4.7 SCENARIO_SPEC.md — как писать YAML-сценарии
+└── 4.8 DEPLOY.md — как развернуть
+
+День 22: Cleanup
+├── 4.9 Удалить .bak файлы (1.5MB мусора)
+├── 4.10 Слить ветку feature/claude-multi-account → main
+├── 4.11 Отключить старые сервисы (citrus_aura, lawu)
+├── 4.12 Настроить авто-бэкапы (диск 80% → нужна архивация)
+└── 4.13 Очистить старые логи (&gt;30 дней)
+</code></pre>
+<hr />
+<h2 id="6">6. 📊 ДЕТАЛЬНЫЙ ПЛАН ПО ПОДСИСТЕМАМ</h2>
+<h3 id="61">6.1 Система логирования</h3>
+<p><strong>Текущее состояние:</strong> Логи в 10+ местах, нет централизации</p>
+<p><strong>Проект решения:</strong></p>
+<pre><code>[Service] → JSON (syslog) → [Redis Stream / File]
+                                    ↓
+                           [LogProcessor]
+                            ├── parse JSON
+                            ├── enrich (correlation_id, service)
+                            └── store (SQLite / Loki)
+                                    ↓
+                              [LogViewer]
+                            ├── grep / fzf
+                            ├── лента событий в TG
+                            └── алерты при CRITICAL/ERROR
+</code></pre>
+<p><strong>Формат лога:</strong></p>
+<pre><code class="language-json">{
+  &quot;timestamp&quot;: &quot;2026-07-02T10:00:00Z&quot;,
+  &quot;service&quot;: &quot;leviathan-agent&quot;,
+  &quot;level&quot;: &quot;INFO&quot;,
+  &quot;message&quot;: &quot;Task started&quot;,
+  &quot;correlation_id&quot;: &quot;task_abc123&quot;,
+  &quot;agent_id&quot;: &quot;sport-observer&quot;,
+  &quot;latency_ms&quot;: 150,
+  &quot;extra&quot;: {}
+}
+</code></pre>
+<p><strong>План:</strong>
+1. Все Python-сервисы → единый <code>leviathan_logger</code> (логгер из <code>agent/providers</code> пишет JSON)
+2. Все shell-скрипты → <code>logger.sh</code> обёртка
+3. LogProcessor — читает из journal и файлов, пишет в единое хранилище
+4. Web UI для просмотра логов</p>
+<h3 id="62">6.2 Хранение ключей</h3>
+<p><strong>Текущее состояние:</strong> 7+ .env файлов с живыми ключами</p>
+<p><strong>Проект решения:</strong></p>
+<pre><code>Secrets Vault (:8400) — уже работает! Нужно:
+├── 1. Загрузить все ключи из всех .env
+├── 2. Удалить ключи из .env (оставить только VAULT_TOKEN)
+├── 3. Auto-rotation для TG_BOT_TOKEN
+└── 4. Доступ через API: curl -s 127.0.0.1:8400/secret/TG_BOT_TOKEN
+</code></pre>
+<p><strong>Миграция:</strong></p>
+<pre><code>До:  /opt/leviathan_engine/agent_service/.env → TG_BOT_TOKEN=86046...
+После: /opt/leviathan_engine/agent_service/.env → VAULT_TOKEN=xxx (только он)
+       TG_BOT_TOKEN → vault set TG_BOT_TOKEN 86046...
+       Код → vault.get(&quot;TG_BOT_TOKEN&quot;)
+</code></pre>
+<h3 id="63-llm">6.3 Ротация LLM</h3>
+<p><strong>Текущее состояние:</strong> ModelRouter есть, но:
+- Gemini key rotation на 429 (базовый)
+- Нет budget enforcement
+- Нет cost tracking</p>
+<p><strong>Проект решения:</strong></p>
+<pre><code class="language-python">class LLMRouter:
+    # Политики ротации:
+    POLICIES = {
+        &quot;cost_optimized&quot;: {
+            &quot;fallback_chain&quot;: [&quot;gemini&quot;, &quot;groq&quot;, &quot;claude&quot;],
+            &quot;budget_usd&quot;: 0.50,          # на задачу
+            &quot;daily_budget_usd&quot;: 10.0,    # на день
+            &quot;mode&quot;: &quot;FLASH&quot;,             # режим ADR-002
+        },
+        &quot;quality&quot;: {
+            &quot;fallback_chain&quot;: [&quot;claude&quot;, &quot;gemini&quot;, &quot;groq&quot;],
+            &quot;budget_usd&quot;: 5.0,
+            &quot;mode&quot;: &quot;PRO&quot;,
+        },
+        &quot;balanced&quot;: {
+            &quot;fallback_chain&quot;: [&quot;gemini&quot;, &quot;groq&quot;],
+            &quot;budget_usd&quot;: 2.0,
+            &quot;mode&quot;: &quot;AUTO&quot;,
+        }
+    }
+
+    async def route(self, task, policy=&quot;balanced&quot;) -&gt; ProviderResponse:
+        for provider in self.POLICIES[policy][&quot;fallback_chain&quot;]:
+            if self.cost_manager.can_afford(provider, task):
+                try:
+                    return await provider.call(task)
+                except (RateLimitError, QuotaExceeded):
+                    continue  # fallback к следующему
+        raise AllProvidersExhausted()
+</code></pre>
+<p><strong>План:</strong>
+1. Интегрировать cost tracking в ModelRouter
+2. Gemini key pool → auto-rotation c quota monitoring
+3. Groq → добавить ключи (сейчас только 1)
+4. Claude → bridge через Claude adapter
+5. Добавить DeepSeek как бюджетный fallback</p>
+<h3 id="64-agent-registry">6.4 Agent Registry</h3>
+<p><strong>Текущее состояние:</strong> 5+ независимых агентов</p>
+<p><strong>Проект решения:</strong></p>
+<pre><code class="language-python">class AgentRegistry:
+    &quot;&quot;&quot;Единый реестр агентов&quot;&quot;&quot;
+
+    def __init__(self):
+        self._agents: Dict[str, BaseRole] = {}
+        self._capabilities: Dict[str, List[str]] = {}
+
+    def register(self, agent: BaseRole):
+        &quot;&quot;&quot;Регистрация агента (hot-plug)&quot;&quot;&quot;
+        self._agents[agent.agent_id] = agent
+        self._capabilities[agent.agent_id] = agent.capabilities
+
+    def route(self, task: AgentTask) -&gt; BaseRole:
+        &quot;&quot;&quot;Авто-роутинг задачи к подходящему агенту&quot;&quot;&quot;
+        # 1. Intent Detection (из agent/intent.py)
+        intent = self.detect_intent(task.prompt)
+
+        # 2. Поиск по capabilities
+        candidates = [
+            aid for aid, caps in self._capabilities.items()
+            if intent.requires in caps
+        ]
+
+        # 3. Если несколько — DecisionEngine
+        if len(candidates) &gt; 1:
+            return self.decision_engine.select(candidates, task)
+
+        return self._agents[candidates[0]]
+
+    async def health_all(self) -&gt; Dict[str, Status]:
+        &quot;&quot;&quot;Проверка всех агентов&quot;&quot;&quot;
+        return {
+            aid: await agent.health_check()
+            for aid, agent in self._agents.items()
+        }
+</code></pre>
+<h3 id="65">6.5 Базы данных</h3>
+<p><strong>Текущее состояние:</strong> 20+ SQLite БД, 1 Postgres</p>
+<p><strong>Проект решения:</strong></p>
+<pre><code>Этап 1: Стандартизация
+├── Все SQLite → /data/leviathan/&lt;db_name&gt;.db
+├── Единая миграционная схема (alembic-like)
+└── Бэкапы: pg_dump + sqlite3 .dump → /backups/
+
+Этап 2: Централизация (опционально)
+├── Postgres: единая БД для всех агентов
+├── Redis: кэш + очереди + session store
+└── SQLite: только для локальных данных (логи, кэш)
+</code></pre>
+<hr />
+<h2 id="7">7. 🗓️ ТАЙМЛАЙН (календарь)</h2>
+<pre><code>Неделя 1 (Фаза 0-1):
+├── Пн: Починить freebuffd, собрать ключи
+├── Вт: ADR-002 Kernel (ScenarioPolicy + DecisionEngine)
+├── Ср: ADR-002 Kernel (ExecutionLoop + SafetyGuards)
+├── Чт: Agent Registry (BaseRole + регистрация агентов)
+├── Пт: Unified LLM Gateway
+└── Сб: Тестирование ядра
+
+Неделя 2 (Фаза 2):
+├── Пн: Централизованное логирование
+├── Вт: Миграция ключей в Vault
+├── Ср: Auth Service + health monitoring
+├── Чт: Monitor dashboard + TG alerts
+└── Пт: Интеграционное тестирование
+
+Неделя 3 (Фаза 3):
+├── Пн: Triton → SportObserverRole
+├── Вт: Arbitr → ArbitrRole
+├── Ср-Чт: den4ik-claude → TelegramHandlerRole (декомпозиция)
+├── Пт: Pelleto → PelletoRole
+└── Сб: Единые интерфейсы (CLI, API, MCP, TG)
+
+Неделя 4 (Фаза 4):
+├── Пн-Вт: Тесты (unit + integration)
+├── Ср-Чт: Документация
+└── Пт: Cleanup + merge веток
+</code></pre>
+<hr />
+<h2 id="8">8. ⚡ ЧТО МОЖНО СДЕЛАТЬ ПРЯМО СЕЙЧАС</h2>
+<pre><code class="language-bash"># 1. Диагностика freebuffd
+journalctl -u freebuffd --no-pager -n 50
+
+# 2. Проверка свободного места
+du -sh /opt/*/ 2&gt;/dev/null | sort -rh | head -20
+
+# 3. Сбор ключей в Vault
+# (собрать все .env → проверить Vault → загрузить недостающие)
+
+# 4. Создание структуры ADR-002
+mkdir -p /opt/leviathan_engine/agent_service/core/{scenarios,agent,roles,safety,artifacts}
+touch /opt/leviathan_engine/agent_service/core/__init__.py
+</code></pre>
+<hr />
+<h2 id="9">9. 📎 ЧЕКЛИСТ ГОТОВНОСТИ</h2>
+<h3 id="_3">🔴 Блокеры (решить до начала)</h3>
+<ul>
+<li>[ ] freebuffd — диагностирован и исправлен или отключён</li>
+<li>[ ] Ключи — собраны и загружены в Vault</li>
+<li>[ ] Диск — освобождено минимум 5GB</li>
+<li>[ ] Swap — снижен до &lt;50%</li>
+</ul>
+<h3 id="1">✅ Критерии готовности Фазы 1</h3>
+<ul>
+<li>[ ] <code>ScenarioPolicy</code> загружается из YAML</li>
+<li>[ ] <code>DecisionEngine</code> выбирает роль по задаче</li>
+<li>[ ] <code>ExecutionLoop</code> делает observe→decide→act→eval</li>
+<li>[ ] <code>BaseRole</code> обёртка для GeneralAgent работает</li>
+<li>[ ] <code>LLMGateway</code> объединяет всех провайдеров</li>
+</ul>
+<h3 id="2_2">✅ Критерии готовности Фазы 2</h3>
+<ul>
+<li>[ ] Все логи пишутся в едином JSON-формате</li>
+<li>[ ] Все ключи только в Vault</li>
+<li>[ ] Health endpoint у каждого сервиса</li>
+<li>[ ] Алерты при падении сервиса</li>
+</ul>
+<h3 id="3_2">✅ Критерии готовности Фазы 3</h3>
+<ul>
+<li>[ ] Triton, Arbitr, den4ik-claude, Pelleto — все как BaseRole</li>
+<li>[ ] <code>lev-cli run scenario X</code> запускает любого агента</li>
+<li>[ ] Единый MCP (:8300) со всеми инструментами</li>
+<li>[ ] Единый TG-бот для всех агентов</li>
+</ul>
+<h3 id="4_1">✅ Критерии готовности Фазы 4</h3>
+<ul>
+<li>[ ] Тесты ≥70%</li>
+<li>[ ] Документация: ARCHITECTURE, API, CLI, SCENARIO, DEPLOY</li>
+<li>[ ] Чистый git: main — source of truth</li>
+<li>[ ] Авто-бэкапы, старые логи удалены</li>
+</ul>
+<hr />
+<h2 id="10">10. 📝 ЗАКЛЮЧЕНИЕ</h2>
+<p>Сервер LEVIATHAN представляет собой <strong>богатую экосистему</strong> из 30+ проектов, 20+ активных сервисов и глубокой интеграции с LLM (Gemini, Groq, Claude). Проблема не в отсутствии компонентов, а в <strong>отсутствии связности</strong>.</p>
+<p><strong>Ключевые метрики:</strong>
+- 4/10 — архитектурная целостность
+- 2/10 — unified infrastructure (logging, keys, auth)
+- 6/10 — LLM capabilities (хороший набор, плохая интеграция)
+- 3/10 — operational readiness (нет мониторинга, тестов)</p>
+<p><strong>План</strong> — не переписывание, а постепенная <strong>унификация</strong>:
+- ADR-002 даёт единый мозг (kernel)
+- Shared Services дают единые органы (logging, keys, gateway)
+- BaseRole даёт единый язык для всех агентов
+- Фазы 0→4 дают безопасный путь без остановки production</p>
+<hr />
+<p><em>Документ создан: 2026-07-02 | Полный аудит сервера LEVIATHAN</em>
+<em>Составлено на основе: systemctl, ss, ps, find, git, cat — 30+ команд</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

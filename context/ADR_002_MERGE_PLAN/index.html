@@ -1,0 +1,1562 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/ADR_002_MERGE_PLAN/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🔀 ПЛАН ОБЪЕДИНЕНИЯ СИСТЕМ: ADR-002 КАК ЯДРО - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#adr-002" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🔀 ПЛАН ОБЪЕДИНЕНИЯ СИСТЕМ: ADR-002 КАК ЯДРО
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План объединения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Секреты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leviathan-engine-triton-den4ik-claude-arbitrcockpit-pelleto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leviathan Engine + Triton + den4ik-claude + ArbitrCockpit + Pelleto → Единая платформа
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ЗАЧЕМ ЭТО НУЖНО
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ЗАЧЕМ ЭТО НУЖНО">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проблема
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adr-002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 🔬 ЧТО ТАКОЕ ADR-002 (КРАТКО)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 🔬 ЧТО ТАКОЕ ADR-002 (КРАТКО)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Было (pipeline):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Стало (runtime kernel):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adr-002_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые компоненты ADR-002:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 🗺️ КАРТА МЕРДЖА: ЧТО И КУДА ПЕРЕЕЗЖАЕТ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 🗺️ КАРТА МЕРДЖА: ЧТО И КУДА ПЕРЕЕЗЖАЕТ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Схема целевой архитектуры
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-adr-002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Маппинг существующего кода на ADR-002
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 📋 ПОЭТАПНЫЙ ПЛАН МЕРДЖА
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 📋 ПОЭТАПНЫЙ ПЛАН МЕРДЖА">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Сводка фаз
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-1-adr-002-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Фаза 1 — ЯДРО ADR-002 (3 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Фаза 2 — РОЛИ И БЕЗОПАСНОСТЬ (4 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-3-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Фаза 3 — СЛИЯНИЕ АГЕНТОВ (5 дней)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Фаза 3 — СЛИЯНИЕ АГЕНТОВ (5 дней)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-generalrole-leviathan-agent-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 GeneralRole (из Leviathan Agent, 1 день)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sportobserverrole-triton-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 SportObserverRole (из Triton, 1 день)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-telegramhandlerrole-den4ik-claude-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 TelegramHandlerRole (из den4ik-claude, 1.5 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-arbitrrole-arbitrcockpit-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 ArbitrRole (из ArbitrCockpit, 0.5 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-pelletorole-pelleto-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 PelletoRole (из Pelleto, 1 день)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-4-cli-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Фаза 4 — CLI И ИНТЕРФЕЙСЫ (2 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-5-production-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Фаза 5 — PRODUCTION (3 дня)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 🔄 ОБРАТНАЯ СОВМЕСТИМОСТЬ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ⏱️ ТАЙМЛАЙН
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 🎯 ЧТО ДАЁТ МЕРДЖ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ПЕРВЫЙ ШАГ (что делать прямо сейчас)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="adr-002">🔀 ПЛАН ОБЪЕДИНЕНИЯ СИСТЕМ: ADR-002 КАК ЯДРО</h1>
+<h2 id="leviathan-engine-triton-den4ik-claude-arbitrcockpit-pelleto">Leviathan Engine + Triton + den4ik-claude + ArbitrCockpit + Pelleto → Единая платформа</h2>
+<p><strong>Дата:</strong> 2026-07-02 | <strong>Сервер:</strong> LEVIATHAN (78.17.24.96)
+<strong>Статус:</strong> DRAFT | <strong>Основание:</strong> ADR-002-FINAL (Dynamic Scenario-Driven Agent Execution Engine)
+<strong>Версия:</strong> 1.0</p>
+<hr />
+<h2 id="1">1. ЗАЧЕМ ЭТО НУЖНО</h2>
+<h3 id="_1">Проблема</h3>
+<p>На сервере работают <strong>5+ независимых агентных систем</strong>, каждая со своей архитектурой:</p>
+<table>
+<thead>
+<tr>
+<th>Система</th>
+<th>Строк кода</th>
+<th>Процесс</th>
+<th>Порт</th>
+<th>LLM-вызовы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leviathan Engine</td>
+<td>~25,000</td>
+<td>leviathan_agent + leviathan_mcp</td>
+<td>:8200, :8300</td>
+<td>Gemini/Claude/Groq</td>
+</tr>
+<tr>
+<td>Triton Agent</td>
+<td>~3,900</td>
+<td>sport-observer</td>
+<td>:8201</td>
+<td>Groq→Gemini→Leviathan</td>
+</tr>
+<tr>
+<td>den4ik-claude</td>
+<td>~125,000 (монолит)</td>
+<td>den4ik-claude</td>
+<td>TG only</td>
+<td>Встроен</td>
+</tr>
+<tr>
+<td>ArbitrCockpit</td>
+<td>~8,000</td>
+<td>arbitr</td>
+<td>:8090</td>
+<td>FastAPI + SQLAlchemy</td>
+</tr>
+<tr>
+<td>Pelleto AI</td>
+<td>~5,000</td>
+<td>pelleto</td>
+<td>:8131</td>
+<td>Встроен</td>
+</tr>
+<tr>
+<td><strong>ИТОГО</strong></td>
+<td><strong>~167,000</strong></td>
+<td><strong>5+ процессов</strong></td>
+<td><strong>~1.5 GiB RAM</strong></td>
+<td><strong>Каждый свой</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Цель</h3>
+<p>Перевести всё это на <strong>централизованное ядро ADR-002</strong>: runtime decision-making kernel, где каждый агент — это просто <code>ScenarioPolicy</code> (YAML-контракт) + <code>BaseAgent</code> (Python-реализация).</p>
+<hr />
+<h2 id="2-adr-002">2. 🔬 ЧТО ТАКОЕ ADR-002 (КРАТКО)</h2>
+<p>ADR-002 — это архитектурное решение, заменяющее <strong>статический pipeline</strong> на <strong>runtime decision-making kernel</strong>.</p>
+<h3 id="pipeline">Было (pipeline):</h3>
+<pre><code>Task → Plan → Step 1 → Step 2 → ... → Step N → Result
+</code></pre>
+<h3 id="runtime-kernel">Стало (runtime kernel):</h3>
+<pre><code>ScenarioPolicy (YAML) → AgentKernel
+  ├── 1. Decision Engine — что делать дальше?
+  ├── 2. Role Selector — кто будет делать?
+  ├── 3. Execution Loop — сделать → оценить
+  ├── 4. Replanning Engine — перепланировать при неудаче
+  └── 5. Safety Guards — защита от зацикливания/перерасхода
+</code></pre>
+<h3 id="adr-002_1">Ключевые компоненты ADR-002:</h3>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Назначение</th>
+<th>Сложность</th>
+<th>Готовность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ScenarioPolicy</code></td>
+<td>YAML-контракт: intent, roles, constraints, safety</td>
+<td>4/10</td>
+<td>📋 План</td>
+</tr>
+<tr>
+<td><code>DecisionEngine</code></td>
+<td>Выбор следующего шага (rules + LLM + cost)</td>
+<td>8/10</td>
+<td>📋 План</td>
+</tr>
+<tr>
+<td><code>RoleSelector</code></td>
+<td>Динамический выбор роли на каждом шаге</td>
+<td>5/10</td>
+<td>📋 План</td>
+</tr>
+<tr>
+<td><code>ExecutionLoop</code></td>
+<td>observe → decide → act → evaluate</td>
+<td>8/10</td>
+<td>📋 План</td>
+</tr>
+<tr>
+<td><code>ReplanningEngine</code></td>
+<td>Адаптивное перепланирование</td>
+<td>7/10</td>
+<td>📋 План</td>
+</tr>
+<tr>
+<td><code>SafetyGuards</code></td>
+<td>max_steps, max_cost, timeout, circuit_breaker</td>
+<td>6/10</td>
+<td>📋 План</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 🗺️ КАРТА МЕРДЖА: ЧТО И КУДА ПЕРЕЕЗЖАЕТ</h2>
+<h3 id="31">3.1 Схема целевой архитектуры</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│                     CLI / API / MCP / TG BOT                        │
+│              (Единый вход: lev-cli, :8200, :8300, @bot)            │
+└──────────────────────────┬──────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────┐
+│                    ADR-002 AGENT KERNEL                             │
+│                                                                      │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │  Decision Engine    Role Selector    Execution Loop           │  │
+│  │  Replanning Engine  Safety Guards    Cost Manager             │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+│                           │                                         │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │  ScenarioPolicy Loader (YAML → Pydantic)                     │  │
+│  │  - freelance_seo.yaml   - sport_observer.yaml                │  │
+│  │  - code_project.yaml    - tg_bot_handler.yaml                │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+└──────────────────────────┬──────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────┐
+│                    SHARED INFRASTRUCTURE                            │
+│                                                                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────────┐  │
+│  │ LLM Gateway  │  │ Memory V2    │  │ Secrets Vault            │  │
+│  │ unified      │  │ 5 типов      │  │ AES-256, :8400           │  │
+│  ├──────────────┤  ├──────────────┤  ├──────────────────────────┤  │
+│  │ EventBus     │  │ Observ.      │  │ Checkpoint/Scheduler     │  │
+│  │ durable+DLQ  │  │ OTEL+Cost    │  │ ContextKeeper            │  │
+│  └──────────────┘  └──────────────┘  └──────────────────────────┘  │
+└──────────────────────────┬──────────────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────────────┐
+│                    ROLE / TOOL REGISTRY                             │
+│  (все роли и инструменты со всех существующих агентов)              │
+│                                                                      │
+│  ┌────────────────┐  ┌────────────────┐  ┌──────────────────────┐  │
+│  │ Из Leviathan:  │  │ Из Triton:     │  │ Из den4ik-claude:    │  │
+│  │ 13 tools       │  │ FootballMatch  │  │ TG message send      │  │
+│  │ Intent Detect  │  │ SportData      │  │ Media upload         │  │
+│  │ Pipeline exec  │  │ Notifications  │  │ Account management   │  │
+│  ├────────────────┤  ├────────────────┤  ├──────────────────────┤  │
+│  │ Из Arbitr:     │  │ Из Pelleto:    │  │ Из Manifest 5.1:     │  │
+│  │ Case status    │  │ KnowledgeBase  │  │ StateMachine (FSM)   │  │
+│  │ Document mgmt  │  │ Skill loader   │  │ WorkflowEngine       │  │
+│  └────────────────┘  └────────────────┘  └──────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="32-adr-002">3.2 Маппинг существующего кода на ADR-002</h3>
+<table>
+<thead>
+<tr>
+<th>Существующий модуль</th>
+<th>Проект</th>
+<th>Куда в ADR-002</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent/core.py</code> (LeviathanAgent)</td>
+<td>Leviathan</td>
+<td>→ <code>Role</code> (GeneralPurpose) / <code>Tool</code> (Bridge)</td>
+<td>🔄 Обёртка</td>
+</tr>
+<tr>
+<td><code>agent/tools*.py</code> (13 файлов, 3K строк)</td>
+<td>Leviathan</td>
+<td>→ <code>ToolRegistry</code></td>
+<td>🔄 Регистрация</td>
+</tr>
+<tr>
+<td><code>agent/intent.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>DecisionEngine</code> (Rule Filter)</td>
+<td>🔄 Интеграция</td>
+</tr>
+<tr>
+<td><code>agent/dispatcher.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>ExecutionLoop</code></td>
+<td>🔄 Замена</td>
+</tr>
+<tr>
+<td><code>agent/providers.py</code> + <code>model_router.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>LLM Gateway</code></td>
+<td>🔄 Слияние</td>
+</tr>
+<tr>
+<td><code>agent/tg_bot.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>Interface Layer</code> (Telegram)</td>
+<td>🔄 Перенос</td>
+</tr>
+<tr>
+<td><code>mcp_server/</code> (19 tools)</td>
+<td>Leviathan</td>
+<td>→ <code>Interface Layer</code> (MCP)</td>
+<td>🔄 Перенос</td>
+</tr>
+<tr>
+<td><code>middleware/pipeline.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>SafetyGuards</code></td>
+<td>🔄 Интеграция</td>
+</tr>
+<tr>
+<td><code>callbacks/manager.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>AgentKernel</code> (Callbacks)</td>
+<td>🔄 Интеграция</td>
+</tr>
+<tr>
+<td><code>workflow/engine.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>ExecutionLoop</code> (Branch/Merge)</td>
+<td>🔄 Интеграция</td>
+</tr>
+<tr>
+<td><code>db/memory_system.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>Memory System</code></td>
+<td>🔄 Shared Service</td>
+</tr>
+<tr>
+<td><code>event_bus.py</code></td>
+<td>Leviathan</td>
+<td>→ <code>EventBus</code> (Durable)</td>
+<td>🔄 Расширение</td>
+</tr>
+<tr>
+<td><code>execution/</code> (backoff, idempotency)</td>
+<td>Leviathan</td>
+<td>→ <code>SafetyGuards</code></td>
+<td>🔄 Интеграция</td>
+</tr>
+<tr>
+<td>Triton: <code>ContentOrchestrator</code></td>
+<td>Triton</td>
+<td>→ <code>Role</code> (SportObserver)</td>
+<td>🔄 Обёртка</td>
+</tr>
+<tr>
+<td>Triton: <code>ProductionLLMGateway</code></td>
+<td>Triton</td>
+<td>→ <code>LLM Gateway</code> (CircuitBreaker)</td>
+<td>🔄 Слияние</td>
+</tr>
+<tr>
+<td>Triton: <code>FootballAdapter</code></td>
+<td>Triton</td>
+<td>→ <code>Tool</code> (SportDataProvider)</td>
+<td>🔄 Регистрация</td>
+</tr>
+<tr>
+<td>den4ik-claude: <code>bot.py</code></td>
+<td>den4ik</td>
+<td>→ <code>Role</code> (TelegramHandler)</td>
+<td>🔄 Модуляризация</td>
+</tr>
+<tr>
+<td>ArbitrCockpit: API</td>
+<td>Arbitr</td>
+<td>→ <code>Role</code> (ArbitrAnalyst)</td>
+<td>🔄 Обёртка</td>
+</tr>
+<tr>
+<td>Pelleto: KnowledgeBase</td>
+<td>Pelleto</td>
+<td>→ <code>Memory System</code> (LongTerm)</td>
+<td>🔄 Интеграция</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 📋 ПОЭТАПНЫЙ ПЛАН МЕРДЖА</h2>
+<h3 id="41">4.1 Сводка фаз</h3>
+<table>
+<thead>
+<tr>
+<th>Фаза</th>
+<th>Дней</th>
+<th>Фокус</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Фаза 1: Ядро</strong></td>
+<td>3</td>
+<td>ScenarioPolicy + DecisionEngine + ExecutionLoop</td>
+<td>Базовый kernel работает</td>
+</tr>
+<tr>
+<td><strong>Фаза 2: Роли и безопасность</strong></td>
+<td>4</td>
+<td>RoleRegistry + SafetyGuards + Checkpointing</td>
+<td>Kernel защищён</td>
+</tr>
+<tr>
+<td><strong>Фаза 3: Слияние агентов</strong></td>
+<td>5</td>
+<td>Обёртка всех существующих агентов в роли</td>
+<td>Все системы под единым ядром</td>
+</tr>
+<tr>
+<td><strong>Фаза 4: CLI и интерфейсы</strong></td>
+<td>2</td>
+<td>lev-cli + API + MCP + TG</td>
+<td>Единые точки входа</td>
+</tr>
+<tr>
+<td><strong>Фаза 5: Production</strong></td>
+<td>3</td>
+<td>Тесты, доки, performance</td>
+<td>Production-ready</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Итого:</strong> ~17 дней</p>
+<hr />
+<h3 id="42-1-adr-002-3">4.2 Фаза 1 — ЯДРО ADR-002 (3 дня)</h3>
+<p><strong>Создаётся</strong> в <code>/opt/leviathan_engine/agent_service/</code>:</p>
+<pre><code>core/                               # 🆕 Новая директория
+├── scenarios/
+│   ├── __init__.py
+│   ├── loader.py                  # ScenarioPolicy (Pydantic) — YAML → модель
+│   └── examples/
+│       └── freelance_seo.yaml     # Пример сценария из ADR-002
+├── agent/
+│   ├── __init__.py
+│   ├── kernel.py                  # AgentKernel — главный оркестратор
+│   ├── decision_engine.py         # DecisionEngine (Rule Filter + LLM Ranking)
+│   ├── execution_loop.py          # ExecutionLoop (observe→decide→act→eval)
+│   └── replanner.py               # ReplanningEngine
+├── roles/
+│   ├── __init__.py
+│   ├── registry.py                # RoleRegistry — регистр ролей
+│   └── base.py                    # BaseRole(Runnable) — базовый интерфейс
+└── safety/
+    ├── __init__.py
+    └── guards.py                  # SafetyGuards (max_steps, cost, timeout)
+</code></pre>
+<p><strong>Как мержится существующий код:</strong>
+- <code>agent/intent.py</code> → читается как inspiration для <code>DecisionEngine</code>
+- <code>agent/state.py</code> (StateMachine) → встраивается в <code>ExecutionLoop</code> как внутреннее состояние
+- <code>middleware/pipeline.py</code> → становится частью <code>SafetyGuards</code>
+- <code>workflow/engine.py</code> → встраивается в <code>ExecutionLoop</code> как Branch/Merge</p>
+<p><strong>Критерий:</strong> <code>ScenarioPolicy</code> загружается из YAML, <code>DecisionEngine</code> выбирает роль, <code>ExecutionLoop</code> делает 1 шаг.</p>
+<hr />
+<h3 id="43-2-4">4.3 Фаза 2 — РОЛИ И БЕЗОПАСНОСТЬ (4 дня)</h3>
+<p><strong>Создаётся/расширяется:</strong></p>
+<pre><code>core/
+├── roles/
+│   └── registry.py                # RoleRegistry с fuzzy match
+├── safety/
+│   ├── guards.py                  # Расширение: все 7 механизмов ADR-002
+│   ├── cost_manager.py            # Budget enforcement
+│   ├── loop_detector.py           # Детектор зацикливания
+│   └── circuit_breaker.py         # Circuit breaker (из Triton)
+├── artifacts/
+│   └── manager.py                 # ArtifactManager (state.json, reasoning_trace.jsonl)
+system/
+├── event_bus_durable.py           # DurableEventBus (ACK/NACK/DLQ) — расширение event_bus.py
+├── checkpoint_manager.py          # Checkpointing (из lev_context.py)
+└── observability.py               # OTEL + Cost Tracking
+</code></pre>
+<p><strong>Как мержится существующий код:</strong>
+- Triton <code>ProductionLLMGateway</code> → circuit breaker выносится в <code>core/safety/</code>
+- Leviathan <code>execution/backoff_scheduler.py</code> → интегрируется в <code>SafetyGuards</code>
+- Leviathan <code>execution/idempotency.py</code> → интегрируется в <code>EventBus</code>
+- Контекст: <code>mcp_server/lev_context.py</code> (ContextKeeper) → <code>checkpoint_manager.py</code></p>
+<p><strong>Критерий:</strong> Kernel не даёт превысить max_cost, детектирует loop, сохраняет checkpoint после каждого шага.</p>
+<hr />
+<h3 id="44-3-5">4.4 Фаза 3 — СЛИЯНИЕ АГЕНТОВ (5 дней)</h3>
+<p><strong>Каждый существующий агент оборачивается в <code>BaseRole</code>:</strong></p>
+<pre><code>core/roles/
+├── general_role.py             # LeviathanAgent → GeneralPurposeRole
+├── sport_observer_role.py      # Triton → SportObserverRole
+├── arbitr_role.py              # ArbitrCockpit → ArbitrRole
+├── tg_handler_role.py          # den4ik-claude → TelegramHandlerRole
+└── pelleto_role.py             # Pelleto → PelletoRole
+</code></pre>
+<p><strong>Процесс слияния для каждого агента:</strong></p>
+<h4 id="31-generalrole-leviathan-agent-1">3.1 GeneralRole (из Leviathan Agent, 1 день)</h4>
+<pre><code>agent/core.py → core/roles/general_role.py
+  └── LeviathanAgent.run() → GeneralRole.execute()
+  └── Сохраняется как pipeline mode (legacy) + runtime mode (new)
+</code></pre>
+<h4 id="32-sportobserverrole-triton-1">3.2 SportObserverRole (из Triton, 1 день)</h4>
+<pre><code>/opt/triton_agent/ → core/roles/sport_observer_role.py
+  └── ContentOrchestrator → сценарий sport_observer.yaml
+  └── FootballAdapter → ToolRegistry
+  └── ProductionLLMGateway → CircuitBreaker в shared
+  └── /opt/triton_agent/ остаётся как есть (symlink на core/roles/)
+</code></pre>
+<h4 id="33-telegramhandlerrole-den4ik-claude-15">3.3 TelegramHandlerRole (из den4ik-claude, 1.5 дня)</h4>
+<pre><code>/opt/den4ik-claude/bot.py → core/roles/tg_handler_role.py
+  └── Разделение: message_handler, command_handler, session_manager
+  └── 125KB монолит → 3-4 модуля в core/roles/tg_handler/
+  └── Исходный bot.py остаётся для отката
+</code></pre>
+<h4 id="34-arbitrrole-arbitrcockpit-05">3.4 ArbitrRole (из ArbitrCockpit, 0.5 дня)</h4>
+<pre><code>/opt/arbitr_cockpit/ → core/roles/arbitr_role.py
+  └── FastAPI эндпоинты → ScenarioPolicy arbitr_case.yaml
+  └── Обёртка без слома существующего API
+</code></pre>
+<h4 id="35-pelletorole-pelleto-1">3.5 PelletoRole (из Pelleto, 1 день)</h4>
+<pre><code>/opt/pelleto-ai/ → core/roles/pelleto_role.py
+  └── Починить MCP (установить fastmcp)
+  └── KnowledgeBase → memory system
+</code></pre>
+<p><strong>Критерий:</strong> <code>AgentKernel</code> может запустить любой из 5 сценариев через единый интерфейс.</p>
+<hr />
+<h3 id="45-4-cli-2">4.5 Фаза 4 — CLI И ИНТЕРФЕЙСЫ (2 дня)</h3>
+<p><strong>Единая точка входа <code>lev-cli</code>:</strong></p>
+<pre><code>cli/
+├── commands.py              # Все команды: run, list, show, watch, cancel, resume
+└── scenarios/               # YAML-сценарии
+    ├── freelance_seo.yaml
+    ├── sport_observer.yaml
+    ├── arbit_case.yaml
+    └── tg_bot_handler.yaml
+</code></pre>
+<p><strong>Команды из ADR-002:</strong></p>
+<pre><code class="language-bash"># Запуск любого сценария
+lev-cli run scenario sport_observer --mode PRO --budget 5.0
+lev-cli run scenario freelance_seo --mode FLASH --provider deepseek
+lev-cli run scenario arbit_case --mode AUTO
+
+# Управление
+lev-cli scenarios list
+lev-cli run watch &lt;execution_id&gt;
+lev-cli run cancel &lt;execution_id&gt;
+lev-cli run resume &lt;execution_id&gt;
+</code></pre>
+<p><strong>Интерфейсы (существующие не ломаются):</strong>
+- CLI: <code>lev-cli</code> (новый)
+- HTTP: <code>:8200</code> (старый) + новый OpenAI-compatible API
+- MCP: <code>:8300</code> (старый) + все инструменты всех агентов
+- Telegram: существующий бот + роутинг в ядро</p>
+<p><strong>Критерий:</strong> Одна команда запускает агента любой системы.</p>
+<hr />
+<h3 id="46-5-production-3">4.6 Фаза 5 — PRODUCTION (3 дня)</h3>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.1</td>
+<td>Unit-тесты: DecisionEngine, ExecutionLoop, SafetyGuards (≥80%)</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>Integration-тесты: Full Loop, Replanning, Safety Violation, Resume</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>Performance-тесты: decision latency &lt;2s, checkpoint &lt;100ms</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>Документация: ARCHITECTURE.md, SCENARIO_SPEC.md, CLI_GUIDE.md</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td>Примеры сценариев: freelance_seo, sport_observer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 🔄 ОБРАТНАЯ СОВМЕСТИМОСТЬ</h2>
+<p><strong>Ключевой принцип:</strong> ни один существующий сервис не ломается.</p>
+<pre><code class="language-python"># LeviathanAgent переключается между режимами:
+class LeviathanAgent:
+    def __init__(self, mode: str = &quot;pipeline&quot;):
+        self.mode = mode
+        if mode == &quot;runtime&quot;:
+            self.kernel = AgentKernel(...)
+        else:
+            self.pipeline = PipelineExecutor(...)
+
+    async def run(self, task):
+        if self.mode == &quot;runtime&quot;:
+            return await self.kernel.execute(task)
+        else:
+            return await self.pipeline.execute(task)
+</code></pre>
+<p><strong>Режим по умолчанию:</strong> <code>pipeline</code> (всё работает как сейчас)
+<strong>Переключение:</strong> <code>lev-cli config set execution_mode runtime</code></p>
+<hr />
+<h2 id="6">6. ⏱️ ТАЙМЛАЙН</h2>
+<pre><code>Фаза 1 (3 дня): ███████░░░░░░░░░░░░░░░░░░░░░░░
+Фаза 2 (4 дня): ███████████████░░░░░░░░░░░░░░░
+Фаза 3 (5 дней): █████████████████████████░░░░░
+Фаза 4 (2 дня): █████████████████████████████░
+Фаза 5 (3 дня): ██████████████████████████████
+                ───────────────────────────────
+                 День 1                   День 17
+</code></pre>
+<hr />
+<h2 id="7">7. 🎯 ЧТО ДАЁТ МЕРДЖ</h2>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Сейчас</th>
+<th>После</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Процессов</strong></td>
+<td>5+</td>
+<td>2 (ядро + worker pool)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>~1.5 GiB</td>
+<td>~500 MiB</td>
+</tr>
+<tr>
+<td><strong>LLM Gateway</strong></td>
+<td>4 реализации</td>
+<td>1 (unified)</td>
+</tr>
+<tr>
+<td><strong>Очередная команда</strong></td>
+<td>выбрать систему → зайти в её контекст</td>
+<td><code>lev-cli run scenario X</code></td>
+</tr>
+<tr>
+<td><strong>Новый сценарий</strong></td>
+<td>писать pipeline-код днями</td>
+<td>написать YAML + роль за часы</td>
+</tr>
+<tr>
+<td><strong>Cost tracking</strong></td>
+<td>нет</td>
+<td>built-in (max_cost_usd)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. ПЕРВЫЙ ШАГ (что делать прямо сейчас)</h2>
+<pre><code class="language-bash"># 1. Создать структуру ядра ADR-002
+mkdir -p /opt/leviathan_engine/agent_service/core/{scenarios,agent,roles,safety,artifacts}
+
+# 2. Создать первый файл
+touch core/__init__.py
+touch core/scenarios/__init__.py
+touch core/scenarios/loader.py      # ScenarioPolicy (Pydantic)
+</code></pre>
+<hr />
+<p><em>Документ создан: 2026-07-02 | Основание: ADR-002-FINAL</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
