@@ -1,0 +1,1689 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/context/MANIFEST_5.1_AGENT_IMPLEMENTATION/">
+      
+      
+        <link rel="prev" href="../MANIFEST_5.0.0/">
+      
+      
+        <link rel="next" href="../MANIFEST_5.1_FINAL_REPORT/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Манифест 5.1 (Агент) - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#510" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Манифест 5.1 (Агент)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.1 (Агент)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.1 (Агент)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ КРИТИЧЕСКИЕ ТРЕБОВАНИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        КОНТЕКСТ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="КОНТЕКСТ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#78172496-leviathan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сервер: 78.17.24.96 (LEVIATHAN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optleviathan_engineagent_service-25k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основной проект: /opt/leviathan_engine/agent_service/ (~25K строк кода)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my_system_analysismd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Текущее состояние (из анализа MY_SYSTEM_ANALYSIS.md):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leviathan-engine-510" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель: Превратить Leviathan Engine в полноценную систему уровня Манифест 5.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 0: ВОССТАНОВЛЕНИЕ КОНТЕКСТА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-agent-lifecycle-fsm-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-statemachine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Создание StateMachine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-leviathanagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Интеграция в LeviathanAgent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-dispatcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Интеграция в Dispatcher
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-runnable-interface-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 2: RUNNABLE INTERFACE — CRITICAL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 2: RUNNABLE INTERFACE — CRITICAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-runnable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Создание протокола Runnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Обёртка компонентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-middleware-pipeline-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Создание Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Реализация базовых мидлварей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Интеграция
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-callback-system-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 4: CALLBACK SYSTEM — HIGH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 4: CALLBACK SYSTEM — HIGH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-callbackmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Создание CallbackManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-eventbus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Интеграция с существующим EventBus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-workflow-engine-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 5: WORKFLOW ENGINE — HIGH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 5: WORKFLOW ENGINE — HIGH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-workflowengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Создание WorkflowEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Декораторы Flow (опционально, но желательно)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Интеграция с Checkpointing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-memory-system-v2-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 6: MEMORY SYSTEM V2 — HIGH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 6: MEMORY SYSTEM V2 — HIGH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Рефакторинг памяти
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Миграция
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Smoke Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Финальный отчёт
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЛОГИРОВАНИЕ (ОБЯЗАТЕЛЬНО)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        НАЧНИ НЕМЕДЛЕННО
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANIFEST_5.1_FINAL_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.1 (Финальный отчёт)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AGENT_STATE_IMPLEMENTATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AgentState Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../COMPARISON/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ КРИТИЧЕСКИЕ ТРЕБОВАНИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        КОНТЕКСТ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="КОНТЕКСТ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#78172496-leviathan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сервер: 78.17.24.96 (LEVIATHAN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optleviathan_engineagent_service-25k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основной проект: /opt/leviathan_engine/agent_service/ (~25K строк кода)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my_system_analysismd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Текущее состояние (из анализа MY_SYSTEM_ANALYSIS.md):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leviathan-engine-510" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель: Превратить Leviathan Engine в полноценную систему уровня Манифест 5.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 0: ВОССТАНОВЛЕНИЕ КОНТЕКСТА
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-agent-lifecycle-fsm-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-statemachine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Создание StateMachine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-leviathanagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Интеграция в LeviathanAgent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-dispatcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Интеграция в Dispatcher
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-runnable-interface-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 2: RUNNABLE INTERFACE — CRITICAL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 2: RUNNABLE INTERFACE — CRITICAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-runnable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Создание протокола Runnable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Обёртка компонентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-middleware-pipeline-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Создание Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Реализация базовых мидлварей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Интеграция
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-callback-system-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 4: CALLBACK SYSTEM — HIGH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 4: CALLBACK SYSTEM — HIGH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-callbackmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Создание CallbackManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-eventbus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Интеграция с существующим EventBus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-workflow-engine-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 5: WORKFLOW ENGINE — HIGH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 5: WORKFLOW ENGINE — HIGH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-workflowengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Создание WorkflowEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Декораторы Flow (опционально, но желательно)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Интеграция с Checkpointing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-memory-system-v2-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 6: MEMORY SYSTEM V2 — HIGH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 6: MEMORY SYSTEM V2 — HIGH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Рефакторинг памяти
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Миграция
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-smoke-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Smoke Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Финальный отчёт
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ЛОГИРОВАНИЕ (ОБЯЗАТЕЛЬНО)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        НАЧНИ НЕМЕДЛЕННО
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="510">ЗАДАЧА: ПОЛНАЯ РЕАЛИЗАЦИЯ МАНИФЕСТА 5.1.0 — АГЕНТНОЕ ЯДРО</h1>
+<h2 id="_1">⚠️ КРИТИЧЕСКИЕ ТРЕБОВАНИЯ</h2>
+<ul>
+<li>Работай АВТОНОМНО без остановок и подтверждений</li>
+<li>Логируй КАЖДОЕ действие в /root/implementation_log.md</li>
+<li>Создавай отчёты после каждого этапа в /root/analysis/</li>
+<li>При ошибках — логируй и продолжай со следующего шага</li>
+<li>НЕ спрашивай "продолжить?" — просто выполняй код</li>
+<li><strong>ВАЖНО:</strong> Секреты уже настроены, не трогай Vault API. Фокус только на коде агента.</li>
+</ul>
+<hr />
+<h2 id="_2">КОНТЕКСТ</h2>
+<h3 id="78172496-leviathan">Сервер: 78.17.24.96 (LEVIATHAN)</h3>
+<h3 id="optleviathan_engineagent_service-25k">Основной проект: /opt/leviathan_engine/agent_service/ (~25K строк кода)</h3>
+<h3 id="my_system_analysismd">Текущее состояние (из анализа MY_SYSTEM_ANALYSIS.md):</h3>
+<ul>
+<li>✅ Есть: ContextKeeper, OperationRegistry, EventBus, Tools (13 файлов)</li>
+<li>❌ Нет: State Machine, Runnable Interface, Middleware Pipeline, Callback System, Workflow Engine</li>
+<li>⚠️ Частично: Memory (только SQLite), Security (базовый PII)</li>
+</ul>
+<h3 id="leviathan-engine-510">Цель: Превратить Leviathan Engine в полноценную систему уровня Манифест 5.1.0</h3>
+<hr />
+<h2 id="0">ЭТАП 0: ВОССТАНОВЛЕНИЕ КОНТЕКСТА</h2>
+<p>Прочитай эти файлы ПЕРВЫМИ:
+1. /root/analysis/MY_SYSTEM_ANALYSIS.md — детальный разбор архитектуры
+2. /root/implementation_log.md — что уже сделано (если есть)
+3. /opt/leviathan_engine/agent_service/agent/core.py — текущий код агента
+4. /opt/leviathan_engine/agent_service/agent/dispatcher.py — текущий диспетчер</p>
+<p>Проверь, что уже реализовано:</p>
+<pre><code class="language-bash">grep -r &quot;class StateMachine&quot; /opt/leviathan_engine/ --include=&quot;*.py&quot; 2&gt;/dev/null || echo &quot;❌ StateMachine нет&quot;
+grep -r &quot;class Runnable&quot; /opt/leviathan_engine/ --include=&quot;*.py&quot; 2&gt;/dev/null || echo &quot;❌ Runnable нет&quot;
+grep -r &quot;class MiddlewarePipeline&quot; /opt/leviathan_engine/ --include=&quot;*.py&quot; 2&gt;/dev/null || echo &quot;❌ Middleware нет&quot;
+ls /opt/leviathan_engine/agent_service/workflow/ 2&gt;/dev/null || echo &quot;❌ Workflow папки нет&quot;
+</code></pre>
+<p>Определи последний завершённый этап и продолжи со следующего.</p>
+<hr />
+<h2 id="1-agent-lifecycle-fsm-critical">ЭТАП 1: AGENT LIFECYCLE (FSM) — CRITICAL</h2>
+<p><strong>Цель:</strong> Внедрить конечный автомат состояний вместо простых режимов Dispatcher.</p>
+<h3 id="11-statemachine">1.1 Создание StateMachine</h3>
+<p>Создай файл <code>/opt/leviathan_engine/agent_service/agent/state.py</code>:</p>
+<p>Реализуй классы:
+- <code>AgentState</code> (Enum): INIT, PLAN, REASON, ACT, OBSERVE, REFLECT, LEARN, COMPLETE, FAILED, INTERRUPTED, PAUSED, RESUMED
+- <code>StateTransition</code> (Dataclass): from_state, to_state, timestamp, metadata
+- <code>StateMachine</code>:
+  - Таблица валидных переходов (VALID_TRANSITIONS)
+  - Метод <code>async transition(to_state, metadata)</code> с блокировкой (asyncio.Lock)
+  - Метод <code>can_transition(to_state)</code>
+  - История переходов (history list)</p>
+<h3 id="12-leviathanagent">1.2 Интеграция в LeviathanAgent</h3>
+<p>Измени <code>/opt/leviathan_engine/agent_service/agent/core.py</code>:
+- Импортируй <code>StateMachine</code>, <code>AgentState</code>
+- В <code>__init__</code>: добавь <code>self.state_machine = StateMachine(self.agent_id)</code>
+- В методе <code>run(task)</code>:
+  - Перед планированием: <code>await self.state_machine.transition(AgentState.PLAN)</code>
+  - Перед рассуждением: <code>await self.state_machine.transition(AgentState.REASON)</code>
+  - Перед действием: <code>await self.state_machine.transition(AgentState.ACT)</code>
+  - Перед наблюдением: <code>await self.state_machine.transition(AgentState.OBSERVE)</code>
+  - При завершении: <code>await self.state_machine.transition(AgentState.COMPLETE)</code>
+  - При ошибке: <code>await self.state_machine.transition(AgentState.FAILED)</code>
+- Добавь логирование каждого перехода в основной логгер.</p>
+<h3 id="13-dispatcher">1.3 Интеграция в Dispatcher</h3>
+<p>Измени <code>/opt/leviathan_engine/agent_service/agent/dispatcher.py</code>:
+- Добавь обработку состояний <code>PAUSED</code>, <code>RESUMED</code>, <code>INTERRUPTED</code>.
+- Реализуй методы <code>pause()</code>, <code>resume()</code>, <code>interrupt()</code> которые меняют состояние через StateMachine.</p>
+<p><strong>Отчёт:</strong> Создай <code>/root/analysis/AGENT_STATE_IMPLEMENTATION.md</code> с примером использования и диаграммой переходов.</p>
+<hr />
+<h2 id="2-runnable-interface-critical">ЭТАП 2: RUNNABLE INTERFACE — CRITICAL</h2>
+<p><strong>Цель:</strong> Унифицировать интерфейс для Agent, Tools, Workflows.</p>
+<h3 id="21-runnable">2.1 Создание протокола Runnable</h3>
+<p>Создай файл <code>/opt/leviathan_engine/agent_service/agent/runnable.py</code>:</p>
+<p>Реализуй абстрактный класс <code>Runnable[T, R]</code> с методами:
+- <code>async invoke(input: T, config: Dict) -&gt; R</code>
+- <code>async ainvoke(input: T, config: Dict) -&gt; R</code> (alias)
+- <code>async stream(input: T, config: Dict) -&gt; AsyncIterator[R]</code>
+- <code>async batch(inputs: List[T], config: Dict) -&gt; List[R]</code>
+- Оператор композиции <code>__or__</code> для создания цепочек (<code>RunnableSequence</code>).</p>
+<p>Реализуй класс <code>RunnableSequence</code>:
+- Принимает список шагов.
+- Последовательно вызывает <code>invoke</code> для каждого шага, передавая результат предыдущего.</p>
+<h3 id="22">2.2 Обёртка компонентов</h3>
+<p>Сделай существующие компоненты наследниками <code>Runnable</code>:
+- <code>LeviathanAgent</code> implements <code>Runnable[Task, Response]</code>
+- <code>Tool</code> (базовый класс инструментов) implements <code>Runnable[ToolInput, ToolOutput]</code>
+- <code>Dispatcher</code> implements <code>Runnable[Message, Message]</code></p>
+<p>Обнови сигнатуры методов в <code>/opt/leviathan_engine/agent_service/agent/tools/*.py</code> чтобы они соответствовали интерфейсу.</p>
+<p><strong>Отчёт:</strong> Создай <code>/root/analysis/RUNNABLE_IMPLEMENTATION.md</code> с примерами цепочек (Agent | Tool | Validator).</p>
+<hr />
+<h2 id="3-middleware-pipeline-critical">ЭТАП 3: MIDDLEWARE PIPELINE — CRITICAL</h2>
+<p><strong>Цель:</strong> Добавить точки расширения (hooks) для логирования, безопасности, метрик.</p>
+<h3 id="31-pipeline">3.1 Создание Pipeline</h3>
+<p>Создай файл <code>/opt/leviathan_engine/agent_service/middleware/pipeline.py</code>:</p>
+<p>Реализуй:
+- Enum <code>MiddlewareHook</code>: BEFORE_AGENT, BEFORE_MODEL, MODIFY_MODEL_REQUEST, AFTER_MODEL, WRAP_TOOL_CALL, AFTER_TOOL_CALL.
+- Класс <code>MiddlewareContext</code>: agent_id, state, request, metadata.
+- Базовый класс <code>Middleware</code> с пустыми методами хуков (async).
+- Класс <code>MiddlewarePipeline</code>:
+  - Список зарегистрированных мидлварей.
+  - Метод <code>add(middleware)</code>.
+  - Метод <code>execute_hook(hook, context, *args)</code> который проходит по всем мидлварям.</p>
+<h3 id="32">3.2 Реализация базовых мидлварей</h3>
+<p>Создай конкретные реализации в <code>/opt/leviathan_engine/agent_service/middleware/</code>:
+- <code>LoggingMiddleware</code>: логирует вход/выход из модели и инструментов.
+- <code>RateLimitMiddleware</code>: считает запросы, выбрасывает ошибку при превышении лимита.
+- <code>SecurityMiddleware</code>: проверяет ввод на PII и опасные паттерны (используй существующие утилиты из tools_security.py).
+- <code>MetricsMiddleware</code>: замеряет время выполнения и количество токенов.</p>
+<h3 id="33">3.3 Интеграция</h3>
+<p>Внедри вызовы <code>pipeline.execute_hook</code> в ключевые места <code>LeviathanAgent.run()</code>:
+- Перед отправкой в LLM: <code>BEFORE_MODEL</code>, <code>MODIFY_MODEL_REQUEST</code>.
+- После ответа LLM: <code>AFTER_MODEL</code>.
+- Перед вызовом инструмента: <code>WRAP_TOOL_CALL</code>.
+- После результата инструмента: <code>AFTER_TOOL_CALL</code>.</p>
+<p><strong>Отчёт:</strong> Создай <code>/root/analysis/MIDDLEWARE_IMPLEMENTATION.md</code> со списком хуков и примером кастомной мидлвари.</p>
+<hr />
+<h2 id="4-callback-system-high">ЭТАП 4: CALLBACK SYSTEM — HIGH</h2>
+<p><strong>Цель:</strong> Расширить EventBus до полноценной системы событий.</p>
+<h3 id="41-callbackmanager">4.1 Создание CallbackManager</h3>
+<p>Создай файл <code>/opt/leviathan_engine/agent_service/callbacks/manager.py</code>:</p>
+<p>Реализуй класс <code>CallbackManager</code> с регистрацией обработчиков для событий:
+- <code>on_llm_start/end/error</code>
+- <code>on_tool_start/end/error</code>
+- <code>on_agent_start/end/error</code>
+- <code>on_state_transition</code> (интеграция с Этапом 1)
+- <code>on_checkpoint_save/load</code></p>
+<p>Используй асинхронные callback-и. Если событие не обрабатывается, игнорируй его (не ломайте поток).</p>
+<h3 id="42-eventbus">4.2 Интеграция с существующим EventBus</h3>
+<p>Замени или оберни старый <code>EventBus</code> новым <code>CallbackManager</code>.
+Убедись, что все старые подписчики продолжают работать.</p>
+<p>Добавь триггеры событий в код агента (в местах, где уже внедрены хуки Middleware).</p>
+<p><strong>Отчёт:</strong> Создай <code>/root/analysis/CALLBACK_IMPLEMENTATION.md</code> со списком всех событий и примером подписки.</p>
+<hr />
+<h2 id="5-workflow-engine-high">ЭТАП 5: WORKFLOW ENGINE — HIGH</h2>
+<p><strong>Цель:</strong> Добавить поддержку сложных потоков выполнения (Branch, Merge, Parallel).</p>
+<h3 id="51-workflowengine">5.1 Создание WorkflowEngine</h3>
+<p>Создай файл <code>/opt/leviathan_engine/agent_service/workflow/engine.py</code>:</p>
+<p>Реализуй:
+- Класс <code>WorkflowStep</code>: обёртка над Runnable с условиями перехода.
+- Класс <code>WorkflowGraph</code>: ориентированный граф шагов.
+- Методы навигации: <code>add_branch(condition)</code>, <code>add_merge()</code>, <code>add_parallel(steps)</code>.
+- Метод <code>async execute(start_step, initial_state)</code>: обход графа с сохранением состояния.</p>
+<h3 id="52-flow">5.2 Декораторы Flow (опционально, но желательно)</h3>
+<p>Создай декораторы <code>@step</code>, <code>@branch</code>, <code>@router</code> для декларативного описания воркфлоу (как в CrewAI).</p>
+<h3 id="53-checkpointing">5.3 Интеграция с Checkpointing</h3>
+<p>Используй существующий <code>ContextKeeper</code> для сохранения состояния воркфлоу между шагами, чтобы поддерживать resume после падения.</p>
+<p><strong>Отчёт:</strong> Создай <code>/root/analysis/WORKFLOW_IMPLEMENTATION.md</code> с примером сложного воркфлоу (Plan -&gt; Branch(A/B) -&gt; Merge -&gt; Complete).</p>
+<hr />
+<h2 id="6-memory-system-v2-high">ЭТАП 6: MEMORY SYSTEM V2 — HIGH</h2>
+<p><strong>Цель:</strong> Разделить память на типы вместо одного монолита.</p>
+<h3 id="61">6.1 Рефакторинг памяти</h3>
+<p>Создай файл <code>/opt/leviathan_engine/agent_service/db/memory_system.py</code>:</p>
+<p>Реализуй классы:
+- <code>ShortTermMemory</code>: кэш последних N сообщений (TTL 30 мин).
+- <code>LongTermMemory</code>: интеграция с векторным поиском (если есть база знаний) или просто архив старых диалогов.
+- <code>EpisodicMemory</code>: журнал событий (кто, что, когда) — используй существующий <code>context_ledger</code>.
+- <code>WorkingMemory</code>: текущий контекст задачи (переменные, промежуточные результаты).
+- <code>SemanticMemory</code>: факты о мире (из knowledge_base).</p>
+<p>Создай фасад <code>MemoryManager</code>, который объединяет их и предоставляет единый интерфейс <code>get_context(query)</code>.</p>
+<h3 id="62">6.2 Миграция</h3>
+<p>Перенеси логику из <code>db/context_memory.py</code> в новые классы. Обнови вызовы в агенте.</p>
+<p><strong>Отчёт:</strong> Создай <code>/root/analysis/MEMORY_IMPLEMENTATION.md</code> с описанием стратегии eviction и поиска для каждого типа.</p>
+<hr />
+<h2 id="7">ЭТАП 7: ФИНАЛИЗАЦИЯ И ТЕСТИРОВАНИЕ</h2>
+<h3 id="71-smoke-tests">7.1 Smoke Tests</h3>
+<p>Напиши простой скрипт <code>/opt/leviathan_engine/tests/test_manifest_5.1.py</code>:
+- Проверка перехода состояний (StateMachine).
+- Проверка работы цепочки Runnable.
+- Проверка срабатывания Middleware.
+- Проверка сохранения состояния Workflow.</p>
+<h3 id="72">7.2 Финальный отчёт</h3>
+<p>Создай <code>/root/analysis/MANIFEST_5.1_FINAL_REPORT.md</code>:
+1. <strong>Executive Summary</strong>: Что реализовано, что улучшено.
+2. <strong>Архитектура</strong>: Схема новых компонентов.
+3. <strong>Метрики</strong>: Количество новых файлов, строк кода, покрытие тестами.
+4. <strong>Инструкция</strong>: Как запустить обновлённого агента.
+5. <strong>План дальнейших улучшений</strong>: Plugin SDK, Multi-Agent, Sandbox (оставь на будущее).</p>
+<hr />
+<h2 id="_3">ЛОГИРОВАНИЕ (ОБЯЗАТЕЛЬНО)</h2>
+<p>В начале каждого этапа пиши в <code>/root/implementation_log.md</code>:</p>
+<pre><code class="language-markdown">## [Дата Время] ЭТАП N: Название
+- Старт: Анализ текущих файлов...
+- Действие: Создание файла X...
+- Действие: Изменение файла Y...
+- Результат: Успех/Ошибка (с деталями)
+- Файлы созданы: [...]
+</code></pre>
+<hr />
+<h2 id="_4">НАЧНИ НЕМЕДЛЕННО</h2>
+<ol>
+<li>Прочитай контекст (Этап 0).</li>
+<li>Начни с <strong>Этапа 1 (Agent Lifecycle)</strong>. Это фундамент.</li>
+<li>Не останавливайся, пока не пройдёшь все 7 этапов.</li>
+<li>Пиши рабочий код сразу, без лишних объяснений в чате.</li>
+<li>Если встречаешь ошибку — исправляй её или обходи, но двигайся дальше.</li>
+</ol>
+<p><strong>Вперёд! Реализуй Манифест 5.1.0!</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
