@@ -14,6 +14,11 @@ nav:
 - Главная: index.md
 - IMPLEMENTATION_LOG.md
 - AI_README.md
+- Платформа:
+  - MASTER_ROADMAP.md
+  - SESSION_CHECKLIST.md
+  - SERVER_METRICS_COMPARISON.md
+
 - Проекты:
   - projects/INDEX.md
   - projects/OVERVIEW.md
