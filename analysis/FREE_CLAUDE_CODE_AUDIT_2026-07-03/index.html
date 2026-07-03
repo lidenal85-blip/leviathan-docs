@@ -1,0 +1,1943 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/analysis/FREE_CLAUDE_CODE_AUDIT_2026-07-03/">
+      
+      
+        <link rel="prev" href="../AI_INTERIOR_COMPOSER_AUDIT_2026-07-03/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>🆓 АУДИТ FREE CLAUDE CODE (FCC) - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#free-claude-code-fcc" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🆓 АУДИТ FREE CLAUDE CODE (FCC)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../context/MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ARCHITECTURAL_AUDIT_2026-07-03/" class="md-tabs__link">
+          
+  
+  
+  Аналитика
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аналитика
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Аналитика
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURAL_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ ПОЛНЫЙ АРХИТЕКТУРНЫЙ АУДИТ LEVIATHAN PLATFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SYSTEM_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE_SESSIONS_ANALYSIS_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 ПОЛНЫЙ АНАЛИЗ СЕССИЙ CLAUDE CODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LEVIATHAN_MASTER_REPORT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ LEVIATHAN — СВОДНЫЙ МАСТЕР-ОТЧЁТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_INTERIOR_COMPOSER_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎨 АУДИТ AI INTERIOR COMPOSER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🆓 АУДИТ FREE CLAUDE CODE (FCC)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🆓 АУДИТ FREE CLAUDE CODE (FCC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ОБЩАЯ ИНФОРМАЦИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ТЕХНОЛОГИЧЕСКИЙ СТЕК
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ТЕХНОЛОГИЧЕСКИЙ СТЕК">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ядро
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Чат-платформы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Инструменты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. АРХИТЕКТУРА
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. АРХИТЕКТУРА">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модульная структура
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI скрипты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ПОДДЕРЖИВАЕМЫЕ ПРОВАЙДЕРЫ (17 шт)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ПОДДЕРЖИВАЕМЫЕ ПРОВАЙДЕРЫ (17 шт)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Роутинг моделей (из .env)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. БЕЗОПАСНОСТЬ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. БЕЗОПАСНОСТЬ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Найденные секреты в .env 🔴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Другие проблемы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. GIT ИСТОРИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ТЕСТЫ И CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ТЕСТЫ И CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тесты (pytest)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ВЫВОДЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. ВЫВОДЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сильные стороны 🟢
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Слабые стороны 🔴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекомендации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. СВОДНАЯ СТАТИСТИКА
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ОБЩАЯ ИНФОРМАЦИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ТЕХНОЛОГИЧЕСКИЙ СТЕК
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ТЕХНОЛОГИЧЕСКИЙ СТЕК">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ядро
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Чат-платформы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Инструменты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. АРХИТЕКТУРА
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. АРХИТЕКТУРА">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модульная структура
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI скрипты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ПОДДЕРЖИВАЕМЫЕ ПРОВАЙДЕРЫ (17 шт)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ПОДДЕРЖИВАЕМЫЕ ПРОВАЙДЕРЫ (17 шт)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Роутинг моделей (из .env)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. БЕЗОПАСНОСТЬ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. БЕЗОПАСНОСТЬ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Найденные секреты в .env 🔴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Другие проблемы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. GIT ИСТОРИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ТЕСТЫ И CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ТЕСТЫ И CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тесты (pytest)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ВЫВОДЫ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. ВЫВОДЫ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сильные стороны 🟢
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Слабые стороны 🔴
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекомендации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. СВОДНАЯ СТАТИСТИКА
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="free-claude-code-fcc">🆓 АУДИТ FREE CLAUDE CODE (FCC)</h1>
+<p><strong>Дата:</strong> 2026-07-03
+<strong>Путь:</strong> /root/free-claude-code/
+<strong>Размер:</strong> 193 MB (включая .venv + .git)
+<strong>Файлов:</strong> 7,761 (4,485 Python, 21 MD, 15 JSON)
+<strong>Версия:</strong> v2.4.1</p>
+<hr />
+<h2 id="1">1. ОБЩАЯ ИНФОРМАЦИЯ</h2>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Прокси-сервер для перенаправления запросов от инструментов разработки (Claude Code CLI, Codex CLI, VS Code, JetBrains) к различным LLM-провайдерам</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>🟢 Active — активная разработка (частые коммиты)</td>
+</tr>
+<tr>
+<td><strong>Архитектура</strong></td>
+<td>FastAPI + uv (Python &gt;=3.14)</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>https://github.com/Alishahryar1/free-claude-code.git</td>
+</tr>
+<tr>
+<td><strong>Последний коммит</strong></td>
+<td><code>6a48811</code> — build(deps): обновление actions/checkout</td>
+</tr>
+<tr>
+<td><strong>Лицензия</strong></td>
+<td>Не указана явно</td>
+</tr>
+<tr>
+<td><strong>Документация</strong></td>
+<td>✅ README.md (подробный)</td>
+</tr>
+<tr>
+<td><strong>Тесты</strong></td>
+<td>✅ pytest + GitHub Actions CI</td>
+</tr>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>✅ GitHub Actions (tests.yml) + Dependabot</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. ТЕХНОЛОГИЧЕСКИЙ СТЕК</h2>
+<h3 id="_1">Ядро</h3>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Технология</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Фреймворк</strong></td>
+<td>FastAPI + Uvicorn</td>
+</tr>
+<tr>
+<td><strong>Менеджер пакетов</strong></td>
+<td>uv (&gt;=0.11.0)</td>
+</tr>
+<tr>
+<td><strong>Сборка</strong></td>
+<td>Hatchling</td>
+</tr>
+<tr>
+<td><strong>Python</strong></td>
+<td>&gt;=3.14.0</td>
+</tr>
+<tr>
+<td><strong>Validation</strong></td>
+<td>Pydantic</td>
+</tr>
+<tr>
+<td><strong>HTTP клиент</strong></td>
+<td>aiohttp</td>
+</tr>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>openai SDK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">Чат-платформы</h3>
+<table>
+<thead>
+<tr>
+<th>Платформа</th>
+<th>Технология</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Telegram</strong></td>
+<td>python-telegram-bot</td>
+</tr>
+<tr>
+<td><strong>Discord</strong></td>
+<td>discord.py</td>
+</tr>
+<tr>
+<td><strong>Голос</strong></td>
+<td>grpcio, nvidia-riva-client (voice опционально)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Инструменты</h3>
+<table>
+<thead>
+<tr>
+<th>Инструмент</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruff</strong></td>
+<td>Линтер/форматтер (27 MB бинарник)</td>
+</tr>
+<tr>
+<td><strong>Pytest</strong></td>
+<td>Тестирование</td>
+</tr>
+<tr>
+<td><strong>Dependabot</strong></td>
+<td>Авто-обновление зависимостей</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. АРХИТЕКТУРА</h2>
+<h3 id="_3">Модульная структура</h3>
+<pre><code>free-claude-code/
+├── api/ — FastAPI сервер
+│   ├── admin_config/ — Управление манифестом, persistence, статусом
+│   ├── handlers/ — Обработчики сообщений, ответов, токенов
+│   ├── models/ — Модели ответов (Anthropic, OpenAI)
+│   ├── web_tools/ — Потоки, прокси, парсинг
+│   ├── app.py — Точка входа FastAPI
+│   ├── routes.py — Маршруты
+│   ├── model_router.py — Роутинг моделей
+│   └── optimization_handlers.py — Оптимизация
+├── core/ — Ядро логики
+│   ├── anthropic/ — Парсинг, streaming, tools, токены, сессии
+│   └── openai_responses/ — Адаптеры для унификации
+├── providers/ — Адаптеры провайдеров (17 шт)
+│   ├── runtime/ — Кэш, обнаружение моделей, валидация
+│   └── transports/ — HTTP, политики запросов
+├── cli/ — CLI инструменты
+│   ├── launchers/ — Запуск
+│   └── managed/ — Управление сессиями
+├── messaging/ — Система сообщений
+│   ├── platforms/ — Discord, Telegram, VoiceFlow
+│   ├── core/ — Планировщики, диспетчеры команд
+│   └── sessions/ — История, хранение диалогов
+├── config/ — Конфигурация
+├── tests/ — Тесты
+├── scripts/ — Скрипты установки
+└── assets/ — Ресурсы
+</code></pre>
+<h3 id="cli">CLI скрипты</h3>
+<pre><code>fcc-server — запуск сервера
+free-claude-code — основной CLI
+fcc-init — инициализация
+fcc-claude — Claude совместимый клиент
+fcc-codex — Codex совместимый клиент
+</code></pre>
+<hr />
+<h2 id="4-17">4. ПОДДЕРЖИВАЕМЫЕ ПРОВАЙДЕРЫ (17 шт)</h2>
+<table>
+<thead>
+<tr>
+<th>Провайдер</th>
+<th>Тип</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>API</td>
+<td>🟢 Активен (ключ в .env)</td>
+</tr>
+<tr>
+<td><strong>Groq</strong></td>
+<td>API</td>
+<td>🟢 Активен (ключ в .env)</td>
+</tr>
+<tr>
+<td><strong>Gemini (Google)</strong></td>
+<td>API</td>
+<td>🟢 Активен (ключ в .env)</td>
+</tr>
+<tr>
+<td><strong>SambaNova</strong></td>
+<td>API</td>
+<td>🟢 Активен (ключ в .env)</td>
+</tr>
+<tr>
+<td><strong>Cloudflare</strong></td>
+<td>API</td>
+<td>🟢 Добавлен недавно</td>
+</tr>
+<tr>
+<td><strong>Cerebras</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Codestral</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Fireworks</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Kimi</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>NVIDIA NIM</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>OpenRouter</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Wafer</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>Zai</strong></td>
+<td>API</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>LlamaCPP</strong></td>
+<td>Локальный</td>
+<td>🟡 (localhost:8080)</td>
+</tr>
+<tr>
+<td><strong>LM Studio</strong></td>
+<td>Локальный</td>
+<td>🟡 (localhost:1234)</td>
+</tr>
+<tr>
+<td><strong>Ollama</strong></td>
+<td>Локальный</td>
+<td>🟡 (localhost:11434)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="env">Роутинг моделей (из .env)</h3>
+<pre><code>MODEL_OPUS  → deepseek/deepseek-chat
+MODEL_SONNET → gemini/gemini-2.5-flash
+MODEL_HAIKU → groq/llama-3.3-70b-versatile
+</code></pre>
+<hr />
+<h2 id="5">5. БЕЗОПАСНОСТЬ</h2>
+<h3 id="env_1">Найденные секреты в .env 🔴</h3>
+<table>
+<thead>
+<tr>
+<th>Ключ</th>
+<th>Значение (первые символы)</th>
+<th>Серьёзность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEEPSEEK_API_KEY</code></td>
+<td><code>sk-da7d0a970ecd...</code></td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><code>GROQ_API_KEY</code></td>
+<td><code>gsk_hWFA9CjcXhSc...</code></td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><code>SAMBANOVA_API_KEY</code></td>
+<td><code>c1f2a4f0-555b-...</code></td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><code>GEMINI_API_KEY</code></td>
+<td><code>AQ.Ab8RN6Iksb...</code></td>
+<td>🔴 Critical</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Другие проблемы</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Проблема</th>
+<th>Серьёзность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>4 API ключа в открытом виде</strong> в .env</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Резервные копии .env</strong> (backup.20260701_*) — тоже с ключами</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>.env не в .gitignore?</strong> — требует проверки</td>
+<td>🟡 High</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Токен GitHub в git remote URL</strong></td>
+<td>🔴 Critical</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-git">6. GIT ИСТОРИЯ</h2>
+<p><strong>Всего:</strong> активная разработка, 15+ коммитов в истории на main</p>
+<p><strong>Последние коммиты:</strong></p>
+<pre><code>6a48811 build(deps): обновление actions/checkout
+5803a06 build(deps): обновление fastapi[standard]
+5ecce7d build(deps): обновление группы зависимостей
+e5c591c Исправление декодирования текста в subprocess
+bdefb46 Исправление учета кэша DeepSeek
+478e966 Добавление провайдера Cloudflare
+156a5d5 Рефакторинг Responses streaming
+...
+</code></pre>
+<p><strong>Ветки:</strong> main, ali/<em> (рабочие ветки разработчика)
+</em><em>Remote:</em><em> origin → github.com/Alishahryar1/free-claude-code.git
+</em><em>Автор:</em>* Alishahryar1 (активный разработчик)</p>
+<hr />
+<h2 id="7-cicd">7. ТЕСТЫ И CI/CD</h2>
+<h3 id="pytest">Тесты (pytest)</h3>
+<table>
+<thead>
+<tr>
+<th>Группа</th>
+<th>Файлы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>core</td>
+<td>test_strict_sliding_window, test_trace</td>
+</tr>
+<tr>
+<td>api/parsing</td>
+<td>test_conversion, test_sse</td>
+</tr>
+<tr>
+<td>config</td>
+<td>test_settings, test_logging</td>
+</tr>
+<tr>
+<td>providers</td>
+<td>Groq, OpenRouter, NVIDIA, Wafer, Cloudflare</td>
+</tr>
+<tr>
+<td>scripts</td>
+<td>test_install, test_uninstall</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cicd">CI/CD</h3>
+<ul>
+<li><strong>GitHub Actions:</strong> tests.yml — автоматический прогон тестов</li>
+<li><strong>Dependabot:</strong> автоматическое обновление зависимостей</li>
+<li><strong>Smoke тесты:</strong> интеграционные тесты</li>
+</ul>
+<hr />
+<h2 id="8">8. ВЫВОДЫ</h2>
+<h3 id="_5">Сильные стороны 🟢</h3>
+<ul>
+<li>Активная разработка (частые коммиты, рефакторинги)</li>
+<li>17 поддерживаемых провайдеров</li>
+<li>Модульная архитектура с чёткими интерфейсами</li>
+<li>Поддержка Claude и OpenAI протоколов</li>
+<li>CI/CD настроен (GitHub Actions + Dependabot)</li>
+<li>Admin UI для управления</li>
+<li>Интеграция с Telegram/Discord</li>
+<li>README с подробной документацией</li>
+</ul>
+<h3 id="_6">Слабые стороны 🔴</h3>
+<ul>
+<li><strong>4 API ключа в открытом виде</strong> в .env (DeepSeek, Groq, SambaNova, Gemini)</li>
+<li><strong>Резервные копии .env</strong> с теми же ключами</li>
+<li><strong>Токен GitHub в git remote</strong> — утечка</li>
+<li>.venv занимает ~150 MB (из 193 MB) — раздуто</li>
+<li>Python 3.14 — очень новая версия, возможны проблемы совместимости</li>
+<li>Нет явной лицензии</li>
+</ul>
+<h3 id="_7">Рекомендации</h3>
+<ol>
+<li><strong>СРОЧНО:</strong> Перенести все ключи в Vault (secrets_vault)</li>
+<li><strong>СРОЧНО:</strong> Очистить резервные копии .env с ключами</li>
+<li><strong>СРОЧНО:</strong> Очистить git remote URL от токена</li>
+<li>Добавить .env в .gitignore (если ещё нет)</li>
+<li>Настроить ротацию ключей</li>
+<li>Указать лицензию в pyproject.toml</li>
+</ol>
+<hr />
+<h2 id="9">9. СВОДНАЯ СТАТИСТИКА</h2>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Версия</td>
+<td>v2.4.1</td>
+</tr>
+<tr>
+<td>Реальный размер кода</td>
+<td>~40 MB (без .venv + .git)</td>
+</tr>
+<tr>
+<td>Файлов Python</td>
+<td>4,485</td>
+</tr>
+<tr>
+<td>Провайдеров</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Тесты</td>
+<td>✅ pytest</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>✅ GitHub Actions</td>
+</tr>
+<tr>
+<td>CLI скриптов</td>
+<td>5 (fcc-*)</td>
+</tr>
+<tr>
+<td>Чат-платформы</td>
+<td>Telegram, Discord, Voice</td>
+</tr>
+<tr>
+<td>Админка</td>
+<td>✅ Admin UI (порт 8082)</td>
+</tr>
+<tr>
+<td>Документация</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Секреты в открытом виде</td>
+<td>🔴 4 ключа</td>
+</tr>
+<tr>
+<td>Общая оценка</td>
+<td>7/10 🟢</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Документ создан: 2026-07-03</em>
+<em>Путь: /root/analysis/FREE_CLAUDE_CODE_AUDIT_2026-07-03.md</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

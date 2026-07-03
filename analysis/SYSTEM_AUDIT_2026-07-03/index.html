@@ -1,0 +1,2701 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lidenal85-blip.github.io/leviathan-docs/analysis/SYSTEM_AUDIT_2026-07-03/">
+      
+      
+        <link rel="prev" href="../ARCHITECTURAL_AUDIT_2026-07-03/">
+      
+      
+        <link rel="next" href="../CLAUDE_SESSIONS_ANALYSIS_2026-07-03/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ) - Leviathan Agent Platform</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#leviathan" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Leviathan Agent Platform" class="md-header__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Leviathan Agent Platform
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../context/MANIFEST_5.0.0/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ARCHITECTURAL_AUDIT_2026-07-03/" class="md-tabs__link">
+          
+  
+  
+  Аналитика
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Leviathan Agent Platform" class="md-nav__button md-logo" aria-label="Leviathan Agent Platform" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Leviathan Agent Platform
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/MANIFEST_5.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Манифест 5.0.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/ADR-002/ADR-002-FINAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/MY_SYSTEM_ANALYSIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/AGENT_MERGE_PLAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Слияние агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context/IMPLEMENTATION_REPORT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аналитика
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Аналитика
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARCHITECTURAL_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ ПОЛНЫЙ АРХИТЕКТУРНЫЙ АУДИТ LEVIATHAN PLATFORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ТОПОЛОГИЯ ДИСКА
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ТОПОЛОГИЯ ДИСКА">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разделы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расход диска по корневым директориям
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-55-gb-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swap файлы (всего 5.5 GB swap)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-root-30-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ДИРЕКТОРИЯ /root/ (3.0 GB)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ДИРЕКТОРИЯ /root/ (3.0 GB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Проекты в /root/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Скрытые директории /root/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ssh-rootssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 SSH ключи (/root/.ssh/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Файлы в корне /root/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usr-94-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ДИРЕКТОРИЯ /usr/ (9.4 GB)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ДИРЕКТОРИЯ /usr/ (9.4 GB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-usrlocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 /usr/local/ — пользовательские установки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-usrlocalbin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Ключевые бинарники в /usr/local/bin/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Пакетные менеджеры
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ДИРЕКТОРИЯ /etc/ — КОНФИГУРАЦИЯ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ДИРЕКТОРИЯ /etc/ — КОНФИГУРАЦИЯ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Nginx — все сайты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 SSH конфигурация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sudoers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Sudoers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-system-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 System Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-var-20-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ДИРЕКТОРИЯ /var/ (2.0 GB)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. ДИРЕКТОРИЯ /var/ (2.0 GB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Крупнейшие поддиректории
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-varwww" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Проекты в /var/www/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Базы данных PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Проблемные логи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ДИРЕКТОРИЯ /home/ И ПОЛЬЗОВАТЕЛИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. ДИРЕКТОРИЯ /home/ И ПОЛЬЗОВАТЕЛИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пользователи с shell-доступом
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-opt-23-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ДИРЕКТОРИЯ /opt/ (2.3 GB) — ПОЛНЫЙ СПИСОК
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ДИРЕКТОРИЯ /opt/ (2.3 GB) — ПОЛНЫЙ СПИСОК">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-remote-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git репозитории с remote URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tmp-211-mb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ДИРЕКТОРИЯ /tmp/ (211 MB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. ФАЙЛЫ НА КОРНЕВОМ УРОВНЕ / (НЕСТАНДАРТНЫЕ)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. АНАЛИЗ БЕЗОПАСНОСТИ (ПОЛНЫЙ)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. АНАЛИЗ БЕЗОПАСНОСТИ (ПОЛНЫЙ)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-git-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Секреты в git URL (в открытом виде)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 SSH доступ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-gpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 GPG ключи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-x-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 X-UI панель
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. АРХИТЕКТУРНАЯ КАРТА ВСЕЙ СИСТЕМЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. ИТОГО: ПОЛНАЯ ИНВЕНТАРИЗАЦИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLAUDE_SESSIONS_ANALYSIS_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 ПОЛНЫЙ АНАЛИЗ СЕССИЙ CLAUDE CODE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LEVIATHAN_MASTER_REPORT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ LEVIATHAN — СВОДНЫЙ МАСТЕР-ОТЧЁТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_INTERIOR_COMPOSER_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎨 АУДИТ AI INTERIOR COMPOSER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FREE_CLAUDE_CODE_AUDIT_2026-07-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🆓 АУДИТ FREE CLAUDE CODE (FCC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ТОПОЛОГИЯ ДИСКА
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ТОПОЛОГИЯ ДИСКА">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разделы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расход диска по корневым директориям
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-55-gb-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swap файлы (всего 5.5 GB swap)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-root-30-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ДИРЕКТОРИЯ /root/ (3.0 GB)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ДИРЕКТОРИЯ /root/ (3.0 GB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Проекты в /root/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Скрытые директории /root/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ssh-rootssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 SSH ключи (/root/.ssh/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Файлы в корне /root/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usr-94-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ДИРЕКТОРИЯ /usr/ (9.4 GB)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ДИРЕКТОРИЯ /usr/ (9.4 GB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-usrlocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 /usr/local/ — пользовательские установки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-usrlocalbin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Ключевые бинарники в /usr/local/bin/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Пакетные менеджеры
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ДИРЕКТОРИЯ /etc/ — КОНФИГУРАЦИЯ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ДИРЕКТОРИЯ /etc/ — КОНФИГУРАЦИЯ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Nginx — все сайты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 SSH конфигурация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sudoers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Sudoers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-system-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 System Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-var-20-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ДИРЕКТОРИЯ /var/ (2.0 GB)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. ДИРЕКТОРИЯ /var/ (2.0 GB)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Крупнейшие поддиректории
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-varwww" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Проекты в /var/www/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Базы данных PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Проблемные логи
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ДИРЕКТОРИЯ /home/ И ПОЛЬЗОВАТЕЛИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. ДИРЕКТОРИЯ /home/ И ПОЛЬЗОВАТЕЛИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пользователи с shell-доступом
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-opt-23-gb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ДИРЕКТОРИЯ /opt/ (2.3 GB) — ПОЛНЫЙ СПИСОК
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. ДИРЕКТОРИЯ /opt/ (2.3 GB) — ПОЛНЫЙ СПИСОК">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-remote-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git репозитории с remote URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-tmp-211-mb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. ДИРЕКТОРИЯ /tmp/ (211 MB)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. ФАЙЛЫ НА КОРНЕВОМ УРОВНЕ / (НЕСТАНДАРТНЫЕ)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. АНАЛИЗ БЕЗОПАСНОСТИ (ПОЛНЫЙ)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. АНАЛИЗ БЕЗОПАСНОСТИ (ПОЛНЫЙ)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-git-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Секреты в git URL (в открытом виде)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 SSH доступ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-gpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 GPG ключи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-x-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 X-UI панель
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. АРХИТЕКТУРНАЯ КАРТА ВСЕЙ СИСТЕМЫ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. ИТОГО: ПОЛНАЯ ИНВЕНТАРИЗАЦИЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="leviathan">💻 ПОЛНЫЙ СИСТЕМНЫЙ АУДИТ LEVIATHAN (ВСЕ ДИРЕКТОРИИ)</h1>
+<p><strong>Дата:</strong> 2026-07-03
+<strong>Сервер:</strong> LEVIATHAN (78.17.24.96, Ubuntu 24.04, 4 ядра, 3.8 GB RAM)
+<strong>Диск:</strong> /dev/vda1, 30GB ext4, 81% used</p>
+<hr />
+<h2 id="1">1. ТОПОЛОГИЯ ДИСКА</h2>
+<h3 id="_1">Разделы</h3>
+<pre><code>NAME    SIZE TYPE MOUNTPOINT        FSTYPE
+vda      30G disk                    
+└─vda1   30G part /                 ext4
+loop0  63.8M loop /snap/core20/2866 squashfs
+loop1  49.3M loop /snap/snapd/26865 squashfs
+</code></pre>
+<h3 id="_2">Расход диска по корневым директориям</h3>
+<table>
+<thead>
+<tr>
+<th>Директория</th>
+<th>Размер</th>
+<th>% от диска</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/usr</td>
+<td>9.4 GB</td>
+<td>31%</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>3.0 GB</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>2.3 GB</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>2.0 GB</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>/snap</td>
+<td>358 MB</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>211 MB</td>
+<td>&lt;1%</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>200 MB</td>
+<td>&lt;1%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="swap-55-gb-swap">Swap файлы (всего 5.5 GB swap)</h3>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Размер</th>
+<th>Использование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/swapfile_new</td>
+<td>3.0 GB</td>
+<td>Active (819 MB used)</td>
+</tr>
+<tr>
+<td>/swapfile2g</td>
+<td>2.0 GB</td>
+<td>Active (1.3 GB used)</td>
+</tr>
+<tr>
+<td>/swapfile</td>
+<td>512 MB</td>
+<td>Active</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-root-30-gb">2. ДИРЕКТОРИЯ /root/ (3.0 GB)</h2>
+<h3 id="21-root">2.1 Проекты в /root/</h3>
+<table>
+<thead>
+<tr>
+<th>Проект</th>
+<th>Размер</th>
+<th>Файлов</th>
+<th>README</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ai-interior-composer</strong></td>
+<td>391 MB</td>
+<td>26,547</td>
+<td>✅</td>
+<td>Дизайн интерьера с ИИ (Production-ready v1.0.0-P0)</td>
+</tr>
+<tr>
+<td><strong>free-claude-code</strong></td>
+<td>193 MB</td>
+<td>7,761</td>
+<td>✅</td>
+<td>Инструменты Claude Code CLI, VS Code</td>
+</tr>
+<tr>
+<td><strong>Claude</strong></td>
+<td>46 MB</td>
+<td>324</td>
+<td>❌</td>
+<td>Репорты и артефакты Claude</td>
+</tr>
+<tr>
+<td><strong>backups</strong></td>
+<td>17 MB</td>
+<td>136</td>
+<td>❌</td>
+<td>Бекапы</td>
+</tr>
+<tr>
+<td><strong>survey-finder</strong></td>
+<td>4.1 MB</td>
+<td>622</td>
+<td>✅</td>
+<td>Система мониторинга опросов</td>
+</tr>
+<tr>
+<td><strong>core</strong></td>
+<td>2.6 MB</td>
+<td>32</td>
+<td>❌</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>analysis</strong></td>
+<td>784 KB</td>
+<td>31</td>
+<td>❌</td>
+<td>Аналитические отчёты</td>
+</tr>
+<tr>
+<td><strong>tszh-bot</strong></td>
+<td>636 KB</td>
+<td>59</td>
+<td>❌</td>
+<td>Telegram бот ТСЖ</td>
+</tr>
+<tr>
+<td><strong>leviathan-property</strong></td>
+<td>208 KB</td>
+<td>45</td>
+<td>❌</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>bin</strong></td>
+<td>196 KB</td>
+<td>23</td>
+<td>❌</td>
+<td>Пользовательские скрипты</td>
+</tr>
+<tr>
+<td><strong>freebuff</strong></td>
+<td>152 KB</td>
+<td>11</td>
+<td>❌</td>
+<td>Freebuff CLI</td>
+</tr>
+<tr>
+<td><strong>registry</strong></td>
+<td>120 KB</td>
+<td>15</td>
+<td>❌</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>cert</strong></td>
+<td>16 KB</td>
+<td>2</td>
+<td>❌</td>
+<td>Сертификаты</td>
+</tr>
+<tr>
+<td><strong>snap</strong></td>
+<td>4 KB</td>
+<td>0</td>
+<td>❌</td>
+<td>Snap ссылки</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-root">2.2 Скрытые директории /root/</h3>
+<table>
+<thead>
+<tr>
+<th>Директория</th>
+<th>Размер</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/root/.local</td>
+<td>553 MB</td>
+<td>Локальные данные (uv, pip)</td>
+</tr>
+<tr>
+<td>/root/.config</td>
+<td>561 MB</td>
+<td>Конфиги (manicode, codebuff)</td>
+</tr>
+<tr>
+<td>/root/.cache</td>
+<td>578 MB</td>
+<td>Кэш</td>
+</tr>
+<tr>
+<td>/root/.u2net</td>
+<td>168 MB</td>
+<td>ML модель (u2net.onnx)</td>
+</tr>
+<tr>
+<td>/root/.claude</td>
+<td>164 MB</td>
+<td>Claude Code данные</td>
+</tr>
+<tr>
+<td>/root/.kimi-code</td>
+<td>152 MB</td>
+<td>Kimi Code CLI</td>
+</tr>
+<tr>
+<td>/root/.npm</td>
+<td>77 MB</td>
+<td>NPM кэш</td>
+</tr>
+<tr>
+<td>/root/.ssh</td>
+<td>68 KB</td>
+<td>SSH ключи</td>
+</tr>
+<tr>
+<td>/root/.gnupg</td>
+<td>16 KB</td>
+<td>GPG ключи</td>
+</tr>
+<tr>
+<td>/root/.docker</td>
+<td>820 KB</td>
+<td>Docker конфиги</td>
+</tr>
+<tr>
+<td>/root/.bash_history</td>
+<td>72 KB</td>
+<td>2000 команд истории</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-ssh-rootssh">2.3 SSH ключи (/root/.ssh/)</h3>
+<p><strong>Ключи:</strong>
+- <code>id_ed25519</code> / <code>id_ed25519.pub</code>
+- <code>levi_key</code> / <code>levi_key.pub</code>
+- <code>termux_rsa</code> / <code>termux_rsa.pub</code>
+- <code>authorized_keys</code> — список разрешённых ключей
+- <code>config</code>, <code>config.bak</code> — SSH конфигурация</p>
+<h3 id="24-root">2.4 Файлы в корне /root/</h3>
+<p><strong>Скрипты (.sh):</strong>
+- <code>audit_kinovibe.sh</code>, <code>fcc-setup.sh</code>, <code>leviathan_dump.sh</code>
+- <code>run_claude_autonomous.sh</code>, <code>setup_freelance.sh</code>
+- <code>check_gemini_keys.sh</code>, <code>backup_leviathan.sh</code>
+- <code>audit_leviathan.sh</code>, <code>send_docs.sh</code>, <code>dump_project.sh</code>
+- <code>push_all_to_github.sh</code></p>
+<p><strong>Python (.py):</strong>
+- <code>gemini_proxy.py</code> — прокси для Gemini API
+- <code>fix_mcp_oauth.py</code> — фикс OAuth для MCP</p>
+<p><strong>Конфиги:</strong>
+- <code>.env</code> — переменные окружения
+- <code>.claude.json</code> — конфиг Claude Code
+- <code>settings.json</code> — настройки
+- <code>mkdocs.yml</code> — конфиг MkDocs</p>
+<p><strong>Архивы:</strong>
+- <code>claude-backup.tar.gz</code> (39 MB)
+- <code>f3platform.tar.gz</code> (62 KB)
+- <code>tools.tar.gz</code> (33 KB)</p>
+<hr />
+<h2 id="3-usr-94-gb">3. ДИРЕКТОРИЯ /usr/ (9.4 GB)</h2>
+<h3 id="31-usrlocal">3.1 /usr/local/ — пользовательские установки</h3>
+<table>
+<thead>
+<tr>
+<th>Директория</th>
+<th>Размер</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/usr/local/lib/python3.12/</td>
+<td>2.5 GB</td>
+<td>Python библиотеки</td>
+</tr>
+<tr>
+<td>/usr/local/lib/</td>
+<td>2.5 GB (всего)</td>
+<td>Библиотеки</td>
+</tr>
+<tr>
+<td>/usr/local/x-ui/</td>
+<td>238 MB</td>
+<td>X-UI панель управления</td>
+</tr>
+<tr>
+<td>/usr/local/bin/</td>
+<td>143 MB</td>
+<td>Исполняемые файлы</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-usrlocalbin">3.2 Ключевые бинарники в /usr/local/bin/</h3>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Размер</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cloudflared</td>
+<td>39 MB</td>
+<td>Cloudflare Tunnel</td>
+</tr>
+<tr>
+<td>filebrowser</td>
+<td>36 MB</td>
+<td>Файловый менеджер</td>
+</tr>
+<tr>
+<td>dart</td>
+<td>symlink → /opt/flutter/bin/dart</td>
+<td>Dart SDK</td>
+</tr>
+<tr>
+<td>alembic, arq, fastapi</td>
+<td>—</td>
+<td>Python утилиты</td>
+</tr>
+<tr>
+<td>ct2-*, deep-translator, edge-tts</td>
+<td>—</td>
+<td>Конвертация/перевод/TTS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 Пакетные менеджеры</h3>
+<p><strong>Snap:</strong> core20, snapd — минимальные системные
+<strong>NPM глобально:</strong> codebuff, cline, llm-checker, claude-code, openai-codex, tsx, playwright-core, localtunnel
+<strong>Pip глобально:</strong> aiohttp, aiogram, APScheduler, anthropic, asyncpg, alembic, beautifulsoup4, bcrypt</p>
+<hr />
+<h2 id="4-etc">4. ДИРЕКТОРИЯ /etc/ — КОНФИГУРАЦИЯ</h2>
+<h3 id="41-nginx">4.1 Nginx — все сайты</h3>
+<table>
+<thead>
+<tr>
+<th>Домен/Конфиг</th>
+<th>Порт</th>
+<th>Прокси/Корень</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fashion-stylist</td>
+<td>80</td>
+<td>→ 127.0.0.1:8555</td>
+<td>AI Fashion Stylist</td>
+</tr>
+<tr>
+<td>f3platform</td>
+<td>8152</td>
+<td>/var/www/f3platform/frontend</td>
+<td>F3 Platform</td>
+</tr>
+<tr>
+<td>fcc-proxy</td>
+<td>8082</td>
+<td>→ 127.0.0.1:8084 (auth)</td>
+<td>FCC Proxy</td>
+</tr>
+<tr>
+<td>fri-messenger</td>
+<td>8340</td>
+<td>→ 127.0.0.1:3030 (WebSocket)</td>
+<td>Messenger</td>
+</tr>
+<tr>
+<td>leviathanstory</td>
+<td>—</td>
+<td>/var/www/leviathan_hub</td>
+<td>Leviathan Hub</td>
+</tr>
+<tr>
+<td>pelleto</td>
+<td>8082</td>
+<td>→ :8082 + security headers</td>
+<td>Pelleto AI</td>
+</tr>
+<tr>
+<td>phonemanager</td>
+<td>8321</td>
+<td>→ 127.0.0.1:8320</td>
+<td>Phone Manager</td>
+</tr>
+<tr>
+<td>tszh-bot</td>
+<td>80</td>
+<td>→ 127.0.0.1:8096</td>
+<td>ТСЖ бот</td>
+</tr>
+<tr>
+<td>wgeasy</td>
+<td>8091</td>
+<td>→ 127.0.0.1:51821 (WebSocket)</td>
+<td>WireGuard Easy</td>
+</tr>
+<tr>
+<td>ai-outreach</td>
+<td>—</td>
+<td>—</td>
+<td>AI Outreach</td>
+</tr>
+<tr>
+<td>kinovibe</td>
+<td>—</td>
+<td>—</td>
+<td>KinoVibe</td>
+</tr>
+<tr>
+<td>voidvpn</td>
+<td>—</td>
+<td>—</td>
+<td>VoidVPN</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-ssh">4.2 SSH конфигурация</h3>
+<ul>
+<li><strong>Порт:</strong> 22</li>
+<li><strong>Root login:</strong> ✅ Разрешён</li>
+<li><strong>Password auth:</strong> Нет (KbdInteractive: no)</li>
+<li><strong>X11 Forwarding:</strong> Включён</li>
+<li><strong>ClientAliveInterval:</strong> 15s</li>
+<li><strong>ClientAliveCountMax:</strong> 3</li>
+</ul>
+<h3 id="43-sudoers">4.3 Sudoers</h3>
+<ul>
+<li>root, admin, sudo — полный доступ</li>
+<li>secure_path, env_reset, use_pty включены</li>
+</ul>
+<h3 id="44-system-environment">4.4 System Environment</h3>
+<p>PATH: стандартный + /snap/bin</p>
+<hr />
+<h2 id="5-var-20-gb">5. ДИРЕКТОРИЯ /var/ (2.0 GB)</h2>
+<h3 id="51">5.1 Крупнейшие поддиректории</h3>
+<table>
+<thead>
+<tr>
+<th>Директория</th>
+<th>Размер</th>
+<th>Содержимое</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/var/log/journal/</td>
+<td>768 MB</td>
+<td>Systemd журналы</td>
+</tr>
+<tr>
+<td>/var/www/kinovibe/</td>
+<td>202 MB</td>
+<td>Веб-проект KinoVibe</td>
+</tr>
+<tr>
+<td>/var/lib/apt/</td>
+<td>186 MB</td>
+<td>APT кэш</td>
+</tr>
+<tr>
+<td>/var/lib/snapd/</td>
+<td>114 MB</td>
+<td>Snap данные</td>
+</tr>
+<tr>
+<td>/var/lib/postgresql/</td>
+<td>79 MB</td>
+<td>PostgreSQL 16</td>
+</tr>
+<tr>
+<td>/var/www/voicestudio/</td>
+<td>64 MB</td>
+<td>Voice Studio</td>
+</tr>
+<tr>
+<td>/var/www/outreach/</td>
+<td>50 MB</td>
+<td>AI Outreach</td>
+</tr>
+<tr>
+<td>/var/www/kinovibe_html/</td>
+<td>24 MB</td>
+<td>KinoVibe HTML</td>
+</tr>
+<tr>
+<td>/var/www/kinovibe_sub/</td>
+<td>23 MB</td>
+<td>KinoVibe SUB</td>
+</tr>
+<tr>
+<td>/var/www/leviathan_hub/</td>
+<td>7.8 MB</td>
+<td>Leviathan Hub</td>
+</tr>
+<tr>
+<td>/var/log/nginx/</td>
+<td>1.3 MB</td>
+<td>Nginx логи</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-varwww">5.2 Проекты в /var/www/</h3>
+<table>
+<thead>
+<tr>
+<th>Проект</th>
+<th>Папка</th>
+<th>Владелец</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KinoVibe</td>
+<td>kinovibe, kinovibe_html, kinovibe_sub</td>
+<td>claude_worker</td>
+</tr>
+<tr>
+<td>Voice Studio</td>
+<td>voicestudio, voice_studio</td>
+<td>root</td>
+</tr>
+<tr>
+<td>AI Outreach</td>
+<td>outreach</td>
+<td>root</td>
+</tr>
+<tr>
+<td>F3 Platform</td>
+<td>f3platform</td>
+<td>root</td>
+</tr>
+<tr>
+<td>HH Sniper</td>
+<td>hh_sniper</td>
+<td>root</td>
+</tr>
+<tr>
+<td>Leviathan Hub</td>
+<td>leviathan_hub</td>
+<td>root</td>
+</tr>
+<tr>
+<td>AIC</td>
+<td>aic</td>
+<td>root</td>
+</tr>
+<tr>
+<td>Narrative</td>
+<td>narrative</td>
+<td>root</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-postgresql">5.3 Базы данных PostgreSQL</h3>
+<table>
+<thead>
+<tr>
+<th>База</th>
+<th>Владелец</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aic_composer</td>
+<td>aic</td>
+</tr>
+<tr>
+<td>tg_monitor</td>
+<td>tg_monitor</td>
+</tr>
+<tr>
+<td>vocalplatform</td>
+<td>vocaluser</td>
+</tr>
+<tr>
+<td>postgres (шаблоны)</td>
+<td>postgres</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54">5.4 Проблемные логи</h3>
+<ul>
+<li><strong>Ошибка порта 8765:</strong> Address already in use — повторяется в journalctl</li>
+<li><strong>vocal-gateway:</strong> FastAPIError с UploadFile</li>
+<li><strong>vocal_bot:</strong> ModuleNotFoundError: apscheduler</li>
+</ul>
+<hr />
+<h2 id="6-home">6. ДИРЕКТОРИЯ /home/ И ПОЛЬЗОВАТЕЛИ</h2>
+<h3 id="shell-">Пользователи с shell-доступом</h3>
+<table>
+<thead>
+<tr>
+<th>Пользователь</th>
+<th>UID</th>
+<th>Домашняя директория</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>root</td>
+<td>0</td>
+<td>/root (3.0 GB)</td>
+</tr>
+<tr>
+<td>claude_worker</td>
+<td>1000</td>
+<td>/home/claude_worker (356 KB)</td>
+</tr>
+<tr>
+<td>nova</td>
+<td>111</td>
+<td>—</td>
+</tr>
+<tr>
+<td>postgres</td>
+<td>113</td>
+<td>/var/lib/postgresql</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>4</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-opt-23-gb">7. ДИРЕКТОРИЯ /opt/ (2.3 GB) — ПОЛНЫЙ СПИСОК</h2>
+<h3 id="git-remote-url">Git репозитории с remote URL</h3>
+<table>
+<thead>
+<tr>
+<th>Проект</th>
+<th>GitHub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leviathan_engine</td>
+<td>github.com/den4ikorm1985/leviathan-engine.git</td>
+</tr>
+<tr>
+<td>arbitr_cockpit</td>
+<td>github.com/den4ikorm1985/arbitr-cockpit.git</td>
+</tr>
+<tr>
+<td>den4ik-claude</td>
+<td>github.com/den4ikorm1985/den4ik-claude.git</td>
+</tr>
+<tr>
+<td>diet_platform</td>
+<td>github.com/lidenal85-blip/diet_platform.git</td>
+</tr>
+<tr>
+<td>pelleto-ai</td>
+<td>github.com/den4ikorm1985/pelleto-ai.git</td>
+</tr>
+<tr>
+<td>triton_agent</td>
+<td>(в составе engine?)</td>
+</tr>
+<tr>
+<td>savdabot</td>
+<td>github.com/lewinthinkman-wq/SavdaBot.git</td>
+</tr>
+<tr>
+<td>vocal_bot</td>
+<td>github.com/den4ikorm1985/vocal-bot.git</td>
+</tr>
+<tr>
+<td>citrus_aura</td>
+<td>github.com/den4ikorm1985/citrus-aura.git</td>
+</tr>
+<tr>
+<td>fri-messenger</td>
+<td>github.com/den4ikorm1985/fri-messenger.git</td>
+</tr>
+<tr>
+<td>kwork_bot</td>
+<td>github.com/den4ikorm1985/kwork-bot.git</td>
+</tr>
+<tr>
+<td>kwork_dispatcher</td>
+<td>github.com/den4ikorm1985/kwork-dispatcher.git</td>
+</tr>
+<tr>
+<td>media_factory</td>
+<td>github.com/den4ikorm1985/media-factory.git</td>
+</tr>
+<tr>
+<td>agrobot</td>
+<td>github.com/den4ikorm1985/agrobot.git</td>
+</tr>
+<tr>
+<td>secrets_vault</td>
+<td>github.com/lidenal85-blip/secrets-vault.git</td>
+</tr>
+<tr>
+<td>leviathan-docs</td>
+<td>github.com/lidenal85-blip/leviathan-docs.git</td>
+</tr>
+<tr>
+<td>agent_output</td>
+<td>github.com/lidenal85-blip/agent_output</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-tmp-211-mb">8. ДИРЕКТОРИЯ /tmp/ (211 MB)</h2>
+<table>
+<thead>
+<tr>
+<th>Объект</th>
+<th>Размер</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/tmp/chroma_db_backup_*/</td>
+<td>107 MB</td>
+</tr>
+<tr>
+<td>/tmp/main-check/</td>
+<td>7.4 MB</td>
+</tr>
+<tr>
+<td>/tmp/main-audit/</td>
+<td>7.4 MB</td>
+</tr>
+<tr>
+<td>/tmp/leviathan-site/</td>
+<td>3.4 MB</td>
+</tr>
+<tr>
+<td>.so библиотеки</td>
+<td>~4.6 MB каждый</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9">9. ФАЙЛЫ НА КОРНЕВОМ УРОВНЕ / (НЕСТАНДАРТНЫЕ)</h2>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Размер</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blizkie_ludy.tar.gz</td>
+<td>152 MB</td>
+<td>Архив "Близкие Люди"</td>
+</tr>
+<tr>
+<td>claude_docs.tar.gz</td>
+<td>167 MB</td>
+<td>Claude документация</td>
+</tr>
+<tr>
+<td>config.db</td>
+<td>128 KB</td>
+<td>Конфигурация</td>
+</tr>
+<tr>
+<td>settings.json</td>
+<td>—</td>
+<td>Настройки</td>
+</tr>
+<tr>
+<td>run_tests.sh</td>
+<td>—</td>
+<td>Тестовый скрипт</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10">10. АНАЛИЗ БЕЗОПАСНОСТИ (ПОЛНЫЙ)</h2>
+<h3 id="101-git-url">10.1 Секреты в git URL (в открытом виде)</h3>
+<p>В remote URL ряда репозиториев обнаружены токены аутентификации GitHub.</p>
+<h3 id="102-ssh">10.2 SSH доступ</h3>
+<ul>
+<li>Root login разрешён — критическая уязвимость</li>
+<li>3 пары SSH ключей (id_ed25519, levi_key, termux_rsa)</li>
+<li>authorized_keys настроен</li>
+</ul>
+<h3 id="103-gpg">10.3 GPG ключи</h3>
+<ul>
+<li>Присутствуют в /root/.gnupg (16 KB)</li>
+</ul>
+<h3 id="104-docker">10.4 Docker</h3>
+<ul>
+<li>Docker установлен (конфиг в /root/.docker)</li>
+<li>0 активных контейнеров</li>
+<li>Docker не используется</li>
+</ul>
+<h3 id="105-x-ui">10.5 X-UI панель</h3>
+<ul>
+<li>Установлена в /usr/local/x-ui/ (238 MB)</li>
+<li>Порты: 2096, 29585, 4443 (xray)</li>
+<li>Потенциально используется для прокси/VPN</li>
+</ul>
+<hr />
+<h2 id="11">11. АРХИТЕКТУРНАЯ КАРТА ВСЕЙ СИСТЕМЫ</h2>
+<pre><code>/ (30GB ext4, 81% used)
+├── /usr/ (9.4 GB) — системные программы
+│   ├── /usr/local/ — пользовательские
+│   │   ├── python3.12/ (2.5 GB)
+│   │   ├── x-ui/ (238 MB) — X-UI панель
+│   │   └── bin/ (143 MB) — cloudflared, filebrowser, dart
+│   └── ...
+├── /root/ (3.0 GB) — root home
+│   ├── ai-interior-composer/ (391 MB)
+│   ├── free-claude-code/ (193 MB)
+│   ├── .config/ (561 MB), .cache/ (578 MB), .local/ (553 MB)
+│   └── analysis/ — 17+ markdown документов
+├── /opt/ (2.3 GB) — основные проекты
+│   ├── leviathan_engine/ — ядро (25K LOC, 4 сервиса)
+│   ├── vocalplatform/ — вокал (3 сервиса, проблемы)
+│   ├── arbitr_cockpit/ — арбитраж
+│   └── 15+ других проектов
+├── /var/ (2.0 GB) — данные
+│   ├── www/ — 12 веб-проектов
+│   ├── lib/postgresql/ — 6 БД
+│   └── log/journal/ — 768 MB логов
+├── /home/ — claude_worker (356 KB)
+├── /tmp/ — chroma_db backups (107 MB)
+└── swap: 5.5 GB total (2.1 GB used)
+</code></pre>
+<hr />
+<h2 id="12">12. ИТОГО: ПОЛНАЯ ИНВЕНТАРИЗАЦИЯ</h2>
+<p><strong>Всего проектов/сервисов на системе: ~40+</strong>
+- /opt/: 20+ проектов (15+ systemd сервисов)
+- /root/: 13 проектов
+- /var/www/: 12 веб-проектов
+- /usr/local/: системные утилиты</p>
+<p><strong>Базы данных:</strong>
+- PostgreSQL: 6 баз (aic_composer, tg_monitor, vocalplatform + templates)
+- SQLite: ~10+ файлов (по одному в каждом Python проекте)
+- ChromaDB: векторная БД (savdabot RAG)
+- Redis: установлен (порт 6379)</p>
+<p><strong>Пользователи системы:</strong> root, claude_worker, nova, postgres</p>
+<p><strong>GitHub аккаунты:</strong>
+- github.com/den4ikorm1985 (основной разработчик) — 15+ репозиториев
+- github.com/lidenal85-blip (LEVIATHAN org) — несколько репозиториев
+- github.com/lewinthinkman-wq (SavdaBot)</p>
+<p><strong>Критические проблемы (дополнительно к архитектурному аудиту):</strong>
+1. Root login по SSH разрешён
+2. Токены в git remote URL
+3. Docker установлен, но не используется (лишний расход места)
+4. X-UI панель — потенциальный вектор атаки
+5. /tmp/ не очищается — 107 MB chroma_db backup
+6. 3 swap файла вместо одного — неоптимально
+7. /usr/local/lib/python3.12/ — 2.5 GB, потенциально раздуто
+8. /var/log/journal/ — 768 MB, можно очистить</p>
+<hr />
+<p><em>Документ создан: 2026-07-03</em>
+<em>Аудитор: Buffy (Codebuff AI)</em>
+<em>Файл: /root/analysis/SYSTEM_AUDIT_2026-07-03.md</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
