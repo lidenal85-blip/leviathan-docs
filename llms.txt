@@ -1,0 +1,19 @@
+# Leviathan Agent Platform
+
+> Документация мультиагентной AI-инфраструктуры LEVIATHAN: архитектурные решения, спецификации агентов, планы миграции. Ссылки ниже ведут на чистый markdown (raw.githubusercontent.com) без HTML/навигации/CSS.
+
+## Core Architecture
+- [ADR-002: Dynamic Scenario-Driven Agent Execution Engine](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/ADR-002/ADR-002-FINAL.md): переход от pipeline-архитектуры к runtime decision-making kernel с policy-driven сценариями.
+- [ADR-002 Executor Prompt](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/ADR-002/ADR-002-EXECUTOR-PROMPT.md): промпт-инструкция для агента-исполнителя, реализующего ADR-002 по фазам.
+- [AgentState Implementation](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/AGENT_STATE_IMPLEMENTATION.md): реализация конечного автомата состояний агента.
+- [Manifest 5.1 — Agent Implementation](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/MANIFEST_5.1_AGENT_IMPLEMENTATION.md): спецификация текущей версии агентной платформы.
+- [Manifest 5.0.0](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/MANIFEST_5.0.0.md): предыдущая версия манифеста платформы.
+
+## Planning & Prompts
+- [Master Prompt](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/prompts/MASTER_PROMPT.md): системный промпт для координации агентов.
+- [Master Checklist](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/plans/MASTER_CHECKLIST.md): живой чек-лист задач платформы.
+- [Execution Plan](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/EXECUTION_PLAN.md): план поэтапного исполнения.
+- [Comparison](https://raw.githubusercontent.com/lidenal85-blip/leviathan-docs/main/docs/context/COMPARISON.md): сравнение архитектурных вариантов.
+
+## Full Context
+- [llms-full.txt](https://lidenal85-blip.github.io/leviathan-docs/llms-full.txt): весь контекст одним файлом для моделей без перехода по ссылкам.

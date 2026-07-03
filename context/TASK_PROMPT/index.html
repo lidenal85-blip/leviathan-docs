@@ -421,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../COMPREHENSIVE_UNIFICATION_PLAN/" class="md-nav__link">
+      <a href="../COMPREHENSIVE_UNIFICATION_PLAN.md" class="md-nav__link">
         
   
   
@@ -505,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SECRETS_ANALYSIS/" class="md-nav__link">
+      <a href="../SECRETS_ANALYSIS.md" class="md-nav__link">
         
   
   
@@ -1485,7 +1485,7 @@ import os
 router = APIRouter()
 
 # Инициализация vault
-MASTER_KEY = os.getenv(&quot;VAULT_MASTER_KEY&quot;, &quot;leviathan_master_key_2026&quot;)
+MASTER_KEY = os.getenv(&quot;VAULT_MASTER_KEY&quot;, &quot;&lt;your-master-key-here&gt;&quot;)
 vault = SecretsVault(MASTER_KEY)
 
 class SecretRequest(BaseModel):
@@ -1537,7 +1537,7 @@ import re
 from pathlib import Path
 from core.vault import SecretsVault
 
-MASTER_KEY = os.getenv(&quot;VAULT_MASTER_KEY&quot;, &quot;leviathan_master_key_2026&quot;)
+MASTER_KEY = os.getenv(&quot;VAULT_MASTER_KEY&quot;, &quot;&lt;your-master-key-here&gt;&quot;)
 vault = SecretsVault(MASTER_KEY)
 
 PROJECTS = {
@@ -1708,7 +1708,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/secrets_vault
-Environment=&quot;VAULT_MASTER_KEY=leviathan_master_key_2026&quot;
+Environment=&quot;VAULT_MASTER_KEY=&lt;your-master-key-here&gt;&quot;
 ExecStart=/usr/bin/python3 /opt/secrets_vault/api/main.py
 Restart=always
 RestartSec=10
