@@ -1,0 +1,225 @@
+#!/usr/bin/env python3
+"""
+Индексатор базы знаний Leviathan (Слой 2 гибрида).
+
+Сканирует /opt/leviathan-docs/knowledge/**/*.md, парсит YAML frontmatter,
+получает эмбеддинги через Gemini API (text-embedding-004) и складывает
+в SQLite (без Qdrant, без torch — экономим диск и RAM).
+
+Инкрементально: реиндексирует только файлы новее последнего запуска
+(метка времени в /opt/leviathan-docs/scripts/.last_reindex).
+
+Usage:
+    python3 index_knowledge.py            # инкрементальный реиндекс
+    python3 index_knowledge.py --full     # полный реиндекс всех файлов
+    python3 index_knowledge.py --search "текст запроса" [--top 5]
+"""
+import argparse
+import json
+import os
+import sqlite3
+import sys
+import time
+from pathlib import Path
+
+import yaml
+import google.generativeai as genai
+
+KNOWLEDGE_DIR = Path("/opt/leviathan-docs/knowledge")
+DB_PATH = Path("/opt/leviathan-docs/scripts/knowledge_index.db")
+LAST_REINDEX_MARKER = Path("/opt/leviathan-docs/scripts/.last_reindex")
+EMBED_MODEL = "models/text-embedding-004"
+
+# Пул ключей — тот же паттерн, что у leviathan_engine (GEMINI_K1..K6)
+API_KEYS = [os.environ[k] for k in sorted(os.environ) if k.startswith("GEMINI_K") and os.environ[k]]
+
+if not API_KEYS:
+    print("ОШИБКА: не найдено ни одного GEMINI_K* в env", file=sys.stderr)
+    sys.exit(1)
+
+_key_idx = 0
+
+
+def _next_key():
+    global _key_idx
+    key = API_KEYS[_key_idx % len(API_KEYS)]
+    _key_idx += 1
+    return key
+
+
+def embed_text(text: str, retries: int = 3):
+    """Получить эмбеддинг с ротацией ключей при rate-limit."""
+    last_err = None
+    for _ in range(max(retries, len(API_KEYS))):
+        try:
+            genai.configure(api_key=_next_key())
+            result = genai.embed_content(
+                model=EMBED_MODEL,
+                content=text[:8000],  # ограничение по длине контента
+                task_type="retrieval_document",
+            )
+            return result["embedding"]
+        except Exception as e:  # rate limit / временная ошибка ключа
+            last_err = e
+            time.sleep(1)
+    raise RuntimeError(f"Не удалось получить эмбеддинг после {retries} попыток: {last_err}")
+
+
+def embed_query(text: str):
+    genai.configure(api_key=_next_key())
+    result = genai.embed_content(
+        model=EMBED_MODEL,
+        content=text,
+        task_type="retrieval_query",
+    )
+    return result["embedding"]
+
+
+def init_db(conn: sqlite3.Connection):
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS knowledge (
+            path TEXT PRIMARY KEY,
+            doc_id TEXT,
+            type TEXT,
+            tags TEXT,
+            updated TEXT,
+            mtime REAL,
+            text TEXT,
+            embedding TEXT
+        )
+    """)
+    conn.commit()
+
+
+def parse_frontmatter(raw: str):
+    """Возвращает (meta_dict, body_text). Если frontmatter нет — meta пустой."""
+    if raw.startswith("---"):
+        parts = raw.split("---", 2)
+        if len(parts) >= 3:
+            try:
+                meta = yaml.safe_load(parts[1]) or {}
+            except yaml.YAMLError:
+                meta = {}
+            body = parts[2].strip()
+            return meta, body
+    return {}, raw.strip()
+
+
+def iter_md_files():
+    return sorted(KNOWLEDGE_DIR.rglob("*.md"))
+
+
+def get_last_reindex_ts() -> float:
+    if LAST_REINDEX_MARKER.exists():
+        try:
+            return float(LAST_REINDEX_MARKER.read_text().strip())
+        except ValueError:
+            return 0.0
+    return 0.0
+
+
+def set_last_reindex_ts(ts: float):
+    LAST_REINDEX_MARKER.write_text(str(ts))
+
+
+def reindex(full: bool = False):
+    KNOWLEDGE_DIR.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(DB_PATH)
+    init_db(conn)
+
+    since_ts = 0.0 if full else get_last_reindex_ts()
+    run_start = time.time()
+
+    files = iter_md_files()
+    to_process = [f for f in files if full or f.stat().st_mtime > since_ts]
+
+    if not to_process:
+        print(f"Нечего индексировать (проверено {len(files)} файлов, все старее последнего реиндекса).")
+        conn.close()
+        return
+
+    print(f"Найдено {len(to_process)} файлов для (пере)индексации из {len(files)} всего.")
+
+    ok, failed = 0, 0
+    for f in to_process:
+        try:
+            raw = f.read_text(encoding="utf-8")
+            meta, body = parse_frontmatter(raw)
+            doc_id = meta.get("id", f.stem)
+            doc_type = meta.get("type", "unknown")
+            tags = ",".join(meta.get("tags", []) or [])
+            updated = str(meta.get("updated", ""))
+
+            embed_source = f"{doc_id}\n{tags}\n{body}"
+            vector = embed_text(embed_source)
+
+            conn.execute(
+                """INSERT INTO knowledge (path, doc_id, type, tags, updated, mtime, text, embedding)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                   ON CONFLICT(path) DO UPDATE SET
+                     doc_id=excluded.doc_id, type=excluded.type, tags=excluded.tags,
+                     updated=excluded.updated, mtime=excluded.mtime,
+                     text=excluded.text, embedding=excluded.embedding""",
+                (str(f), doc_id, doc_type, tags, updated, f.stat().st_mtime, body[:2000], json.dumps(vector)),
+            )
+            conn.commit()
+            ok += 1
+            print(f"  [OK] {f.relative_to(KNOWLEDGE_DIR)}")
+        except Exception as e:
+            failed += 1
+            print(f"  [FAIL] {f.relative_to(KNOWLEDGE_DIR)}: {e}", file=sys.stderr)
+
+    conn.close()
+    set_last_reindex_ts(run_start)
+    print(f"Готово: {ok} успешно, {failed} с ошибкой.")
+
+
+def cosine_sim(a, b):
+    dot = sum(x * y for x, y in zip(a, b))
+    na = sum(x * x for x in a) ** 0.5
+    nb = sum(y * y for y in b) ** 0.5
+    if na == 0 or nb == 0:
+        return 0.0
+    return dot / (na * nb)
+
+
+def search(query: str, top: int = 5):
+    if not DB_PATH.exists():
+        print("База пуста — сначала запусти реиндекс: python3 index_knowledge.py --full")
+        return
+    conn = sqlite3.connect(DB_PATH)
+    rows = conn.execute("SELECT path, doc_id, type, tags, updated, embedding FROM knowledge").fetchall()
+    conn.close()
+
+    if not rows:
+        print("База пуста — сначала запусти реиндекс: python3 index_knowledge.py --full")
+        return
+
+    qvec = embed_query(query)
+    scored = []
+    for path, doc_id, doc_type, tags, updated, emb_json in rows:
+        vec = json.loads(emb_json)
+        score = cosine_sim(qvec, vec)
+        scored.append((score, path, doc_id, doc_type, tags, updated))
+
+    scored.sort(reverse=True)
+    print(f"\nТоп-{top} совпадений для запроса: {query!r}\n")
+    for score, path, doc_id, doc_type, tags, updated in scored[:top]:
+        print(f"  {score:.3f}  [{doc_type}] {doc_id}  ({tags})  -> {path}  (updated: {updated})")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Индексатор базы знаний Leviathan")
+    parser.add_argument("--full", action="store_true", help="Полный реиндекс всех файлов")
+    parser.add_argument("--search", type=str, help="Поисковый запрос")
+    parser.add_argument("--top", type=int, default=5, help="Кол-во результатов поиска")
+    args = parser.parse_args()
+
+    if args.search:
+        search(args.search, args.top)
+    else:
+        reindex(full=args.full)
+
+
+if __name__ == "__main__":
+    main()
